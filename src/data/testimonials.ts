@@ -1,9 +1,14 @@
 export interface TestimonialItem {
   id: string;
   name: string;
+  nameVi?: string;
+  nameEn?: string;
   role: string;
   roleVi?: string;
   roleEn?: string;
+  company?: string;
+  companyVi?: string;
+  companyEn?: string;
   avatar: string;
   rating: number;
   quote: string;
@@ -13,93 +18,83 @@ export interface TestimonialItem {
 
 export const TESTIMONIALS_DATA: TestimonialItem[] = [
   {
-    id: 'sarah',
-    name: 'Sarah Mitchell',
-    role: 'Head of Product at NexaTech',
-    roleVi: 'Giám đốc Sản phẩm tại NexaTech',
-    roleEn: 'Head of Product at NexaTech',
-    avatar: '/avatars/sarah_mitchell_hd.jpg',
+    id: 'sang_aqp',
+    name: 'Phan Nhật Sang',
+    nameVi: 'Phan Nhật Sang',
+    nameEn: 'Phan Nhat Sang',
+    role: 'Chief Executive Officer (CEO)',
+    roleVi: 'Giám đốc Điều hành (CEO)',
+    roleEn: 'Chief Executive Officer (CEO)',
+    company: 'AQP Technology Co., Ltd',
+    companyVi: 'CÔNG TY TNHH CÔNG NGHỆ AQP',
+    companyEn: 'AQP Technology Co., Ltd',
+    avatar: '/avatars/sang_aqp_hd.jpg',
     rating: 5.0,
     quote:
-      '“CommaDesk eliminated tool fragmentation. Having Kanban, time logs, and org charts in one place saves us hours of meetings every week.”',
+      '“CommaDesk unified our Kanban sprint tracking, GPS biometric attendance, and workforce records under one hub. Reporting meetings dropped by over 50%, while project delivery transparency reached an all-time high.”',
     quoteVi:
-      '“CommaDesk xóa bỏ phân mảnh công cụ. Việc có Kanban, nhật ký giờ và sơ đồ tổ chức tại một nơi giúp chúng tôi tiết kiệm hàng giờ họp mỗi tuần.”',
+      '“CommaDesk giúp AQP hợp nhất toàn bộ tiến độ Kanban, chấm công GPS và hồ sơ nhân sự trên một nền tảng duy nhất. Thời gian họp báo cáo giảm hơn 50%, tiến độ bàn giao dự án luôn minh bạch và tức thì.”',
     quoteEn:
-      '“CommaDesk eliminated tool fragmentation. Having Kanban, time logs, and org charts in one place saves us hours of meetings every week.”',
+      '“CommaDesk unified our Kanban sprint tracking, GPS biometric attendance, and workforce records under one hub. Reporting meetings dropped by over 50%, while project delivery transparency reached an all-time high.”',
   },
   {
-    id: 'james',
-    name: 'James Carter',
-    role: 'Operations Lead at BrightPath',
-    roleVi: 'Trưởng khối Vận hành tại BrightPath',
-    roleEn: 'Operations Lead at BrightPath',
-    avatar: '/avatars/james_carter_hd.jpg',
+    id: 'phong_cvedix',
+    name: 'Trần Hoàng Phong',
+    nameVi: 'Trần Hoàng Phong',
+    nameEn: 'Tran Hoang Phong',
+    role: 'CTO & Solutions Director',
+    roleVi: 'Giám đốc Công nghệ & Giải pháp (CTO)',
+    roleEn: 'Chief Technology Officer (CTO)',
+    company: 'CVEDIX Technology and Solutions Co., Ltd',
+    companyVi: 'CÔNG TY TNHH CÔNG NGHỆ VÀ GIẢI PHÁP CVEDIX',
+    companyEn: 'CVEDIX Technology and Solutions Co., Ltd',
+    avatar: '/avatars/phong_cvedix_hd.jpg',
     rating: 5.0,
     quote:
-      '“The document registry and multi-tier permissions deliver enterprise-grade governance. Multi-manager approvals now take minutes instead of days.”',
+      '“The multi-tier permission matrix, open REST APIs, and event webhooks in CommaDesk operate with exceptional reliability. CVEDIX integrated it into our core infrastructure within days while maintaining strict enterprise security.”',
     quoteVi:
-      '“Sổ văn bản số và phân quyền đa tầng mang lại năng lực quản trị chuẩn mực. Quy trình duyệt đa cấp giờ chỉ mất vài phút thay vì nhiều ngày.”',
+      '“Hệ thống phân quyền dữ liệu đa cấp và bộ REST API, Webhooks của CommaDesk vận hành cực kỳ ổn định. CVEDIX tích hợp sâu vào hệ thống hạ tầng sẵn có chỉ trong vài ngày mà vẫn đảm bảo an toàn tuyệt đối.”',
     quoteEn:
-      '“The document registry and multi-tier permissions deliver enterprise-grade governance. Multi-manager approvals now take minutes instead of days.”',
+      '“The multi-tier permission matrix, open REST APIs, and event webhooks in CommaDesk operate with exceptional reliability. CVEDIX integrated it into our core infrastructure within days while maintaining strict enterprise security.”',
   },
   {
-    id: 'elena',
-    name: 'Elena Rostova',
-    role: 'VP of Engineering at TechVanguard',
-    roleVi: 'Phó Chủ tịch Kỹ thuật tại TechVanguard',
-    roleEn: 'VP of Engineering at TechVanguard',
-    avatar: '/avatars/elena_rostova_hd.jpg',
+    id: 'nganthy',
+    name: 'Đỗ Thị Ngân Thy',
+    nameVi: 'Đỗ Thị Ngân Thy',
+    nameEn: 'Do Thi Ngan Thy',
+    role: 'Managing Director & COO',
+    roleVi: 'Tổng Giám đốc Vận hành (COO)',
+    roleEn: 'Managing Director & COO',
+    company: 'Ngan Thy Joint Stock Company',
+    companyVi: 'Cty CP Ngân Thy',
+    companyEn: 'Ngan Thy Joint Stock Company',
+    avatar: '/avatars/ngan_thy_hd.jpg',
     rating: 5.0,
     quote:
-      '“The REST API and webhooks integrated smoothly into our CI/CD pipelines. Flexible permission tiers keep developer access secure and effortless.”',
+      '“The digital document registry, multi-tier approvals, and logistics inventory tracking freed Ngan Thy from cumbersome paper trails. Proposals and procurement requests are now approved on mobile in minutes.”',
     quoteVi:
-      '“Hệ thống REST API và Webhooks tích hợp mượt mà vào luồng CI/CD. Cơ chế phân quyền linh hoạt giúp quản lý quyền hạn an toàn và tiện lợi.”',
+      '“Hệ thống sổ văn bản số điện tử, quy trình duyệt đa cấp và quản lý kho bãi của CommaDesk giải phóng đội ngũ Ngân Thy khỏi mớ giấy tờ rườm rà. Mọi đề xuất, tờ trình đều được phê duyệt ngay trên điện thoại trong vài phút.”',
     quoteEn:
-      '“The REST API and webhooks integrated smoothly into our CI/CD pipelines. Flexible permission tiers keep developer access secure and effortless.”',
+      '“The digital document registry, multi-tier approvals, and logistics inventory tracking freed Ngan Thy from cumbersome paper trails. Proposals and procurement requests are now approved on mobile in minutes.”',
   },
   {
-    id: 'david',
-    name: 'David Chen',
-    role: 'HR & People Ops Director at OmniRetail',
-    roleVi: 'Giám đốc Nhân sự & Vận hành tại OmniRetail',
-    roleEn: 'HR & People Ops Director at OmniRetail',
-    avatar: '/avatars/david_chen_hd.jpg',
+    id: 'tuan_citares',
+    name: 'TS. Lê Quốc Tuấn',
+    nameVi: 'TS. Lê Quốc Tuấn',
+    nameEn: 'Dr. Le Quoc Tuan',
+    role: 'R&D & Digital Transformation Director',
+    roleVi: 'Giám đốc Nghiên cứu & Chuyển đổi số',
+    roleEn: 'R&D & Digital Transformation Director',
+    company: 'CITARES',
+    companyVi: 'CITARES',
+    companyEn: 'CITARES',
+    avatar: '/avatars/tuan_citares_hd.jpg',
     rating: 5.0,
     quote:
-      '“Mobile GPS and Face AI check-in transformed attendance across branches. Automated timesheets cut our payroll cycle by 60%.”',
+      '“The seamless integration between AI vision surveillance and real-time Gantt tracking provides CITARES with unparalleled operational visibility. It is a benchmark digital operating platform for modern organizations.”',
     quoteVi:
-      '“Chấm công GPS di động và Face AI giúp tinh gọn điểm danh chi nhánh. Bảng công tự động giúp giảm 60% thời gian chốt lương.”',
+      '“Khả năng kết nối camera AI giám sát thông minh và biểu đồ Gantt tiến độ thời gian thực của CommaDesk mang lại tầm nhìn vận hành vượt trội cho CITARES. Đây là nền tảng quản trị số chuẩn mực cho tổ chức hiện đại.”',
     quoteEn:
-      '“Mobile GPS and Face AI check-in transformed attendance across branches. Automated timesheets cut our payroll cycle by 60%.”',
-  },
-  {
-    id: 'marcus',
-    name: 'Marcus Aurel',
-    role: 'Enterprise Solution Architect at Apex Global',
-    roleVi: 'Kiến trúc sư Giải pháp Doanh nghiệp tại Apex Global',
-    roleEn: 'Enterprise Solution Architect at Apex Global',
-    avatar: '/avatars/marcus_aurel_hd.jpg',
-    rating: 5.0,
-    quote:
-      '“CommaDesk’s multi-tenant architecture and automated backups gave our security council total confidence to deploy company-wide.”',
-    quoteVi:
-      '“Kiến trúc đa tổ chức và sao lưu tự động của CommaDesk đem lại sự yên tâm tuyệt đối khi triển khai trên toàn tập đoàn.”',
-    quoteEn:
-      '“CommaDesk’s multi-tenant architecture and automated backups gave our security council total confidence to deploy company-wide.”',
-  },
-  {
-    id: 'sophia',
-    name: 'Sophia Lin',
-    role: 'PMO Director at Horizon Software',
-    roleVi: 'Giám đốc Văn phòng Quản lý Dự án PMO tại Horizon Software',
-    roleEn: 'PMO Director at Horizon Software',
-    avatar: '/avatars/sophia_lin_hd.jpg',
-    rating: 5.0,
-    quote:
-      '“Real-time Gantt timelines and executive KPIs let us spot bottlenecks before milestones slip. Delivery predictability has never been higher.”',
-    quoteVi:
-      '“Tiến độ Gantt realtime và KPI lãnh đạo giúp phát hiện điểm nghẽn trước khi trễ hạn. Tiến độ bàn giao luôn được đảm bảo.”',
-    quoteEn:
-      '“Real-time Gantt timelines and executive KPIs let us spot bottlenecks before milestones slip. Delivery predictability has never been higher.”',
+      '“The seamless integration between AI vision surveillance and real-time Gantt tracking provides CITARES with unparalleled operational visibility. It is a benchmark digital operating platform for modern organizations.”',
   },
 ];

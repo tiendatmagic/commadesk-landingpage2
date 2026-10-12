@@ -171,7 +171,7 @@ export function ArcCarousel() {
       </div>
 
       {/* 3D Arc Curved Carousel Container */}
-      <div className="scroll-scale-up delay-200 relative max-w-5xl xl:max-w-6xl mx-auto mt-12 sm:mt-16 flex flex-col items-center justify-center">
+      <div className="relative max-w-5xl xl:max-w-6xl mx-auto mt-12 sm:mt-16 flex flex-col items-center justify-center">
         <div
           id="arcContainer"
           className="relative w-full h-44 sm:h-52 md:h-60 lg:h-64 xl:h-72 flex items-center justify-center overflow-visible"

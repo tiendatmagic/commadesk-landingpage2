@@ -10,6 +10,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@/components/ui/UIIcons';
 
 export function TestimonialsSection() {
   const { t, language } = useLanguage();
+  const isVi = language === 'vi';
   const [hasFannedOut, setHasFannedOut] = useState(false);
   const [currentIdx, setCurrentIdx] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -260,7 +261,7 @@ export function TestimonialsSection() {
         onMouseLeave={() => {
           if (hasFannedOut) startAutoRotate();
         }}
-        className={`testi-stage scroll-scale-up delay-150 relative max-w-[1400px] w-full mx-auto flex flex-col items-center justify-center min-h-[480px] sm:min-h-[500px] md:min-h-[520px] ${
+        className={`testi-stage relative max-w-[1400px] w-full mx-auto flex flex-col items-center justify-center min-h-[480px] sm:min-h-[500px] md:min-h-[520px] transition-all duration-500 ${
           hasFannedOut ? 'is-fanout' : ''
         }`}
         title="Click to interact with 3D Testimonials"
@@ -328,24 +329,33 @@ export function TestimonialsSection() {
             </span>
 
             <div className="flex items-center gap-1.5">
-              {TESTIMONIALS_DATA.map((item, dotIdx) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    goToSlide(dotIdx);
-                    startAutoRotate();
-                  }}
-                  className={`transition-all duration-300 rounded-full cursor-pointer ${
-                    dotIdx === currentIdx
-                      ? 'w-5 sm:w-6 h-2 bg-[#7C3AED]'
-                      : 'w-2 h-2 bg-slate-200 hover:bg-slate-400'
-                  }`}
-                  aria-label={`Go to ${item.name}`}
-                  title={`${item.name} (${item.role})`}
-                />
-              ))}
+              {TESTIMONIALS_DATA.map((item, dotIdx) => {
+                const nameText = isVi
+                  ? item.nameVi || item.name
+                  : item.nameEn || item.name;
+                const labelText = isVi
+                  ? item.companyVi || item.roleVi || item.role
+                  : item.companyEn || item.roleEn || item.role;
+
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      goToSlide(dotIdx);
+                      startAutoRotate();
+                    }}
+                    className={`transition-all duration-300 rounded-full cursor-pointer ${
+                      dotIdx === currentIdx
+                        ? 'w-5 sm:w-6 h-2 bg-[#7C3AED]'
+                        : 'w-2 h-2 bg-slate-200 hover:bg-slate-400'
+                    }`}
+                    aria-label={`Go to ${nameText}`}
+                    title={`${nameText} (${labelText})`}
+                  />
+                );
+              })}
             </div>
           </div>
 
