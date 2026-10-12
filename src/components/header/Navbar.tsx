@@ -224,7 +224,7 @@ export function Navbar() {
           >
             <div className="w-7 h-7 rounded-md flex items-center justify-center overflow-hidden transition-transform group-hover:scale-105">
               <img
-                src="/commadesk/logo_commadesk.webp"
+                src="/commadesk/logo_CommaDesk.webp"
                 alt="CommaDesk Logo"
                 className="w-full h-full object-contain"
               />
