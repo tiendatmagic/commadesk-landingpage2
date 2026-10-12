@@ -36,11 +36,11 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     avatar: '/avatars/james_carter_hd.jpg',
     rating: 5.0,
     quote:
-      '“The document registry and Casbin RBAC deliver enterprise-grade governance. Multi-manager approvals now take minutes instead of days.”',
+      '“The document registry and multi-tier permissions deliver enterprise-grade governance. Multi-manager approvals now take minutes instead of days.”',
     quoteVi:
-      '“Sổ văn bản số và phân quyền Casbin mang lại năng lực quản trị chuẩn mực. Quy trình duyệt đa cấp giờ chỉ mất vài phút thay vì nhiều ngày.”',
+      '“Sổ văn bản số và phân quyền đa tầng mang lại năng lực quản trị chuẩn mực. Quy trình duyệt đa cấp giờ chỉ mất vài phút thay vì nhiều ngày.”',
     quoteEn:
-      '“The document registry and Casbin RBAC deliver enterprise-grade governance. Multi-manager approvals now take minutes instead of days.”',
+      '“The document registry and multi-tier permissions deliver enterprise-grade governance. Multi-manager approvals now take minutes instead of days.”',
   },
   {
     id: 'elena',
@@ -51,11 +51,11 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     avatar: '/avatars/elena_rostova_hd.jpg',
     rating: 5.0,
     quote:
-      '“The REST API and webhooks integrated smoothly into our CI/CD pipelines. Casbin RBAC keeps developer access secure and effortless.”',
+      '“The REST API and webhooks integrated smoothly into our CI/CD pipelines. Flexible permission tiers keep developer access secure and effortless.”',
     quoteVi:
-      '“Hệ thống REST API và Webhooks tích hợp mượt mà vào luồng CI/CD. Phân quyền Casbin giúp quản lý quyền hạn an toàn và tiện lợi.”',
+      '“Hệ thống REST API và Webhooks tích hợp mượt mà vào luồng CI/CD. Cơ chế phân quyền linh hoạt giúp quản lý quyền hạn an toàn và tiện lợi.”',
     quoteEn:
-      '“The REST API and webhooks integrated smoothly into our CI/CD pipelines. Casbin RBAC keeps developer access secure and effortless.”',
+      '“The REST API and webhooks integrated smoothly into our CI/CD pipelines. Flexible permission tiers keep developer access secure and effortless.”',
   },
   {
     id: 'david',

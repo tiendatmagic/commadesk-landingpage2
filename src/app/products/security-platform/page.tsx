@@ -19,90 +19,102 @@ export default function SecurityPlatformPage() {
   const features: SubpageFeatureItem[] = isVi
     ? [
         {
-          id: 'casbin-rbac',
-          tag: 'Phân quyền',
-          title: 'Ma Trận Casbin RBAC',
-          description: 'Phân quyền rành mạch theo vai trò và tổ chức, kiểm tra quyền dưới 1ms trong bộ nhớ.',
-          metricBadge: { label: 'Độ trễ', value: '< 1ms In-Memory' },
+          id: 'enterprise-permissions',
+          tag: 'Phân quyền đa tầng',
+          title: 'Phân quyền đa tầng, linh hoạt theo mô hình doanh nghiệp',
+          description:
+            'Kiểm soát quyền truy cập xuyên suốt từ tổ chức, phòng ban đến từng vị trí và người dùng. Linh hoạt thiết lập chính sách phân quyền theo cơ cấu tổ chức và nhu cầu vận hành thực tế, đảm bảo quản trị tập trung nhưng vẫn trao quyền chủ động cho từng đơn vị.',
+          metricBadge: { label: 'Cơ chế', value: 'Đa tầng linh hoạt' },
         },
         {
           id: 'multi-tenant',
-          tag: 'Đa tổ chức',
-          title: 'Kiến Trúc Multi-Tenant',
-          description: 'Cô lập dữ liệu tuyệt đối giữa các tổ chức và chi nhánh, loại bỏ nguy cơ rò rỉ.',
-          metricBadge: { label: 'Cô lập', value: '100% Tenant Isolation' },
+          tag: 'Đa chi nhánh',
+          title: 'Quản Trị Đa Doanh Nghiệp & Chi Nhánh',
+          description:
+            'Cô lập dữ liệu tuyệt đối giữa các công ty thành viên và chi nhánh, phân cấp điều hành tập trung nhưng vẫn tự chủ đơn vị.',
+          metricBadge: { label: 'Cô lập dữ liệu', value: '100% Độc lập' },
         },
         {
           id: 'audit-trails',
           tag: 'Kiểm toán',
-          title: 'Nhật Ký Kiểm Toán 3 Lớp',
-          description: 'Ghi lại mọi thay đổi dữ liệu, lịch sử truy cập và nhật ký quyền hạn bất biến.',
-          metricBadge: { label: 'Toàn vẹn', value: 'Bất biến (Immutable)' },
+          title: 'Nhật Ký Hoạt Động & Lịch Sử Thay Đổi',
+          description:
+            'Ghi nhận minh bạch mọi thao tác của người dùng, lịch sử truy cập và chỉnh sửa dữ liệu, phục vụ đối soát và thanh tra.',
+          metricBadge: { label: 'Toàn vẹn', value: 'Minh bạch 100%' },
         },
         {
           id: 'two-factor-auth',
           tag: 'Xác thực',
-          title: 'Xác Thực 2FA & Thiết Bị',
-          description: 'Bảo vệ đăng nhập với 2FA/TOTP và định danh thiết bị IoT, camera bằng HMAC.',
-          metricBadge: { label: 'An toàn', value: 'Zero Account Takeover' },
+          title: 'Bảo Mật Đăng Nhập 2 Lớp & Thiết Bị',
+          description:
+            'Bảo vệ tài khoản với xác thực 2 lớp (OTP), quản lý phiên đăng nhập từ xa và định danh thiết bị làm việc an toàn.',
+          metricBadge: { label: 'Bảo mật', value: 'Xác thực 2 lớp' },
         },
         {
           id: 'rest-api-webhooks',
           tag: 'Kết nối',
-          title: 'REST API & Webhooks',
-          description: 'Bộ API chuẩn OpenAPI 3.0 và hệ thống Webhooks hai chiều tích hợp không giới hạn.',
-          metricBadge: { label: 'Tiêu chuẩn', value: 'OpenAPI 3.0' },
+          title: 'Kết Nối & Tích Hợp Hệ Thống Sẵn Có',
+          description:
+            'Dễ dàng liên kết và đồng bộ dữ liệu hai chiều với phần mềm kế toán, hóa đơn điện tử, ERP và cổng thanh toán nội bộ.',
+          metricBadge: { label: 'Tương thích', value: 'Mọi nền tảng' },
         },
         {
           id: 'deployment-modes',
           tag: 'Hạ tầng',
-          title: 'Triển Khai Linh Hoạt',
-          description: 'Vận hành trên Cloud, On-Premises hoặc Hybrid với ứng dụng Desktop và Mobile.',
-          metricBadge: { label: 'Mô hình', value: 'Docker / On-Prem / Hybrid' },
+          title: 'Lựa Chọn Vận Hành Đám Mây Hoặc Máy Chủ Riêng',
+          description:
+            'Linh hoạt sử dụng trên Đám mây doanh nghiệp hoặc Cài đặt trên máy chủ nội bộ với đầy đủ ứng dụng Máy tính và Di động.',
+          metricBadge: { label: 'Linh hoạt', value: 'Đám mây & Máy chủ riêng' },
         },
       ]
     : [
         {
-          id: 'casbin-rbac',
-          tag: 'Access Control',
-          title: 'Casbin RBAC Matrix',
-          description: 'Fine-grained role-based authorization enforced across all actions under 1ms.',
-          metricBadge: { label: 'Latency', value: '< 1ms In-Memory' },
+          id: 'enterprise-permissions',
+          tag: 'Access Governance',
+          title: 'Multi-Tier Flexible Enterprise Permissions',
+          description:
+            'Control access seamlessly across organizations, departments, roles, and individual users. Flexibly define authorization policies aligned with corporate structure and operational needs, ensuring centralized governance while empowering business units.',
+          metricBadge: { label: 'Model', value: 'Multi-Level & Flexible' },
         },
         {
           id: 'multi-tenant',
-          tag: 'Multi-Tenant',
-          title: 'Tenant Isolation',
-          description: 'Strict logical database isolation between corporate tenants eliminating leaks.',
+          tag: 'Multi-Branch',
+          title: 'Corporate Multi-Unit Governance',
+          description:
+            'Strict logical data partitioning between subsidiaries and branches, enabling unified corporate management.',
           metricBadge: { label: 'Isolation', value: '100% Tenant Scoped' },
         },
         {
           id: 'audit-trails',
           tag: 'Auditing',
-          title: 'Triple-Layer Audit Trails',
-          description: 'Complete audit logs covering data deltas, access attempts, and RBAC changes.',
-          metricBadge: { label: 'Integrity', value: 'Cryptographic Logs' },
+          title: 'Activity Logs & Tamper-Proof Audit',
+          description:
+            'Transparent logging of all user activities, data modifications, and privilege adjustments for compliance.',
+          metricBadge: { label: 'Integrity', value: '100% Audited' },
         },
         {
           id: 'two-factor-auth',
-          tag: 'Auth & Tokens',
-          title: '2FA & Device Identity',
-          description: 'Fortify logins with TOTP 2FA, remote session control, and HMAC device pairing.',
-          metricBadge: { label: 'Security', value: 'Zero Account Takeover' },
+          tag: 'Auth & Safety',
+          title: 'Two-Factor Authentication & Device Trust',
+          description:
+            'Safeguard corporate accounts with 2FA/OTP login verification, remote session revoke, and trusted device binding.',
+          metricBadge: { label: 'Protection', value: '2-Factor Auth' },
         },
         {
           id: 'rest-api-webhooks',
-          tag: 'APIs',
-          title: 'REST API & Webhooks',
-          description: 'OpenAPI 3.0 endpoints and bi-directional Webhooks with full trace debugging.',
-          metricBadge: { label: 'Standard', value: 'OpenAPI 3.0' },
+          tag: 'Integration',
+          title: 'Ecosystem Connectivity & Open Data Sync',
+          description:
+            'Seamlessly connect and synchronize two-way data with external ERP, accounting, e-invoices, and corporate systems.',
+          metricBadge: { label: 'Standard', value: 'Universal Sync' },
         },
         {
           id: 'deployment-modes',
           tag: 'Deployment',
-          title: 'Hybrid Deployments',
-          description: 'Flexible deployment across Cloud, On-Premises, or Hybrid with Desktop & Mobile apps.',
-          metricBadge: { label: 'Modes', value: 'Docker / On-Prem / Hybrid' },
+          title: 'Flexible Cloud or On-Premises Hosting',
+          description:
+            'Choose between turnkey Cloud SaaS or private on-premises server hosting with native desktop and mobile parity.',
+          metricBadge: { label: 'Options', value: 'Cloud & On-Prem' },
         },
       ];
 
@@ -120,24 +132,24 @@ export default function SecurityPlatformPage() {
           }
           subtitle={
             isVi
-              ? 'Phân quyền Casbin RBAC, kiến trúc đa tổ chức Multi-tenant an toàn và nhật ký kiểm toán bất biến.'
-              : 'Casbin RBAC access governance, zero-leak multi-tenant partitioning, and immutable audit trails.'
+              ? 'Phân quyền đa tầng linh hoạt theo mô hình doanh nghiệp, quản trị đa chi nhánh an toàn và bảo mật dữ liệu tuyệt đối.'
+              : 'Multi-tier flexible permissions aligned with corporate structure, multi-branch governance, and complete data safety.'
           }
           tags={
             isVi
               ? [
-                  'Phân quyền Casbin RBAC',
-                  'Đa tổ chức Multi-Tenant',
-                  'Nhật ký Audit 3 lớp',
-                  'Xác thực 2FA / HMAC',
-                  'REST API & Webhooks',
+                  'Phân quyền đa tầng linh hoạt',
+                  'Quản trị đa chi nhánh',
+                  'Nhật ký hoạt động minh bạch',
+                  'Bảo mật đăng nhập 2 lớp',
+                  'Tích hợp hệ thống mở',
                 ]
               : [
-                  'Casbin RBAC Matrix',
-                  'Multi-Tenant Isolation',
-                  'Triple-Layer Audit',
-                  '2FA & HMAC Identity',
-                  'REST API & Webhooks',
+                  'Multi-Tier Permissions',
+                  'Multi-Branch Governance',
+                  'Transparent Activity Logs',
+                  'Two-Factor Authentication',
+                  'Open Ecosystem Integration',
                 ]
           }
           visualPreview={visualPreview}

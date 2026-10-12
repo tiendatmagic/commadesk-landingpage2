@@ -30,7 +30,7 @@ export function InteractiveMeetCollab({ isVi }: InteractiveMeetCollabProps) {
     },
     {
       id: 'chat' as const,
-      label: isVi ? 'Chat Matrix' : 'Matrix Chat',
+      label: isVi ? 'Chat Nội Bộ' : 'Team Chat',
       icon: <MessageSquareIcon className="w-3.5 h-3.5" />,
     },
   ];
@@ -38,7 +38,7 @@ export function InteractiveMeetCollab({ isVi }: InteractiveMeetCollabProps) {
   const participants = [
     {
       name: isVi ? 'Bạn (Chủ phòng)' : 'You (Host)',
-      role: 'Tech Lead',
+      role: isVi ? 'Trưởng nhóm giải pháp' : 'Solutions Lead',
       speaking: true,
       initials: 'ME',
       bg: 'from-blue-50 to-indigo-100/90',
@@ -46,15 +46,15 @@ export function InteractiveMeetCollab({ isVi }: InteractiveMeetCollabProps) {
     },
     {
       name: isVi ? 'Linh Đặng (PM)' : 'Linh Dang (PM)',
-      role: 'Product Manager',
+      role: isVi ? 'Quản lý dự án' : 'Project Manager',
       speaking: false,
       initials: 'LD',
       bg: 'from-purple-50 to-pink-100/90',
       avatarColor: 'text-purple-600 bg-purple-50 border-purple-200',
     },
     {
-      name: isVi ? 'Hoàng Trần (Dev)' : 'Hoang Tran (Dev)',
-      role: 'Backend Engineer',
+      name: isVi ? 'Hoàng Trần (Kỹ thuật)' : 'Hoang Tran (Tech)',
+      role: isVi ? 'Chuyên viên kỹ thuật' : 'Technical Specialist',
       speaking: false,
       initials: 'HT',
       bg: 'from-emerald-50 to-teal-100/90',
@@ -62,7 +62,7 @@ export function InteractiveMeetCollab({ isVi }: InteractiveMeetCollabProps) {
     },
     {
       name: isVi ? 'Hương Vũ (QA)' : 'Huong Vu (QA)',
-      role: 'QA Lead',
+      role: isVi ? 'Kiểm soát chất lượng' : 'QA Lead',
       speaking: false,
       initials: 'HV',
       bg: 'from-amber-50 to-orange-100/90',
@@ -79,7 +79,7 @@ export function InteractiveMeetCollab({ isVi }: InteractiveMeetCollabProps) {
     {
       sender: 'Hoàng Trần',
       time: '10:44',
-      text: isVi ? 'Đã deploy migration Casbin RBAC lên môi trường staging thành công.' : 'Casbin RBAC migration successfully deployed to staging.',
+      text: isVi ? 'Đã kích hoạt chính sách phân quyền đa tầng cho toàn bộ phòng ban.' : 'Multi-tier permissions policy successfully activated across all departments.',
     },
   ];
 
@@ -179,7 +179,7 @@ export function InteractiveMeetCollab({ isVi }: InteractiveMeetCollabProps) {
           </div>
         </div>
       ) : (
-        /* Matrix Chat Tab (Light Mode) */
+        /* Team Chat Tab (Light Mode) */
         <div className="space-y-2.5">
           <div className="space-y-2">
             {chatMessages.map((msg, i) => (

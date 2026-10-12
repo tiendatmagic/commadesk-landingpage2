@@ -29,7 +29,7 @@ export default function OperationsDocumentsPage() {
           id: 'approvals-flow',
           tag: 'Trình ký',
           title: 'Ký Duyệt & Dấu Số',
-          description: 'Thiết lập luồng trình ký linh hoạt, chữ ký số băm bất biến và đối soát vết sửa đổi.',
+          description: 'Thiết lập luồng trình ký linh hoạt, ký số điện tử an toàn và theo dõi lịch sử phê duyệt minh bạch.',
           metricBadge: { label: 'Tốc độ', value: 'Nhanh hơn 75%' },
         },
         {
@@ -100,7 +100,7 @@ export default function OperationsDocumentsPage() {
         {
           id: 'casbin-registry-rbac',
           tag: 'Security',
-          title: 'Casbin RBAC Permissions',
+          title: 'Multi-Tier Permissions',
           description: 'Strict access control ensuring only authorized personnel view sensitive files.',
           metricBadge: { label: 'Standard', value: 'ISO 27001' },
         },
@@ -130,14 +130,14 @@ export default function OperationsDocumentsPage() {
                   'Ký duyệt & Con dấu số',
                   'Đánh số tự động',
                   'Tra cứu trích yếu',
-                  'Phân quyền Casbin',
+                  'Phân quyền đa tầng',
                 ]
               : [
                   'Document Registry',
                   'Digital Signatures',
                   'Auto-Numbering',
                   'Abstract Search',
-                  'Casbin RBAC',
+                  'Multi-Tier Permissions',
                 ]
           }
           visualPreview={visualPreview}

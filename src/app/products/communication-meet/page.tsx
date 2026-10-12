@@ -22,15 +22,15 @@ export default function CommunicationMeetPage() {
           id: 'commameet-webrtc',
           tag: 'Họp online',
           title: 'Họp Video CommaMeet',
-          description: 'Họp video bảo mật trên nền WebRTC, không giới hạn thời gian họp.',
-          metricBadge: { label: 'Độ trễ', value: '<100ms siêu mượt' },
+          description: 'Họp video trực tuyến hình ảnh sắc nét, âm thanh rõ ràng và không giới hạn thời gian họp.',
+          metricBadge: { label: 'Chất lượng', value: 'HD Siêu mượt' },
         },
         {
           id: 'matrix-chat',
           tag: 'Chat',
-          title: 'Kênh Chat Mã Hóa E2EE',
-          description: 'Nhắn tin tức thì, chia sẻ tệp và tạo kênh trao đổi theo dự án bảo mật tuyệt đối.',
-          metricBadge: { label: 'Mã hóa', value: 'E2EE Standard' },
+          title: 'Chat & Trao Đổi Nhóm Nội Bộ',
+          description: 'Nhắn tin tức thì, chia sẻ tệp tin và tạo nhóm thảo luận riêng theo từng dự án hoặc phòng ban.',
+          metricBadge: { label: 'Bảo mật', value: 'Mã hóa an toàn' },
         },
         {
           id: 'cms-portal',
@@ -57,8 +57,8 @@ export default function CommunicationMeetPage() {
           id: 'push-notifications',
           tag: 'Thông báo',
           title: 'Thông Báo Tức Thì',
-          description: 'Đồng bộ thông báo in-app qua WebSocket và đẩy tin quan trọng đến Telegram, Zalo.',
-          metricBadge: { label: 'Tốc độ', value: 'Tức thời' },
+          description: 'Nhận thông báo quan trọng trên ứng dụng, nhắc việc tự động và liên kết thông báo qua Zalo, Telegram.',
+          metricBadge: { label: 'Tốc độ', value: 'Thời gian thực' },
         },
       ]
     : [
@@ -66,15 +66,15 @@ export default function CommunicationMeetPage() {
           id: 'commameet-webrtc',
           tag: 'Video',
           title: 'CommaMeet Video Calls',
-          description: 'Enterprise WebRTC video conferencing with zero time limits and high concurrency.',
-          metricBadge: { label: 'Audio', value: '<100ms Latency' },
+          description: 'Enterprise HD video conferencing with crystal-clear audio and zero time limits.',
+          metricBadge: { label: 'Quality', value: 'Ultra Smooth HD' },
         },
         {
           id: 'matrix-chat',
           tag: 'Chat',
-          title: 'Matrix E2EE Messenger',
-          description: 'Instant team channels, file sharing, and project chat rooms with E2EE security.',
-          metricBadge: { label: 'Security', value: 'E2EE Standard' },
+          title: 'Team Chat & Group Messaging',
+          description: 'Instant team channels, file sharing, and dedicated project discussion rooms with encryption.',
+          metricBadge: { label: 'Security', value: 'Encrypted' },
         },
         {
           id: 'cms-portal',
@@ -101,7 +101,7 @@ export default function CommunicationMeetPage() {
           id: 'push-notifications',
           tag: 'Alerts',
           title: 'Multi-Channel Alerts',
-          description: 'WebSocket in-app realtime alerts and outbound webhooks to Telegram and Zalo.',
+          description: 'Instant in-app alerts, automated task reminders, and mobile push notifications.',
           metricBadge: { label: 'Speed', value: 'Instant' },
         },
       ];
@@ -126,8 +126,8 @@ export default function CommunicationMeetPage() {
           visualPreview={visualPreview}
           tags={
             isVi
-              ? ['Họp CommaMeet HD', 'Chat Matrix E2EE', 'Cổng tin tức CMS', 'Khảo sát nội bộ', 'Thông báo tức thì']
-              : ['CommaMeet HD', 'Matrix E2EE Chat', 'CMS Portal', 'Internal Surveys', 'Instant Alerts']
+              ? ['Họp video HD', 'Chat nhóm nội bộ', 'Cổng tin tức', 'Khảo sát nhân viên', 'Thông báo tức thì']
+              : ['HD Video Meetings', 'Team Group Chat', 'News Portal', 'Staff Surveys', 'Instant Alerts']
           }
         />
 

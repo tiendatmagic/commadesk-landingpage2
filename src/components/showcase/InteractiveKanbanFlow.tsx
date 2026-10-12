@@ -95,7 +95,7 @@ export function InteractiveKanbanFlow({ isVi }: Props) {
               </div>
               <div>
                 <p className="text-[11px] font-bold text-slate-900">
-                  {isVi ? 'Phân quyền thẻ việc Casbin' : 'Casbin Task RBAC'}
+                  {isVi ? 'Phân quyền giao việc đa tầng' : 'Multi-Tier Task Permissions'}
                 </p>
                 <p className="text-[10px] text-slate-500">
                   {isVi ? 'Giao việc minh bạch chống can thiệp' : 'Tamper-proof Assignment'}
@@ -188,19 +188,19 @@ export function InteractiveKanbanFlow({ isVi }: Props) {
           <div className="space-y-3">
             {[
               {
-                label: isVi ? 'Q1: Kiến trúc vi dịch vụ cốt lõi' : 'Q1: Core Microservice Architecture',
+                label: isVi ? 'Q1: Nền tảng quản trị công việc tập trung' : 'Q1: Centralized Workspace Platform',
                 width: '90%',
                 progress: '90%',
                 color: 'bg-indigo-500',
               },
               {
-                label: isVi ? 'Q2: Kiểm soát đa tổ chức Casbin' : 'Q2: Casbin Multi-Tenant Enforcement',
+                label: isVi ? 'Q2: Phân quyền đa tầng & Đa tổ chức' : 'Q2: Multi-Tier Permissions Enforcement',
                 width: '75%',
                 progress: '75%',
                 color: 'bg-emerald-500',
               },
               {
-                label: isVi ? 'Q3: Tích hợp đường ống Camera AI' : 'Q3: AI Camera Pipeline Integration',
+                label: isVi ? 'Q3: Tích hợp Camera AI & Nhận diện xe' : 'Q3: Vision AI & Smart Detection',
                 width: '55%',
                 progress: '55%',
                 color: 'bg-amber-500',

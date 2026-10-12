@@ -58,7 +58,7 @@ export function SubpageCTA({ moduleName }: SubpageCTAProps) {
         <div className="mt-12 pt-8 border-t border-slate-100 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-slate-500 font-medium">
           <span className="flex items-center gap-1.5">
             <CheckCircleIcon className="w-4 h-4 text-emerald-600" />
-            Casbin RBAC Matrix
+            {language === 'vi' ? 'Phân quyền đa tầng linh hoạt' : 'Multi-Tier Permissions'}
           </span>
           <span className="flex items-center gap-1.5">
             <CheckCircleIcon className="w-4 h-4 text-emerald-600" />

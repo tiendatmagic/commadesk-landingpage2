@@ -52,7 +52,7 @@ export function InteractiveCRMPipeline({ isVi }: Props) {
               {[
                 { name: 'REST API', icon: ZapIcon, color: 'from-amber-400 to-orange-500', count: '14 req/s' },
                 { name: 'Email ITIL', icon: MailIcon, color: 'from-blue-400 to-indigo-500', count: '8 tk/min' },
-                { name: 'Matrix Chat', icon: MessageSquareIcon, color: 'from-emerald-400 to-teal-500', count: '26 msg/s' },
+                { name: 'Team Chat', icon: MessageSquareIcon, color: 'from-emerald-400 to-teal-500', count: '26 msg/s' },
                 { name: 'Web Forms', icon: GlobeIcon, color: 'from-purple-400 to-pink-500', count: '5 sub/min' },
               ].map((c, i) => {
                 const IconComponent = c.icon;

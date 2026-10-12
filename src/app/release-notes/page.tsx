@@ -125,19 +125,19 @@ export default function ReleaseNotesPage() {
       badge: isVi ? 'Bảo Mật & Ứng Dụng' : 'Security & App Parity',
       badgeColor: 'bg-slate-100 text-slate-700 border-slate-200',
       summary: {
-        vi: 'Ra mắt Desktop Windows (.exe), Mobile Flutter và nâng cấp Casbin RBAC.',
-        en: 'Windows Desktop app, Flutter Mobile, and enhanced Casbin RBAC matrix.',
+        vi: 'Ra mắt Ứng dụng Máy tính Windows, Ứng dụng Di động và nâng cấp Phân quyền đa tầng doanh nghiệp.',
+        en: 'Windows Desktop app, Mobile app, and enhanced multi-tier enterprise permissions.',
       },
       highlights: [
         {
           category: 'security',
           title: {
-            vi: 'Casbin RBAC & 2FA/TOTP',
-            en: 'Casbin RBAC & 2FA/TOTP',
+            vi: 'Phân quyền đa tầng & Bảo mật 2 lớp',
+            en: 'Multi-Tier Permissions & 2FA Security',
           },
           desc: {
-            vi: 'Thu hồi phiên từ xa, định danh HMAC và kiểm toán 3 tầng độc lập.',
-            en: 'Remote session revoke, HMAC binding, and 3-tier audit logs.',
+            vi: 'Thu hồi phiên đăng nhập từ xa, định danh thiết bị an toàn và nhật ký hoạt động minh bạch.',
+            en: 'Remote session revoke, trusted device binding, and transparent audit logs.',
           },
         },
       ],
@@ -287,19 +287,19 @@ export default function ReleaseNotesPage() {
         {/* Bottom CTA to Docs */}
         <div className="max-w-4xl mx-auto mt-16 p-8 rounded-3xl bg-gradient-to-br from-white to-slate-50 border border-slate-200 text-center shadow-xs space-y-3">
           <h2 className="text-lg sm:text-xl font-bold text-slate-900">
-            {isVi ? 'Cần Tra Cứu Đặc Tả Kỹ Thuật Chi Tiết?' : 'Looking for Technical Documentation?'}
+            {isVi ? 'Tìm Hiểu Chi Tiết Về Tính Năng Nghiệp Vụ?' : 'Explore Feature Guides & Operations?'}
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
             {isVi
-              ? 'Tham khảo tài liệu đặc tả 67+ phân hệ và OpenAPI Swagger chi tiết.'
-              : 'Explore our 67+ module technical specs and OpenAPI Swagger docs.'}
+              ? 'Tham khảo cẩm nang hướng dẫn sử dụng và quy trình vận hành toàn diện cho doanh nghiệp.'
+              : 'Explore comprehensive user guides and operational workflows tailored for your business.'}
           </p>
           <div className="pt-2 flex items-center justify-center gap-3">
             <Link
               href="/docs"
               className="px-5 py-2.5 rounded-full bg-[#FF4D38] text-white text-xs font-bold shadow-sm hover:bg-[#e03d29] transition-all"
             >
-              {isVi ? 'Xem Tài Liệu 67+ Phân Hệ' : 'Explore 67+ Technical Docs'}
+              {isVi ? 'Xem Cẩm Nang Tính Năng' : 'Explore Feature Handbook'}
             </Link>
             <Link
               href="/deployment"

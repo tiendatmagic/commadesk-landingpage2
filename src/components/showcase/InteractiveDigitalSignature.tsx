@@ -53,8 +53,8 @@ export function InteractiveDigitalSignature({ isVi }: Props) {
 
             <p className="text-[11px] text-slate-600 line-clamp-3 leading-relaxed mb-4 relative z-10">
               {isVi
-                ? 'Quyết định ban hành quy chế vận hành số hóa liên phòng ban, bảo mật văn bản theo tiêu chuẩn ISO 27001 và phân quyền ma trận Casbin RBAC.'
-                : 'Executive order on digital inter-departmental operations, confidential document dispatching under ISO 27001, and Casbin RBAC matrix enforcement.'}
+                ? 'Quyết định ban hành quy chế vận hành số hóa liên phòng ban, bảo mật văn bản theo tiêu chuẩn ISO 27001 và phân quyền đa tầng linh hoạt.'
+                : 'Executive order on digital inter-departmental operations, confidential document dispatching under ISO 27001, and multi-tier flexible permissions.'}
             </p>
 
             {/* Red Cryptographic Digital Stamp */}

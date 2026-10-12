@@ -287,7 +287,7 @@ export function InteractiveInventoryAssets({ isVi }: InteractiveInventoryAssetsP
       <div className="mt-3 pt-3 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-500">
         <span className="flex items-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-          {isVi ? 'Đồng bộ tự động cân bằng tồn kho qua Casbin RBAC' : 'Inventory auto-synced under Casbin RBAC'}
+          {isVi ? 'Đồng bộ tự động cân bằng tồn kho theo phân quyền đa tầng' : 'Inventory auto-synced under multi-tier permissions'}
         </span>
         <span className="font-semibold text-slate-700">Audit Trail: OK</span>
       </div>

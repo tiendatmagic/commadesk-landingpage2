@@ -19,90 +19,102 @@ export default function DocsPage() {
   const features: SubpageFeatureItem[] = isVi
     ? [
         {
-          id: 'rest-api-swagger',
-          tag: 'API',
-          title: 'REST API & Swagger UI',
-          description: 'Hàng trăm endpoint chuẩn OpenAPI 3.0 với Swagger UI tương tác thử cURL tức thì.',
-          metricBadge: { label: 'Chuẩn', value: 'OpenAPI 3.0' },
+          id: 'project-management-guide',
+          tag: 'Dự án',
+          title: 'Quản Trị Dự Án & Tiến Độ',
+          description:
+            'Tổ chức công việc theo bảng Kanban, lập kế hoạch với sơ đồ Gantt và theo dõi tiến độ chi tiết đến từng nhân sự.',
+          metricBadge: { label: 'Hiệu quả', value: '+35% Tốc độ bàn giao' },
         },
         {
-          id: 'webhooks-pipeline',
-          tag: 'Webhooks',
-          title: 'Webhooks Hai Chiều',
-          description: 'Bắn sự kiện tức thì khi có biến động nhân sự, công việc kèm cơ chế retry lũy tiến.',
-          metricBadge: { label: 'Độ trễ', value: '< 50ms Realtime' },
+          id: 'hr-payroll-guide',
+          tag: 'Nhân sự',
+          title: 'Vận Hành Nhân Sự & Chấm Công AI',
+          description:
+            'Quản lý hồ sơ nhân viên 360°, chấm công nhận diện khuôn mặt và tự động tính bảng lương không sai sót.',
+          metricBadge: { label: 'Độ chính xác', value: '100% Tự động hóa' },
         },
         {
-          id: 'feature-specs-14',
-          tag: 'Đặc tả',
-          title: 'Đặc Tả 14 Phân Hệ',
-          description: 'Tài liệu hướng dẫn chuyên sâu cho toàn bộ 14 phân hệ nghiệp vụ của CommaDesk.',
-          metricBadge: { label: 'Bao phủ', value: '14 Phân hệ' },
+          id: 'digital-documents-guide',
+          tag: 'Văn bản',
+          title: 'Sổ Văn Bản Số & Ký Duyệt',
+          description:
+            'Quy trình tiếp nhận văn bản đến/đi, đánh số tự động theo quy định, ký số điện tử và lưu trữ số hóa an toàn.',
+          metricBadge: { label: 'Tiêu chuẩn', value: 'Nghị định 30' },
         },
         {
-          id: 'jwt-rs256',
-          tag: 'Xác thực',
-          title: 'Xác Thực JWT & HMAC',
-          description: 'Xác thực bất đối xứng RS256, 2FA chuẩn RFC 6238 và ghép nối thiết bị qua HMAC.',
-          metricBadge: { label: 'Thuật toán', value: 'RS256 / SHA-256' },
-        },
-        {
-          id: 'casbin-rbac-docs',
+          id: 'enterprise-permissions-docs',
           tag: 'Phân quyền',
-          title: 'Chính Sách Casbin RBAC',
-          description: 'Hướng dẫn khai báo chính sách phân quyền chi tiết, kiểm tra quyền dưới 1ms.',
-          metricBadge: { label: 'Tốc độ', value: '< 1ms In-Memory' },
+          title: 'Phân Quyền Đa Tầng Theo Tổ Chức',
+          description:
+            'Thiết lập chính sách truy cập phân cấp từ trụ sở, chi nhánh đến từng phòng ban và vị trí chuyên môn.',
+          metricBadge: { label: 'Cơ chế', value: 'Đa tầng linh hoạt' },
         },
         {
-          id: 'iot-peripherals',
-          tag: 'Phần cứng',
-          title: 'Kết Nối Thiết Bị Ngoại Vi',
-          description: 'Kết nối camera RTSP/ONVIF, máy chấm công, MinIO S3 và bản đồ địa lý GIS.',
-          metricBadge: { label: 'Chuẩn', value: 'Công nghiệp' },
+          id: 'camera-ai-guide',
+          tag: 'An ninh AI',
+          title: 'Camera AI & Giám Sát Thông Minh',
+          description:
+            'Kết nối camera giám sát hiện hữu, nhận diện khách quen/khách VIP, đếm lưu lượng và cảnh báo an ninh tức thì.',
+          metricBadge: { label: 'Phản ứng', value: 'Thời gian thực' },
+        },
+        {
+          id: 'open-integration-guide',
+          tag: 'Kết nối',
+          title: 'Kết Nối Dữ Liệu Doanh Nghiệp',
+          description:
+            'Dễ dàng kết nối và đồng bộ hai chiều với phần mềm kế toán, bán hàng POS, máy chấm công và cổng dịch vụ công.',
+          metricBadge: { label: 'Tương thích', value: 'Mọi nền tảng' },
         },
       ]
     : [
         {
-          id: 'rest-api-swagger',
-          tag: 'API',
-          title: 'OpenAPI 3.0 & Swagger UI',
-          description: 'Hundreds of standardized endpoints with an interactive Swagger test playground.',
-          metricBadge: { label: 'Standard', value: 'OpenAPI 3.0' },
+          id: 'project-management-guide',
+          tag: 'Projects',
+          title: 'Project & Milestone Governance',
+          description:
+            'Organize deliverables with Kanban boards, Gantt timelines, and monitor individual contributor velocity.',
+          metricBadge: { label: 'Efficiency', value: '+35% Delivery Rate' },
         },
         {
-          id: 'webhooks-pipeline',
-          tag: 'Webhooks',
-          title: 'Real-Time Webhooks',
-          description: 'Bi-directional event streams for tasks, attendance, and audit alerts with retries.',
-          metricBadge: { label: 'Latency', value: '< 50ms Realtime' },
+          id: 'hr-payroll-guide',
+          tag: 'Workforce',
+          title: 'Smart HR & Automated Payroll',
+          description:
+            '360° employee directory, AI biometric clock-in, and automated timesheets without manual discrepancies.',
+          metricBadge: { label: 'Accuracy', value: '100% Automated' },
         },
         {
-          id: 'feature-specs-14',
-          tag: 'Specs',
-          title: '14 Module Specifications',
-          description: 'In-depth implementation guides for all 14 core CommaDesk enterprise modules.',
-          metricBadge: { label: 'Coverage', value: '14 Core Modules' },
+          id: 'digital-documents-guide',
+          tag: 'Documents',
+          title: 'Document Registry & Digital Signing',
+          description:
+            'Standardized inbound and outbound dispatches, auto-numbering, cryptographic approvals, and archiving.',
+          metricBadge: { label: 'Standard', value: 'Decree 30 Ready' },
         },
         {
-          id: 'jwt-rs256',
-          tag: 'Auth',
-          title: 'JWT RS256 & HMAC Tokens',
-          description: 'Enterprise identity with RS256 keys, TOTP 2FA, and edge device HMAC pairing.',
-          metricBadge: { label: 'Crypto', value: 'RS256 / SHA-256' },
+          id: 'enterprise-permissions-docs',
+          tag: 'Permissions',
+          title: 'Multi-Tier Permission Policies',
+          description:
+            'Control access seamlessly across organizations, branches, departments, roles, and individual users.',
+          metricBadge: { label: 'Model', value: 'Multi-Tier' },
         },
         {
-          id: 'casbin-rbac-docs',
-          tag: 'Security',
-          title: 'Casbin RBAC Policy Guide',
-          description: 'Configure domain-scoped access policies for sub-millisecond in-memory authorization.',
-          metricBadge: { label: 'Speed', value: '< 1ms In-Memory' },
+          id: 'camera-ai-guide',
+          tag: 'Vision AI',
+          title: 'AI Cameras & Smart Operations',
+          description:
+            'Integrate existing CCTV streams, detect VIP visitors, license plates, and receive instant anomaly alerts.',
+          metricBadge: { label: 'Response', value: 'Real-Time' },
         },
         {
-          id: 'iot-peripherals',
-          tag: 'Hardware',
-          title: 'IoT & Camera Ingestion',
-          description: 'Documentation for RTSP/ONVIF cameras, time clock APIs, and MinIO S3 storage.',
-          metricBadge: { label: 'Protocol', value: 'Industry Standard' },
+          id: 'open-integration-guide',
+          tag: 'Ecosystem',
+          title: 'Enterprise Data Synchronization',
+          description:
+            'Seamlessly connect and sync two-way data with accounting software, retail POS, and corporate tools.',
+          metricBadge: { label: 'Support', value: 'Universal Sync' },
         },
       ];
 
@@ -112,52 +124,54 @@ export default function DocsPage() {
 
       <main className="max-w-[1440px] mx-auto flex flex-col gap-6 sm:gap-10 md:gap-12 lg:gap-14 relative px-2.5 sm:px-6 lg:px-8 pb-4 sm:pb-6 md:pb-6 lg:pb-6">
         <SubpageHero
-          categoryBadge={isVi ? 'Tài nguyên Kỹ thuật & API' : 'Technical Docs & API Reference'}
+          categoryBadge={isVi ? 'Cẩm Nang & Tính Năng Nghiệp Vụ' : 'Feature Handbook & Guides'}
           title={
             isVi
-              ? ['Tài liệu kỹ thuật mở.', 'Tích hợp không giới hạn.']
-              : ['Open technical docs.', 'Limitless integration.']
+              ? ['Làm chủ nền tảng.', 'Tối ưu hóa vận hành.']
+              : ['Master the platform.', 'Optimize operations.']
           }
           subtitle={
             isVi
-              ? 'Tài nguyên kỹ thuật: đặc tả 14 phân hệ, bộ REST API OpenAPI 3.0 và hệ thống Webhooks hai chiều.'
-              : 'Developer hub for 14 module specifications, OpenAPI 3.0 REST endpoints, and Webhooks.'
+              ? 'Khám phá đầy đủ tính năng và quy trình vận hành thực tế cho toàn bộ 14 phân hệ quản trị doanh nghiệp CommaDesk.'
+              : 'Explore comprehensive features and real-world workflows across all 14 CommaDesk enterprise modules.'
           }
           tags={
             isVi
               ? [
-                  'REST API OpenAPI 3.0',
-                  'Webhooks hai chiều',
-                  'Đặc tả 14 phân hệ',
-                  'Chính sách Casbin RBAC',
-                  'Camera RTSP / ONVIF',
+                  'Quản trị dự án & Tiến độ',
+                  'Chấm công AI & Tính lương',
+                  'Sổ văn bản & Ký số',
+                  'Phân quyền đa tầng',
+                  'Camera AI thông minh',
                 ]
               : [
-                  'REST API OpenAPI 3.0',
-                  'Bi-directional Webhooks',
-                  '14 Module Specs',
-                  'Casbin RBAC Policies',
-                  'Camera RTSP / ONVIF',
+                  'Project & Progress Hub',
+                  'Smart HR & Payroll',
+                  'Document Registry',
+                  'Multi-Tier Permissions',
+                  'Vision AI & Safety',
                 ]
           }
           visualPreview={visualPreview}
         />
 
         <SubpageFeaturesGrid
-          badge={isVi ? 'Tài nguyên tích hợp' : 'Integration Resources'}
-          title={isVi ? 'Bộ công cụ tích hợp & Hướng dẫn kỹ thuật' : 'Developer Tools & Integration Ecosystem'}
+          badge={isVi ? 'Danh mục tính năng' : 'Feature Categories'}
+          title={isVi ? 'Cẩm nang nghiệp vụ doanh nghiệp' : 'Enterprise Operational Handbook'}
           subtitle={
             isVi
-              ? 'Kết nối CommaDesk với hệ thống nội bộ, ứng dụng bên thứ ba và hạ tầng đám mây sẵn có.'
-              : 'Connect CommaDesk with your internal pipelines, third-party apps, and cloud infra.'
+              ? 'Tất cả nghiệp vụ cần thiết được số hóa và kết nối liền mạch trên cùng một không gian làm việc duy nhất.'
+              : 'Every critical enterprise workflow is digitized and seamlessly united in a single workspace.'
           }
           features={features}
         />
 
-        <SubpageCTA moduleName={isVi ? 'Tài liệu Kỹ thuật & API' : 'Technical Docs & APIs'} />
-
-        <Footer />
+        <SubpageCTA
+          moduleName={isVi ? 'Cẩm Nang & Hướng Dẫn Tính Năng' : 'Feature Handbook & Guides'}
+        />
       </main>
+
+      <Footer />
     </>
   );
 }

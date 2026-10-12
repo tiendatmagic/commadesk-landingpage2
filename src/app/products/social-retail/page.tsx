@@ -47,10 +47,10 @@ export default function SocialRetailPage() {
         },
         {
           id: 'social-monitoring',
-          tag: 'Giám sát',
-          title: 'Giám Sát & Nhật Ký',
-          description: 'Giám sát lưu lượng tương tác, giới hạn gọi API và ghi log gửi nhận đa kênh.',
-          metricBadge: { label: 'Kiểm toán', value: '100% Casbin Log' },
+          tag: 'Chất lượng',
+          title: 'Đo Lường Hiệu Quả Tương Tác',
+          description: 'Giám sát tốc độ phản hồi tin nhắn, đo lường mức độ hài lòng và theo dõi lịch sử tư vấn bán hàng.',
+          metricBadge: { label: 'Chất lượng', value: 'Đo lường 100%' },
         },
         {
           id: 'omnichannel-orders',
@@ -91,10 +91,10 @@ export default function SocialRetailPage() {
         },
         {
           id: 'social-monitoring',
-          tag: 'Audit Log',
-          title: 'Health & Audit Logs',
-          description: 'Monitor traffic volume, API rate limits, and webhook audit trails under RBAC.',
-          metricBadge: { label: 'Security & Audit', value: '100% Logged' },
+          tag: 'Quality',
+          title: 'Engagement & Response Analytics',
+          description: 'Monitor customer engagement volume, response times, and omnichannel messaging quality.',
+          metricBadge: { label: 'Quality', value: '100% Tracked' },
         },
         {
           id: 'omnichannel-orders',

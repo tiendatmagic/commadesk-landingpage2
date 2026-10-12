@@ -240,7 +240,7 @@ export function InteractiveApprovalsAnalytics({ isVi }: InteractiveApprovalsAnal
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
           {isVi ? 'Tích hợp chữ ký số và nhật ký kiểm toán không thể sửa đổi (Immutable Audit)' : 'Cryptographic digital signatures & immutable audit trails'}
         </span>
-        <span className="font-semibold text-slate-700">Casbin Policy: Enforced</span>
+        <span className="font-semibold text-slate-700">{isVi ? 'Chính sách: Đã kích hoạt' : 'Access Policy: Enforced'}</span>
       </div>
     </ShowcaseCard>
   );

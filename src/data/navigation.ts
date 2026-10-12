@@ -32,19 +32,19 @@ export const FOOTER_LINKS = {
     { label: 'CRM & Helpdesk', labelVi: 'Khách hàng & Hỗ trợ', labelEn: 'CRM & Helpdesk', href: '/products/crm-helpdesk' },
     { label: 'Social & Retail', labelVi: 'Mạng xã hội & Bán lẻ', labelEn: 'Social & Retail', href: '/products/social-retail' },
     { label: 'AI Vision & Cameras', labelVi: 'AI Vision & Smart City', labelEn: 'AI Vision & Cameras', href: '/products/ai-smart-city' },
-    { label: 'Casbin RBAC Security', labelVi: 'Bảo mật Casbin RBAC', labelEn: 'Casbin RBAC Security', href: '/products/security-platform' },
+    { label: 'Multi-Tier Permissions', labelVi: 'Phân quyền & Bảo mật', labelEn: 'Multi-Tier Permissions', href: '/products/security-platform' },
   ],
   pricing: [
-    { label: 'Multi-Tenant Cloud', labelVi: 'Đám mây Đa tổ chức', labelEn: 'Multi-Tenant Cloud', href: '/deployment' },
-    { label: 'Private Cloud / On-Prem', labelVi: 'Máy chủ riêng On-Premises', labelEn: 'Private Cloud / On-Prem', href: '/deployment' },
-    { label: 'Desktop & Mobile Parity', labelVi: 'Bản Desktop (.exe) & Mobile', labelEn: 'Desktop & Mobile Parity', href: '/deployment' },
-    { label: 'SLA & Compliance', labelVi: 'Cam kết SLA & Uptime 99.9%', labelEn: 'SLA & Compliance', href: '/deployment' },
+    { label: 'Enterprise Cloud', labelVi: 'Đám mây Doanh nghiệp', labelEn: 'Enterprise Cloud', href: '/deployment' },
+    { label: 'Private Server', labelVi: 'Máy chủ riêng nội bộ', labelEn: 'Private Dedicated Server', href: '/deployment' },
+    { label: 'Desktop & Mobile Apps', labelVi: 'Ứng dụng Máy tính & Di động', labelEn: 'Desktop & Mobile Apps', href: '/deployment' },
+    { label: 'High Availability SLA', labelVi: 'Cam kết vận hành 99.9%', labelEn: 'High Availability SLA', href: '/deployment' },
   ],
   resources: [
-    { label: '67+ Feature Documentation', labelVi: 'Đặc tả 67+ phân hệ', labelEn: '67+ Feature Documentation', href: '/docs' },
-    { label: "What's New & Release Notes", labelVi: 'Nhật ký phát hành mới', labelEn: "What's New & Release Notes", href: '/release-notes' },
-    { label: 'REST API & Webhooks', labelVi: 'REST API & Webhooks', labelEn: 'REST API & Webhooks', href: '/docs' },
-    { label: 'Architecture & Deployment', labelVi: 'Kiến trúc triển khai', labelEn: 'Architecture & Deployment', href: '/deployment' },
+    { label: 'Feature Handbook', labelVi: 'Cẩm nang tính năng nghiệp vụ', labelEn: 'Feature Handbook', href: '/docs' },
+    { label: "What's New & Updates", labelVi: 'Nhật ký cập nhật mới', labelEn: "What's New & Updates", href: '/release-notes' },
+    { label: 'Ecosystem & Sync', labelVi: 'Tích hợp & Kết nối mở', labelEn: 'Ecosystem & Sync', href: '/docs' },
+    { label: 'Apps & Deployment', labelVi: 'Ứng dụng & Triển khai', labelEn: 'Apps & Deployment', href: '/deployment' },
   ],
 };
 

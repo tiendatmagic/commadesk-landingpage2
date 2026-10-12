@@ -12,7 +12,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "CommaDesk - Enterprise Multi-Module SaaS Platform",
   description:
-    "CommaDesk combines AI retail analytics, HR & automated payroll, Kanban & Gantt project management, multi-location inventory, document registry (Decree 150/370), fleet logistics, ITIL helpdesk, and Casbin RBAC security into one unified operating system.",
+    "CommaDesk combines AI retail analytics, HR & automated payroll, Kanban & Gantt project management, multi-location inventory, document registry (Decree 150/370), fleet logistics, ITIL helpdesk, and multi-tier enterprise permissions into one unified operating system.",
   icons: {
     icon: "/favicon.ico",
   },

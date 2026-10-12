@@ -32,9 +32,9 @@ export const INTEGRATION_APPS: IntegrationApp[] = [
     name: 'CommaMeet & Unified Comms',
     nameVi: 'CommaMeet & Giao Tiếp Hợp Nhất',
     nameEn: 'CommaMeet & Unified Comms',
-    desc: 'Encrypted HD video meetings, team Matrix chat & instant push alerts',
-    descVi: 'Họp video HD bảo mật cao, trò chuyện nhóm Matrix & thông báo in-app realtime',
-    descEn: 'Encrypted HD video meetings, team Matrix chat & instant push alerts',
+    desc: 'Encrypted HD video meetings, team chat & instant push alerts',
+    descVi: 'Họp video HD bảo mật cao, trò chuyện nhóm và thông báo in-app realtime',
+    descEn: 'Encrypted HD video meetings, team chat & instant push alerts',
   },
   {
     id: 'operations-documents',

@@ -34,10 +34,10 @@ export default function AISmartCityPage() {
         },
         {
           id: 'vms',
-          tag: 'Camera VMS',
-          title: 'Quản Lý Camera VMS',
-          description: 'Quản lý tập trung camera RTSP/ONVIF độ trễ thấp và tua lại sự kiện tức thì.',
-          metricBadge: { label: 'Kết nối', value: 'RTSP / ONVIF' },
+          tag: 'Camera an ninh',
+          title: 'Quản Lý Camera Tập Trung',
+          description: 'Kết nối và quản lý tập trung toàn bộ hệ thống camera an ninh sẵn có, xem trực tiếp và tua lại sự kiện tức thì.',
+          metricBadge: { label: 'Tương thích', value: 'Mọi dòng Camera' },
         },
         {
           id: 'heatmap',
@@ -78,10 +78,10 @@ export default function AISmartCityPage() {
         },
         {
           id: 'vms',
-          tag: 'Video VMS',
-          title: 'VMS Camera Portal',
-          description: 'Centralized RTSP/ONVIF video management with low-latency live streaming.',
-          metricBadge: { label: 'Protocol', value: 'RTSP / ONVIF' },
+          tag: 'Security Cameras',
+          title: 'Centralized Camera Management',
+          description: 'Manage and stream existing surveillance cameras centrally with instant event playback.',
+          metricBadge: { label: 'Compatibility', value: 'Universal Cameras' },
         },
         {
           id: 'heatmap',
@@ -128,14 +128,14 @@ export default function AISmartCityPage() {
               ? [
                   'Nhận diện khuôn mặt',
                   'Đọc biển số ANPR',
-                  'VMS Camera',
-                  'Bản đồ nhiệt Heatmap',
+                  'Camera an ninh tập trung',
+                  'Bản đồ mật độ khách',
                   'Bản đồ số GIS',
                 ]
               : [
                   'Facial Recognition',
                   'ANPR License Plates',
-                  'VMS Camera Portal',
+                  'Centralized Cameras',
                   'Footfall Heatmaps',
                   'GIS Smart City',
                 ]

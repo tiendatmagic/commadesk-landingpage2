@@ -1,0 +1,34 @@
+# Dependencies & build outputs
+node_modules
+.next
+out
+build
+dist
+
+# Version control & metadata
+.git
+.gitignore
+.agent
+*.md
+LICENSE
+
+# IDE & OS files
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+
+# Logs & temporary files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+scratch
+
+# Local environment variables
+.env*.local
+
+# Docker files
+Dockerfile*
+docker-compose*
+.dockerignore
