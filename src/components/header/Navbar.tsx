@@ -222,9 +222,9 @@ export function Navbar() {
             className="flex items-center gap-1.5 sm:gap-2 group shrink-0"
             onClick={closeAllMenus}
           >
-            <div className="w-7 h-7 rounded-md flex items-center justify-center overflow-hidden transition-transform group-hover:scale-105 p-0.5">
+            <div className="w-7 h-7 rounded-md flex items-center justify-center overflow-hidden transition-transform group-hover:scale-105">
               <img
-                src="/commadesk/logo_CommaDesk.webp"
+                src="/commadesk/logo_commadesk.webp"
                 alt="CommaDesk Logo"
                 className="w-full h-full object-contain"
               />

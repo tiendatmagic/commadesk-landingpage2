@@ -22,9 +22,9 @@ export function Footer() {
         {/* Col 1: Bio & Branding */}
         <div className="md:col-span-7 lg:col-span-7 xl:col-span-3 text-left">
           <Link href="/" className="inline-flex items-center gap-2 mb-4 group">
-            <div className="w-10 h-10 bg-white flex items-center justify-center p-0.5 transition-transform group-hover:scale-105">
+            <div className="w-10 h-10 flex items-center justify-center transition-transform group-hover:scale-105">
               <img
-                src="/commadesk/logo_CommaDesk.webp"
+                src="/commadesk/logo_commadesk.webp"
                 alt="CommaDesk Logo"
                 className="w-full h-full object-contain"
               />
