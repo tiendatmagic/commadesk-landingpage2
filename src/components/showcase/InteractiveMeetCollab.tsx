@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import {
   VideoIcon,
   MessageSquareIcon,
@@ -9,6 +10,7 @@ import {
   CameraIcon,
   CameraOffIcon,
   ScreenShareIcon,
+  CheckIcon,
 } from '@/components/ui/UIIcons';
 import { ShowcaseCard, ShowcaseTabBar } from '@/components/ui/ShowcaseCard';
 
@@ -20,9 +22,14 @@ export function InteractiveMeetCollab({ isVi }: InteractiveMeetCollabProps) {
   const [isMicOn, setIsMicOn] = useState(true);
   const [isCamOn, setIsCamOn] = useState(true);
   const [isSharing, setIsSharing] = useState(false);
-  const [activeTab, setActiveTab] = useState<'meet' | 'chat'>('meet');
+  const [activeTab, setActiveTab] = useState<'3d-meet' | 'meet' | 'chat'>('3d-meet');
 
   const tabs = [
+    {
+      id: '3d-meet' as const,
+      label: isVi ? 'Phòng Họp Ảo 3D' : '3D Collab Arena',
+      icon: <VideoIcon className="w-3.5 h-3.5" />,
+    },
     {
       id: 'meet' as const,
       label: isVi ? 'Họp Video' : 'Video Grid',
@@ -94,7 +101,54 @@ export function InteractiveMeetCollab({ isVi }: InteractiveMeetCollabProps) {
         />
       }
     >
-      {activeTab === 'meet' ? (
+      {activeTab === '3d-meet' && (
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
+          <Image
+            src="/showcase/tech_communication_meet.webp"
+            alt="Futuristic 3D Enterprise Virtual Collaboration and Video Arena"
+            fill
+            unoptimized
+            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            priority
+          />
+
+          {/* Floating Badge 1: Holographic Arena */}
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 animate-float bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg max-w-[220px] hidden sm:block">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="w-2 h-2 rounded-full bg-indigo-500"></span>
+              <span className="text-[11px] font-bold text-slate-900">
+                {isVi ? 'Phòng Họp Ảo Holographic' : 'Holographic Collab Arena'}
+              </span>
+            </div>
+            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-1">
+              <div className="bg-indigo-500 h-full w-[99%] rounded-full animate-pulse"></div>
+            </div>
+            <span className="text-[10px] text-slate-500 font-medium">
+              {isVi ? 'Mã hóa E2EE & Khử nhiễu AI' : 'E2EE Encrypted & AI Noise Cancellation'}
+            </span>
+          </div>
+
+          {/* Floating Badge 2: Latency */}
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 animate-float-delayed bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg hidden sm:block">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">
+                <CheckIcon className="w-3.5 h-3.5" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold text-slate-900">
+                  {isVi ? 'Giao Thức LiveKit WebRTC' : 'LiveKit WebRTC Protocol'}
+                </p>
+                <p className="text-[10px] text-emerald-600 font-semibold">
+                  {isVi ? 'Độ trễ <100ms siêu tốc' : 'Sub-100ms Ultra-Low Latency'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'meet' && (
         <div className="space-y-3">
           {/* 2x2 Video Participant Grid (Light Mode) */}
           <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
@@ -178,7 +232,9 @@ export function InteractiveMeetCollab({ isVi }: InteractiveMeetCollabProps) {
             </button>
           </div>
         </div>
-      ) : (
+      )}
+
+      {activeTab === 'chat' && (
         /* Team Chat Tab (Light Mode) */
         <div className="space-y-2.5">
           <div className="space-y-2">

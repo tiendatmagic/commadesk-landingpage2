@@ -28,7 +28,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'AQP Technology Co., Ltd',
     companyVi: 'CÔNG TY TNHH CÔNG NGHỆ AQP',
     companyEn: 'AQP Technology Co., Ltd',
-    avatar: '/avatars/sang_aqp_hd.jpg',
+    avatar: '/avatars/sang_aqp_hd.webp',
     rating: 5.0,
     quote:
       '“CommaDesk unified our Kanban sprint tracking, GPS biometric attendance, and workforce records under one hub. Reporting meetings dropped by over 50%, while project delivery transparency reached an all-time high.”',
@@ -48,7 +48,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'CVEDIX Technology and Solutions Co., Ltd',
     companyVi: 'CÔNG TY TNHH CÔNG NGHỆ VÀ GIẢI PHÁP CVEDIX',
     companyEn: 'CVEDIX Technology and Solutions Co., Ltd',
-    avatar: '/avatars/phong_cvedix_hd.jpg',
+    avatar: '/avatars/phong_cvedix_hd.webp',
     rating: 5.0,
     quote:
       '“The multi-tier permission matrix, open REST APIs, and event webhooks in CommaDesk operate with exceptional reliability. CVEDIX integrated it into our core infrastructure within days while maintaining strict enterprise security.”',
@@ -68,7 +68,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'Ngan Thy Joint Stock Company',
     companyVi: 'Cty CP Ngân Thy',
     companyEn: 'Ngan Thy Joint Stock Company',
-    avatar: '/avatars/ngan_thy_hd.jpg',
+    avatar: '/avatars/ngan_thy_hd.webp',
     rating: 5.0,
     quote:
       '“The digital document registry, multi-tier approvals, and logistics inventory tracking freed Ngan Thy from cumbersome paper trails. Proposals and procurement requests are now approved on mobile in minutes.”',
@@ -88,7 +88,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     company: 'CITARES',
     companyVi: 'CITARES',
     companyEn: 'CITARES',
-    avatar: '/avatars/tuan_citares_hd.jpg',
+    avatar: '/avatars/tuan_citares_hd.webp',
     rating: 5.0,
     quote:
       '“The seamless integration between AI vision surveillance and real-time Gantt tracking provides CITARES with unparalleled operational visibility. It is a benchmark digital operating platform for modern organizations.”',

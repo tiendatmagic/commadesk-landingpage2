@@ -1,13 +1,13 @@
-'use client';
-
 import React, { useState } from 'react';
-import { CheckIcon, QuantumShieldGraphic } from '@/components/ui/UIIcons';
+import Image from 'next/image';
+import { CheckIcon, QuantumShieldGraphic, ShieldCheckIcon } from '@/components/ui/UIIcons';
 
 interface Props {
   isVi?: boolean;
 }
 
 export function InteractiveCasbinShield({ isVi }: Props) {
+  const [activeTab, setActiveTab] = useState<'3d-shield' | 'matrix'>('3d-shield');
   const [permissions, setPermissions] = useState<Record<string, boolean>>({
     'bod:strategy': true,
     'ops:projects': true,
@@ -70,8 +70,92 @@ export function InteractiveCasbinShield({ isVi }: Props) {
   ];
 
   return (
-    <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-slate-100/60 p-4 sm:p-6 border border-slate-200/80">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+    <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-slate-100/60 p-2 sm:p-4 border border-slate-200/80">
+      {/* Interactive Controls Bar */}
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-4 px-2 sm:px-4 pt-2">
+        <div className="flex items-center gap-2">
+          <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-ping"></span>
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
+            {isVi ? 'Nền Tảng An Ninh Lượng Tử & Phân Quyền 3D' : '3D Quantum Security & Governance Platform'}
+          </span>
+        </div>
+
+        {/* Tab switchers */}
+        <div className="flex flex-wrap items-center gap-1 p-1 bg-white/90 backdrop-blur-md rounded-xl border border-slate-200/90 shadow-2xs w-full sm:w-auto justify-center sm:justify-start">
+          <button
+            onClick={() => setActiveTab('3d-shield')}
+            className={`px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-semibold rounded-lg transition-all ${
+              activeTab === '3d-shield'
+                ? 'bg-[#FF4D38] text-white shadow-xs'
+                : 'text-slate-600 hover:text-black hover:bg-slate-100'
+            }`}
+          >
+            {isVi ? 'Lá Chắn An Ninh 3D' : '3D Security Grid'}
+          </button>
+          <button
+            onClick={() => setActiveTab('matrix')}
+            className={`px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-semibold rounded-lg transition-all ${
+              activeTab === 'matrix'
+                ? 'bg-[#FF4D38] text-white shadow-xs'
+                : 'text-slate-600 hover:text-black hover:bg-slate-100'
+            }`}
+          >
+            {isVi ? 'Ma Trận Phân Quyền' : 'Permission Matrix'}
+          </button>
+        </div>
+      </div>
+
+      {/* Tab 1: 3D Security Shield Image Showcase */}
+      {activeTab === '3d-shield' && (
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
+          <Image
+            src="/showcase/tech_security_platform.webp"
+            alt="Futuristic 3D Enterprise Security Platform and Multi-Tier Governance"
+            fill
+            unoptimized
+            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            priority
+          />
+
+          {/* Floating Badge 1: Data Isolation Matrix */}
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 animate-float bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg max-w-[210px] hidden sm:block">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
+              <span className="text-[11px] font-bold text-slate-900">
+                {isVi ? 'Cô Lập Dữ Liệu 100%' : '100% Data Isolation'}
+              </span>
+            </div>
+            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-1">
+              <div className="bg-cyan-500 h-full w-[100%] rounded-full animate-pulse"></div>
+            </div>
+            <span className="text-[10px] text-slate-500 font-medium">
+              {isVi ? 'Mã hóa đa chi nhánh độc lập' : 'Multi-Tenant Cryptographic Scope'}
+            </span>
+          </div>
+
+          {/* Floating Badge 2: Multi-Tier Access Verification */}
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 animate-float-delayed bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg hidden sm:block">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">
+                <CheckIcon className="w-3.5 h-3.5" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold text-slate-900">
+                  {isVi ? 'Xác Thực 2 Lớp (2FA/OTP)' : '2-Factor Auth & Device Trust'}
+                </p>
+                <p className="text-[10px] text-emerald-600 font-semibold">
+                  {isVi ? 'Định danh phần cứng & sinh trắc' : 'Hardware & Biometric Bound'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Tab 2: Existing Interactive Permission Matrix */}
+      {activeTab === 'matrix' && (
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         {/* Left Col: High-Tech Security Shield Graphic */}
         <div className="lg:col-span-5 relative flex flex-col items-center justify-center p-6 sm:p-8 bg-gradient-to-b from-white via-indigo-50/30 to-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden text-center">
           {/* Subtle Ambient Rings */}
@@ -199,6 +283,7 @@ export function InteractiveCasbinShield({ isVi }: Props) {
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 }

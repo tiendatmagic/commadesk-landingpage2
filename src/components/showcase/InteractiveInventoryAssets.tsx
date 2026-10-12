@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import {
   BoxIcon,
   ClipboardListIcon,
@@ -15,10 +16,15 @@ interface InteractiveInventoryAssetsProps {
 }
 
 export function InteractiveInventoryAssets({ isVi }: InteractiveInventoryAssetsProps) {
-  const [activeTab, setActiveTab] = useState<'warehouses' | 'vouchers' | 'assets'>('warehouses');
+  const [activeTab, setActiveTab] = useState<'3d-warehouse' | 'warehouses' | 'vouchers' | 'assets'>('3d-warehouse');
   const [selectedItem, setSelectedItem] = useState<number>(0);
 
   const tabs = [
+    {
+      id: '3d-warehouse' as const,
+      label: isVi ? 'Kho Thông Minh 3D' : '3D Warehouse',
+      icon: <BoxIcon className="w-3.5 h-3.5" />,
+    },
     {
       id: 'warehouses' as const,
       label: isVi ? 'Kho & SKU' : 'SKU Stock',
@@ -131,6 +137,52 @@ export function InteractiveInventoryAssets({ isVi }: InteractiveInventoryAssetsP
         />
       }
     >
+      {activeTab === '3d-warehouse' && (
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
+          <Image
+            src="/showcase/tech_inventory_assets.webp"
+            alt="Futuristic 3D Smart Warehouse and Automated Asset Tracking"
+            fill
+            unoptimized
+            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            priority
+          />
+
+          {/* Floating Badge 1: Robotic Matrix Storage */}
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 animate-float bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg max-w-[220px] hidden sm:block">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+              <span className="text-[11px] font-bold text-slate-900">
+                {isVi ? 'Kho Tự Động Hóa Robot' : 'Robotic Matrix Storage'}
+              </span>
+            </div>
+            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-1">
+              <div className="bg-amber-500 h-full w-[95%] rounded-full animate-pulse"></div>
+            </div>
+            <span className="text-[10px] text-slate-500 font-medium">
+              {isVi ? 'Quét RFID & Barcode Laser tức thì' : 'Instant Laser Barcode & RFID Sync'}
+            </span>
+          </div>
+
+          {/* Floating Badge 2: Stock Accuracy */}
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 animate-float-delayed bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg hidden sm:block">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">
+                <CheckIcon className="w-3.5 h-3.5" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold text-slate-900">
+                  {isVi ? 'Độ Chính Xác Tồn Kho 99.9%' : '99.9% Stock Accuracy'}
+                </p>
+                <p className="text-[10px] text-emerald-600 font-semibold">
+                  {isVi ? 'Tự động cân đối phiếu nhập xuất' : 'Automated Ledger Reconciliation'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {activeTab === 'warehouses' && (
         <div className="space-y-3">

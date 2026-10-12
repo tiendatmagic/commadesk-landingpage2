@@ -52,7 +52,7 @@ export function HeroGraphicNetwork() {
       <div className="absolute top-[48%] -translate-y-1/2 left-[0.5%] sm:left-[2%] z-10 animate-float-slow">
         <div className="w-18 h-18 sm:w-24 sm:h-24 md:w-[114px] md:h-[114px] rounded-[24px] sm:rounded-[32px] md:rounded-[36px] p-0.5 bg-white shadow-2xl shadow-slate-300/70 border-2 border-white overflow-hidden">
           <Image
-            src="/avatars/hero1_man.png"
+            src="/avatars/hero1_man.webp"
             alt="Team member"
             width={114}
             height={114}
@@ -66,7 +66,7 @@ export function HeroGraphicNetwork() {
       <div className="absolute bottom-[4%] sm:bottom-[6%] right-[15%] sm:right-[17%] z-10 animate-float-reverse">
         <div className="w-14 h-16 sm:w-18 sm:h-22 md:w-[78px] md:h-[94px] rounded-2xl sm:rounded-[24px] p-0.5 bg-white shadow-2xl shadow-slate-300/70 border-2 border-white overflow-hidden">
           <Image
-            src="/avatars/hero1_woman.png"
+            src="/avatars/hero1_woman.webp"
             alt="Team member"
             width={78}
             height={94}

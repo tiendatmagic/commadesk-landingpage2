@@ -1,11 +1,11 @@
-'use client';
-
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import {
   ZapIcon,
   MailIcon,
   MessageSquareIcon,
   GlobeIcon,
+  CheckIcon,
 } from '@/components/ui/UIIcons';
 
 interface Props {
@@ -13,6 +13,7 @@ interface Props {
 }
 
 export function InteractiveCRMPipeline({ isVi }: Props) {
+  const [activeTab, setActiveTab] = useState<'3d-hub' | 'pipeline'>('3d-hub');
   const [slaSeconds, setSlaSeconds] = useState<number>(3542);
   const [activeStage, setActiveStage] = useState<number>(2);
 
@@ -30,8 +31,92 @@ export function InteractiveCRMPipeline({ isVi }: Props) {
   };
 
   return (
-    <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-slate-100/60 p-4 sm:p-6 border border-slate-200/80">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+    <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-slate-100/60 p-2 sm:p-4 border border-slate-200/80">
+      {/* Interactive Controls Bar */}
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-4 px-2 sm:px-4 pt-2">
+        <div className="flex items-center gap-2">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
+            {isVi ? 'Hệ Thống CRM Đa Kênh & Trạm Giải Quyết 3D' : '3D Omnichannel Resolution & CRM Sphere'}
+          </span>
+        </div>
+
+        {/* Tab switchers */}
+        <div className="flex flex-wrap items-center gap-1 p-1 bg-white/90 backdrop-blur-md rounded-xl border border-slate-200/90 shadow-2xs w-full sm:w-auto justify-center sm:justify-start">
+          <button
+            onClick={() => setActiveTab('3d-hub')}
+            className={`px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-semibold rounded-lg transition-all ${
+              activeTab === '3d-hub'
+                ? 'bg-[#FF4D38] text-white shadow-xs'
+                : 'text-slate-600 hover:text-black hover:bg-slate-100'
+            }`}
+          >
+            {isVi ? 'Trạm Xử Lý 3D' : '3D Resolution Hub'}
+          </button>
+          <button
+            onClick={() => setActiveTab('pipeline')}
+            className={`px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-semibold rounded-lg transition-all ${
+              activeTab === 'pipeline'
+                ? 'bg-[#FF4D38] text-white shadow-xs'
+                : 'text-slate-600 hover:text-black hover:bg-slate-100'
+            }`}
+          >
+            {isVi ? 'Phễu & Đồng Hồ SLA' : 'Funnel & SLA Engine'}
+          </button>
+        </div>
+      </div>
+
+      {/* Tab 1: 3D Omnichannel Resolution Sphere Image Showcase */}
+      {activeTab === '3d-hub' && (
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
+          <Image
+            src="/showcase/tech_crm_helpdesk.webp"
+            alt="Futuristic 3D Omnichannel CRM and Helpdesk Resolution Sphere"
+            fill
+            unoptimized
+            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            priority
+          />
+
+          {/* Floating Badge 1: Omnichannel Resolution */}
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 animate-float bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg max-w-[210px] hidden sm:block">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span className="text-[11px] font-bold text-slate-900">
+                {isVi ? 'Hội Tụ Đa Kênh Tức Thì' : 'Omnichannel Ingestion'}
+              </span>
+            </div>
+            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-1">
+              <div className="bg-emerald-500 h-full w-[94%] rounded-full animate-pulse"></div>
+            </div>
+            <span className="text-[10px] text-slate-500 font-medium">
+              {isVi ? 'Email, Chat, Hotline & Web Portal' : 'Email, Chat, Voice & Portal Synced'}
+            </span>
+          </div>
+
+          {/* Floating Badge 2: SLA Guarantee */}
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 animate-float-delayed bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg hidden sm:block">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center font-bold text-xs">
+                <CheckIcon className="w-3.5 h-3.5" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold text-slate-900">
+                  {isVi ? 'Cam Kết SLA ITIL 99.8%' : 'ITIL SLA Compliance 99.8%'}
+                </p>
+                <p className="text-[10px] text-teal-600 font-semibold">
+                  {isVi ? 'Cảnh báo leo thang thông minh' : 'Smart Auto-Escalation Protocol'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Tab 2: Existing Interactive Funnel & SLA Engine */}
+      {activeTab === 'pipeline' && (
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         {/* Left Col: Omnichannel Data Ingestion Stream Visual */}
         <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-7 shadow-sm space-y-5">
           <div className="flex items-center justify-between">
@@ -138,6 +223,7 @@ export function InteractiveCRMPipeline({ isVi }: Props) {
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 }

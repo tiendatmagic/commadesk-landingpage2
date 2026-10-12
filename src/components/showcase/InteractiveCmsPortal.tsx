@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import {
   PaletteIcon,
   NewspaperIcon,
@@ -10,6 +11,7 @@ import {
   EyeIcon,
   MessageSquareIcon,
   TrendingUpIcon,
+  CheckIcon,
 } from '@/components/ui/UIIcons';
 import { ShowcaseCard, ShowcaseTabBar } from '@/components/ui/ShowcaseCard';
 
@@ -18,10 +20,15 @@ interface InteractiveCmsPortalProps {
 }
 
 export function InteractiveCmsPortal({ isVi }: InteractiveCmsPortalProps) {
-  const [activeTab, setActiveTab] = useState<'builder' | 'articles' | 'analytics'>('builder');
+  const [activeTab, setActiveTab] = useState<'3d-portal' | 'builder' | 'articles' | 'analytics'>('3d-portal');
   const [activeDevice, setActiveDevice] = useState<'desktop' | 'mobile'>('desktop');
 
   const tabs = [
+    {
+      id: '3d-portal' as const,
+      label: isVi ? 'Cổng Tri Thức 3D' : '3D Portal',
+      icon: <PaletteIcon className="w-3.5 h-3.5" />,
+    },
     {
       id: 'builder' as const,
       label: isVi ? 'Trình Dựng Khối' : 'Page Builder',
@@ -87,6 +94,52 @@ export function InteractiveCmsPortal({ isVi }: InteractiveCmsPortalProps) {
         />
       }
     >
+      {activeTab === '3d-portal' && (
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
+          <Image
+            src="/showcase/tech_operations_documents.webp"
+            alt="Futuristic 3D Enterprise Knowledge Hub and Digital Publishing"
+            fill
+            unoptimized
+            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            priority
+          />
+
+          {/* Floating Badge 1: Knowledge Hub */}
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 animate-float bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg max-w-[220px] hidden sm:block">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="w-2 h-2 rounded-full bg-violet-500"></span>
+              <span className="text-[11px] font-bold text-slate-900">
+                {isVi ? 'Thư Viện Tri Thức Doanh Nghiệp' : 'Enterprise Knowledge Hub'}
+              </span>
+            </div>
+            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-1">
+              <div className="bg-violet-500 h-full w-[95%] rounded-full animate-pulse"></div>
+            </div>
+            <span className="text-[10px] text-slate-500 font-medium">
+              {isVi ? 'Tìm kiếm toàn văn ngữ nghĩa AI' : 'Semantic AI Full-Text Search'}
+            </span>
+          </div>
+
+          {/* Floating Badge 2: Visual Publishing */}
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 animate-float-delayed bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg hidden sm:block">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">
+                <CheckIcon className="w-3.5 h-3.5" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold text-slate-900">
+                  {isVi ? 'Xuất Bản Không Cần Code' : 'No-Code Page Publishing'}
+                </p>
+                <p className="text-[10px] text-emerald-600 font-semibold">
+                  {isVi ? 'Chuẩn Responsive Desktop & Mobile' : 'Responsive Desktop & Mobile Native'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {activeTab === 'builder' && (
         <div className="space-y-3">

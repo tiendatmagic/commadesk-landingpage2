@@ -1,11 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import {
   InboxIcon,
   HandshakeIcon,
   TrendingUpIcon,
   HourglassIcon,
+  CheckIcon,
 } from '@/components/ui/UIIcons';
 import { ShowcaseCard, ShowcaseTabBar } from '@/components/ui/ShowcaseCard';
 
@@ -14,10 +16,15 @@ interface InteractiveApprovalsAnalyticsProps {
 }
 
 export function InteractiveApprovalsAnalytics({ isVi }: InteractiveApprovalsAnalyticsProps) {
-  const [activeTab, setActiveTab] = useState<'inbox' | 'delegation' | 'executive'>('inbox');
+  const [activeTab, setActiveTab] = useState<'3d-tower' | 'inbox' | 'delegation' | 'executive'>('3d-tower');
   const [filterType, setFilterType] = useState<'all' | 'hr' | 'inventory' | 'finance'>('all');
 
   const tabs = [
+    {
+      id: '3d-tower' as const,
+      label: isVi ? 'Tháp Duyệt 3D' : '3D Tower',
+      icon: <TrendingUpIcon className="w-3.5 h-3.5" />,
+    },
     {
       id: 'inbox' as const,
       label: isVi ? 'Hàng Đợi Duyệt' : 'Approval Inbox',
@@ -100,6 +107,52 @@ export function InteractiveApprovalsAnalytics({ isVi }: InteractiveApprovalsAnal
         />
       }
     >
+      {activeTab === '3d-tower' && (
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
+          <Image
+            src="/showcase/tech_approvals_analytics.webp"
+            alt="Futuristic 3D Executive Command Tower and Approval Workflow"
+            fill
+            unoptimized
+            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            priority
+          />
+
+          {/* Floating Badge 1: 4-Tier Approval Tower */}
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 animate-float bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg max-w-[220px] hidden sm:block">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span className="text-[11px] font-bold text-slate-900">
+                {isVi ? 'Tháp Phê Duyệt 4 Cấp' : '4-Tier Approval Tower'}
+              </span>
+            </div>
+            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-1">
+              <div className="bg-emerald-500 h-full w-[100%] rounded-full animate-pulse"></div>
+            </div>
+            <span className="text-[10px] text-slate-500 font-medium">
+              {isVi ? 'Tốc độ quyết định: 2.4 Giờ' : 'Decision Velocity: 2.4h'}
+            </span>
+          </div>
+
+          {/* Floating Badge 2: C-Suite Sign-Off */}
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 animate-float-delayed bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg hidden sm:block">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-xs">
+                <CheckIcon className="w-3.5 h-3.5" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold text-slate-900">
+                  {isVi ? 'Phê Duyệt Điện Tử C-Level' : 'C-Suite Strategic Sign-Off'}
+                </p>
+                <p className="text-[10px] text-indigo-600 font-semibold">
+                  {isVi ? 'Theo dõi KPI đa phòng ban' : 'Cross-Departmental KPI Tracking'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {activeTab === 'inbox' && (
         <div className="space-y-3">

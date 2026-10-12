@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import {
   PenToolIcon,
   StoreIcon,
@@ -17,10 +18,15 @@ interface InteractiveSocialRetailProps {
 }
 
 export function InteractiveSocialRetail({ isVi }: InteractiveSocialRetailProps) {
-  const [activeTab, setActiveTab] = useState<'composer' | 'kiotviet' | 'channels'>('composer');
+  const [activeTab, setActiveTab] = useState<'3d-retail' | 'composer' | 'kiotviet' | 'channels'>('3d-retail');
   const [selectedChannel, setSelectedChannel] = useState<'facebook' | 'zalo'>('facebook');
 
   const tabs = [
+    {
+      id: '3d-retail' as const,
+      label: isVi ? 'Bán Lẻ Đa Kênh 3D' : '3D Retail Hub',
+      icon: <StoreIcon className="w-3.5 h-3.5" />,
+    },
     {
       id: 'composer' as const,
       label: isVi ? 'Soạn Đăng Đa Kênh' : 'Post Composer',
@@ -106,6 +112,52 @@ export function InteractiveSocialRetail({ isVi }: InteractiveSocialRetailProps) 
         />
       }
     >
+      {activeTab === '3d-retail' && (
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
+          <Image
+            src="/showcase/tech_inventory_assets.webp"
+            alt="Futuristic 3D Smart Retail and Omnichannel Fulfillment"
+            fill
+            unoptimized
+            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            priority
+          />
+
+          {/* Floating Badge 1: KiotViet POS Sync */}
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 animate-float bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg max-w-[220px] hidden sm:block">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+              <span className="text-[11px] font-bold text-slate-900">
+                {isVi ? 'Đồng Bộ KiotViet POS Live' : 'KiotViet POS Realtime'}
+              </span>
+            </div>
+            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-1">
+              <div className="bg-blue-500 h-full w-[96%] rounded-full animate-pulse"></div>
+            </div>
+            <span className="text-[10px] text-slate-500 font-medium">
+              {isVi ? 'Tự động trừ tồn kho khi phát sinh đơn' : 'Auto-deduct stock on order completion'}
+            </span>
+          </div>
+
+          {/* Floating Badge 2: Omnichannel Channels */}
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 animate-float-delayed bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg hidden sm:block">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">
+                <CheckIcon className="w-3.5 h-3.5" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold text-slate-900">
+                  {isVi ? 'Đăng Bài Đa Kênh Tự Động' : 'Multi-Channel Auto-Publish'}
+                </p>
+                <p className="text-[10px] text-emerald-600 font-semibold">
+                  {isVi ? 'Meta Facebook & Zalo Official Account' : 'Facebook & Zalo OA Connected'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {activeTab === 'composer' && (
         <div className="space-y-3">

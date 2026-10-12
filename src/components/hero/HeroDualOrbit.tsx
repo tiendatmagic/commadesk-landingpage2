@@ -14,26 +14,26 @@ interface AvatarItem {
 
 const LEFT_AVATARS: AvatarItem[] = [
   {
-    src: '/avatars/hero2_1.png',
+    src: '/avatars/hero2_1.webp',
     alt: 'Team member',
     defaultTop: 'top-[17%] sm:top-[18%] lg:top-[20%]',
     defaultLeft: 'left-[1.5%] sm:left-[2.5%] lg:left-[3.8%]',
     hiddenOnMobile: true,
   },
   {
-    src: '/avatars/hero2_2.png',
+    src: '/avatars/hero2_2.webp',
     alt: 'Team member',
     defaultTop: 'top-[16%] sm:top-[26%] lg:top-[30%]',
     defaultLeft: 'left-[2%] sm:left-[12%] lg:left-[16.5%]',
   },
   {
-    src: '/avatars/hero2_3.png',
+    src: '/avatars/hero2_3.webp',
     alt: 'Team member',
     defaultTop: 'top-[68%] sm:top-[54%] lg:top-[56%]',
     defaultLeft: 'left-[2%] sm:left-[12%] lg:left-[16.5%]',
   },
   {
-    src: '/avatars/hero2_4.png',
+    src: '/avatars/hero2_4.webp',
     alt: 'Team member',
     defaultTop: 'top-[64%] sm:top-[66%] lg:top-[68%]',
     defaultLeft: 'left-[1.5%] sm:left-[2.5%] lg:left-[3.8%]',
@@ -43,26 +43,26 @@ const LEFT_AVATARS: AvatarItem[] = [
 
 const RIGHT_AVATARS: AvatarItem[] = [
   {
-    src: '/avatars/hero2_6.png',
+    src: '/avatars/hero2_6.webp',
     alt: 'Team member',
     defaultTop: 'top-[17%] sm:top-[18%] lg:top-[20%]',
     defaultRight: 'right-[1.5%] sm:right-[2.5%] lg:right-[3.8%]',
     hiddenOnMobile: true,
   },
   {
-    src: '/avatars/hero2_7.png',
+    src: '/avatars/hero2_7.webp',
     alt: 'Team member',
     defaultTop: 'top-[16%] sm:top-[26%] lg:top-[30%]',
     defaultRight: 'right-[2%] sm:right-[12%] lg:right-[16.5%]',
   },
   {
-    src: '/avatars/hero2_8.png',
+    src: '/avatars/hero2_8.webp',
     alt: 'Team member',
     defaultTop: 'top-[68%] sm:top-[54%] lg:top-[56%]',
     defaultRight: 'right-[2%] sm:right-[12%] lg:right-[16.5%]',
   },
   {
-    src: '/avatars/hero2_9.png',
+    src: '/avatars/hero2_9.webp',
     alt: 'Team member',
     defaultTop: 'top-[64%] sm:top-[66%] lg:top-[68%]',
     defaultRight: 'right-[1.5%] sm:right-[2.5%] lg:right-[3.8%]',

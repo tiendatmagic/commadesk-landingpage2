@@ -124,7 +124,7 @@ export function EmployeeDataCard() {
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-full overflow-hidden relative shrink-0">
                     <Image
-                      src="/avatars/hero2_1.png"
+                      src="/avatars/hero2_1.webp"
                       alt="Willem Gray"
                       fill
                       sizes="24px"
@@ -144,7 +144,7 @@ export function EmployeeDataCard() {
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-full overflow-hidden relative shrink-0">
                     <Image
-                      src="/avatars/hero2_7.png"
+                      src="/avatars/hero2_7.webp"
                       alt="Dimitri Ryabell"
                       fill
                       sizes="24px"
@@ -164,7 +164,7 @@ export function EmployeeDataCard() {
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-full overflow-hidden relative shrink-0">
                     <Image
-                      src="/avatars/hero2_3.png"
+                      src="/avatars/hero2_3.webp"
                       alt="Olivia Klyver"
                       fill
                       sizes="24px"

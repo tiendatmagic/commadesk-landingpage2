@@ -6,18 +6,18 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { UsersIcon } from '@/components/ui/UIIcons';
 
 const ORBIT_AVATARS = [
-  { src: '/avatars/hero2_1.png', pos: 'top-0 left-1/2 -translate-x-1/2' },
-  { src: '/avatars/hero2_2.png', pos: 'top-[7%] right-[25%]' },
-  { src: '/avatars/hero2_3.png', pos: 'top-[25%] right-[7%]' },
-  { src: '/avatars/hero2_4.png', pos: 'top-1/2 right-0 -translate-y-1/2' },
-  { src: '/avatars/hero2_5.png', pos: 'bottom-[25%] right-[7%]' },
-  { src: '/avatars/hero2_6.png', pos: 'bottom-[7%] right-[25%]' },
-  { src: '/avatars/hero2_7.png', pos: 'bottom-0 left-1/2 -translate-x-1/2' },
-  { src: '/avatars/hero2_8.png', pos: 'bottom-[7%] left-[25%]' },
-  { src: '/avatars/hero1_man.png', pos: 'bottom-[25%] left-[7%]' },
-  { src: '/avatars/hero1_woman.png', pos: 'top-1/2 left-0 -translate-y-1/2' },
-  { src: '/avatars/sarah_mitchell.png', pos: 'top-[25%] left-[7%]' },
-  { src: '/avatars/james_carter.png', pos: 'top-[7%] left-[25%]' },
+  { src: '/avatars/hero2_1.webp', pos: 'top-0 left-1/2 -translate-x-1/2' },
+  { src: '/avatars/hero2_2.webp', pos: 'top-[7%] right-[25%]' },
+  { src: '/avatars/hero2_3.webp', pos: 'top-[25%] right-[7%]' },
+  { src: '/avatars/hero2_4.webp', pos: 'top-1/2 right-0 -translate-y-1/2' },
+  { src: '/avatars/hero2_5.webp', pos: 'bottom-[25%] right-[7%]' },
+  { src: '/avatars/hero2_6.webp', pos: 'bottom-[7%] right-[25%]' },
+  { src: '/avatars/hero2_7.webp', pos: 'bottom-0 left-1/2 -translate-x-1/2' },
+  { src: '/avatars/hero2_8.webp', pos: 'bottom-[7%] left-[25%]' },
+  { src: '/avatars/hero1_man.webp', pos: 'bottom-[25%] left-[7%]' },
+  { src: '/avatars/hero1_woman.webp', pos: 'top-1/2 left-0 -translate-y-1/2' },
+  { src: '/avatars/sarah_mitchell.webp', pos: 'top-[25%] left-[7%]' },
+  { src: '/avatars/james_carter.webp', pos: 'top-[7%] left-[25%]' },
 ];
 
 export function TeamsEmployeesCard() {

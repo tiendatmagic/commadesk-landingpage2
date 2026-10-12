@@ -61,7 +61,7 @@ export function InteractiveVisionRadar({ isVi }: Props) {
       {activeTab === 'city' && (
         <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
           <Image
-            src="/showcase/tech_ai_smart_city.jpg"
+            src="/showcase/tech_ai_smart_city.webp"
             alt="Futuristic Smart City AI Neural Vision"
             fill
             unoptimized

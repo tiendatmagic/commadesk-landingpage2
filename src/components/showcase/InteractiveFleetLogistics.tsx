@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { TruckIcon, BoxIcon } from '@/components/ui/UIIcons';
+import Image from 'next/image';
+import { TruckIcon, BoxIcon, CheckIcon } from '@/components/ui/UIIcons';
 import { ShowcaseCard, ShowcaseTabBar } from '@/components/ui/ShowcaseCard';
 
 interface InteractiveFleetLogisticsProps {
@@ -9,10 +10,15 @@ interface InteractiveFleetLogisticsProps {
 }
 
 export function InteractiveFleetLogistics({ isVi }: InteractiveFleetLogisticsProps) {
-  const [activeTab, setActiveTab] = useState<'fleet' | 'inventory'>('fleet');
+  const [activeTab, setActiveTab] = useState<'3d-fleet' | 'fleet' | 'inventory'>('3d-fleet');
   const [selectedVehicle, setSelectedVehicle] = useState<number>(0);
 
   const tabs = [
+    {
+      id: '3d-fleet' as const,
+      label: isVi ? 'Bản Đồ Vệ Tinh 3D' : '3D GPS Map',
+      icon: <TruckIcon className="w-3.5 h-3.5" />,
+    },
     {
       id: 'fleet' as const,
       label: isVi ? 'Đội Xe Live' : 'Live Fleet',
@@ -84,7 +90,54 @@ export function InteractiveFleetLogistics({ isVi }: InteractiveFleetLogisticsPro
         />
       }
     >
-      {activeTab === 'fleet' ? (
+      {activeTab === '3d-fleet' && (
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
+          <Image
+            src="/showcase/tech_fleet_logistics.webp"
+            alt="Futuristic 3D Smart Fleet Management and GPS Satellite Logistics"
+            fill
+            unoptimized
+            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            priority
+          />
+
+          {/* Floating Badge 1: Satellite Telemetry */}
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 animate-float bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg max-w-[220px] hidden sm:block">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="w-2 h-2 rounded-full bg-cyan-500"></span>
+              <span className="text-[11px] font-bold text-slate-900">
+                {isVi ? 'Định Vị Vệ Tinh Thời Gian Thực' : 'Satellite Telemetry Grid'}
+              </span>
+            </div>
+            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-1">
+              <div className="bg-cyan-500 h-full w-[98%] rounded-full animate-pulse"></div>
+            </div>
+            <span className="text-[10px] text-slate-500 font-medium">
+              {isVi ? 'Độ chính xác GPS: sai số < 1.5m' : 'GPS Accuracy < 1.5m Tolerance'}
+            </span>
+          </div>
+
+          {/* Floating Badge 2: Dispatch Optimization */}
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 animate-float-delayed bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg hidden sm:block">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">
+                <CheckIcon className="w-3.5 h-3.5" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold text-slate-900">
+                  {isVi ? 'Điều Phối Chuyến Xe Tối Ưu' : 'AI Routing Optimization'}
+                </p>
+                <p className="text-[10px] text-emerald-600 font-semibold">
+                  {isVi ? 'Tiết kiệm 22% chi phí nhiên liệu' : 'Reduces 22% Fuel & Transit Time'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'fleet' && (
         <div className="space-y-3">
           {/* Light Mode Mini Map View */}
           <div className="relative h-32 sm:h-36 rounded-2xl bg-gradient-to-br from-white to-slate-50 border border-slate-200/90 p-3.5 overflow-hidden flex flex-col justify-between shadow-xs">
@@ -142,7 +195,9 @@ export function InteractiveFleetLogistics({ isVi }: InteractiveFleetLogisticsPro
             ))}
           </div>
         </div>
-      ) : (
+      )}
+
+      {activeTab === 'inventory' && (
         /* Inventory Tab (Light mode) */
         <div className="space-y-2">
           <div className="flex items-center justify-between text-[11px] font-semibold text-slate-500 px-1 pb-1">

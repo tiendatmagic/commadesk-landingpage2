@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ClipboardListIcon, HeartIcon, MailIcon } from '@/components/ui/UIIcons';
+import Image from 'next/image';
+import { ClipboardListIcon, HeartIcon, MailIcon, CheckIcon } from '@/components/ui/UIIcons';
 import { ShowcaseCard, ShowcaseTabBar } from '@/components/ui/ShowcaseCard';
 
 interface InteractiveSurveysFeedbackProps {
@@ -9,10 +10,15 @@ interface InteractiveSurveysFeedbackProps {
 }
 
 export function InteractiveSurveysFeedback({ isVi }: InteractiveSurveysFeedbackProps) {
-  const [activeTab, setActiveTab] = useState<'surveys' | 'enps' | 'mailbox'>('surveys');
+  const [activeTab, setActiveTab] = useState<'3d-pulse' | 'surveys' | 'enps' | 'mailbox'>('3d-pulse');
   const [selectedScore, setSelectedScore] = useState<number>(9);
 
   const tabs = [
+    {
+      id: '3d-pulse' as const,
+      label: isVi ? 'Nhịp Sống 3D' : '3D Culture Pulse',
+      icon: <HeartIcon className="w-3.5 h-3.5" />,
+    },
     {
       id: 'surveys' as const,
       label: isVi ? 'Khảo Sát eNPS' : 'Surveys',
@@ -79,6 +85,52 @@ export function InteractiveSurveysFeedback({ isVi }: InteractiveSurveysFeedbackP
         />
       }
     >
+      {activeTab === '3d-pulse' && (
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
+          <Image
+            src="/showcase/tech_hr_workforce.webp"
+            alt="Futuristic 3D Workplace Culture Pulse and Sentiment Analytics"
+            fill
+            unoptimized
+            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            priority
+          />
+
+          {/* Floating Badge 1: eNPS Score */}
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 animate-float bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg max-w-[220px] hidden sm:block">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="w-2 h-2 rounded-full bg-rose-500"></span>
+              <span className="text-[11px] font-bold text-slate-900">
+                {isVi ? 'Chỉ Số Gắn Kết eNPS: +68' : 'Culture Pulse eNPS: +68'}
+              </span>
+            </div>
+            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-1">
+              <div className="bg-rose-500 h-full w-[88%] rounded-full animate-pulse"></div>
+            </div>
+            <span className="text-[10px] text-slate-500 font-medium">
+              {isVi ? '91.5% Nhân sự phản hồi tích cực' : '91.5% Positive Workplace Sentiment'}
+            </span>
+          </div>
+
+          {/* Floating Badge 2: Encrypted Mailbox */}
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 animate-float-delayed bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg hidden sm:block">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">
+                <CheckIcon className="w-3.5 h-3.5" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold text-slate-900">
+                  {isVi ? 'Hòm Thư Ẩn Danh Mã Hóa' : '100% Encrypted Feedback'}
+                </p>
+                <p className="text-[10px] text-emerald-600 font-semibold">
+                  {isVi ? 'Bảo mật danh tính tuyệt đối' : 'Anonymous & Tamper-Proof'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {activeTab === 'surveys' && (
         <div className="space-y-3">

@@ -1,13 +1,13 @@
-'use client';
-
 import React, { useState } from 'react';
-import { FileTextIcon, CheckIcon, PenToolIcon } from '@/components/ui/UIIcons';
+import Image from 'next/image';
+import { FileTextIcon, CheckIcon, PenToolIcon, ShieldCheckIcon } from '@/components/ui/UIIcons';
 
 interface Props {
   isVi?: boolean;
 }
 
 export function InteractiveDigitalSignature({ isVi }: Props) {
+  const [activeTab, setActiveTab] = useState<'3d-docs' | 'interactive-sign'>('3d-docs');
   const [currentStep, setCurrentStep] = useState<number>(2);
   const [isSigned, setIsSigned] = useState<boolean>(false);
 
@@ -17,8 +17,92 @@ export function InteractiveDigitalSignature({ isVi }: Props) {
   };
 
   return (
-    <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-slate-100/60 p-4 sm:p-6 border border-slate-200/80">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+    <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-slate-100/60 p-2 sm:p-4 border border-slate-200/80">
+      {/* Interactive Controls Bar */}
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-4 px-2 sm:px-4 pt-2">
+        <div className="flex items-center gap-2">
+          <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping"></span>
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
+            {isVi ? 'Sổ Văn Bản Số & Ký Số Điện Tử 3D' : '3D Digital Document Registry & e-Signing'}
+          </span>
+        </div>
+
+        {/* Tab switchers */}
+        <div className="flex flex-wrap items-center gap-1 p-1 bg-white/90 backdrop-blur-md rounded-xl border border-slate-200/90 shadow-2xs w-full sm:w-auto justify-center sm:justify-start">
+          <button
+            onClick={() => setActiveTab('3d-docs')}
+            className={`px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-semibold rounded-lg transition-all ${
+              activeTab === '3d-docs'
+                ? 'bg-[#FF4D38] text-white shadow-xs'
+                : 'text-slate-600 hover:text-black hover:bg-slate-100'
+            }`}
+          >
+            {isVi ? 'Văn Bản Số 3D' : '3D Document Hub'}
+          </button>
+          <button
+            onClick={() => setActiveTab('interactive-sign')}
+            className={`px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-semibold rounded-lg transition-all ${
+              activeTab === 'interactive-sign'
+                ? 'bg-[#FF4D38] text-white shadow-xs'
+                : 'text-slate-600 hover:text-black hover:bg-slate-100'
+            }`}
+          >
+            {isVi ? 'Ký Số & Phê Duyệt' : 'Sign & Review'}
+          </button>
+        </div>
+      </div>
+
+      {/* Tab 1: 3D Digital Document Registry Image Showcase */}
+      {activeTab === '3d-docs' && (
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
+          <Image
+            src="/showcase/tech_operations_documents.webp"
+            alt="Futuristic 3D Digital Document Registry and Executive Signing"
+            fill
+            unoptimized
+            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            priority
+          />
+
+          {/* Floating Badge 1: ISO 27001 Certification */}
+          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 animate-float bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg max-w-[210px] hidden sm:block">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span className="text-[11px] font-bold text-slate-900">
+                {isVi ? 'Niêm Phong Số ISO 27001' : 'ISO 27001 Sealed'}
+              </span>
+            </div>
+            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-1">
+              <div className="bg-emerald-500 h-full w-[100%] rounded-full animate-pulse"></div>
+            </div>
+            <span className="text-[10px] text-slate-500 font-medium">
+              {isVi ? 'Mã hóa SHA-256 chống làm giả' : 'SHA-256 Tamper-Proof Cryptography'}
+            </span>
+          </div>
+
+          {/* Floating Badge 2: Multi-Tier Approval */}
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 animate-float-delayed bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg hidden sm:block">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-xs">
+                <CheckIcon className="w-3.5 h-3.5" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold text-slate-900">
+                  {isVi ? 'Chữ Ký Số Lãnh Đạo Hợp Pháp' : 'Legal Executive e-Signature'}
+                </p>
+                <p className="text-[10px] text-rose-600 font-semibold">
+                  {isVi ? 'Tuân thủ Nghị định 30/2020/NĐ-CP' : 'Decree 30/2020/ND-CP Standard'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Tab 2: Existing Interactive Signing Interface */}
+      {activeTab === 'interactive-sign' && (
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         {/* Left Col: 3D Layered Cryptographic Documents with Red Seal */}
         <div className="lg:col-span-7 relative min-h-[360px] flex items-center justify-center p-4">
           {/* Back document layer */}
@@ -126,6 +210,7 @@ export function InteractiveDigitalSignature({ isVi }: Props) {
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 }
