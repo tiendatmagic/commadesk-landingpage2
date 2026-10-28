@@ -122,15 +122,15 @@ export function ArcCarousel() {
     scale1 = 0.92;
     scale2 = 0.8;
   } else {
-    stepX1 = 82;
-    stepX2 = 158;
-    dropY1 = 12;
-    dropY2 = 36;
+    stepX1 = 70;
+    stepX2 = 138;
+    dropY1 = 10;
+    dropY2 = 32;
     rot1 = 7;
     rot2 = 14;
-    scale0 = 1.04;
-    scale1 = 0.86;
-    scale2 = 0.7;
+    scale0 = 1.02;
+    scale1 = 0.84;
+    scale2 = 0.68;
   }
 
   const isDesktop = isLargeDesktop || isMediumDesktop;

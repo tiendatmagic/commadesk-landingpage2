@@ -270,13 +270,13 @@ export function TestimonialsSection() {
           {/* 1. LEFT TILT CARD (Thẻ trắng to bản xòe sang trái) */}
           <div
             id="leftTiltCard"
-            className="testi-fanout-card absolute left-1/2 top-1/2 w-[320px] sm:w-[380px] md:w-[410px] lg:w-[430px] h-[440px] sm:h-[490px] md:h-[520px] lg:h-[540px] rounded-[36px] sm:rounded-[44px] bg-white border border-slate-200/80 shadow-[0_20px_45px_-12px_rgba(0,0,0,0.06)] z-10 pointer-events-none"
+            className="testi-fanout-card absolute left-1/2 top-1/2 w-[275px] min-[390px]:w-[320px] sm:w-[380px] md:w-[410px] lg:w-[430px] h-[440px] sm:h-[490px] md:h-[520px] lg:h-[540px] rounded-[36px] sm:rounded-[44px] bg-white border border-slate-200/80 shadow-[0_20px_45px_-12px_rgba(0,0,0,0.06)] z-10 pointer-events-none"
           />
 
           {/* 2. RIGHT TILT CARD (Thẻ trắng to bản xòe sang phải) */}
           <div
             id="rightTiltCard"
-            className="testi-fanout-card absolute left-1/2 top-1/2 w-[320px] sm:w-[380px] md:w-[410px] lg:w-[430px] h-[440px] sm:h-[490px] md:h-[520px] lg:h-[540px] rounded-[36px] sm:rounded-[44px] bg-white border border-slate-200/80 shadow-[0_20px_45px_-12px_rgba(0,0,0,0.06)] z-10 pointer-events-none"
+            className="testi-fanout-card absolute left-1/2 top-1/2 w-[275px] min-[390px]:w-[320px] sm:w-[380px] md:w-[410px] lg:w-[430px] h-[440px] sm:h-[490px] md:h-[520px] lg:h-[540px] rounded-[36px] sm:rounded-[44px] bg-white border border-slate-200/80 shadow-[0_20px_45px_-12px_rgba(0,0,0,0.06)] z-10 pointer-events-none"
           />
 
           {/* 3. Phong bì thư màu tím và vạt trước màu trắng */}

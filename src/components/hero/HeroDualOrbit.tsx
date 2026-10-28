@@ -23,14 +23,14 @@ const LEFT_AVATARS: AvatarItem[] = [
   {
     src: '/avatars/hero2_2.webp',
     alt: 'Team member',
-    defaultTop: 'top-[16%] sm:top-[26%] lg:top-[30%]',
-    defaultLeft: 'left-[2%] sm:left-[12%] lg:left-[16.5%]',
+    defaultTop: 'top-3.5 sm:top-[26%] lg:top-[30%]',
+    defaultLeft: 'left-2.5 sm:left-[12%] lg:left-[16.5%]',
   },
   {
     src: '/avatars/hero2_3.webp',
     alt: 'Team member',
-    defaultTop: 'top-[68%] sm:top-[54%] lg:top-[56%]',
-    defaultLeft: 'left-[2%] sm:left-[12%] lg:left-[16.5%]',
+    defaultTop: 'bottom-3.5 sm:bottom-auto sm:top-[54%] lg:top-[56%]',
+    defaultLeft: 'left-2.5 sm:left-[12%] lg:left-[16.5%]',
   },
   {
     src: '/avatars/hero2_4.webp',
@@ -52,14 +52,14 @@ const RIGHT_AVATARS: AvatarItem[] = [
   {
     src: '/avatars/hero2_7.webp',
     alt: 'Team member',
-    defaultTop: 'top-[16%] sm:top-[26%] lg:top-[30%]',
-    defaultRight: 'right-[2%] sm:right-[12%] lg:right-[16.5%]',
+    defaultTop: 'top-3.5 sm:top-[26%] lg:top-[30%]',
+    defaultRight: 'right-2.5 sm:right-[12%] lg:right-[16.5%]',
   },
   {
     src: '/avatars/hero2_8.webp',
     alt: 'Team member',
-    defaultTop: 'top-[68%] sm:top-[54%] lg:top-[56%]',
-    defaultRight: 'right-[2%] sm:right-[12%] lg:right-[16.5%]',
+    defaultTop: 'bottom-3.5 sm:bottom-auto sm:top-[54%] lg:top-[56%]',
+    defaultRight: 'right-2.5 sm:right-[12%] lg:right-[16.5%]',
   },
   {
     src: '/avatars/hero2_9.webp',
@@ -79,11 +79,15 @@ export function HeroDualOrbit() {
 
     const leftAvatars = container.querySelectorAll<HTMLElement>('.hero2-avatar-left');
     const rightAvatars = container.querySelectorAll<HTMLElement>('.hero2-avatar-right');
-    const allAvatars = container.querySelectorAll<HTMLElement>('.hero2-avatar-item');
     if (!leftAvatars.length || !rightAvatars.length) return;
 
-    // Công thức Fourier khép kín chuẩn xác
-    function getOrbitCoords(theta: number) {
+    // Công thức Fourier khép kín: Tự động co hẹp bán kính ngang khi ở màn hình 1024px - 1279px để không đè lên text
+    function getOrbitCoords(theta: number, isCompact: boolean) {
+      if (isCompact) {
+        const x = 5.2 - 3.6 * Math.cos(theta) + 3.6 * Math.sin(theta);
+        const y = 43.5 - 18.0 * Math.cos(theta) - 19.0 * Math.sin(theta) - 5.5 * Math.cos(2 * theta);
+        return { x, y };
+      }
       const x = 10.15 - 6.35 * Math.cos(theta) + 6.35 * Math.sin(theta);
       const y = 43.5 - 18.0 * Math.cos(theta) - 19.0 * Math.sin(theta) - 5.5 * Math.cos(2 * theta);
       return { x, y };
@@ -143,63 +147,65 @@ export function HeroDualOrbit() {
       const speed = baseSpeed + scrollVelocity;
       currentAngle += speed * dt;
 
-      const isMobile = window.innerWidth < 640;
+      const width = window.innerWidth;
+      const isSmallScreen = width < 1024;
 
-      if (isMobile) {
-        allAvatars.forEach((el) => {
-          el.style.left = '';
-          el.style.top = '';
-          el.style.right = '';
-          el.style.opacity = '';
-          el.style.zIndex = '';
-          const cardInner = el.querySelector<HTMLElement>('.hero2-avatar-card');
-          if (cardInner) cardInner.style.transform = '';
-        });
-      } else {
-        leftAvatars.forEach((el) => {
-          const idx = parseInt(el.dataset.index || '0', 10);
-          const angle = currentAngle + idx * (Math.PI / 2);
-          const pos = getOrbitCoords(angle);
-
-          el.style.left = `${pos.x.toFixed(2)}%`;
-          el.style.top = `${pos.y.toFixed(2)}%`;
-          el.style.right = 'auto';
-
-          const depthFactor = Math.max(0, Math.min(1, (pos.x - 1.2) / 18.0));
-          const scale = 1.02 - depthFactor * 0.06;
-          const opacity = 1.0 - depthFactor * 0.05;
-          const zIndex = depthFactor < 0.5 ? 30 : 20;
-
-          el.style.zIndex = `${zIndex}`;
-          el.style.opacity = opacity.toFixed(2);
-          const cardInner = el.querySelector<HTMLElement>('.hero2-avatar-card');
-          if (cardInner && !el.matches(':hover')) {
-            cardInner.style.transform = `scale(${scale.toFixed(3)})`;
-          }
-        });
-
-        rightAvatars.forEach((el) => {
-          const idx = parseInt(el.dataset.index || '0', 10);
-          const angle = currentAngle + idx * (Math.PI / 2);
-          const pos = getOrbitCoords(angle);
-
-          el.style.right = `${pos.x.toFixed(2)}%`;
-          el.style.top = `${pos.y.toFixed(2)}%`;
-          el.style.left = 'auto';
-
-          const depthFactor = Math.max(0, Math.min(1, (pos.x - 1.2) / 18.0));
-          const scale = 1.02 - depthFactor * 0.06;
-          const opacity = 1.0 - depthFactor * 0.05;
-          const zIndex = depthFactor < 0.5 ? 30 : 20;
-
-          el.style.zIndex = `${zIndex}`;
-          el.style.opacity = opacity.toFixed(2);
-          const cardInner = el.querySelector<HTMLElement>('.hero2-avatar-card');
-          if (cardInner && !el.matches(':hover')) {
-            cardInner.style.transform = `scale(${scale.toFixed(3)})`;
-          }
-        });
+      if (isSmallScreen) {
+        rafId = requestAnimationFrame(render);
+        return;
       }
+
+      const isCompact = width < 1280;
+
+      leftAvatars.forEach((el) => {
+        const idx = parseInt(el.dataset.index || '0', 10);
+        const angle = currentAngle + idx * (Math.PI / 2);
+        const pos = getOrbitCoords(angle, isCompact);
+
+        el.style.left = `${pos.x.toFixed(2)}%`;
+        el.style.top = `${pos.y.toFixed(2)}%`;
+        el.style.bottom = 'auto';
+        el.style.right = 'auto';
+
+        const depthFactor = isCompact
+          ? Math.max(0, Math.min(1, (pos.x - 0.5) / 10.0))
+          : Math.max(0, Math.min(1, (pos.x - 1.2) / 18.0));
+        const scale = 1.02 - depthFactor * 0.06;
+        const opacity = isCompact ? 0.92 - depthFactor * 0.08 : 1.0 - depthFactor * 0.05;
+        const zIndex = depthFactor < 0.5 ? 30 : 20;
+
+        el.style.zIndex = `${zIndex}`;
+        el.style.opacity = opacity.toFixed(2);
+        const cardInner = el.querySelector<HTMLElement>('.hero2-avatar-card');
+        if (cardInner && !el.matches(':hover')) {
+          cardInner.style.transform = `scale(${scale.toFixed(3)})`;
+        }
+      });
+
+      rightAvatars.forEach((el) => {
+        const idx = parseInt(el.dataset.index || '0', 10);
+        const angle = currentAngle + idx * (Math.PI / 2);
+        const pos = getOrbitCoords(angle, isCompact);
+
+        el.style.right = `${pos.x.toFixed(2)}%`;
+        el.style.top = `${pos.y.toFixed(2)}%`;
+        el.style.bottom = 'auto';
+        el.style.left = 'auto';
+
+        const depthFactor = isCompact
+          ? Math.max(0, Math.min(1, (pos.x - 0.5) / 10.0))
+          : Math.max(0, Math.min(1, (pos.x - 1.2) / 18.0));
+        const scale = 1.02 - depthFactor * 0.06;
+        const opacity = isCompact ? 0.92 - depthFactor * 0.08 : 1.0 - depthFactor * 0.05;
+        const zIndex = depthFactor < 0.5 ? 30 : 20;
+
+        el.style.zIndex = `${zIndex}`;
+        el.style.opacity = opacity.toFixed(2);
+        const cardInner = el.querySelector<HTMLElement>('.hero2-avatar-card');
+        if (cardInner && !el.matches(':hover')) {
+          cardInner.style.transform = `scale(${scale.toFixed(3)})`;
+        }
+      });
 
       rafId = requestAnimationFrame(render);
     }
@@ -215,7 +221,7 @@ export function HeroDualOrbit() {
     <div
       ref={containerRef}
       id="hero2AvatarsContainer"
-      className="absolute inset-0 pointer-events-none"
+      className="hidden lg:block absolute inset-0 pointer-events-none"
     >
       {/* Cụm Bên Trái */}
       {LEFT_AVATARS.map((av, index) => (
@@ -226,12 +232,12 @@ export function HeroDualOrbit() {
           } ${av.defaultTop} ${av.defaultLeft}`}
           data-index={index}
         >
-          <div className="hero2-avatar-card w-[95px] h-[125px] sm:w-[130px] sm:h-[168px] md:w-[148px] md:h-[192px] lg:w-[165px] lg:h-[215px] rounded-[20px] sm:rounded-[28px] md:rounded-[32px] bg-white shadow-xl shadow-slate-300/40 overflow-hidden border-[3px] border-white relative">
+          <div className="hero2-avatar-card w-[74px] h-[98px] min-[390px]:w-[80px] min-[390px]:h-[106px] sm:w-[130px] sm:h-[168px] md:w-[148px] md:h-[192px] lg:w-[110px] lg:h-[144px] xl:w-[165px] xl:h-[215px] rounded-[18px] sm:rounded-[28px] md:rounded-[32px] lg:rounded-[22px] xl:rounded-[32px] bg-white shadow-lg sm:shadow-xl shadow-slate-300/40 overflow-hidden border-2 sm:border-[3px] border-white relative">
             <Image
               src={av.src}
               alt={av.alt}
               fill
-              sizes="(max-width: 640px) 95px, (max-width: 768px) 130px, (max-width: 1024px) 148px, 165px"
+              sizes="(max-width: 640px) 80px, (max-width: 1024px) 130px, (max-width: 1280px) 110px, 165px"
               className="object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-white/95 via-white/40 to-transparent pointer-events-none" />
@@ -248,12 +254,12 @@ export function HeroDualOrbit() {
           } ${av.defaultTop} ${av.defaultRight}`}
           data-index={index}
         >
-          <div className="hero2-avatar-card w-[95px] h-[125px] sm:w-[130px] sm:h-[168px] md:w-[148px] md:h-[192px] lg:w-[165px] lg:h-[215px] rounded-[20px] sm:rounded-[28px] md:rounded-[32px] bg-white shadow-xl shadow-slate-300/40 overflow-hidden border-[3px] border-white relative">
+          <div className="hero2-avatar-card w-[74px] h-[98px] min-[390px]:w-[80px] min-[390px]:h-[106px] sm:w-[130px] sm:h-[168px] md:w-[148px] md:h-[192px] lg:w-[110px] lg:h-[144px] xl:w-[165px] xl:h-[215px] rounded-[18px] sm:rounded-[28px] md:rounded-[32px] lg:rounded-[22px] xl:rounded-[32px] bg-white shadow-lg sm:shadow-xl shadow-slate-300/40 overflow-hidden border-2 sm:border-[3px] border-white relative">
             <Image
               src={av.src}
               alt={av.alt}
               fill
-              sizes="(max-width: 640px) 95px, (max-width: 768px) 130px, (max-width: 1024px) 148px, 165px"
+              sizes="(max-width: 640px) 80px, (max-width: 1024px) 130px, (max-width: 1280px) 110px, 165px"
               className="object-cover"
             />
             <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-white/95 via-white/40 to-transparent pointer-events-none" />

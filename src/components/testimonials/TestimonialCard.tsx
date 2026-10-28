@@ -24,7 +24,7 @@ export function TestimonialCard({ testimonial, id, statusClass }: TestimonialCar
   return (
     <div
       id={id}
-      className={`testi-card-item ${statusClass} absolute left-1/2 top-1/2 z-20 w-[88vw] max-w-[350px] sm:max-w-[375px] md:max-w-[390px] bg-white rounded-[28px] sm:rounded-[36px] p-6 sm:p-7 text-center shadow-[0_25px_50px_-12px_rgba(0,0,0,0.08)] border border-slate-200/80 transition-all duration-700 will-change-transform select-text cursor-default`}
+      className={`testi-card-item ${statusClass} absolute left-1/2 top-1/2 z-20 w-[90vw] max-w-[340px] sm:max-w-[375px] md:max-w-[390px] bg-white rounded-[26px] sm:rounded-[36px] p-5 sm:p-7 text-center shadow-[0_25px_50px_-12px_rgba(0,0,0,0.08)] border border-slate-200/80 transition-all duration-700 will-change-transform select-text cursor-default`}
       onMouseUp={(e) => {
         const selection = window.getSelection();
         if (selection && selection.toString().trim().length > 0) {
