@@ -9,6 +9,7 @@ import {
   BarChartIcon,
   TrendingUpIcon,
 } from '@/components/ui/UIIcons';
+import { ShowcaseCard, ShowcaseTabBar } from '@/components/ui/ShowcaseCard';
 
 interface Props {
   isVi?: boolean;
@@ -19,40 +20,58 @@ export function InteractiveDocsConsole({ isVi }: Props) {
   const [approvalStatus, setApprovalStatus] = useState<'pending' | 'approved'>('pending');
   const [taskFilter, setTaskFilter] = useState<'all' | 'in_progress' | 'done'>('all');
 
+  const tabs = [
+    {
+      id: 'tasks' as const,
+      label: isVi ? 'Công việc & Tiến độ' : 'Tasks & progress',
+      icon: <BarChartIcon className="w-3.5 h-3.5" />,
+    },
+    {
+      id: 'approvals' as const,
+      label: isVi ? 'Quy trình duyệt' : 'Approval flow',
+      icon: <ShieldCheckIcon className="w-3.5 h-3.5" />,
+    },
+    {
+      id: 'attendance' as const,
+      label: isVi ? 'Chấm công ca kíp' : 'Attendance',
+      icon: <UsersIcon className="w-3.5 h-3.5" />,
+    },
+  ];
+
   const tasks = [
     {
       id: 'CV-101',
-      title: isVi ? 'Khai trương chi nhánh bán lẻ miền Nam' : 'Launch Southern Retail Branch',
+      title: isVi ? 'Khai trương chi nhánh bán lẻ miền Nam' : 'Launch Southern retail branch',
       assignee: 'Sarah Mitchell',
-      role: isVi ? 'Trưởng dự án' : 'Project Lead',
-      department: isVi ? 'Phát triển kinh doanh' : 'Business Dev',
+      role: isVi ? 'Trưởng dự án' : 'Project lead',
+      department: isVi ? 'Phát triển kinh doanh' : 'Business dev',
       progress: 90,
       priority: isVi ? 'Khẩn cấp' : 'High',
-      priorityColor: 'bg-rose-50 text-rose-700 border-rose-200',
+      priorityTone: 'text-[#DC2626]',
       status: 'in_progress' as const,
-      statusLabel: isVi ? 'Đang thực hiện' : 'In Progress',
+      statusLabel: isVi ? 'Đang thực hiện' : 'In progress',
     },
     {
       id: 'CV-102',
-      title: isVi ? 'Nghiệm thu lắp đặt hệ thống Camera AI an ninh' : 'Acceptance of AI Security Camera System',
+      title: isVi ? 'Nghiệm thu lắp đặt hệ thống Camera an ninh' : 'Security camera system acceptance',
       assignee: 'James Carter',
-      role: isVi ? 'Chuyên viên kỹ thuật' : 'Tech Specialist',
-      department: isVi ? 'Vận hành hạ tầng' : 'Infra Ops',
+      role: isVi ? 'Chuyên viên kỹ thuật' : 'Tech specialist',
+      department: isVi ? 'Vận hành hạ tầng' : 'Infra ops',
       progress: 100,
       priority: isVi ? 'Bình thường' : 'Normal',
-      priorityColor: 'bg-slate-50 text-slate-700 border-slate-200',
+      priorityTone: 'text-[#4B5565]',
       status: 'done' as const,
-      statusLabel: isVi ? 'Đã hoàn thành' : 'Completed',
+      statusLabel: isVi ? 'Hoàn thành' : 'Completed',
     },
     {
       id: 'CV-103',
-      title: isVi ? 'Tổng hợp báo cáo doanh thu & KPI tháng' : 'Monthly Revenue & KPI Consolidation',
+      title: isVi ? 'Tổng hợp báo cáo doanh thu & KPI tháng' : 'Monthly revenue & KPI consolidation',
       assignee: 'Elena Rostova',
-      role: isVi ? 'Kế toán trưởng' : 'Chief Accountant',
-      department: isVi ? 'Tài chính kế toán' : 'Finance & Acc',
+      role: isVi ? 'Kế toán trưởng' : 'Chief accountant',
+      department: isVi ? 'Tài chính kế toán' : 'Finance',
       progress: 75,
       priority: isVi ? 'Ưu tiên' : 'Medium',
-      priorityColor: 'bg-amber-50 text-amber-700 border-amber-200',
+      priorityTone: 'text-[#D97706]',
       status: 'in_progress' as const,
       statusLabel: isVi ? 'Đang thẩm định' : 'Reviewing',
     },
@@ -63,82 +82,36 @@ export function InteractiveDocsConsole({ isVi }: Props) {
   );
 
   return (
-    <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-slate-100/60 p-4 sm:p-6 border border-slate-200/80">
-      {/* Top Controls: Tab Switcher */}
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-5 pb-4 border-b border-slate-200/80">
-        <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#FF4D38] animate-pulse"></span>
-          <span className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-            {isVi ? 'Trải Nghiệm Nghiệp Vụ Doanh Nghiệp' : 'Enterprise Operations Playground'}
-          </span>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-white border border-slate-200 shadow-2xs">
-          <button
-            type="button"
-            onClick={() => setActiveTab('tasks')}
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-              activeTab === 'tasks'
-                ? 'bg-[#FF4D38] text-white shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-            }`}
-          >
-            <BarChartIcon className="w-3.5 h-3.5" />
-            <span>{isVi ? 'Công Việc & Tiến Độ' : 'Tasks & Progress'}</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab('approvals')}
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-              activeTab === 'approvals'
-                ? 'bg-[#FF4D38] text-white shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-            }`}
-          >
-            <ShieldCheckIcon className="w-3.5 h-3.5" />
-            <span>{isVi ? 'Quy Trình Phê Duyệt' : 'Approval Flow'}</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab('attendance')}
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-              activeTab === 'attendance'
-                ? 'bg-[#FF4D38] text-white shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-            }`}
-          >
-            <UsersIcon className="w-3.5 h-3.5" />
-            <span>{isVi ? 'Chấm Công & Ca Kíp' : 'Workforce Attendance'}</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Main Content Area */}
-      <div className="min-h-[350px]">
-        {/* Tab 1: Công Việc & Tiến Độ */}
+    <ShowcaseCard
+      title={isVi ? 'Mô phỏng nghiệp vụ doanh nghiệp' : 'Enterprise Operations Console'}
+      headerRight={
+        <ShowcaseTabBar tabs={tabs} activeTab={activeTab} onChange={setActiveTab} />
+      }
+    >
+      <div className="min-h-[340px]">
         {activeTab === 'tasks' && (
-          <div className="bg-white rounded-2xl border border-slate-200/90 shadow-md p-5 sm:p-7 space-y-4 animate-in fade-in duration-200">
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
+          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-4 sm:p-6 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-900/[0.06]">
               <div>
-                <h4 className="text-sm font-bold text-slate-900">
-                  {isVi ? 'Bảng Theo Dõi Nhiệm Vụ Trực Quan' : 'Visual Task & Milestone Tracker'}
+                <h4 className="text-[14px] font-semibold text-[#111827]">
+                  {isVi ? 'Bảng theo dõi nhiệm vụ & mốc tiến độ' : 'Task & milestone tracker'}
                 </h4>
-                <p className="text-[11px] text-slate-500 mt-0.5">
+                <p className="text-[12px] text-[#6B7487] mt-0.5">
                   {isVi
-                    ? 'Phân bổ công việc rõ ràng, đo lường tiến độ tự động theo thời gian thực'
-                    : 'Clear task distribution, automated progress tracking in real time'}
+                    ? 'Phân bổ đầu việc và đo lường tỷ lệ hoàn thành theo thời gian thực'
+                    : 'Structured task assignments with live completion tracking'}
                 </p>
               </div>
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1 p-0.5 bg-[#F5F7FA] rounded-lg border border-slate-900/[0.06]">
                 {(['all', 'in_progress', 'done'] as const).map((filter) => (
                   <button
                     key={filter}
                     type="button"
                     onClick={() => setTaskFilter(filter)}
-                    className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all cursor-pointer ${
+                    className={`px-2.5 py-1 rounded-md text-[12px] font-medium transition-colors cursor-pointer ${
                       taskFilter === filter
-                        ? 'bg-slate-900 text-white'
-                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                        ? 'bg-white text-[#111827] shadow-[0_1px_2px_rgba(17,24,39,0.06)]'
+                        : 'text-[#6B7487] hover:text-[#111827]'
                     }`}
                   >
                     {filter === 'all' && (isVi ? 'Tất cả' : 'All')}
@@ -149,58 +122,45 @@ export function InteractiveDocsConsole({ isVi }: Props) {
               </div>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               {filteredTasks.map((t) => (
                 <div
                   key={t.id}
-                  className="p-3.5 sm:p-4 rounded-xl bg-slate-50/80 border border-slate-200/80 hover:bg-white hover:shadow-md transition-all space-y-2.5"
+                  className="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-900/[0.06] space-y-2"
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
-                      <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 border border-indigo-200">
+                      <span className="font-mono text-[11px] font-medium text-[#6B7487]">
                         {t.id}
                       </span>
-                      <h5 className="text-xs sm:text-sm font-bold text-slate-900">
+                      <h5 className="text-[13.5px] font-medium text-[#111827]">
                         {t.title}
                       </h5>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <span
-                        className={`text-[10px] font-bold px-2 py-0.5 rounded border ${t.priorityColor}`}
-                      >
-                        {t.priority}
-                      </span>
-                      <span
-                        className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full ${
-                          t.status === 'done'
-                            ? 'bg-emerald-100 text-emerald-800'
-                            : 'bg-blue-100 text-blue-800'
-                        }`}
-                      >
+                    <div className="flex items-center gap-3 font-mono text-[11px]">
+                      <span className={`font-medium ${t.priorityTone}`}>{t.priority}</span>
+                      <span className={t.status === 'done' ? 'text-[#16A34A] font-medium' : 'text-[#4B5565]'}>
                         {t.statusLabel}
                       </span>
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-500">
-                    <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2 text-[12px] text-[#6B7487]">
+                    <div className="flex items-center gap-2.5">
                       <span>
-                        {isVi ? 'Phụ trách:' : 'Assignee:'}{' '}
-                        <strong className="text-slate-800">{t.assignee}</strong> ({t.role})
+                        {isVi ? 'Phụ trách: ' : 'Assignee: '}
+                        <span className="font-medium text-[#111827]">{t.assignee}</span> ({t.role})
                       </span>
-                      <span className="hidden sm:inline text-slate-300">•</span>
-                      <span className="hidden sm:inline">
-                        {isVi ? 'Phòng ban:' : 'Dept:'} {t.department}
-                      </span>
+                      <span className="hidden sm:inline">·</span>
+                      <span className="hidden sm:inline">{t.department}</span>
                     </div>
-                    <span className="font-bold text-slate-700">{t.progress}%</span>
+                    <span className="font-mono tabular-nums font-medium text-[#111827]">{t.progress}%</span>
                   </div>
 
-                  {/* Thanh tiến độ */}
-                  <div className="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                  <div className="w-full h-1.5 bg-slate-200/80 rounded-full overflow-hidden">
                     <div
-                      className={`h-full rounded-full transition-all duration-500 ${
-                        t.status === 'done' ? 'bg-emerald-500' : 'bg-[#FF4D38]'
+                      className={`h-full rounded-full transition-[width] duration-300 ${
+                        t.status === 'done' ? 'bg-[#16A34A]' : 'bg-[#FF4D38]'
                       }`}
                       style={{ width: `${t.progress}%` }}
                     />
@@ -209,140 +169,121 @@ export function InteractiveDocsConsole({ isVi }: Props) {
               ))}
             </div>
 
-            <div className="pt-2 flex items-center justify-between text-[11px] text-slate-500">
+            <div className="pt-1 flex items-center justify-between text-[12px] text-[#6B7487]">
               <span className="flex items-center gap-1.5">
-                <CheckIcon className="w-3.5 h-3.5 text-emerald-600" />
+                <CheckIcon className="w-3.5 h-3.5 text-[#16A34A]" />
                 {isVi
-                  ? 'Tự động gửi thông báo nhắc việc qua Email và Ứng dụng di động'
-                  : 'Automated task reminder notifications via Email and Mobile App'}
+                  ? 'Thông báo nhắc hạn tự động qua Email và Mobile'
+                  : 'Automated deadline notifications via Email & Mobile'}
               </span>
-              <span className="font-semibold text-slate-700">
-                {isVi ? 'Hiệu suất nhóm: 94.2%' : 'Team Efficiency: 94.2%'}
-              </span>
+              <span className="font-mono tabular-nums font-medium text-[#111827]">94.2%</span>
             </div>
           </div>
         )}
 
-        {/* Tab 2: Quy Trình Phê Duyệt */}
         {activeTab === 'approvals' && (
-          <div className="bg-white rounded-2xl border border-slate-200/90 shadow-md p-5 sm:p-7 space-y-4 animate-in fade-in duration-200">
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
+          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-4 sm:p-6 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-900/[0.06]">
               <div>
-                <h4 className="text-sm font-bold text-slate-900">
-                  {isVi ? 'Quy Trình Phê Duyệt Tự Động 2 Cấp' : 'Automated 2-Step Approval Workflow'}
+                <h4 className="text-[14px] font-semibold text-[#111827]">
+                  {isVi ? 'Quy trình phê duyệt 2 cấp' : 'Two-step approval workflow'}
                 </h4>
-                <p className="text-[11px] text-slate-500 mt-0.5">
+                <p className="text-[12px] text-[#6B7487] mt-0.5">
                   {isVi
-                    ? 'Ký duyệt số hóa tức thì, loại bỏ hoàn toàn thủ tục giấy tờ rườm rà'
-                    : 'Instant digital approvals, completely eliminating manual paper forms'}
+                    ? 'Ký duyệt trực tuyến với nhật ký thời gian và hạn mức rõ ràng'
+                    : 'Digital sign-offs with explicit timestamps and limits'}
                 </p>
               </div>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
-                {isVi ? 'Quy trình chuẩn hóa' : 'Standardized Flow'}
+              <span className="font-mono text-[12px] font-medium text-[#16A34A]">
+                {isVi ? 'Quy trình chuẩn' : 'Standard flow'}
               </span>
             </div>
 
-            {/* Chi tiết phiếu đề xuất mẫu */}
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
-              <div className="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-slate-200/80">
+            <div className="p-4 rounded-xl bg-[#F5F7FA] border border-slate-900/[0.06] space-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-slate-900/[0.06]">
                 <div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-                    {isVi ? 'Số phiếu đề xuất' : 'Request Code'}
+                  <span className="font-mono text-[11px] text-[#6B7487]">
+                    {isVi ? 'Số phiếu đề xuất' : 'Request code'}
                   </span>
-                  <p className="text-xs sm:text-sm font-bold text-slate-900">
-                    DX-2026-088 // {isVi ? 'Đề xuất mua sắm thiết bị văn phòng' : 'Office Equipment Procurement'}
+                  <p className="text-[13.5px] font-semibold text-[#111827]">
+                    DX-2026-088 · {isVi ? 'Mua sắm thiết bị văn phòng' : 'Office equipment procurement'}
                   </p>
                 </div>
                 <div className="text-right">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
-                    {isVi ? 'Giá trị dự toán' : 'Estimated Value'}
+                  <span className="font-mono text-[11px] text-[#6B7487]">
+                    {isVi ? 'Giá trị dự toán' : 'Estimated amount'}
                   </span>
-                  <p className="text-xs sm:text-sm font-black text-[#FF4D38]">
-                    18.500.000 VNĐ
+                  <p className="font-mono tabular-nums text-[14px] font-semibold text-[#FF4D38]">
+                    18,500,000 đ
                   </p>
                 </div>
               </div>
 
-              {/* Luồng phê duyệt 2 bước */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                {/* Bước 1 */}
-                <div className="p-3 rounded-lg bg-white border border-emerald-200 flex items-start gap-3 shadow-2xs">
-                  <div className="w-7 h-7 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
-                    <CheckIcon className="w-4 h-4 text-emerald-700" />
+                <div className="p-3 rounded-lg bg-white border border-slate-900/[0.08] flex items-start gap-2.5">
+                  <div className="w-6 h-6 rounded-full bg-[#16A34A]/10 text-[#16A34A] flex items-center justify-center shrink-0 mt-0.5">
+                    <CheckIcon className="w-3.5 h-3.5" />
                   </div>
-                  <div className="text-xs">
-                    <p className="font-bold text-slate-900">
-                      {isVi ? 'Cấp 1: Trưởng Bộ Phận' : 'Step 1: Department Manager'}
+                  <div className="text-[12px]">
+                    <p className="font-medium text-[#111827]">
+                      {isVi ? 'Cấp 1: Trưởng bộ phận' : 'Step 1: Dept manager'}
                     </p>
-                    <p className="text-slate-500 text-[11px]">
-                      {isVi ? 'Đã duyệt bởi: Nguyễn Hoàng Long (09:15)' : 'Approved by: Nguyen Hoang Long (09:15)'}
+                    <p className="text-[#6B7487] text-[11px]">
+                      {isVi ? 'Nguyễn Hoàng Long · 09:15' : 'Long Nguyen · 09:15'}
                     </p>
-                    <span className="inline-block mt-1 text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded">
-                      {isVi ? 'Đã thông qua' : 'Passed'}
+                    <span className="inline-block mt-1 font-mono text-[11px] font-medium text-[#16A34A]">
+                      {isVi ? 'Đã duyệt' : 'Approved'}
                     </span>
                   </div>
                 </div>
 
-                {/* Bước 2 */}
-                <div
-                  className={`p-3 rounded-lg bg-white border flex items-start gap-3 shadow-2xs transition-all ${
-                    approvalStatus === 'approved'
-                      ? 'border-emerald-200'
-                      : 'border-amber-200'
-                  }`}
-                >
+                <div className="p-3 rounded-lg bg-white border border-slate-900/[0.08] flex items-start gap-2.5">
                   <div
-                    className={`w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 ${
+                    className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${
                       approvalStatus === 'approved'
-                        ? 'bg-emerald-100 text-emerald-700'
-                        : 'bg-amber-100 text-amber-700'
+                        ? 'bg-[#16A34A]/10 text-[#16A34A]'
+                        : 'bg-amber-50 text-[#D97706]'
                     }`}
                   >
                     {approvalStatus === 'approved' ? (
-                      <CheckIcon className="w-4 h-4 text-emerald-700" />
+                      <CheckIcon className="w-3.5 h-3.5" />
                     ) : (
-                      <ClockIcon className="w-4 h-4 text-amber-700" />
+                      <ClockIcon className="w-3.5 h-3.5" />
                     )}
                   </div>
-                  <div className="text-xs flex-1">
-                    <p className="font-bold text-slate-900">
-                      {isVi ? 'Cấp 2: Ban Tổng Giám Đốc' : 'Step 2: Executive Board'}
+                  <div className="text-[12px] flex-1">
+                    <p className="font-medium text-[#111827]">
+                      {isVi ? 'Cấp 2: Ban Giám đốc' : 'Step 2: Executive board'}
                     </p>
-                    <p className="text-slate-500 text-[11px]">
+                    <p className="text-[#6B7487] text-[11px]">
                       {approvalStatus === 'approved'
                         ? isVi
-                          ? 'Đã duyệt bởi: Ban Giám Đốc (Vừa xong)'
-                          : 'Approved by: Executive Board (Just now)'
+                          ? 'Đã duyệt vừa xong'
+                          : 'Approved just now'
                         : isVi
-                        ? 'Đang chờ Tổng Giám Đốc phê duyệt'
-                        : 'Awaiting Executive Board approval'}
+                        ? 'Đang chờ phê duyệt'
+                        : 'Awaiting sign-off'}
                     </p>
                     <span
-                      className={`inline-block mt-1 text-[10px] font-semibold px-1.5 py-0.2 rounded ${
-                        approvalStatus === 'approved'
-                          ? 'text-emerald-700 bg-emerald-50'
-                          : 'text-amber-700 bg-amber-50'
+                      className={`inline-block mt-1 font-mono text-[11px] font-medium ${
+                        approvalStatus === 'approved' ? 'text-[#16A34A]' : 'text-[#D97706]'
                       }`}
                     >
                       {approvalStatus === 'approved'
                         ? isVi
-                          ? 'Đã phê duyệt hoàn tất'
-                          : 'Fully Approved'
+                          ? 'Hoàn tất'
+                          : 'Approved'
                         : isVi
                         ? 'Chờ duyệt'
-                        : 'Pending Action'}
+                        : 'Pending'}
                     </span>
                   </div>
                 </div>
               </div>
 
-              {/* Nút thao tác tương tác */}
               <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
-                <span className="text-[11px] text-slate-500">
-                  {isVi
-                    ? 'Bạn có thể thử nghiệm phê duyệt trực tiếp trên giao diện này'
-                    : 'You can interactively simulate approval directly here'}
+                <span className="text-[12px] text-[#6B7487]">
+                  {isVi ? 'Thử thao tác phê duyệt trực tiếp' : 'Test interactive sign-off'}
                 </span>
                 <button
                   type="button"
@@ -351,46 +292,45 @@ export function InteractiveDocsConsole({ isVi }: Props) {
                       prev === 'approved' ? 'pending' : 'approved'
                     )
                   }
-                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-sm cursor-pointer ${
+                  className={`px-4 h-9 rounded-[10px] text-[12.5px] font-medium transition-colors cursor-pointer ${
                     approvalStatus === 'approved'
-                      ? 'bg-slate-200 text-slate-800 hover:bg-slate-300'
-                      : 'bg-[#FF4D38] hover:bg-[#EE4832] text-white shadow-[#FF4D38]/30'
+                      ? 'bg-[#ECEFF4] text-[#111827] hover:bg-slate-200/80'
+                      : 'bg-[#FF4D38] hover:bg-[#E03E2A] text-white'
                   }`}
                 >
                   {approvalStatus === 'approved'
                     ? isVi
-                      ? '↩ Đặt lại trạng thái chờ'
-                      : '↩ Reset to Pending'
+                      ? 'Đặt lại trạng thái chờ'
+                      : 'Reset to pending'
                     : isVi
-                    ? '✓ Phê Duyệt Ngay (1 Chạm)'
-                    : '✓ Approve Now (1-Tap)'}
+                    ? 'Phê duyệt phiếu'
+                    : 'Approve request'}
                 </button>
               </div>
             </div>
           </div>
         )}
 
-        {/* Tab 3: Chấm Công & Quản Lý Ca Kíp */}
         {activeTab === 'attendance' && (
-          <div className="bg-white rounded-2xl border border-slate-200/90 shadow-md p-5 sm:p-7 space-y-4 animate-in fade-in duration-200">
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
+          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-4 sm:p-6 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-900/[0.06]">
               <div>
-                <h4 className="text-sm font-bold text-slate-900">
-                  {isVi
-                    ? 'Bảng Chấm Công Thông Minh Thời Gian Thực'
-                    : 'Real-Time Smart Attendance Board'}
+                <h4 className="text-[14px] font-semibold text-[#111827]">
+                  {isVi ? 'Bảng chấm công thời gian thực' : 'Real-time attendance log'}
                 </h4>
-                <p className="text-[11px] text-slate-500 mt-0.5">
+                <p className="text-[12px] text-[#6B7487] mt-0.5">
                   {isVi
-                    ? 'Nhận diện khuôn mặt AI và định vị GPS, chống gian lận và tự động tính công'
-                    : 'AI facial recognition and GPS geolocation, tamper-proof with automated timesheets'}
+                    ? 'Chấm công nhận diện khuôn mặt & định vị GPS đồng bộ sang bảng lương'
+                    : 'Facial check-in and GPS logs synced to monthly payroll'}
                 </p>
               </div>
               <div className="text-right">
-                <span className="text-[10px] font-bold text-slate-400 uppercase">
-                  {isVi ? 'Tỷ lệ có mặt hôm nay' : 'Today Attendance'}
+                <span className="text-[11px] text-[#6B7487] block">
+                  {isVi ? 'Có mặt hôm nay' : 'Today attendance'}
                 </span>
-                <p className="text-sm font-black text-emerald-600">96.8% (148/153)</p>
+                <p className="font-mono tabular-nums text-[14px] font-semibold text-[#16A34A]">
+                  96.8% (148/153)
+                </p>
               </div>
             </div>
 
@@ -398,82 +338,78 @@ export function InteractiveDocsConsole({ isVi }: Props) {
               {[
                 {
                   name: 'Trần Văn Minh',
-                  role: isVi ? 'Kỹ sư phần mềm' : 'Software Engineer',
+                  role: isVi ? 'Kỹ sư phần mềm' : 'Software engineer',
                   time: '08:02',
-                  method: isVi ? 'Nhận diện khuôn mặt' : 'AI Face Check-in',
-                  location: isVi ? 'Trụ sở chính (Tầng 8)' : 'Headquarters (Floor 8)',
-                  status: isVi ? 'Đúng giờ' : 'On-Time',
-                  badgeColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+                  method: isVi ? 'Face ID' : 'Face check-in',
+                  location: isVi ? 'Trụ sở chính (Tầng 8)' : 'HQ (Floor 8)',
+                  status: isVi ? 'Đúng giờ' : 'On time',
+                  tone: 'text-[#16A34A]',
                 },
                 {
                   name: 'Lê Thu Hương',
-                  role: isVi ? 'Chuyên viên Nhân sự' : 'HR Specialist',
+                  role: isVi ? 'Chuyên viên Nhân sự' : 'HR specialist',
                   time: '08:14',
-                  method: isVi ? 'Định vị GPS Mobile' : 'Mobile GPS',
-                  location: isVi ? 'Chi nhánh Miền Trung' : 'Central Branch',
-                  status: isVi ? 'Đúng giờ' : 'On-Time',
-                  badgeColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+                  method: isVi ? 'GPS Mobile' : 'Mobile GPS',
+                  location: isVi ? 'Chi nhánh Miền Trung' : 'Central branch',
+                  status: isVi ? 'Đúng giờ' : 'On time',
+                  tone: 'text-[#16A34A]',
                 },
                 {
                   name: 'Phạm Đức Duy',
-                  role: isVi ? 'Nhân viên kinh doanh' : 'Sales Representative',
+                  role: isVi ? 'Kinh doanh' : 'Account exec',
                   time: '08:45',
-                  method: isVi ? 'Làm việc bên ngoài' : 'Client Visit GPS',
-                  location: isVi ? 'Gặp khách hàng (Đã duyệt)' : 'On-Site Client (Approved)',
-                  status: isVi ? 'Công tác ngoài' : 'Field Work',
-                  badgeColor: 'bg-sky-50 text-sky-700 border-sky-200',
+                  method: isVi ? 'Công tác ngoài' : 'Client visit',
+                  location: isVi ? 'Gặp khách hàng' : 'On-site client',
+                  status: isVi ? 'Ngoài văn phòng' : 'Field work',
+                  tone: 'text-[#4B5565]',
                 },
               ].map((staff, idx) => (
                 <div
                   key={idx}
-                  className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2 hover:bg-white hover:shadow-sm transition-all"
+                  className="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-900/[0.06] space-y-2"
                 >
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between gap-2">
                     <div>
-                      <p className="text-xs font-bold text-slate-900">{staff.name}</p>
-                      <p className="text-[10px] text-slate-500">{staff.role}</p>
+                      <p className="text-[13px] font-semibold text-[#111827]">{staff.name}</p>
+                      <p className="text-[11px] text-[#6B7487]">{staff.role}</p>
                     </div>
-                    <span
-                      className={`text-[10px] font-bold px-2 py-0.5 rounded border ${staff.badgeColor}`}
-                    >
+                    <span className={`font-mono text-[11px] font-medium ${staff.tone}`}>
                       {staff.status}
                     </span>
                   </div>
 
-                  <div className="pt-1 text-[11px] space-y-1 text-slate-600">
+                  <div className="pt-1.5 border-t border-slate-900/[0.06] text-[12px] space-y-1 text-[#4B5565]">
                     <p className="flex items-center justify-between">
-                      <span className="text-slate-400">{isVi ? 'Giờ vào:' : 'Check-in:'}</span>
-                      <strong className="font-mono text-slate-900">{staff.time}</strong>
+                      <span className="text-[#6B7487]">{isVi ? 'Giờ vào' : 'Check-in'}</span>
+                      <span className="font-mono tabular-nums font-medium text-[#111827]">{staff.time}</span>
                     </p>
                     <p className="flex items-center justify-between">
-                      <span className="text-slate-400">{isVi ? 'Phương thức:' : 'Method:'}</span>
-                      <span className="font-medium text-slate-700">{staff.method}</span>
+                      <span className="text-[#6B7487]">{isVi ? 'Phương thức' : 'Method'}</span>
+                      <span>{staff.method}</span>
                     </p>
-                    <p className="flex items-center justify-between">
-                      <span className="text-slate-400">{isVi ? 'Địa điểm:' : 'Location:'}</span>
-                      <span className="truncate max-w-[130px] font-medium text-slate-700">
-                        {staff.location}
-                      </span>
+                    <p className="flex items-center justify-between gap-2">
+                      <span className="text-[#6B7487]">{isVi ? 'Địa điểm' : 'Location'}</span>
+                      <span className="truncate max-w-[120px]">{staff.location}</span>
                     </p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="pt-2 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-500 border-t border-slate-100">
+            <div className="pt-2 flex flex-wrap items-center justify-between gap-3 text-[12px] text-[#6B7487] border-t border-slate-900/[0.06]">
               <span className="flex items-center gap-1.5">
-                <TrendingUpIcon className="w-3.5 h-3.5 text-indigo-600" />
+                <TrendingUpIcon className="w-3.5 h-3.5 text-[#111827]" />
                 {isVi
-                  ? 'Dữ liệu chấm công tự động chuyển thành bảng lương cuối tháng, chính xác 100%'
-                  : 'Attendance automatically syncs with month-end payroll with 100% precision'}
+                  ? 'Dữ liệu chấm công đồng bộ trực tiếp sang bảng lương cuối tháng'
+                  : 'Attendance logs sync directly into monthly payroll calculations'}
               </span>
-              <span className="font-semibold text-slate-700">
-                {isVi ? 'Đồng bộ tự động: 24/7' : 'Auto-Sync: 24/7'}
+              <span className="font-mono font-medium text-[#111827]">
+                {isVi ? 'Đồng bộ: 24/7' : 'Sync: 24/7'}
               </span>
             </div>
           </div>
         )}
       </div>
-    </div>
+    </ShowcaseCard>
   );
 }

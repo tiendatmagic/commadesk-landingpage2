@@ -1,233 +1,168 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
-import { CheckIcon, ZapIcon } from '@/components/ui/UIIcons';
+import { ZapIcon } from '@/components/ui/UIIcons';
+import { ShowcaseCard, ShowcaseTabBar } from '@/components/ui/ShowcaseCard';
 
 interface Props {
   isVi?: boolean;
 }
 
 export function InteractiveKanbanFlow({ isVi }: Props) {
-  const [activeTab, setActiveTab] = useState<'flow' | 'sprint' | 'gantt'>('flow');
-  const [activeTask, setActiveTask] = useState<number>(1);
+  const [activeTab, setActiveTab] = useState<'sprint' | 'gantt'>('sprint');
+  const [activeTask, setActiveTask] = useState<number>(2);
+
+  const tabs = [
+    { id: 'sprint' as const, label: isVi ? 'Bảng Sprint' : 'Sprint board' },
+    { id: 'gantt' as const, label: isVi ? 'Lộ trình Gantt' : 'Gantt timeline' },
+  ];
+
+  const columns = [
+    {
+      id: 1,
+      title: isVi ? 'Hàng đợi' : 'Backlog',
+      count: isVi ? '4 việc' : '4 tasks',
+      accent: 'bg-slate-400',
+      pct: 25,
+    },
+    {
+      id: 2,
+      title: isVi ? 'Đang làm' : 'In progress',
+      count: isVi ? '6 việc' : '6 tasks',
+      accent: 'bg-[#FF4D38]',
+      pct: 60,
+    },
+    {
+      id: 3,
+      title: isVi ? 'Đang duyệt' : 'In review',
+      count: isVi ? '3 việc' : '3 tasks',
+      accent: 'bg-amber-500',
+      pct: 85,
+    },
+    {
+      id: 4,
+      title: isVi ? 'Hoàn thành' : 'Done',
+      count: isVi ? '12 việc' : '12 tasks',
+      accent: 'bg-[#16A34A]',
+      pct: 100,
+    },
+  ];
+
+  const ganttRows = [
+    {
+      label: isVi ? 'Q1: Chuẩn hóa quy trình Kanban đa phòng ban' : 'Q1: Multi-department Kanban rollout',
+      progress: '90%',
+      width: '90%',
+      highlight: false,
+    },
+    {
+      label: isVi ? 'Q2: Áp dụng phân quyền dự án theo chi nhánh' : 'Q2: Branch-scoped project permissions',
+      progress: '75%',
+      width: '75%',
+      highlight: true,
+    },
+    {
+      label: isVi ? 'Q3: Đồng bộ nhật ký giờ làm với bảng công' : 'Q3: Time log sync with payroll',
+      progress: '55%',
+      width: '55%',
+      highlight: false,
+    },
+    {
+      label: isVi ? 'Q4: Nghiệm thu tiến độ và đối soát ngân sách' : 'Q4: Milestone sign-off & budget audit',
+      progress: '35%',
+      width: '35%',
+      highlight: false,
+    },
+  ];
 
   return (
-    <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-slate-100/60 p-2 sm:p-4 border border-slate-200/80">
-      {/* Interactive Controls Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-4 px-2 sm:px-4 pt-2">
-        <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-700">
-            {isVi ? 'Động Cơ Quản Trị Dự Án Quang Học' : 'Optical Project Flow Engine'}
-          </span>
-        </div>
-
-        {/* Tab switchers */}
-        <div className="flex flex-wrap items-center gap-1 p-1 bg-white/90 backdrop-blur-md rounded-xl border border-slate-200/90 shadow-2xs w-full sm:w-auto justify-center sm:justify-start">
-          <button
-            onClick={() => setActiveTab('flow')}
-            className={`px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-semibold rounded-lg transition-all ${
-              activeTab === 'flow'
-                ? 'bg-[#FF4D38] text-white shadow-xs'
-                : 'text-slate-600 hover:text-black hover:bg-slate-100'
-            }`}
-          >
-            {isVi ? 'Luồng 3D' : '3D Flow'}
-          </button>
-          <button
-            onClick={() => setActiveTab('sprint')}
-            className={`px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-semibold rounded-lg transition-all ${
-              activeTab === 'sprint'
-                ? 'bg-[#FF4D38] text-white shadow-xs'
-                : 'text-slate-600 hover:text-black hover:bg-slate-100'
-            }`}
-          >
-            {isVi ? 'Tiến Độ Sprint' : 'Sprint Velocity'}
-          </button>
-          <button
-            onClick={() => setActiveTab('gantt')}
-            className={`px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-semibold rounded-lg transition-all ${
-              activeTab === 'gantt'
-                ? 'bg-[#FF4D38] text-white shadow-xs'
-                : 'text-slate-600 hover:text-black hover:bg-slate-100'
-            }`}
-          >
-            {isVi ? 'Biểu Đồ Gantt' : 'Gantt Timeline'}
-          </button>
-        </div>
-      </div>
-
-      {/* Main Content Showcase */}
-      {activeTab === 'flow' && (
-        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
-          <Image
-            src="/showcase/tech_work_management.webp"
-            alt="Futuristic Work Management 3D Flow"
-            fill
-            unoptimized
-            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width: 1200px) 100vw, 1200px"
-            priority
-          />
-
-          {/* Floating Badge 1: Velocity */}
-          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 animate-float bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg max-w-[200px] hidden sm:block">
-            <div className="flex items-center gap-2 mb-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-              <span className="text-[11px] font-bold text-slate-900">
-                {isVi ? 'Vận tốc Sprint 14' : 'Sprint 14 Velocity'}
-              </span>
-            </div>
-            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-1">
-              <div className="bg-emerald-500 h-full w-[84%] rounded-full animate-pulse"></div>
-            </div>
-            <span className="text-[10px] text-slate-500 font-medium">
-              {isVi ? '+17% Vượt tiến độ bàn giao' : '+17% Delivered ahead'}
-            </span>
-          </div>
-
-          {/* Floating Badge 2: Casbin Verified */}
-          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 animate-float-delayed bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg hidden sm:block">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center font-bold text-xs">
-                <CheckIcon className="w-3.5 h-3.5" />
-              </div>
-              <div>
-                <p className="text-[11px] font-bold text-slate-900">
-                  {isVi ? 'Phân quyền giao việc đa tầng' : 'Multi-Tier Task Permissions'}
-                </p>
-                <p className="text-[10px] text-slate-500">
-                  {isVi ? 'Giao việc minh bạch chống can thiệp' : 'Tamper-proof Assignment'}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
+    <ShowcaseCard
+      title={isVi ? 'Bảng Kanban & Tiến độ dự án' : 'Sprint Kanban & Project Timeline'}
+      headerRight={
+        <ShowcaseTabBar tabs={tabs} activeTab={activeTab} onChange={setActiveTab} />
+      }
+    >
       {activeTab === 'sprint' && (
-        <div className="w-full bg-white rounded-2xl p-5 sm:p-7 border border-slate-200 shadow-md">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {[
-              {
-                id: 1,
-                title: isVi ? 'Hàng đợi (Backlog)' : 'Backlog (Epic)',
-                count: isVi ? '4 Nhiệm vụ' : '4 Tasks',
-                color: 'border-l-sky-500',
-                pct: 25,
-              },
-              {
-                id: 2,
-                title: isVi ? 'Đang thực hiện' : 'In Progress',
-                count: isVi ? '6 Nhiệm vụ' : '6 Tasks',
-                color: 'border-l-amber-500',
-                pct: 60,
-              },
-              {
-                id: 3,
-                title: isVi ? 'Kiểm tra & Review' : 'Code Review',
-                count: isVi ? '3 Nhiệm vụ' : '3 Tasks',
-                color: 'border-l-purple-500',
-                pct: 85,
-              },
-              {
-                id: 4,
-                title: isVi ? 'Đã xong & Nghiệm thu' : 'Done & Verified',
-                count: isVi ? '12 Nhiệm vụ' : '12 Tasks',
-                color: 'border-l-emerald-500',
-                pct: 100,
-              },
-            ].map((col) => (
-              <div
-                key={col.id}
-                onClick={() => setActiveTask(col.id)}
-                className={`p-4 rounded-xl border-2 transition-all cursor-pointer ${
-                  activeTask === col.id
-                    ? 'border-[#FF4D38] bg-orange-50/30 shadow-md'
-                    : 'border-slate-100 hover:border-slate-200 bg-slate-50/50'
-                }`}
-              >
-                <div className={`border-l-4 ${col.color} pl-2 mb-2`}>
-                  <p className="text-xs font-bold text-slate-900">{col.title}</p>
-                  <p className="text-[11px] text-slate-500">{col.count}</p>
-                </div>
-                <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden mt-3">
-                  <div
-                    className="h-full bg-[#FF4D38] rounded-full transition-all duration-500"
-                    style={{ width: `${col.pct}%` }}
-                  ></div>
-                </div>
-              </div>
-            ))}
+        <div className="w-full bg-white rounded-xl p-4 sm:p-6 border border-slate-900/[0.08]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {columns.map((col) => {
+              const isSelected = activeTask === col.id;
+              return (
+                <button
+                  type="button"
+                  key={col.id}
+                  onClick={() => setActiveTask(col.id)}
+                  className={`p-4 rounded-xl border text-left transition-colors duration-150 cursor-pointer ${
+                    isSelected
+                      ? 'border-[#FF4D38] bg-[#FFF8F7]'
+                      : 'border-slate-900/[0.08] hover:border-slate-900/[0.16] bg-[#F5F7FA]'
+                  }`}
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className={`w-2 h-2 rounded-full ${col.accent}`} />
+                    <p className="text-[13px] font-semibold text-[#111827]">{col.title}</p>
+                  </div>
+                  <p className="font-mono tabular-nums text-[12px] text-[#6B7487] pl-4">
+                    {col.count}
+                  </p>
+                  <div className="w-full bg-slate-200/80 h-1.5 rounded-full overflow-hidden mt-3">
+                    <div
+                      className={`h-full rounded-full transition-[width] duration-300 ${
+                        isSelected ? 'bg-[#FF4D38]' : 'bg-slate-400'
+                      }`}
+                      style={{ width: `${col.pct}%` }}
+                    />
+                  </div>
+                </button>
+              );
+            })}
           </div>
 
-          <div className="mt-5 p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-4 p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-900/[0.08] flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
-                <ZapIcon className="w-5 h-5 text-emerald-700" />
+              <div className="w-9 h-9 rounded-lg bg-white border border-slate-900/[0.08] text-[#111827] flex items-center justify-center shrink-0">
+                <ZapIcon className="w-4 h-4" />
               </div>
               <div>
-                <p className="text-xs font-bold text-slate-900">
-                  {isVi ? 'Đồng bộ Kanban thời gian thực với WebSocket' : 'Real-time WebSocket Kanban Sync'}
+                <p className="text-[13px] font-medium text-[#111827]">
+                  {isVi ? 'Đồng bộ trạng thái thẻ theo thời gian thực' : 'Real-time Kanban status sync'}
                 </p>
-                <p className="text-[11px] text-slate-500">
-                  {isVi ? 'Mọi thay đổi trạng thái thẻ được cập nhật tức thì tới toàn bộ đội ngũ' : 'Zero latency drag-and-drop state transitions across all connected clients'}
+                <p className="text-[12px] text-[#6B7487]">
+                  {isVi
+                    ? 'Cập nhật tức thì tới toàn bộ thành viên tham gia dự án'
+                    : 'Instant board updates across assigned project members'}
                 </p>
               </div>
             </div>
-            <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
-              60 FPS Smooth
+            <span className="font-mono tabular-nums text-[12px] font-medium text-[#16A34A]">
+              +17% vs last week
             </span>
           </div>
         </div>
       )}
 
       {activeTab === 'gantt' && (
-        <div className="w-full bg-white rounded-2xl p-5 sm:p-7 border border-slate-200 shadow-md">
+        <div className="w-full bg-white rounded-xl p-4 sm:p-6 border border-slate-900/[0.08]">
           <div className="space-y-3">
-            {[
-              {
-                label: isVi ? 'Q1: Nền tảng quản trị công việc tập trung' : 'Q1: Centralized Workspace Platform',
-                width: '90%',
-                progress: '90%',
-                color: 'bg-indigo-500',
-              },
-              {
-                label: isVi ? 'Q2: Phân quyền đa tầng & Đa tổ chức' : 'Q2: Multi-Tier Permissions Enforcement',
-                width: '75%',
-                progress: '75%',
-                color: 'bg-emerald-500',
-              },
-              {
-                label: isVi ? 'Q3: Tích hợp Camera AI & Nhận diện xe' : 'Q3: Vision AI & Smart Detection',
-                width: '55%',
-                progress: '55%',
-                color: 'bg-amber-500',
-              },
-              {
-                label: isVi ? 'Q4: Triển khai vận hành & Kiểm toán' : 'Q4: Production Deployment & Auditing',
-                width: '35%',
-                progress: '35%',
-                color: 'bg-rose-500',
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                <div className="flex justify-between text-xs font-semibold text-slate-800 mb-2">
+            {ganttRows.map((item, idx) => (
+              <div key={idx} className="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-900/[0.06]">
+                <div className="flex justify-between gap-3 text-[13px] font-medium text-[#111827] mb-2">
                   <span>{item.label}</span>
-                  <span className="font-mono text-slate-600">{item.progress}</span>
+                  <span className="font-mono tabular-nums text-[#4B5565]">{item.progress}</span>
                 </div>
-                <div className="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
+                <div className="w-full bg-slate-200/80 h-2 rounded-full overflow-hidden">
                   <div
-                    className={`h-full ${item.color} rounded-full transition-all duration-700`}
+                    className={`h-full rounded-full transition-[width] duration-300 ${
+                      item.highlight ? 'bg-[#FF4D38]' : 'bg-[#111827]'
+                    }`}
                     style={{ width: item.width }}
-                  ></div>
+                  />
                 </div>
               </div>
             ))}
           </div>
         </div>
       )}
-    </div>
+    </ShowcaseCard>
   );
 }

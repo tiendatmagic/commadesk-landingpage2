@@ -26,7 +26,7 @@ export function ShowcaseTabBar<T extends string = string>({
 }: ShowcaseTabBarProps<T>) {
   return (
     <div
-      className={`flex items-center gap-1 p-1 bg-white/95 backdrop-blur-md rounded-xl border border-slate-200 shadow-2xs ${className}`}
+      className={`flex items-center gap-1 p-1 bg-white rounded-[10px] border border-slate-900/[0.08] shadow-[0_1px_2px_rgba(17,24,39,0.04)] ${className}`}
     >
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
@@ -35,22 +35,22 @@ export function ShowcaseTabBar<T extends string = string>({
             key={tab.id}
             type="button"
             onClick={() => onChange(tab.id)}
-            className={`inline-flex items-center gap-1.5 rounded-lg font-semibold transition-all cursor-pointer ${
-              compact ? 'px-2.5 py-1 text-[11px]' : 'px-3 py-1.5 text-xs'
+            className={`inline-flex items-center gap-1.5 rounded-lg font-medium transition-colors duration-150 cursor-pointer ${
+              compact ? 'px-2.5 py-1 text-[12px]' : 'px-3 py-1.5 text-[12.5px]'
             } ${
               isActive
-                ? 'bg-[#FF4D38] text-white shadow-xs'
-                : 'text-slate-600 hover:text-black hover:bg-slate-100'
+                ? 'bg-[#111827] text-white'
+                : 'text-[#4B5565] hover:text-[#111827] hover:bg-[#F5F7FA]'
             }`}
           >
             {tab.icon}
             <span>{tab.label}</span>
             {tab.badge !== undefined && (
               <span
-                className={`text-[9px] font-bold px-1 py-0.2 rounded-md ${
+                className={`font-mono tabular-nums text-[10px] font-medium px-1.5 py-0.5 rounded ${
                   isActive
-                    ? 'bg-white/20 text-white'
-                    : 'bg-slate-100 text-slate-700'
+                    ? 'bg-white/15 text-white'
+                    : 'bg-[#ECEFF4] text-[#4B5565]'
                 }`}
               >
                 {tab.badge}
@@ -74,7 +74,7 @@ export interface ShowcaseCardProps {
 
 export function ShowcaseCard({
   title,
-  liveIndicator = true,
+  liveIndicator = false,
   headerRight,
   children,
   className = '',
@@ -84,16 +84,16 @@ export function ShowcaseCard({
 
   return (
     <div
-      className={`relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-slate-100/60 p-3 sm:p-5 border border-slate-200/80 text-left font-sans select-none ${className}`}
+      className={`relative w-full rounded-xl overflow-hidden bg-[#F5F7FA] p-3 sm:p-4 border border-slate-900/[0.08] text-left font-sans select-none ${className}`}
     >
       {hasHeader && (
-        <div className="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3 border-b border-slate-200/80">
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-3.5 pb-3 border-b border-slate-900/[0.06]">
           {title ? (
             <div className="flex items-center gap-2">
               {liveIndicator && (
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#16A34A]" />
               )}
-              <span className="text-xs font-bold text-slate-800 uppercase tracking-wider">
+              <span className="text-[13px] font-medium text-[#111827]">
                 {title}
               </span>
             </div>

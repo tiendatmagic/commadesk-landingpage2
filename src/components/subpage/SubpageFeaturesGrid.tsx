@@ -31,58 +31,57 @@ export function SubpageFeaturesGrid({
   return (
     <section
       id="capabilities"
-      className="canvas-card scroll-mt-28 bg-white rounded-[24px] sm:rounded-[44px] md:rounded-[48px] shadow-sm border border-slate-200/60 overflow-hidden relative pt-12 sm:pt-28 pb-12 sm:pb-28 px-3 sm:px-10 lg:px-14"
+      className="canvas-card scroll-mt-24 bg-white rounded-2xl sm:rounded-3xl shadow-[0_1px_2px_rgba(17,24,39,0.05)] border border-slate-900/[0.08] overflow-hidden relative pt-14 sm:pt-20 pb-14 sm:pb-20 px-4 sm:px-8 lg:px-12"
     >
       {/* Header */}
-      <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#6366F1]"></span>
+      <div className="max-w-2xl mx-auto text-center mb-10 sm:mb-14">
+        <p className="text-[13px] font-medium text-[#6B7487] mb-2">
           {badge}
-        </div>
+        </p>
         <TextBlurWipe
           as="h2"
-          className="text-2xl sm:text-4xl md:text-5xl font-black text-gray-900 tracking-tight"
+          className="text-[28px] sm:text-4xl font-semibold text-[#111827] tracking-[-0.02em] leading-[1.12]"
         >
           {title}
         </TextBlurWipe>
-        <p className="mt-2.5 sm:mt-3 text-xs sm:text-base text-gray-500 max-w-xl mx-auto leading-relaxed">
+        <p className="mt-3 text-[14px] sm:text-[16px] text-[#4B5565] max-w-xl mx-auto leading-relaxed">
           {subtitle}
         </p>
       </div>
 
-      {/* Bento Grid */}
+      {/* Capabilities Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-[1360px] mx-auto">
         {features.map((item) => (
           <div
             key={item.id}
-            className="group relative rounded-2xl sm:rounded-3xl bg-slate-50/70 border border-slate-200/70 p-4 sm:p-6 md:p-8 hover:bg-white hover:shadow-xl hover:shadow-slate-200/60 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+            className="group relative rounded-2xl bg-[#F5F7FA] border border-slate-900/[0.08] p-6 hover:bg-white hover:border-slate-900/[0.15] transition-colors duration-150 flex flex-col justify-between"
           >
             <div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#FF4D38] bg-[#FF4D38]/10 px-2.5 py-1 rounded-full">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[12px] font-medium text-[#6B7487]">
                   {item.tag}
                 </span>
                 {item.icon && (
-                  <div className="w-10 h-10 rounded-2xl bg-white border border-slate-100 shadow-xs flex items-center justify-center text-slate-700 group-hover:text-[#FF4D38] transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-white border border-slate-900/[0.08] flex items-center justify-center text-[#4B5565] group-hover:text-[#FF4D38] transition-colors">
                     {item.icon}
                   </div>
                 )}
               </div>
 
-              <h3 className="text-xl font-bold text-gray-950 tracking-tight group-hover:text-[#FF4D38] transition-colors">
+              <h3 className="text-[18px] font-semibold text-[#111827] tracking-[-0.01em]">
                 {item.title}
               </h3>
-              <p className="mt-2.5 text-sm text-gray-500 leading-relaxed font-normal">
+              <p className="mt-2 text-[14px] text-[#4B5565] leading-relaxed font-normal">
                 {item.description}
               </p>
             </div>
 
             {item.metricBadge && (
-              <div className="mt-6 pt-4 border-t border-slate-200/60 flex items-baseline justify-between">
-                <span className="text-xs text-slate-400 font-medium">
+              <div className="mt-5 pt-3.5 border-t border-slate-900/[0.06] flex items-baseline justify-between">
+                <span className="text-[12px] text-[#6B7487] font-normal">
                   {item.metricBadge.label}
                 </span>
-                <span className="text-sm font-extrabold text-slate-900 bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full border border-emerald-200/60">
+                <span className="font-mono tabular-nums text-[12.5px] font-medium text-[#111827]">
                   {item.metricBadge.value}
                 </span>
               </div>

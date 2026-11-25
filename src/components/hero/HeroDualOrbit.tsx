@@ -232,7 +232,7 @@ export function HeroDualOrbit() {
           } ${av.defaultTop} ${av.defaultLeft}`}
           data-index={index}
         >
-          <div className="hero2-avatar-card w-[74px] h-[98px] min-[390px]:w-[80px] min-[390px]:h-[106px] sm:w-[130px] sm:h-[168px] md:w-[148px] md:h-[192px] lg:w-[110px] lg:h-[144px] xl:w-[165px] xl:h-[215px] rounded-[18px] sm:rounded-[28px] md:rounded-[32px] lg:rounded-[22px] xl:rounded-[32px] bg-white shadow-lg sm:shadow-xl shadow-slate-300/40 overflow-hidden border-2 sm:border-[3px] border-white relative">
+          <div className="hero2-avatar-card w-[74px] h-[98px] min-[390px]:w-[80px] min-[390px]:h-[106px] sm:w-[130px] sm:h-[168px] md:w-[148px] md:h-[192px] lg:w-[110px] lg:h-[144px] xl:w-[165px] xl:h-[215px] rounded-2xl bg-white shadow-[0_8px_24px_rgba(17,24,39,0.08)] overflow-hidden border-2 border-white relative">
             <Image
               src={av.src}
               alt={av.alt}
@@ -254,7 +254,7 @@ export function HeroDualOrbit() {
           } ${av.defaultTop} ${av.defaultRight}`}
           data-index={index}
         >
-          <div className="hero2-avatar-card w-[74px] h-[98px] min-[390px]:w-[80px] min-[390px]:h-[106px] sm:w-[130px] sm:h-[168px] md:w-[148px] md:h-[192px] lg:w-[110px] lg:h-[144px] xl:w-[165px] xl:h-[215px] rounded-[18px] sm:rounded-[28px] md:rounded-[32px] lg:rounded-[22px] xl:rounded-[32px] bg-white shadow-lg sm:shadow-xl shadow-slate-300/40 overflow-hidden border-2 sm:border-[3px] border-white relative">
+          <div className="hero2-avatar-card w-[74px] h-[98px] min-[390px]:w-[80px] min-[390px]:h-[106px] sm:w-[130px] sm:h-[168px] md:w-[148px] md:h-[192px] lg:w-[110px] lg:h-[144px] xl:w-[165px] xl:h-[215px] rounded-2xl bg-white shadow-[0_8px_24px_rgba(17,24,39,0.08)] overflow-hidden border-2 border-white relative">
             <Image
               src={av.src}
               alt={av.alt}

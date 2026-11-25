@@ -32,11 +32,11 @@ export default function ReleaseNotesPage() {
     {
       version: 'v2.4.0',
       date: isVi ? 'Tháng 10, 2026' : 'October 2026',
-      badge: isVi ? 'Bản Mới Nhất' : 'Latest Release',
-      badgeColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+      badge: isVi ? 'Mới nhất' : 'Latest',
+      badgeColor: 'bg-emerald-50 text-[#16A34A] border-emerald-200/80',
       summary: {
         vi: 'Ra mắt 5 phân hệ: Kho SKU & Tài sản, CMS kéo thả, KiotViet POS Sync, Khảo sát eNPS và Phê duyệt tập trung.',
-        en: '5 core pillars: SKU Inventory & Assets, Visual CMS, KiotViet POS Sync, eNPS Surveys, and Approvals.',
+        en: '5 core modules: SKU Inventory & Assets, Visual CMS, KiotViet POS Sync, eNPS Surveys, and Approvals.',
       },
       highlights: [
         {
@@ -88,8 +88,8 @@ export default function ReleaseNotesPage() {
     {
       version: 'v2.3.0',
       date: isVi ? 'Tháng 09, 2026' : 'September 2026',
-      badge: isVi ? 'Cập Nhật Nền Tảng' : 'Platform Update',
-      badgeColor: 'bg-blue-50 text-blue-700 border-blue-200',
+      badge: isVi ? 'Cập nhật nền tảng' : 'Platform update',
+      badgeColor: 'bg-[#F5F7FA] text-[#4B5565] border-slate-900/[0.08]',
       summary: {
         vi: 'Chuẩn văn bản Nghị định 30, Face AI & ANPR biển số xe, CommaMeet video HD.',
         en: 'Decree 30 document registry, Face AI & ANPR recognition, and CommaMeet HD.',
@@ -113,7 +113,7 @@ export default function ReleaseNotesPage() {
             en: 'Face AI & ANPR Recognition',
           },
           desc: {
-            vi: 'Nhận diện biển số và chấm công sinh trắc học siêu tốc < 85ms qua camera VMS.',
+            vi: 'Nhận diện biển số và chấm công sinh trắc học < 85ms qua camera VMS.',
             en: 'Sub-85ms plate and biometric recognition across VMS cameras.',
           },
         },
@@ -122,8 +122,8 @@ export default function ReleaseNotesPage() {
     {
       version: 'v2.2.0',
       date: isVi ? 'Tháng 08, 2026' : 'August 2026',
-      badge: isVi ? 'Bảo Mật & Ứng Dụng' : 'Security & App Parity',
-      badgeColor: 'bg-slate-100 text-slate-700 border-slate-200',
+      badge: isVi ? 'Bảo mật & Ứng dụng' : 'Security & app parity',
+      badgeColor: 'bg-[#F5F7FA] text-[#4B5565] border-slate-900/[0.08]',
       summary: {
         vi: 'Ra mắt Ứng dụng Máy tính Windows, Ứng dụng Di động và nâng cấp Phân quyền đa tầng doanh nghiệp.',
         en: 'Windows Desktop app, Mobile app, and enhanced multi-tier enterprise permissions.',
@@ -144,174 +144,180 @@ export default function ReleaseNotesPage() {
     },
   ];
 
-  const filteredReleases = releases.map((release) => ({
-    ...release,
-    highlights: release.highlights.filter((item) => {
-      if (activeFilter === 'all') return true;
-      return item.category === activeFilter;
-    }),
-  })).filter((release) => release.highlights.length > 0 || activeFilter === 'all');
+  const filteredReleases = releases
+    .map((release) => ({
+      ...release,
+      highlights: release.highlights.filter((item) => {
+        if (activeFilter === 'all') return true;
+        return item.category === activeFilter;
+      }),
+    }))
+    .filter((release) => release.highlights.length > 0 || activeFilter === 'all');
 
   return (
-    <div className="min-h-screen bg-[#FBFBFD] text-slate-900 selection:bg-[#FF4D38] selection:text-white">
+    <>
       <Navbar />
 
-      <main className="max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 pb-20">
-        {/* Header Breadcrumb & Title */}
-        <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200/90 text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-4">
-            <span className="w-2 h-2 rounded-full bg-[#FF4D38]"></span>
-            {isVi ? 'Nhật Ký Phát Hành' : "Changelog"}
+      <main className="max-w-[1536px] mx-auto flex flex-col gap-6 sm:gap-10 md:gap-12 relative px-2.5 sm:px-6 lg:px-8 pb-4 sm:pb-6">
+        <section className="canvas-card bg-white rounded-2xl sm:rounded-3xl shadow-[0_1px_2px_rgba(17,24,39,0.05)] border border-slate-900/[0.08] overflow-hidden relative pt-24 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-8 lg:px-12">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+            <p className="text-[13px] font-medium text-[#6B7487] mb-2">
+              {isVi ? 'Nhật ký phát hành' : 'Changelog'}
+            </p>
+
+            <h1 className="text-[32px] sm:text-5xl font-semibold tracking-[-0.025em] text-[#111827] mb-4 leading-[1.08]">
+              {isVi ? 'Lịch sử cập nhật & nâng cấp' : 'Release notes & changelog'}
+            </h1>
+
+            <p className="text-[15px] sm:text-[17px] text-[#4B5565] leading-relaxed">
+              {isVi
+                ? 'Theo dõi các cải tiến, phân hệ mới và nâng cấp bảo mật định kỳ của CommaDesk.'
+                : 'Product updates, new modules, and security enhancements across CommaDesk.'}
+            </p>
+
+            {/* Filter Controls */}
+            <div className="flex flex-wrap items-center justify-center gap-2 mt-7">
+              <button
+                type="button"
+                onClick={() => setActiveFilter('all')}
+                className={`px-3.5 h-9 rounded-[10px] text-[13px] font-medium transition-colors cursor-pointer ${
+                  activeFilter === 'all'
+                    ? 'bg-[#111827] text-white'
+                    : 'bg-[#F5F7FA] border border-slate-900/[0.08] text-[#4B5565] hover:text-[#111827]'
+                }`}
+              >
+                {isVi ? 'Tất cả' : 'All updates'}
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveFilter('feature')}
+                className={`inline-flex items-center gap-1.5 px-3.5 h-9 rounded-[10px] text-[13px] font-medium transition-colors cursor-pointer ${
+                  activeFilter === 'feature'
+                    ? 'bg-[#111827] text-white'
+                    : 'bg-[#F5F7FA] border border-slate-900/[0.08] text-[#4B5565] hover:text-[#111827]'
+                }`}
+              >
+                <SparklesIcon className="w-3.5 h-3.5" />
+                <span>{isVi ? 'Tính năng mới' : 'New features'}</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveFilter('security')}
+                className={`inline-flex items-center gap-1.5 px-3.5 h-9 rounded-[10px] text-[13px] font-medium transition-colors cursor-pointer ${
+                  activeFilter === 'security'
+                    ? 'bg-[#111827] text-white'
+                    : 'bg-[#F5F7FA] border border-slate-900/[0.08] text-[#4B5565] hover:text-[#111827]'
+                }`}
+              >
+                <ShieldCheckIcon className="w-3.5 h-3.5" />
+                <span>{isVi ? 'Bảo mật & RBAC' : 'Security & RBAC'}</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveFilter('enhancement')}
+                className={`inline-flex items-center gap-1.5 px-3.5 h-9 rounded-[10px] text-[13px] font-medium transition-colors cursor-pointer ${
+                  activeFilter === 'enhancement'
+                    ? 'bg-[#111827] text-white'
+                    : 'bg-[#F5F7FA] border border-slate-900/[0.08] text-[#4B5565] hover:text-[#111827]'
+                }`}
+              >
+                <ZapIcon className="w-3.5 h-3.5" />
+                <span>{isVi ? 'Hiệu năng' : 'Enhancements'}</span>
+              </button>
+            </div>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
-            {isVi ? 'Lịch Sử Cập Nhật & Nâng Cấp' : 'Release Notes & Changelog'}
-          </h1>
-
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            {isVi
-              ? 'Khám phá các cải tiến, tính năng mới và nâng cấp bảo mật liên tục của CommaDesk.'
-              : 'Continuous feature additions, module enhancements, and security updates for CommaDesk.'}
-          </p>
-
-          {/* Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
-            <button
-              type="button"
-              onClick={() => setActiveFilter('all')}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                activeFilter === 'all'
-                  ? 'bg-[#FF4D38] text-white shadow-xs'
-                  : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'
-              }`}
-            >
-              {isVi ? 'Tất cả thay đổi' : 'All Updates'}
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveFilter('feature')}
-              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                activeFilter === 'feature'
-                  ? 'bg-[#FF4D38] text-white shadow-xs'
-                  : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'
-              }`}
-            >
-              <SparklesIcon className="w-3.5 h-3.5" />
-              <span>{isVi ? 'Tính năng mới' : 'New Features'}</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveFilter('security')}
-              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                activeFilter === 'security'
-                  ? 'bg-blue-600 text-white shadow-xs'
-                  : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'
-              }`}
-            >
-              <ShieldCheckIcon className="w-3.5 h-3.5" />
-              <span>{isVi ? 'Bảo mật & RBAC' : 'Security & RBAC'}</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveFilter('enhancement')}
-              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                activeFilter === 'enhancement'
-                  ? 'bg-emerald-600 text-white shadow-xs'
-                  : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'
-              }`}
-            >
-              <ZapIcon className="w-3.5 h-3.5" />
-              <span>{isVi ? 'Cải tiến & Hiệu năng' : 'Enhancements'}</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Timeline Stream */}
-        <div className="max-w-6xl mx-auto space-y-12">
-          {filteredReleases.map((release) => (
-            <div
-              key={release.version}
-              className="relative p-6 sm:p-8 rounded-3xl bg-white border border-slate-200/90 shadow-md shadow-slate-200/40 space-y-6"
-            >
-              {/* Release Header */}
-              <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100">
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl font-extrabold text-slate-900 tracking-tight">
-                    {release.version}
-                  </span>
-                  <span className={`text-xs font-bold px-2.5 py-1 rounded-full border ${release.badgeColor}`}>
-                    {release.badge}
+          {/* Timeline Stream */}
+          <div className="max-w-4xl mx-auto space-y-6">
+            {filteredReleases.map((release) => (
+              <div
+                key={release.version}
+                className="p-6 sm:p-8 rounded-2xl bg-[#F5F7FA] border border-slate-900/[0.08] space-y-5"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-900/[0.06]">
+                  <div className="flex items-center gap-3">
+                    <span className="font-mono tabular-nums text-[22px] font-semibold text-[#111827]">
+                      {release.version}
+                    </span>
+                    <span className={`text-[12px] font-medium px-2.5 py-0.5 rounded-md border ${release.badgeColor}`}>
+                      {release.badge}
+                    </span>
+                  </div>
+                  <span className="font-mono text-[12px] text-[#6B7487]">
+                    {release.date}
                   </span>
                 </div>
-                <span className="text-xs font-semibold text-slate-400">
-                  {release.date}
-                </span>
-              </div>
 
-              {/* Summary */}
-              <p className="text-sm text-slate-700 leading-relaxed font-medium">
-                {isVi ? release.summary.vi : release.summary.en}
-              </p>
+                <p className="text-[14px] sm:text-[15px] text-[#111827] leading-relaxed">
+                  {isVi ? release.summary.vi : release.summary.en}
+                </p>
 
-              {/* Highlights Cards */}
-              <div className="space-y-3 pt-2">
-                {release.highlights.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/80 space-y-1.5 hover:bg-white hover:border-slate-300 transition-colors"
-                  >
-                    <div className="flex items-center gap-2">
-                      <span className={`text-[10px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider ${
-                        item.category === 'feature'
-                          ? 'bg-rose-100 text-rose-700'
-                          : item.category === 'security'
-                          ? 'bg-blue-100 text-blue-700'
-                          : 'bg-emerald-100 text-emerald-700'
-                      }`}>
-                        {item.category === 'feature' ? (isVi ? 'Tính năng' : 'Feature') : item.category === 'security' ? (isVi ? 'Bảo mật' : 'Security') : (isVi ? 'Hiệu năng' : 'Performance')}
-                      </span>
-                      <h3 className="text-sm font-bold text-slate-900">
-                        {isVi ? item.title.vi : item.title.en}
-                      </h3>
+                <div className="space-y-2.5">
+                  {release.highlights.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="p-4 rounded-xl bg-white border border-slate-900/[0.08] space-y-1"
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <span
+                          className={`text-[11px] font-medium px-2 py-0.5 rounded ${
+                            item.category === 'feature'
+                              ? 'bg-[#FF4D38]/10 text-[#C8321F]'
+                              : item.category === 'security'
+                              ? 'bg-[#ECEFF4] text-[#111827]'
+                              : 'bg-emerald-50 text-[#16A34A]'
+                          }`}
+                        >
+                          {item.category === 'feature'
+                            ? isVi ? 'Tính năng' : 'Feature'
+                            : item.category === 'security'
+                            ? isVi ? 'Bảo mật' : 'Security'
+                            : isVi ? 'Hiệu năng' : 'Performance'}
+                        </span>
+                        <h3 className="text-[14px] font-semibold text-[#111827]">
+                          {isVi ? item.title.vi : item.title.en}
+                        </h3>
+                      </div>
+                      <p className="text-[13px] text-[#4B5565] leading-relaxed">
+                        {isVi ? item.desc.vi : item.desc.en}
+                      </p>
                     </div>
-                    <p className="text-xs text-slate-600 leading-relaxed pl-1">
-                      {isVi ? item.desc.vi : item.desc.en}
-                    </p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom CTA to Docs */}
-        <div className="max-w-6xl mx-auto mt-16 p-8 rounded-3xl bg-gradient-to-br from-white to-slate-50 border border-slate-200 text-center shadow-xs space-y-3">
-          <h2 className="text-lg sm:text-xl font-bold text-slate-900">
-            {isVi ? 'Tìm Hiểu Chi Tiết Về Tính Năng Nghiệp Vụ?' : 'Explore Feature Guides & Operations?'}
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
-            {isVi
-              ? 'Tham khảo cẩm nang hướng dẫn sử dụng và quy trình vận hành toàn diện cho doanh nghiệp.'
-              : 'Explore comprehensive user guides and operational workflows tailored for your business.'}
-          </p>
-          <div className="pt-2 flex items-center justify-center gap-3">
-            <Link
-              href="/docs"
-              className="px-5 py-2.5 rounded-full bg-[#FF4D38] text-white text-xs font-bold shadow-sm hover:bg-[#e03d29] transition-all"
-            >
-              {isVi ? 'Xem Cẩm Nang Tính Năng' : 'Explore Feature Handbook'}
-            </Link>
-            <Link
-              href="/deployment"
-              className="px-5 py-2.5 rounded-full bg-white border border-slate-200 text-slate-700 text-xs font-bold hover:bg-slate-50 transition-all"
-            >
-              {isVi ? 'Mô Hình Triển Khai' : 'Deployment Options'}
-            </Link>
+            ))}
           </div>
-        </div>
-      </main>
 
-      <Footer />
-    </div>
+          {/* Bottom CTA */}
+          <div className="max-w-4xl mx-auto mt-10 p-6 sm:p-8 rounded-2xl bg-[#F5F7FA] border border-slate-900/[0.08] text-center space-y-3">
+            <h2 className="text-[20px] font-semibold text-[#111827]">
+              {isVi ? 'Tìm hiểu chi tiết tính năng nghiệp vụ' : 'Explore feature guides and operations'}
+            </h2>
+            <p className="text-[14px] text-[#4B5565] max-w-xl mx-auto">
+              {isVi
+                ? 'Tham khảo cẩm nang hướng dẫn sử dụng và quy trình vận hành cho doanh nghiệp.'
+                : 'Read user guides and operational workflows tailored for your teams.'}
+            </p>
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+              <Link
+                href="/docs"
+                className="inline-flex items-center justify-center h-10 px-5 rounded-[10px] bg-[#FF4D38] hover:bg-[#E03E2A] text-white text-[13px] font-medium transition-colors"
+              >
+                {isVi ? 'Xem cẩm nang tính năng' : 'Feature handbook'}
+              </Link>
+              <Link
+                href="/deployment"
+                className="inline-flex items-center justify-center h-10 px-5 rounded-[10px] bg-white border border-slate-900/[0.08] text-[#111827] text-[13px] font-medium hover:bg-[#ECEFF4] transition-colors"
+              >
+                {isVi ? 'Mô hình triển khai' : 'Deployment options'}
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <Footer />
+      </main>
+    </>
   );
 }

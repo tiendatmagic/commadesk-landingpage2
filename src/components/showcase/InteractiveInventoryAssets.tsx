@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import {
   BoxIcon,
   ClipboardListIcon,
@@ -16,28 +15,23 @@ interface InteractiveInventoryAssetsProps {
 }
 
 export function InteractiveInventoryAssets({ isVi }: InteractiveInventoryAssetsProps) {
-  const [activeTab, setActiveTab] = useState<'3d-warehouse' | 'warehouses' | 'vouchers' | 'assets'>('3d-warehouse');
+  const [activeTab, setActiveTab] = useState<'warehouses' | 'vouchers' | 'assets'>('warehouses');
   const [selectedItem, setSelectedItem] = useState<number>(0);
 
   const tabs = [
     {
-      id: '3d-warehouse' as const,
-      label: isVi ? 'Kho Thông Minh 3D' : '3D Warehouse',
-      icon: <BoxIcon className="w-3.5 h-3.5" />,
-    },
-    {
       id: 'warehouses' as const,
-      label: isVi ? 'Kho & SKU' : 'SKU Stock',
+      label: isVi ? 'Kho & SKU' : 'SKU stock',
       icon: <BoxIcon className="w-3.5 h-3.5" />,
     },
     {
       id: 'vouchers' as const,
-      label: isVi ? 'Phiếu Kho' : 'Vouchers',
+      label: isVi ? 'Phiếu kho' : 'Vouchers',
       icon: <ClipboardListIcon className="w-3.5 h-3.5" />,
     },
     {
       id: 'assets' as const,
-      label: isVi ? 'Tài Sản Serial' : 'Serial Assets',
+      label: isVi ? 'Tài sản serial' : 'Serial assets',
       icon: <LaptopIcon className="w-3.5 h-3.5" />,
     },
   ];
@@ -45,63 +39,57 @@ export function InteractiveInventoryAssets({ isVi }: InteractiveInventoryAssetsP
   const inventoryStock = [
     {
       sku: 'SKU-LOG-204',
-      name: isVi ? 'Thùng Carton Tiêu Chuẩn 5 Lớp' : '5-Ply Shipping Carton Box',
+      name: isVi ? 'Thùng Carton 5 lớp' : '5-Ply Shipping Carton Box',
       warehouse: isVi ? 'Kho Tổng Quang Minh' : 'Quang Minh Central Hub',
       stock: 4850,
       min: 1000,
       status: 'safe',
-      trend: '+12%',
-      value: '24,250,000 đ',
     },
     {
       sku: 'SKU-DEV-882',
-      name: isVi ? 'Màn Hình Dell UltraSharp U2723QE' : 'Dell UltraSharp 27" 4K',
-      warehouse: isVi ? 'Kho Kỹ Thuật Tầng 4' : 'Engineering Dept Hub',
+      name: isVi ? 'Màn hình Dell UltraSharp 27" 4K' : 'Dell UltraSharp 27" 4K',
+      warehouse: isVi ? 'Kho Kỹ thuật tầng 4' : 'Engineering Dept Hub',
       stock: 3,
       min: 8,
       status: 'low',
-      trend: '-62%',
-      value: '43,500,000 đ',
     },
     {
       sku: 'SKU-VPP-114',
-      name: isVi ? 'Hộp Mực HP LaserJet Toner 85A' : 'HP Toner Cartridge 85A',
-      warehouse: isVi ? 'Kho Văn Phòng Phẩm Keangnam' : 'Keangnam Supplies Depot',
+      name: isVi ? 'Hộp mực HP LaserJet 85A' : 'HP Toner Cartridge 85A',
+      warehouse: isVi ? 'Kho Văn phòng phẩm Keangnam' : 'Keangnam Supplies Depot',
       stock: 28,
       min: 20,
       status: 'safe',
-      trend: '+5%',
-      value: '26,600,000 đ',
     },
   ];
 
   const vouchers = [
     {
       code: 'NK-2026-0814',
-      type: isVi ? 'Phiếu Nhập Kho' : 'Inbound Receipt',
+      type: isVi ? 'Phiếu nhập kho' : 'Inbound receipt',
       source: isVi ? 'Nhà cung cấp Dell Vietnam' : 'Dell Vendor Official',
       itemsCount: '15 SKU',
       approval: isVi ? 'Đã duyệt 2/2 cấp' : 'Approved (2/2)',
-      time: '14:20 Hôm nay',
-      statusColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+      time: '14:20',
+      tone: 'text-[#16A34A]',
     },
     {
       code: 'XK-2026-0492',
-      type: isVi ? 'Phiếu Xuất Cấp Phát' : 'Asset Dispatch',
-      source: isVi ? 'Phòng Kỹ Thuật & Phần Mềm' : 'Engineering Department',
-      itemsCount: '4 Máy trạm',
+      type: isVi ? 'Phiếu xuất cấp phát' : 'Asset dispatch',
+      source: isVi ? 'Phòng Kỹ thuật' : 'Engineering dept',
+      itemsCount: isVi ? '4 máy trạm' : '4 workstations',
       approval: isVi ? 'Chờ Kế toán trưởng' : 'Pending CFO',
-      time: '11:05 Hôm nay',
-      statusColor: 'bg-amber-50 text-amber-700 border-amber-200',
+      time: '11:05',
+      tone: 'text-[#D97706]',
     },
     {
       code: 'CK-2026-0118',
-      type: isVi ? 'Phiếu Chuyển Kho' : 'Inter-Warehouse Transfer',
-      source: isVi ? 'Kho Tổng -> Chi Nhánh Đà Nẵng' : 'Main Hub -> Da Nang Hub',
-      itemsCount: '120 Kiện',
-      approval: isVi ? 'Đang vận chuyển' : 'In Transit',
-      time: '08:45 Hôm nay',
-      statusColor: 'bg-blue-50 text-blue-700 border-blue-200',
+      type: isVi ? 'Phiếu chuyển kho' : 'Inter-warehouse transfer',
+      source: isVi ? 'Kho Tổng -> Đà Nẵng' : 'Main Hub -> Da Nang',
+      itemsCount: isVi ? '120 kiện' : '120 cases',
+      approval: isVi ? 'Đang vận chuyển' : 'In transit',
+      time: '08:45',
+      tone: 'text-[#4B5565]',
     },
   ];
 
@@ -110,154 +98,112 @@ export function InteractiveInventoryAssets({ isVi }: InteractiveInventoryAssetsP
       serial: 'MBP-M3M-99104',
       model: 'MacBook Pro 16" M3 Max',
       holder: isVi ? 'Đặng Hoàng Sơn (Tech Lead)' : 'Son Dang (Tech Lead)',
-      dept: 'Engineering Core',
-      assignedDate: '15/01/2026',
       warranty: isVi ? 'Bảo hành đến 2028' : 'Warranty until 2028',
       health: '98%',
     },
     {
       serial: 'PRN-HP-55210',
-      model: 'Máy In Laser HP Enterprise M608',
-      holder: isVi ? 'Tầng 6 - Khối Vận Hành' : 'Floor 6 - Operations Hub',
-      dept: 'Operations',
-      assignedDate: '10/08/2025',
-      warranty: isVi ? 'Bảo hành chính hãng' : 'OEM Certified',
+      model: 'HP Enterprise LaserJet M608',
+      holder: isVi ? 'Tầng 6 - Khối Vận hành' : 'Floor 6 - Operations Hub',
+      warranty: isVi ? 'Bảo hành chính hãng' : 'OEM certified',
       health: '92%',
     },
   ];
 
   return (
     <ShowcaseCard
-      title={isVi ? 'Quản Trị Kho SKU & Tài Sản Doanh Nghiệp' : 'SKU Inventory & Asset Lifecycle'}
+      title={isVi ? 'Kho hàng SKU & Quản lý tài sản' : 'SKU Inventory & Serial Assets'}
       headerRight={
-        <ShowcaseTabBar
-          tabs={tabs}
-          activeTab={activeTab}
-          onChange={setActiveTab}
-        />
+        <ShowcaseTabBar tabs={tabs} activeTab={activeTab} onChange={setActiveTab} />
       }
     >
-      {activeTab === '3d-warehouse' && (
-        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
-          <Image
-            src="/showcase/tech_inventory_assets.webp"
-            alt="Futuristic 3D Smart Warehouse and Automated Asset Tracking"
-            fill
-            unoptimized
-            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width: 1200px) 100vw, 1200px"
-            priority
-          />
-
-          {/* Floating Badge 1: Robotic Matrix Storage */}
-          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 animate-float bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg max-w-[220px] hidden sm:block">
-            <div className="flex items-center gap-2 mb-1.5">
-              <span className="w-2 h-2 rounded-full bg-amber-500"></span>
-              <span className="text-[11px] font-bold text-slate-900">
-                {isVi ? 'Kho Tự Động Hóa Robot' : 'Robotic Matrix Storage'}
-              </span>
-            </div>
-            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-1">
-              <div className="bg-amber-500 h-full w-[95%] rounded-full animate-pulse"></div>
-            </div>
-            <span className="text-[10px] text-slate-500 font-medium">
-              {isVi ? 'Quét RFID & Barcode Laser tức thì' : 'Instant Laser Barcode & RFID Sync'}
-            </span>
-          </div>
-
-          {/* Floating Badge 2: Stock Accuracy */}
-          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 animate-float-delayed bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg hidden sm:block">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">
-                <CheckIcon className="w-3.5 h-3.5" />
-              </div>
-              <div>
-                <p className="text-[11px] font-bold text-slate-900">
-                  {isVi ? 'Độ Chính Xác Tồn Kho 99.9%' : '99.9% Stock Accuracy'}
-                </p>
-                <p className="text-[10px] text-emerald-600 font-semibold">
-                  {isVi ? 'Tự động cân đối phiếu nhập xuất' : 'Automated Ledger Reconciliation'}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
       {activeTab === 'warehouses' && (
         <div className="space-y-3">
-          {/* Warehouse 3D Overview Card */}
-          <div className="rounded-2xl bg-gradient-to-br from-white to-slate-50 border border-slate-200/90 p-4 shadow-xs">
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-slate-900">
-                  {isVi ? 'Cân Bằng Số Dư Kho Tức Thì (Real-Time Balances)' : 'Real-Time Inventory Balances'}
-                </span>
-                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
-                  3 {isVi ? 'Kho Hoạt Động' : 'Active Depots'}
-                </span>
-              </div>
-              <span className="text-xs font-bold text-slate-700">
-                {isVi ? 'Tổng giá trị: 1.48 Tỷ VNĐ' : 'Total Value: $58.2K'}
+          <div className="rounded-xl bg-white border border-slate-900/[0.08] p-4">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <span className="text-[13px] font-semibold text-[#111827]">
+                {isVi ? 'Số dư tồn kho theo chi nhánh' : 'Multi-location stock balances'}
+              </span>
+              <span className="font-mono tabular-nums text-[12px] font-medium text-[#111827]">
+                {isVi ? 'Tổng giá trị: 1.48 Tỷ đ' : 'Total value: $58.2K'}
               </span>
             </div>
 
-            {/* Simulated 3D Stock Racks */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-2">
-              <div className="p-2.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs text-center">
-                <div className="text-[10px] font-semibold text-slate-500 uppercase">{isVi ? 'Kho Tổng HN' : 'Main Hub'}</div>
-                <div className="text-sm font-extrabold text-slate-900 mt-0.5">8,420 SKU</div>
-                <div className="text-[10px] text-emerald-600 font-bold mt-1">94% {isVi ? 'Sức chứa' : 'Capacity'}</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+              <div className="p-3 rounded-lg bg-[#F5F7FA] border border-slate-900/[0.06]">
+                <div className="text-[12px] text-[#6B7487]">{isVi ? 'Kho Tổng HN' : 'Main hub'}</div>
+                <div className="font-mono tabular-nums text-[16px] font-semibold text-[#111827] mt-0.5">
+                  8,420 SKU
+                </div>
+                <div className="text-[12px] text-[#16A34A] mt-0.5">
+                  94% {isVi ? 'sức chứa' : 'capacity'}
+                </div>
               </div>
-              <div className="p-2.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs text-center">
-                <div className="text-[10px] font-semibold text-slate-500 uppercase">{isVi ? 'Kho Đà Nẵng' : 'Central Hub'}</div>
-                <div className="text-sm font-extrabold text-slate-900 mt-0.5">3,110 SKU</div>
-                <div className="text-[10px] text-emerald-600 font-bold mt-1">68% {isVi ? 'Sức chứa' : 'Capacity'}</div>
+              <div className="p-3 rounded-lg bg-[#F5F7FA] border border-slate-900/[0.06]">
+                <div className="text-[12px] text-[#6B7487]">{isVi ? 'Kho Đà Nẵng' : 'Central hub'}</div>
+                <div className="font-mono tabular-nums text-[16px] font-semibold text-[#111827] mt-0.5">
+                  3,110 SKU
+                </div>
+                <div className="text-[12px] text-[#16A34A] mt-0.5">
+                  68% {isVi ? 'sức chứa' : 'capacity'}
+                </div>
               </div>
-              <div className="p-2.5 rounded-xl bg-white border border-amber-200 bg-amber-50/30 shadow-2xs text-center">
-                <div className="text-[10px] font-semibold text-amber-700 uppercase">{isVi ? 'Kho TP.HCM' : 'South Hub'}</div>
-                <div className="text-sm font-extrabold text-slate-900 mt-0.5">12,650 SKU</div>
-                <div className="text-[10px] text-amber-600 font-bold mt-1">98% {isVi ? 'Cảnh báo đầy' : 'Near Full'}</div>
+              <div className="p-3 rounded-lg bg-[#FFF8F7] border border-[#FF4D38]/25">
+                <div className="text-[12px] text-[#C8321F]">{isVi ? 'Kho TP.HCM' : 'South hub'}</div>
+                <div className="font-mono tabular-nums text-[16px] font-semibold text-[#111827] mt-0.5">
+                  12,650 SKU
+                </div>
+                <div className="text-[12px] text-[#C8321F] mt-0.5">
+                  98% {isVi ? 'gần đầy' : 'near full'}
+                </div>
               </div>
             </div>
           </div>
 
-          {/* SKU List with threshold alert */}
           <div className="space-y-2">
             {inventoryStock.map((item, idx) => (
-              <div
+              <button
+                type="button"
                 key={item.sku}
                 onClick={() => setSelectedItem(idx)}
-                className={`p-3 rounded-xl border transition-all cursor-pointer flex items-center justify-between ${
+                className={`w-full text-left p-3 rounded-xl border transition-colors cursor-pointer flex items-center justify-between ${
                   selectedItem === idx
-                    ? 'bg-white border-[#FF4D38] shadow-sm'
-                    : 'bg-white/80 border-slate-200 hover:bg-white'
+                    ? 'bg-white border-[#FF4D38]'
+                    : 'bg-white border-slate-900/[0.08] hover:border-slate-900/[0.16]'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold ${
-                    item.status === 'low' ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700'
-                  }`}>
-                    {item.status === 'low' ? <AlertTriangleIcon className="w-4 h-4" /> : <CheckIcon className="w-4 h-4" />}
+                  <div
+                    className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                      item.status === 'low'
+                        ? 'bg-amber-50 text-[#D97706]'
+                        : 'bg-[#F5F7FA] text-[#16A34A]'
+                    }`}
+                  >
+                    {item.status === 'low' ? (
+                      <AlertTriangleIcon className="w-4 h-4" />
+                    ) : (
+                      <CheckIcon className="w-4 h-4" />
+                    )}
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold text-slate-900">{item.name}</span>
-                      <span className="text-[10px] font-mono text-slate-400">{item.sku}</span>
+                      <span className="text-[13px] font-medium text-[#111827]">{item.name}</span>
+                      <span className="text-[11px] font-mono text-[#6B7487]">{item.sku}</span>
                     </div>
-                    <div className="text-[11px] text-slate-500 mt-0.5">{item.warehouse}</div>
+                    <div className="text-[12px] text-[#6B7487]">{item.warehouse}</div>
                   </div>
                 </div>
 
-                <div className="text-right">
-                  <div className="text-xs font-extrabold text-slate-900">
-                    {item.stock.toLocaleString()} <span className="text-[10px] text-slate-500 font-normal">/ min {item.min}</span>
+                <div className="text-right font-mono tabular-nums">
+                  <div className="text-[13px] font-semibold text-[#111827]">
+                    {item.stock.toLocaleString()} <span className="text-[11px] text-[#6B7487] font-normal">/ {item.min}</span>
                   </div>
-                  <div className={`text-[10px] font-bold ${item.status === 'low' ? 'text-amber-600' : 'text-emerald-600'}`}>
-                    {item.status === 'low' ? (isVi ? 'Cảnh báo sắp hết' : 'Low Stock Warning') : (isVi ? 'Tồn an toàn' : 'Optimal Level')}
+                  <div className={`text-[11px] font-medium ${item.status === 'low' ? 'text-[#D97706]' : 'text-[#16A34A]'}`}>
+                    {item.status === 'low' ? (isVi ? 'Dưới định mức' : 'Low stock') : (isVi ? 'An toàn' : 'Optimal')}
                   </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -265,31 +211,25 @@ export function InteractiveInventoryAssets({ isVi }: InteractiveInventoryAssetsP
 
       {activeTab === 'vouchers' && (
         <div className="space-y-2.5">
-          <div className="p-3 rounded-2xl bg-white border border-slate-200/90 shadow-xs mb-2">
-            <span className="text-xs font-bold text-slate-900">
-              {isVi ? 'Quy Trình Duyệt Phiếu Kho Đa Cấp (Stock Voucher Workflow)' : 'Multi-Level Voucher Approvals'}
-            </span>
-            <p className="text-[11px] text-slate-500 mt-1">
-              {isVi
-                ? 'Tự động luân chuyển: Thủ kho đề xuất -> Quản lý duyệt -> Kế toán đối soát -> Tự động trừ tồn kho.'
-                : 'Automated pipeline: Warehouse keeper initiates -> Manager approves -> CFO verifies -> Stock deducted.'}
-            </p>
-          </div>
-
           {vouchers.map((v) => (
-            <div key={v.code} className="p-3 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center justify-between">
+            <div
+              key={v.code}
+              className="p-3.5 rounded-xl bg-white border border-slate-900/[0.08] flex items-center justify-between gap-3"
+            >
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-mono font-bold text-slate-900">{v.code}</span>
-                  <span className="text-xs font-semibold text-slate-700">· {v.type}</span>
+                  <span className="text-[12px] font-mono tabular-nums font-medium text-[#111827]">
+                    {v.code}
+                  </span>
+                  <span className="text-[13px] font-medium text-[#4B5565]">· {v.type}</span>
                 </div>
-                <div className="text-[11px] text-slate-500 mt-0.5">{v.source} ({v.itemsCount})</div>
+                <div className="text-[12px] text-[#6B7487] mt-0.5">
+                  {v.source} ({v.itemsCount})
+                </div>
               </div>
               <div className="text-right">
-                <span className={`inline-block text-[10px] font-bold px-2 py-0.5 rounded-full border ${v.statusColor}`}>
-                  {v.approval}
-                </span>
-                <div className="text-[10px] text-slate-400 mt-1">{v.time}</div>
+                <span className={`text-[12px] font-medium ${v.tone}`}>{v.approval}</span>
+                <div className="font-mono tabular-nums text-[11px] text-[#6B7487] mt-0.5">{v.time}</div>
               </div>
             </div>
           ))}
@@ -298,36 +238,28 @@ export function InteractiveInventoryAssets({ isVi }: InteractiveInventoryAssetsP
 
       {activeTab === 'assets' && (
         <div className="space-y-2.5">
-          <div className="p-3 rounded-2xl bg-white border border-slate-200/90 shadow-xs mb-2">
-            <span className="text-xs font-bold text-slate-900">
-              {isVi ? 'Quản Lý Tài Sản Serial & Thiết Bị Máy Móc' : 'Fixed Serial Assets & Machinery'}
-            </span>
-            <p className="text-[11px] text-slate-500 mt-1">
-              {isVi
-                ? 'Định danh duy nhất từng máy móc, mã serial, khấu hao, bàn giao cá nhân và lịch sử bảo trì.'
-                : 'Individual tracking by serial number, warranty status, employee custody and maintenance history.'}
-            </p>
-          </div>
-
           {serialAssets.map((asset) => (
-            <div key={asset.serial} className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-2">
-              <div className="flex items-center justify-between">
+            <div
+              key={asset.serial}
+              className="p-4 rounded-xl bg-white border border-slate-900/[0.08] space-y-2"
+            >
+              <div className="flex items-center justify-between gap-2">
                 <div>
-                  <span className="text-xs font-bold text-slate-900">{asset.model}</span>
-                  <span className="ml-2 text-[10px] font-mono text-slate-400">{asset.serial}</span>
+                  <span className="text-[13px] font-semibold text-[#111827]">{asset.model}</span>
+                  <span className="ml-2 text-[11px] font-mono text-[#6B7487]">{asset.serial}</span>
                 </div>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-                  {isVi ? 'Sức khỏe thiết bị' : 'Health'} {asset.health}
+                <span className="font-mono tabular-nums text-[12px] font-medium text-[#16A34A]">
+                  {isVi ? 'Sức khỏe' : 'Health'} {asset.health}
                 </span>
               </div>
-              <div className="grid grid-cols-2 gap-2 text-[11px] text-slate-600 pt-1 border-t border-slate-100">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[12px] text-[#4B5565] pt-2 border-t border-slate-900/[0.06]">
                 <div>
-                  <span className="text-slate-400">{isVi ? 'Người giữ: ' : 'Custodian: '}</span>
-                  <span className="font-semibold text-slate-800">{asset.holder}</span>
+                  <span className="text-[#6B7487]">{isVi ? 'Người giữ: ' : 'Custodian: '}</span>
+                  <span className="font-medium text-[#111827]">{asset.holder}</span>
                 </div>
                 <div>
-                  <span className="text-slate-400">{isVi ? 'Bảo hành: ' : 'Status: '}</span>
-                  <span className="font-semibold text-slate-800">{asset.warranty}</span>
+                  <span className="text-[#6B7487]">{isVi ? 'Bảo hành: ' : 'Status: '}</span>
+                  <span className="font-medium text-[#111827]">{asset.warranty}</span>
                 </div>
               </div>
             </div>
@@ -335,13 +267,11 @@ export function InteractiveInventoryAssets({ isVi }: InteractiveInventoryAssetsP
         </div>
       )}
 
-      {/* Bottom Status Ticker */}
-      <div className="mt-3 pt-3 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-500">
-        <span className="flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-          {isVi ? 'Đồng bộ tự động cân bằng tồn kho theo phân quyền đa tầng' : 'Inventory auto-synced under multi-tier permissions'}
+      <div className="mt-3 pt-3 border-t border-slate-900/[0.06] flex items-center justify-between text-[12px] text-[#6B7487]">
+        <span>
+          {isVi ? 'Cân bằng tồn kho tự động theo phân quyền' : 'Automated ledger sync with permissions'}
         </span>
-        <span className="font-semibold text-slate-700">Audit Trail: OK</span>
+        <span className="font-mono text-[#111827] font-medium">Audit trail: ok</span>
       </div>
     </ShowcaseCard>
   );

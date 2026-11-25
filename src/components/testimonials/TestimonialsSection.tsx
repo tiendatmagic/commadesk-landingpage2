@@ -40,7 +40,7 @@ export function TestimonialsSection() {
 
       setTimeout(() => {
         setIsTransitioning(false);
-      }, 750);
+      }, 650);
     },
     [hasFannedOut, currentIdx, isTransitioning]
   );
@@ -50,7 +50,7 @@ export function TestimonialsSection() {
     if (!hasFannedOut) return;
     autoRotateTimerRef.current = setInterval(() => {
       setCurrentIdx((prev) => (prev + 1) % TESTIMONIALS_DATA.length);
-    }, 4200);
+    }, 4500);
   }, [hasFannedOut, stopAutoRotate]);
 
   const triggerFanOut = useCallback(() => {
@@ -59,7 +59,7 @@ export function TestimonialsSection() {
 
     setTimeout(() => {
       setCurrentIdx((prev) => (prev === 0 ? 1 : prev));
-    }, 1400);
+    }, 1200);
   }, [hasFannedOut]);
 
   const resetToEnvelope = useCallback(() => {
@@ -68,7 +68,6 @@ export function TestimonialsSection() {
     setCurrentIdx(0);
   }, [stopAutoRotate]);
 
-  // Bắt đầu auto-rotate sau khi bung xòe
   useEffect(() => {
     if (hasFannedOut) {
       startAutoRotate();
@@ -78,7 +77,6 @@ export function TestimonialsSection() {
     return () => stopAutoRotate();
   }, [hasFannedOut, startAutoRotate, stopAutoRotate]);
 
-  // Xử lý scroll, wheel và touch
   useEffect(() => {
     const stage = stageRef.current;
     const section = sectionRef.current;
@@ -233,21 +231,20 @@ export function TestimonialsSection() {
     <section
       ref={sectionRef}
       id="testimonials"
-      className="canvas-card scroll-mt-20 sm:scroll-mt-24 md:scroll-mt-28 bg-white rounded-[32px] sm:rounded-[44px] md:rounded-[48px] shadow-sm border border-slate-200/60 relative pt-12 sm:pt-16 md:pt-20 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-8 lg:px-12 text-center overflow-hidden min-h-[760px] lg:min-h-[820px] flex flex-col justify-center items-center"
+      className="canvas-card scroll-mt-24 bg-white rounded-2xl sm:rounded-3xl shadow-[0_1px_2px_rgba(17,24,39,0.05)] border border-slate-900/[0.08] relative pt-14 sm:pt-20 pb-14 sm:pb-20 px-4 sm:px-8 lg:px-12 text-center overflow-hidden min-h-[720px] lg:min-h-[780px] flex flex-col justify-center items-center"
     >
       {/* Section Header */}
       <div className="scroll-blur-reveal max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold uppercase tracking-wider mb-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#7C3AED]"></span>
+        <p className="text-[13px] font-medium text-[#6B7487] mb-2">
           {t.testimonials.badge}
-        </div>
+        </p>
         <TextBlurWipe
           as="h2"
-          className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 tracking-tight"
+          className="text-2xl sm:text-4xl md:text-[42px] font-semibold text-[#111827] tracking-[-0.025em] leading-[1.12]"
         >
           {t.testimonials.title}
         </TextBlurWipe>
-        <p className="text-blur-wipe-sub mt-2.5 text-sm sm:text-base text-gray-500 max-w-2xl mx-auto">
+        <p className="text-blur-wipe-sub mt-3 text-sm sm:text-base text-[#4B5565] max-w-2xl mx-auto leading-relaxed">
           {t.testimonials.subtitle}
         </p>
       </div>
@@ -261,28 +258,24 @@ export function TestimonialsSection() {
         onMouseLeave={() => {
           if (hasFannedOut) startAutoRotate();
         }}
-        className={`testi-stage relative max-w-[1400px] w-full mx-auto flex flex-col items-center justify-center min-h-[480px] sm:min-h-[500px] md:min-h-[520px] transition-all duration-500 ${
+        className={`testi-stage relative max-w-[1400px] w-full mx-auto flex flex-col items-center justify-center min-h-[480px] sm:min-h-[500px] md:min-h-[520px] ${
           hasFannedOut ? 'is-fanout' : ''
         }`}
-        title="Click to interact with 3D Testimonials"
+        title="Click to cycle customer stories"
       >
         <div className="relative w-full max-w-[1240px] h-[450px] sm:h-[480px] md:h-[500px] mx-auto flex items-center justify-center overflow-visible">
-          {/* 1. LEFT TILT CARD (Thẻ trắng to bản xòe sang trái) */}
           <div
             id="leftTiltCard"
-            className="testi-fanout-card absolute left-1/2 top-1/2 w-[275px] min-[390px]:w-[320px] sm:w-[380px] md:w-[410px] lg:w-[430px] h-[440px] sm:h-[490px] md:h-[520px] lg:h-[540px] rounded-[36px] sm:rounded-[44px] bg-white border border-slate-200/80 shadow-[0_20px_45px_-12px_rgba(0,0,0,0.06)] z-10 pointer-events-none"
+            className="testi-fanout-card absolute left-1/2 top-1/2 w-[275px] min-[390px]:w-[320px] sm:w-[380px] md:w-[410px] lg:w-[430px] h-[440px] sm:h-[490px] md:h-[520px] lg:h-[540px] rounded-2xl sm:rounded-3xl z-10 pointer-events-none"
           />
 
-          {/* 2. RIGHT TILT CARD (Thẻ trắng to bản xòe sang phải) */}
           <div
             id="rightTiltCard"
-            className="testi-fanout-card absolute left-1/2 top-1/2 w-[275px] min-[390px]:w-[320px] sm:w-[380px] md:w-[410px] lg:w-[430px] h-[440px] sm:h-[490px] md:h-[520px] lg:h-[540px] rounded-[36px] sm:rounded-[44px] bg-white border border-slate-200/80 shadow-[0_20px_45px_-12px_rgba(0,0,0,0.06)] z-10 pointer-events-none"
+            className="testi-fanout-card absolute left-1/2 top-1/2 w-[275px] min-[390px]:w-[320px] sm:w-[380px] md:w-[410px] lg:w-[430px] h-[440px] sm:h-[490px] md:h-[520px] lg:h-[540px] rounded-2xl sm:rounded-3xl z-10 pointer-events-none"
           />
 
-          {/* 3. Phong bì thư màu tím và vạt trước màu trắng */}
           <EnvelopeGraphic />
 
-          {/* 4. Render danh sách toàn bộ Testimonial Cards */}
           {TESTIMONIALS_DATA.map((item, index) => {
             let statusClass = 'is-hidden';
             if (index === currentIdx) {
@@ -307,25 +300,24 @@ export function TestimonialsSection() {
           })}
         </div>
 
-        {/* 5. Navigation Controls: Prev, Interactive Dots & Counter, Next */}
+        {/* Navigation Controls */}
         <div
           id="testiNavControls"
-          className="testi-nav-controls flex items-center justify-center gap-3 sm:gap-4 mt-8 sm:mt-10 relative z-30"
+          className="testi-nav-controls flex items-center justify-center gap-3 mt-8 sm:mt-10 relative z-30"
         >
           <button
             id="testiPrevBtn"
             type="button"
             onClick={handlePrev}
             aria-label="Previous Testimonial"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200/90 shadow-sm flex items-center justify-center text-gray-700 transition-all hover:scale-105 active:scale-95 cursor-pointer"
+            className="w-10 h-10 rounded-[10px] bg-white hover:bg-[#F5F7FA] border border-slate-900/[0.08] shadow-[0_1px_2px_rgba(17,24,39,0.05)] flex items-center justify-center text-[#111827] transition-[background-color,transform] duration-150 active:scale-[0.97] cursor-pointer"
           >
             <ArrowLeftIcon className="w-4 h-4" />
           </button>
 
-          {/* Interactive Pagination Dots + Counter Badge */}
-          <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/95 backdrop-blur-md rounded-full border border-slate-200/90 shadow-xs">
-            <span className="text-[11px] font-bold text-gray-400 mr-1 select-none">
-              {String(currentIdx + 1).padStart(2, '0')}&nbsp;{t.testimonials.counterOf}&nbsp;{String(TESTIMONIALS_DATA.length).padStart(2, '0')}
+          <div className="flex items-center gap-2.5 px-3.5 h-10 bg-white rounded-[10px] border border-slate-900/[0.08] shadow-[0_1px_2px_rgba(17,24,39,0.05)]">
+            <span className="font-mono tabular-nums text-[12px] font-medium text-[#6B7487] select-none">
+              {currentIdx + 1}&nbsp;{t.testimonials.counterOf}&nbsp;{TESTIMONIALS_DATA.length}
             </span>
 
             <div className="flex items-center gap-1.5">
@@ -346,10 +338,10 @@ export function TestimonialsSection() {
                       goToSlide(dotIdx);
                       startAutoRotate();
                     }}
-                    className={`transition-all duration-300 rounded-full cursor-pointer ${
+                    className={`transition-[width,background-color] duration-200 rounded-full cursor-pointer ${
                       dotIdx === currentIdx
-                        ? 'w-5 sm:w-6 h-2 bg-[#7C3AED]'
-                        : 'w-2 h-2 bg-slate-200 hover:bg-slate-400'
+                        ? 'w-5 h-1.5 bg-[#FF4D38]'
+                        : 'w-1.5 h-1.5 bg-slate-300 hover:bg-slate-400'
                     }`}
                     aria-label={`Go to ${nameText}`}
                     title={`${nameText} (${labelText})`}
@@ -364,7 +356,7 @@ export function TestimonialsSection() {
             type="button"
             onClick={handleNext}
             aria-label="Next Testimonial"
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white hover:bg-slate-50 border border-slate-200/90 shadow-sm flex items-center justify-center text-gray-700 transition-all hover:scale-105 active:scale-95 cursor-pointer"
+            className="w-10 h-10 rounded-[10px] bg-white hover:bg-[#F5F7FA] border border-slate-900/[0.08] shadow-[0_1px_2px_rgba(17,24,39,0.05)] flex items-center justify-center text-[#111827] transition-[background-color,transform] duration-150 active:scale-[0.97] cursor-pointer"
           >
             <ArrowRightIcon className="w-4 h-4" />
           </button>

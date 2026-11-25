@@ -24,25 +24,23 @@ export function TeamsEmployeesCard() {
   const { t } = useLanguage();
 
   return (
-    <div className="scroll-fade-up delay-300 bg-[#FAFAFC] rounded-3xl p-6 sm:p-8 border border-slate-200/70 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-      {/* Graphic: Vòng tròn 12 Avatar nhân sự xếp như mặt đồng hồ */}
-      <div className="bg-white rounded-2xl p-6 border border-slate-100 mb-6 flex items-center justify-center min-h-[170px] relative overflow-hidden shadow-xs">
-        {/* Tâm: Icon 2 người màu đen teamwork */}
-        <div className="w-12 h-12 rounded-full bg-white shadow-md border border-slate-100 flex items-center justify-center z-20 text-gray-800">
-          <UsersIcon className="w-6 h-6 text-gray-800" />
+    <div className="scroll-fade-up delay-300 bg-[#F8FAFC] rounded-2xl p-6 border border-slate-900/[0.08] flex flex-col justify-between">
+      {/* Graphic: 12 Avatars Orbit Ring */}
+      <div className="bg-white rounded-xl p-6 border border-slate-900/[0.08] mb-6 flex items-center justify-center min-h-[176px] relative overflow-hidden shadow-[0_1px_2px_rgba(17,24,39,0.04)]">
+        <div className="w-11 h-11 rounded-full bg-white shadow-[0_1px_2px_rgba(17,24,39,0.06)] border border-slate-900/[0.08] flex items-center justify-center z-20 text-[#111827]">
+          <UsersIcon className="w-5 h-5" />
         </div>
 
-        {/* Vòng tròn 12 Avatar xoay chậm (animate-orbit-slow) */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none animate-orbit-slow">
           <div className="w-36 h-36 rounded-full relative">
             {ORBIT_AVATARS.map((av, idx) => (
               <div
                 key={idx}
-                className={`absolute ${av.pos} w-6 h-6 rounded-full border border-white shadow-2xs overflow-hidden`}
+                className={`absolute ${av.pos} w-6 h-6 rounded-full border border-white shadow-[0_1px_2px_rgba(17,24,39,0.08)] overflow-hidden`}
               >
                 <Image
                   src={av.src}
-                  alt={`Team avatar ${idx + 1}`}
+                  alt={`Team member ${idx + 1}`}
                   fill
                   sizes="24px"
                   className="object-cover"
@@ -54,8 +52,8 @@ export function TeamsEmployeesCard() {
       </div>
 
       <div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">{t.features.card5.title}</h3>
-        <p className="text-sm text-gray-500 leading-relaxed">
+        <h3 className="text-[18px] font-semibold text-[#111827] mb-1.5">{t.features.card5.title}</h3>
+        <p className="text-[14px] text-[#4B5565] leading-relaxed">
           {t.features.card5.desc}
         </p>
       </div>

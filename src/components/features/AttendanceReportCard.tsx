@@ -8,79 +8,74 @@ export function AttendanceReportCard() {
   const { t } = useLanguage();
 
   return (
-    <div className="scroll-fade-up delay-75 bg-[#FAFAFC] rounded-3xl p-6 sm:p-8 border border-slate-200/70 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-      {/* Graphic: Attendance Report Box */}
-      <div className="relative bg-white rounded-2xl p-4 sm:p-5 border border-slate-100 mb-6 shadow-xs overflow-hidden">
-        {/* Mép thẻ mờ hai bên tạo chiều sâu 3D */}
-        <div className="absolute -left-12 top-6 bottom-6 w-16 bg-slate-50 border border-slate-100 rounded-xl opacity-60 pointer-events-none" />
-        <div className="absolute -right-12 top-6 bottom-6 w-16 bg-slate-50 border border-slate-100 rounded-xl opacity-60 pointer-events-none" />
-
-        <div className="relative z-10 flex items-center justify-between mb-3">
-          <span className="text-xs font-semibold text-gray-700">Time Logs &amp; Velocity</span>
-          <span className="text-[10px] font-medium text-gray-500 bg-slate-50 px-2 py-0.5 rounded-full border border-gray-100 inline-flex items-center gap-1">
-            Weekly <ChevronDownIcon className="w-2.5 h-2.5 text-gray-400" />
+    <div className="scroll-fade-up delay-75 bg-[#F8FAFC] rounded-2xl p-6 border border-slate-900/[0.08] flex flex-col justify-between">
+      {/* Graphic: Time Logs & Velocity */}
+      <div className="relative bg-white rounded-xl p-4 sm:p-5 border border-slate-900/[0.08] mb-6 shadow-[0_1px_2px_rgba(17,24,39,0.04)] overflow-hidden">
+        <div className="relative z-10 flex items-center justify-between mb-4">
+          <span className="text-[13px] font-medium text-[#111827]">Time logs &amp; velocity</span>
+          <span className="font-mono text-[11px] font-medium text-[#4B5565] bg-[#F5F7FA] px-2 py-0.5 rounded-[6px] border border-slate-900/[0.08] inline-flex items-center gap-1">
+            Weekly <ChevronDownIcon className="w-3 h-3 text-[#6B7487]" />
           </span>
         </div>
 
-        {/* Graphic with Mon-Fri Axis & +17% Badge */}
-        <div className="relative z-10 h-28 flex items-end justify-between gap-2 pt-2 px-1">
-          <div className="absolute top-8 left-6 right-2 border-b border-dashed border-slate-300/80 pointer-events-none" />
+        {/* Mon-Fri Bars with single accent on peak */}
+        <div className="relative z-10 h-28 flex items-end justify-between gap-2.5 pt-4 px-1">
+          <div className="absolute top-8 left-9 right-2 border-b border-dashed border-slate-200 pointer-events-none" />
 
-          <div className="flex flex-col justify-between h-20 text-[9px] text-gray-400 pr-1">
-            <span>Mon</span>
-            <span>Tue</span>
-            <span>Wed</span>
-            <span>Thu</span>
-            <span>Fri</span>
+          <div className="flex flex-col justify-between h-20 font-mono tabular-nums text-[10px] text-[#6B7487] pr-1">
+            <span>40h</span>
+            <span>32h</span>
+            <span>24h</span>
+            <span>16h</span>
           </div>
 
-          {/* Cột 1 */}
-          <div className="w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-center gap-1.5">
             <div
-              className="chart-bar w-full bg-[#FF4D38]/30 rounded-t-md h-12"
-              style={{ transitionDelay: '200ms' }}
+              className="chart-bar w-full bg-slate-200 rounded-t-[4px] h-12"
+              style={{ transitionDelay: '120ms' }}
             />
+            <span className="font-mono text-[11px] text-[#6B7487]">Mon</span>
           </div>
-          {/* Cột 2 */}
-          <div className="w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-center gap-1.5">
             <div
-              className="chart-bar w-full bg-[#FF4D38]/50 rounded-t-md h-16"
-              style={{ transitionDelay: '300ms' }}
+              className="chart-bar w-full bg-slate-200 rounded-t-[4px] h-16"
+              style={{ transitionDelay: '180ms' }}
             />
+            <span className="font-mono text-[11px] text-[#6B7487]">Tue</span>
           </div>
-          {/* Cột 3 - Cao nhất kèm Badge đen +17% */}
-          <div className="w-full flex flex-col items-center relative">
+          <div className="w-full flex flex-col items-center gap-1.5 relative">
             <span
-              className="chart-badge absolute -top-6 text-[9px] font-bold bg-slate-800 text-white px-1.5 py-0.5 rounded-md shadow-xs"
-              style={{ transitionDelay: '500ms' }}
+              className="chart-badge absolute -top-6 font-mono tabular-nums text-[11px] font-medium bg-[#111827] text-white px-1.5 py-0.5 rounded-[4px] whitespace-nowrap"
+              style={{ transitionDelay: '280ms' }}
             >
               +17%
             </span>
             <div
-              className="chart-bar w-full bg-[#7C6AF7] rounded-t-md h-24 shadow-sm shadow-indigo-300/50"
-              style={{ transitionDelay: '450ms' }}
+              className="chart-bar w-full bg-[#FF4D38] rounded-t-[4px] h-22"
+              style={{ transitionDelay: '240ms' }}
             />
+            <span className="font-mono text-[11px] font-medium text-[#111827]">Wed</span>
           </div>
-          {/* Cột 4 */}
-          <div className="w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-center gap-1.5">
             <div
-              className="chart-bar w-full bg-[#7C6AF7]/60 rounded-t-md h-16"
-              style={{ transitionDelay: '550ms' }}
+              className="chart-bar w-full bg-slate-200 rounded-t-[4px] h-14"
+              style={{ transitionDelay: '300ms' }}
             />
+            <span className="font-mono text-[11px] text-[#6B7487]">Thu</span>
           </div>
-          {/* Cột 5 */}
-          <div className="w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-center gap-1.5">
             <div
-              className="chart-bar w-full bg-[#FF4D38]/70 rounded-t-md h-20"
-              style={{ transitionDelay: '650ms' }}
+              className="chart-bar w-full bg-slate-300 rounded-t-[4px] h-18"
+              style={{ transitionDelay: '360ms' }}
             />
+            <span className="font-mono text-[11px] text-[#6B7487]">Fri</span>
           </div>
         </div>
       </div>
 
       <div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">{t.features.card1.title}</h3>
-        <p className="text-sm text-gray-500 leading-relaxed">
+        <h3 className="text-[18px] font-semibold text-[#111827] mb-1.5">{t.features.card1.title}</h3>
+        <p className="text-[14px] text-[#4B5565] leading-relaxed">
           {t.features.card1.desc}
         </p>
       </div>

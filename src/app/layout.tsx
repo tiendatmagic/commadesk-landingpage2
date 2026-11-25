@@ -1,25 +1,31 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/i18n/LanguageContext";
+import { ScrollRevealManager } from "@/components/ui/ScrollRevealManager";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
   display: "swap",
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "CommaDesk - Enterprise Multi-Module SaaS Platform",
+  title: "CommaDesk - Unified Enterprise Operations Platform",
   description:
-    "CommaDesk combines AI retail analytics, HR & automated payroll, Kanban & Gantt project management, multi-location inventory, document registry (Decree 150/370), fleet logistics, ITIL helpdesk, and multi-tier enterprise permissions into one unified operating system.",
+    "CommaDesk unifies project delivery, HR and automated payroll, document registry (Decree 30/150), multi-warehouse inventory, fleet logistics, ITIL service desk, and vision AI in one workspace.",
   icons: {
     icon: "/favicon.ico",
   },
 };
-
-import { LanguageProvider } from "@/i18n/LanguageContext";
-import { ScrollRevealManager } from "@/components/ui/ScrollRevealManager";
 
 export default function RootLayout({
   children,
@@ -27,8 +33,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`scroll-smooth ${plusJakartaSans.variable}`}>
-      <body className="bg-[#EAEDF1] min-h-screen text-slate-800 p-2 sm:p-4 md:p-6 lg:p-8 selection:bg-[#FF4D38] selection:text-white">
+    <html
+      lang="en"
+      className={`scroll-smooth ${plusJakartaSans.variable} ${jetbrainsMono.variable}`}
+    >
+      <body className="bg-[#F2F4F7] min-h-screen text-[#111827] py-3 sm:py-4 md:py-6 selection:bg-[#FF4D38] selection:text-white">
         <LanguageProvider>
           <ScrollRevealManager />
           {children}

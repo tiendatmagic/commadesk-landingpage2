@@ -10,8 +10,8 @@ import {
   MapPinIcon,
   BellIcon,
   CheckIcon,
-  ClockIcon,
 } from '@/components/ui/UIIcons';
+import { ShowcaseCard, ShowcaseTabBar } from '@/components/ui/ShowcaseCard';
 
 interface Props {
   isVi?: boolean;
@@ -20,384 +20,282 @@ interface Props {
 export function InteractiveDeploymentHub({ isVi }: Props) {
   const [activeTab, setActiveTab] = useState<'desktop' | 'mobile' | 'cloud' | 'onprem'>('desktop');
 
+  const tabs = [
+    {
+      id: 'desktop' as const,
+      label: isVi ? 'Máy tính' : 'Desktop',
+      icon: <LaptopIcon className="w-3.5 h-3.5" />,
+    },
+    {
+      id: 'mobile' as const,
+      label: isVi ? 'Di động' : 'Mobile',
+      icon: <SmartphoneIcon className="w-3.5 h-3.5" />,
+    },
+    {
+      id: 'cloud' as const,
+      label: isVi ? 'Đám mây' : 'Cloud',
+      icon: <GlobeIcon className="w-3.5 h-3.5" />,
+    },
+    {
+      id: 'onprem' as const,
+      label: isVi ? 'Máy chủ riêng' : 'On-prem',
+      icon: <ShieldCheckIcon className="w-3.5 h-3.5" />,
+    },
+  ];
+
   return (
-    <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-slate-100/60 p-4 sm:p-6 border border-slate-200/80">
-      {/* Top Controls: Tab Switcher */}
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-5 pb-4 border-b border-slate-200/80">
-        <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-            {isVi ? 'Hệ Sinh Thái Ứng Dụng Đa Nền Tảng' : 'Multi-Platform App Ecosystem'}
-          </span>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-white border border-slate-200 shadow-2xs">
-          <button
-            type="button"
-            onClick={() => setActiveTab('desktop')}
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-              activeTab === 'desktop'
-                ? 'bg-[#FF4D38] text-white shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-            }`}
-          >
-            <LaptopIcon className="w-3.5 h-3.5" />
-            <span>{isVi ? 'Máy Tính (Desktop)' : 'Desktop App'}</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab('mobile')}
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-              activeTab === 'mobile'
-                ? 'bg-[#FF4D38] text-white shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-            }`}
-          >
-            <SmartphoneIcon className="w-3.5 h-3.5" />
-            <span>{isVi ? 'Di Động (Mobile)' : 'Mobile App'}</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab('cloud')}
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-              activeTab === 'cloud'
-                ? 'bg-[#FF4D38] text-white shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-            }`}
-          >
-            <GlobeIcon className="w-3.5 h-3.5" />
-            <span>{isVi ? 'Đám Mây (Web Cloud)' : 'Web Cloud'}</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab('onprem')}
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
-              activeTab === 'onprem'
-                ? 'bg-[#FF4D38] text-white shadow-xs'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-            }`}
-          >
-            <ShieldCheckIcon className="w-3.5 h-3.5" />
-            <span>{isVi ? 'Máy Chủ Riêng (On-Premises)' : 'Private Server'}</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Main Content Area */}
-      <div className="min-h-[340px] flex items-center justify-center">
-        {/* Tab 1: Ứng dụng Desktop */}
+    <ShowcaseCard
+      title={isVi ? 'Ứng dụng & Mô hình triển khai' : 'Multi-Platform Deployment Models'}
+      headerRight={
+        <ShowcaseTabBar tabs={tabs} activeTab={activeTab} onChange={setActiveTab} />
+      }
+    >
+      <div className="min-h-[300px] flex items-center justify-center">
         {activeTab === 'desktop' && (
-          <div className="w-full bg-white rounded-2xl border border-slate-200/90 shadow-md p-5 sm:p-7 space-y-5 animate-in fade-in duration-200">
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-sky-500/10 text-sky-600 flex items-center justify-center font-bold text-sm">
+          <div className="w-full bg-white rounded-xl border border-slate-900/[0.08] p-5 sm:p-6 space-y-5">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-900/[0.06]">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-[#F5F7FA] border border-slate-900/[0.08] text-[#111827] flex items-center justify-center">
                   <WindowsIcon className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">
-                    {isVi ? 'Ứng Dụng Làm Việc Chuyên Dụng Trên Máy Tính' : 'Dedicated Desktop Workstation App'}
+                  <h4 className="text-[14px] font-semibold text-[#111827]">
+                    {isVi ? 'Ứng dụng máy tính Windows & macOS' : 'Dedicated desktop client'}
                   </h4>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[12px] text-[#6B7487]">
                     {isVi
-                      ? 'Dành cho Windows 10/11 & macOS • Tối ưu thao tác nhanh • Đa cửa sổ'
-                      : 'Windows 10/11 & macOS • Fast Operations • Multi-Window Workspace'}
+                      ? 'Windows 10/11 & macOS · Đa cửa sổ · Thông báo tức thì'
+                      : 'Windows 10/11 & macOS · Multi-window workspace'}
                   </p>
                 </div>
               </div>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                {isVi ? 'Sẵn sàng sử dụng' : 'Ready to Install'}
+              <span className="font-mono text-[12px] font-medium text-[#16A34A]">
+                {isVi ? 'Sẵn sàng cài đặt' : 'Ready to install'}
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-                <span className="text-[10px] font-bold uppercase text-slate-400">
-                  {isVi ? 'Cài đặt đơn giản' : 'Installation'}
-                </span>
-                <p className="text-sm font-bold text-slate-800">
-                  {isVi ? 'Tải về & Chạy ngay' : 'Download & Run'}
-                </p>
-                <p className="text-[11px] text-slate-500">
-                  {isVi
+              {[
+                {
+                  meta: isVi ? 'Cài đặt' : 'Installation',
+                  title: isVi ? 'Tải về & chạy ngay' : 'Download & run',
+                  desc: isVi
                     ? 'Bộ cài đóng gói hoàn chỉnh, không cần cấu hình phức tạp'
-                    : 'Self-contained installer with no complex setup needed'}
-                </p>
-              </div>
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-                <span className="text-[10px] font-bold uppercase text-slate-400">
-                  {isVi ? 'Tự động nâng cấp' : 'Auto-Updates'}
-                </span>
-                <p className="text-sm font-bold text-slate-800">
-                  {isVi ? 'Cập nhật ngầm tức thì' : 'Instant Silent Update'}
-                </p>
-                <p className="text-[11px] text-slate-500">
-                  {isVi
-                    ? 'Tự động cập nhật tính năng mới mà không làm gián đoạn công việc'
-                    : 'Receives latest features automatically without interrupting work'}
-                </p>
-              </div>
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-                <span className="text-[10px] font-bold uppercase text-slate-400">
-                  {isVi ? 'Đồng bộ dữ liệu' : 'Synchronization'}
-                </span>
-                <p className="text-sm font-bold text-slate-800">
-                  {isVi ? 'Đồng bộ thời gian thực' : 'Real-Time Sync'}
-                </p>
-                <p className="text-[11px] text-slate-500">
-                  {isVi
-                    ? 'Nhận tin nhắn, cảnh báo phê duyệt và giao việc ngay lập tức'
-                    : 'Instant task alerts, messages, and approval notifications'}
-                </p>
-              </div>
+                    : 'Self-contained installer without manual dependencies',
+                },
+                {
+                  meta: isVi ? 'Nâng cấp' : 'Updates',
+                  title: isVi ? 'Cập nhật tự động' : 'Silent updates',
+                  desc: isVi
+                    ? 'Nhận bản vá và tính năng mới không làm gián đoạn công việc'
+                    : 'Background updates without interrupting active sessions',
+                },
+                {
+                  meta: isVi ? 'Đồng bộ' : 'Sync',
+                  title: isVi ? 'Thông báo thời gian thực' : 'Real-time alerts',
+                  desc: isVi
+                    ? 'Nhận tin nhắn, cảnh báo phê duyệt và giao việc tức thì'
+                    : 'Instant desktop alerts for approvals, chat, and tasks',
+                },
+              ].map((c, idx) => (
+                <div key={idx} className="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-900/[0.06] space-y-1">
+                  <span className="font-mono text-[11px] text-[#6B7487]">{c.meta}</span>
+                  <p className="text-[13.5px] font-semibold text-[#111827]">{c.title}</p>
+                  <p className="text-[12px] text-[#4B5565] leading-relaxed">{c.desc}</p>
+                </div>
+              ))}
             </div>
 
-            <div className="pt-2 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-500 border-t border-slate-100">
+            <div className="pt-2 flex flex-wrap items-center justify-between gap-3 text-[12px] text-[#6B7487] border-t border-slate-900/[0.06]">
               <span className="flex items-center gap-1.5">
-                <CheckIcon className="w-3.5 h-3.5 text-emerald-600" />
+                <CheckIcon className="w-3.5 h-3.5 text-[#16A34A]" />
                 {isVi
-                  ? 'Hỗ trợ phím tắt tiện lợi, thông báo popup nổi trên màn hình làm việc'
-                  : 'Desktop shortcut support, rich popup notifications over other apps'}
+                  ? 'Hỗ trợ phím tắt nhanh và thông báo hệ thống'
+                  : 'Keyboard shortcuts and native OS notifications'}
               </span>
-              <span className="font-semibold text-slate-700">
-                {isVi ? 'Tương thích: Windows 10/11 & macOS' : 'Compatible: Windows 10/11 & macOS'}
+              <span className="font-mono font-medium text-[#111827]">
+                Windows 10/11 &amp; macOS
               </span>
             </div>
           </div>
         )}
 
-        {/* Tab 2: Ứng dụng Di động */}
         {activeTab === 'mobile' && (
-          <div className="w-full bg-white rounded-2xl border border-slate-200/90 shadow-md p-5 sm:p-7 space-y-5 animate-in fade-in duration-200">
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-sm">
+          <div className="w-full bg-white rounded-xl border border-slate-900/[0.08] p-5 sm:p-6 space-y-5">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-900/[0.06]">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-[#F5F7FA] border border-slate-900/[0.08] text-[#111827] flex items-center justify-center">
                   <SmartphoneIcon className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">
-                    {isVi ? 'Ứng Dụng Di Động Mọi Lúc Mọi Nơi' : 'Mobile App for On-the-Go Teams'}
+                  <h4 className="text-[14px] font-semibold text-[#111827]">
+                    {isVi ? 'Ứng dụng di động iOS & Android' : 'Mobile app for field & office teams'}
                   </h4>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[12px] text-[#6B7487]">
                     {isVi
-                      ? 'Dành cho iOS & Android • Chấm công GPS • Phê duyệt 1 chạm'
-                      : 'Available on iOS & Android • GPS Check-in • 1-Tap Approvals'}
+                      ? 'Chấm công GPS · Phê duyệt 1 chạm · Trao đổi nội bộ'
+                      : 'GPS check-in · 1-tap approvals · Team messaging'}
                   </p>
                 </div>
               </div>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">
-                App Store &amp; Google Play
+              <span className="font-mono text-[12px] text-[#111827] font-medium">
+                iOS &amp; Android
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/70 text-center">
-                <div className="w-10 h-10 mx-auto rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-2">
-                  <MapPinIcon className="w-5 h-5 text-emerald-600" />
-                </div>
-                <h5 className="text-xs font-bold text-slate-900 mb-1">
-                  {isVi ? 'Chấm Công Định Vị GPS' : 'GPS Mobile Check-in'}
-                </h5>
-                <p className="text-[11px] text-slate-500">
-                  {isVi
-                    ? 'Chấm công chính xác tại đúng văn phòng, chi nhánh hoặc địa điểm công tác'
-                    : 'Accurate check-in tied to verified company geofences and branches'}
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/70 text-center">
-                <div className="w-10 h-10 mx-auto rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center mb-2">
-                  <CheckIcon className="w-5 h-5 text-indigo-600" />
-                </div>
-                <h5 className="text-xs font-bold text-slate-900 mb-1">
-                  {isVi ? 'Phê Duyệt 1 Chạm' : '1-Tap Approvals'}
-                </h5>
-                <p className="text-[11px] text-slate-500">
-                  {isVi
-                    ? 'Lãnh đạo duyệt đơn nghỉ phép, tạm ứng và phiếu đề xuất ngay trên điện thoại'
-                    : 'Leaders approve leave requests, vouchers, and tasks straight from mobile'}
-                </p>
-              </div>
-
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/70 text-center">
-                <div className="w-10 h-10 mx-auto rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mb-2">
-                  <BellIcon className="w-5 h-5 text-amber-600" />
-                </div>
-                <h5 className="text-xs font-bold text-slate-900 mb-1">
-                  {isVi ? 'Thông Báo Nhắc Việc' : 'Push Notifications'}
-                </h5>
-                <p className="text-[11px] text-slate-500">
-                  {isVi
-                    ? 'Nhận thông báo khẩn cấp, nhắc hạn công việc và trao đổi nội bộ tức thì'
-                    : 'Instant deadline reminders, urgent company announcements, and team chat'}
-                </p>
-              </div>
+              {[
+                {
+                  icon: MapPinIcon,
+                  title: isVi ? 'Chấm công định vị GPS' : 'GPS geofence check-in',
+                  desc: isVi
+                    ? 'Xác thực vị trí tại đúng văn phòng, chi nhánh hoặc điểm công tác'
+                    : 'Verify attendance within authorized branch geofences',
+                },
+                {
+                  icon: CheckIcon,
+                  title: isVi ? 'Phê duyệt 1 chạm' : '1-tap approvals',
+                  desc: isVi
+                    ? 'Duyệt đơn nghỉ phép, tạm ứng và phiếu kho ngay trên điện thoại'
+                    : 'Review and sign off leave or procurement vouchers on mobile',
+                },
+                {
+                  icon: BellIcon,
+                  title: isVi ? 'Thông báo nhắc việc' : 'Push notifications',
+                  desc: isVi
+                    ? 'Nhận nhắc hạn công việc và thông báo khẩn từ điều hành'
+                    : 'Deadline alerts, announcements, and channel replies',
+                },
+              ].map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="p-4 rounded-xl bg-[#F5F7FA] border border-slate-900/[0.06] text-left">
+                    <div className="w-8 h-8 rounded-lg bg-white border border-slate-900/[0.08] text-[#111827] flex items-center justify-center mb-2.5">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <h5 className="text-[13.5px] font-semibold text-[#111827] mb-1">{item.title}</h5>
+                    <p className="text-[12px] text-[#4B5565] leading-relaxed">{item.desc}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}
 
-        {/* Tab 3: Đám Mây Trực Tuyến */}
         {activeTab === 'cloud' && (
-          <div className="w-full bg-white rounded-2xl border border-slate-200/90 shadow-md p-5 sm:p-7 space-y-5 animate-in fade-in duration-200">
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-600 flex items-center justify-center font-bold text-sm">
+          <div className="w-full bg-white rounded-xl border border-slate-900/[0.08] p-5 sm:p-6 space-y-5">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-900/[0.06]">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-[#F5F7FA] border border-slate-900/[0.08] text-[#111827] flex items-center justify-center">
                   <GlobeIcon className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">
-                    {isVi ? 'Nền Tảng Đám Mây Doanh Nghiệp (Cloud SaaS)' : 'Enterprise Cloud SaaS Platform'}
+                  <h4 className="text-[14px] font-semibold text-[#111827]">
+                    {isVi ? 'Nền tảng Cloud SaaS trực tuyến' : 'Enterprise Cloud SaaS'}
                   </h4>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[12px] text-[#6B7487]">
                     {isVi
-                      ? 'Truy cập mọi nơi qua trình duyệt web • Khởi tạo dùng ngay • Không cần IT bảo trì'
-                      : 'Browser access anywhere • Turnkey setup • Zero IT maintenance'}
+                      ? 'Truy cập qua trình duyệt · Khởi tạo trong ngày · Không cần bảo trì hạ tầng'
+                      : 'Browser access · Same-day onboarding · Managed backups'}
                   </p>
                 </div>
               </div>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold border border-indigo-200">
-                {isVi ? 'Triển khai trong ngày' : 'Same-Day Rollout'}
+              <span className="font-mono tabular-nums text-[12px] font-medium text-[#16A34A]">
+                99.9% uptime
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-                <span className="text-[10px] font-bold uppercase text-slate-400">
-                  {isVi ? 'Tiện lợi' : 'Accessibility'}
-                </span>
-                <p className="text-sm font-bold text-slate-800">
-                  {isVi ? 'Dùng ngay trên Web' : 'Browser Native'}
-                </p>
-                <p className="text-[11px] text-slate-500">
-                  {isVi
-                    ? 'Đăng nhập an toàn qua Chrome, Safari, Edge mà không cần cài đặt phần mềm'
-                    : 'Secure access via Chrome, Safari, or Edge without local installs'}
-                </p>
-              </div>
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-                <span className="text-[10px] font-bold uppercase text-slate-400">
-                  {isVi ? 'Bảo toàn dữ liệu' : 'Data Protection'}
-                </span>
-                <p className="text-sm font-bold text-slate-800">
-                  {isVi ? 'Sao lưu tự động 24/7' : '24/7 Auto Backup'}
-                </p>
-                <p className="text-[11px] text-slate-500">
-                  {isVi
-                    ? 'Dữ liệu được mã hóa và sao lưu định kỳ, phòng ngừa rủi ro mất mát'
-                    : 'Encrypted multi-region backup protecting against any data loss'}
-                </p>
-              </div>
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-                <span className="text-[10px] font-bold uppercase text-slate-400">
-                  {isVi ? 'Quy mô mở rộng' : 'Scalability'}
-                </span>
-                <p className="text-sm font-bold text-slate-800">
-                  {isVi ? 'Không giới hạn quy mô' : 'Unlimited Scale'}
-                </p>
-                <p className="text-[11px] text-slate-500">
-                  {isVi
-                    ? 'Dễ dàng mở rộng từ vài chục đến hàng nghìn nhân sự tại nhiều chi nhánh'
-                    : 'Effortlessly scale from dozens to thousands of staff across branches'}
-                </p>
-              </div>
-            </div>
-
-            <div className="pt-2 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-500 border-t border-slate-100">
-              <span className="flex items-center gap-1.5">
-                <CheckIcon className="w-3.5 h-3.5 text-emerald-600" />
-                {isVi
-                  ? 'Phù hợp cho doanh nghiệp muốn chuyển đổi số nhanh, tiết kiệm tối đa chi phí'
-                  : 'Ideal for enterprises seeking fast digital transformation with lower overhead'}
-              </span>
-              <span className="font-semibold text-slate-700">
-                {isVi ? 'Độ sẵn sàng: 99.9%' : 'Availability: 99.9%'}
-              </span>
+              {[
+                {
+                  meta: isVi ? 'Truy cập' : 'Access',
+                  title: isVi ? 'Dùng ngay trên Web' : 'Browser native',
+                  desc: isVi
+                    ? 'Hoạt động trên Chrome, Safari, Edge không cần cài thêm plugin'
+                    : 'Run on Chrome, Safari, or Edge without local setup',
+                },
+                {
+                  meta: isVi ? 'Sao lưu' : 'Backups',
+                  title: isVi ? 'Sao lưu tự động 24/7' : 'Automated backups',
+                  desc: isVi
+                    ? 'Mã hóa dữ liệu và sao lưu định kỳ nhiều vùng dự phòng'
+                    : 'Encrypted snapshots across redundant availability zones',
+                },
+                {
+                  meta: isVi ? 'Mở rộng' : 'Scale',
+                  title: isVi ? 'Đa chi nhánh linh hoạt' : 'Multi-branch scale',
+                  desc: isVi
+                    ? 'Mở rộng từ vài chục đến hàng nghìn tài khoản theo nhu cầu'
+                    : 'Scale from small teams to multi-thousand staff groups',
+                },
+              ].map((c, idx) => (
+                <div key={idx} className="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-900/[0.06] space-y-1">
+                  <span className="font-mono text-[11px] text-[#6B7487]">{c.meta}</span>
+                  <p className="text-[13.5px] font-semibold text-[#111827]">{c.title}</p>
+                  <p className="text-[12px] text-[#4B5565] leading-relaxed">{c.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         )}
 
-        {/* Tab 4: Máy Chủ Riêng */}
         {activeTab === 'onprem' && (
-          <div className="w-full bg-white rounded-2xl border border-slate-200/90 shadow-md p-5 sm:p-7 space-y-5 animate-in fade-in duration-200">
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold text-sm">
+          <div className="w-full bg-white rounded-xl border border-slate-900/[0.08] p-5 sm:p-6 space-y-5">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-900/[0.06]">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-lg bg-[#F5F7FA] border border-slate-900/[0.08] text-[#111827] flex items-center justify-center">
                   <ShieldCheckIcon className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">
-                    {isVi
-                      ? 'Cài Đặt Trên Hạ Tầng Máy Chủ Riêng (On-Premises)'
-                      : 'Private On-Premises Server Deployment'}
+                  <h4 className="text-[14px] font-semibold text-[#111827]">
+                    {isVi ? 'Triển khai máy chủ riêng (On-Premises)' : 'Private On-Premises Server'}
                   </h4>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[12px] text-[#6B7487]">
                     {isVi
-                      ? 'Dành cho Khối Hành chính, Ngân hàng & Tập đoàn lớn • Sở hữu 100% dữ liệu'
-                      : 'For Public Sector, Banking & Large Corporations • 100% Data Sovereignty'}
+                      ? 'Dành cho cơ quan hành chính, ngân hàng & tập đoàn làm chủ 100% dữ liệu'
+                      : 'For public sector, banking & regulated enterprises requiring full data ownership'}
                   </p>
                 </div>
               </div>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">
-                {isVi ? 'Bảo mật tuyệt đối' : 'Maximum Security'}
+              <span className="font-mono text-[12px] font-medium text-[#111827]">
+                ISO 27001 ready
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-                <span className="text-[10px] font-bold uppercase text-slate-400">
-                  {isVi ? 'Chủ quyền dữ liệu' : 'Data Sovereignty'}
-                </span>
-                <p className="text-sm font-bold text-slate-800">
-                  {isVi ? '100% Máy chủ nội bộ' : '100% In-House'}
-                </p>
-                <p className="text-[11px] text-slate-500">
-                  {isVi
-                    ? 'Dữ liệu được lưu trữ hoàn toàn tại trung tâm dữ liệu của tổ chức'
-                    : 'Data resides exclusively within your organization’s private data center'}
-                </p>
-              </div>
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-                <span className="text-[10px] font-bold uppercase text-slate-400">
-                  {isVi ? 'Mạng nội bộ' : 'Network Isolation'}
-                </span>
-                <p className="text-sm font-bold text-slate-800">
-                  {isVi ? 'Vận hành độc lập' : 'Air-Gapped Capable'}
-                </p>
-                <p className="text-[11px] text-slate-500">
-                  {isVi
-                    ? 'Hoạt động ổn định trong mạng nội bộ (LAN), không phụ thuộc kết nối Internet ngoài'
-                    : 'Functions seamlessly in offline LAN networks without external dependencies'}
-                </p>
-              </div>
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
-                <span className="text-[10px] font-bold uppercase text-slate-400">
-                  {isVi ? 'Hỗ trợ kỹ thuật' : 'Dedicated Support'}
-                </span>
-                <p className="text-sm font-bold text-slate-800">
-                  {isVi ? 'Đồng hành chuyên sâu' : 'Specialized Onboarding'}
-                </p>
-                <p className="text-[11px] text-slate-500">
-                  {isVi
-                    ? 'Đội ngũ chuyên gia hỗ trợ cài đặt, chuyển giao và đào tạo vận hành tại chỗ'
-                    : 'Expert team assists with on-site setup, data migration, and training'}
-                </p>
-              </div>
-            </div>
-
-            <div className="pt-2 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-500 border-t border-slate-100">
-              <span className="flex items-center gap-1.5">
-                <CheckIcon className="w-3.5 h-3.5 text-emerald-600" />
-                {isVi
-                  ? 'Đáp ứng đầy đủ các tiêu chuẩn an toàn thông tin khắt khe của Nhà nước và Ngân hàng'
-                  : 'Fully compliant with strict government and banking security compliance mandates'}
-              </span>
-              <span className="font-semibold text-slate-700">
-                {isVi ? 'Tuân thủ: ISO 27001' : 'Compliant: ISO 27001'}
-              </span>
+              {[
+                {
+                  meta: isVi ? 'Chủ quyền' : 'Sovereignty',
+                  title: isVi ? '100% máy chủ nội bộ' : '100% in-house',
+                  desc: isVi
+                    ? 'Toàn bộ dữ liệu lưu trữ tại trung tâm dữ liệu của tổ chức'
+                    : 'All data stays within your private infrastructure',
+                },
+                {
+                  meta: isVi ? 'Cô lập mạng' : 'Isolation',
+                  title: isVi ? 'Vận hành mạng LAN' : 'Air-gapped LAN',
+                  desc: isVi
+                    ? 'Hoạt động ổn định trong mạng nội bộ không cần kết nối ngoài'
+                    : 'Operates inside restricted corporate networks',
+                },
+                {
+                  meta: isVi ? 'Chuyển giao' : 'Onboarding',
+                  title: isVi ? 'Đồng hành triển khai' : 'Dedicated setup',
+                  desc: isVi
+                    ? 'Đội ngũ kỹ thuật hỗ trợ cài đặt, chuyển đổi dữ liệu và đào tạo'
+                    : 'Engineering support for installation and data migration',
+                },
+              ].map((c, idx) => (
+                <div key={idx} className="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-900/[0.06] space-y-1">
+                  <span className="font-mono text-[11px] text-[#6B7487]">{c.meta}</span>
+                  <p className="text-[13.5px] font-semibold text-[#111827]">{c.title}</p>
+                  <p className="text-[12px] text-[#4B5565] leading-relaxed">{c.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         )}
       </div>
-    </div>
+    </ShowcaseCard>
   );
 }

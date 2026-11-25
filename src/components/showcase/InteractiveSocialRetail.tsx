@@ -1,14 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import {
   PenToolIcon,
   StoreIcon,
   GlobeIcon,
   FacebookIcon,
   MessageSquareIcon,
-  GiftIcon,
   CheckIcon,
 } from '@/components/ui/UIIcons';
 import { ShowcaseCard, ShowcaseTabBar } from '@/components/ui/ShowcaseCard';
@@ -18,28 +16,23 @@ interface InteractiveSocialRetailProps {
 }
 
 export function InteractiveSocialRetail({ isVi }: InteractiveSocialRetailProps) {
-  const [activeTab, setActiveTab] = useState<'3d-retail' | 'composer' | 'kiotviet' | 'channels'>('3d-retail');
+  const [activeTab, setActiveTab] = useState<'composer' | 'kiotviet' | 'channels'>('composer');
   const [selectedChannel, setSelectedChannel] = useState<'facebook' | 'zalo'>('facebook');
 
   const tabs = [
     {
-      id: '3d-retail' as const,
-      label: isVi ? 'Bán Lẻ Đa Kênh 3D' : '3D Retail Hub',
-      icon: <StoreIcon className="w-3.5 h-3.5" />,
-    },
-    {
       id: 'composer' as const,
-      label: isVi ? 'Soạn Đăng Đa Kênh' : 'Post Composer',
+      label: isVi ? 'Soạn đăng đa kênh' : 'Post composer',
       icon: <PenToolIcon className="w-3.5 h-3.5" />,
     },
     {
       id: 'kiotviet' as const,
-      label: isVi ? 'Đồng Bộ KiotViet' : 'KiotViet Sync',
+      label: isVi ? 'Đồng bộ KiotViet' : 'KiotViet sync',
       icon: <StoreIcon className="w-3.5 h-3.5" />,
     },
     {
       id: 'channels' as const,
-      label: isVi ? 'Kênh Kết Nối' : 'Channels',
+      label: isVi ? 'Kênh kết nối' : 'Channels',
       icon: <GlobeIcon className="w-3.5 h-3.5" />,
     },
   ];
@@ -49,26 +42,26 @@ export function InteractiveSocialRetail({ isVi }: InteractiveSocialRetailProps) 
       id: 'facebook',
       name: 'Facebook Page Official',
       followers: '124,500',
-      status: isVi ? 'Đang kết nối' : 'Connected',
-      syncTime: 'Vừa xong',
+      status: isVi ? 'Đã kết nối' : 'Connected',
+      syncTime: isVi ? 'Vừa xong' : 'Just now',
       icon: FacebookIcon,
       badge: 'Meta Graph API v19',
     },
     {
       id: 'zalo',
-      name: 'Zalo OA Doanh Nghiệp',
+      name: 'Zalo OA Doanh nghiệp',
       followers: '48,200',
-      status: isVi ? 'Đang kết nối' : 'Connected',
-      syncTime: '1 phút trước',
+      status: isVi ? 'Đã kết nối' : 'Connected',
+      syncTime: isVi ? '1 phút trước' : '1m ago',
       icon: MessageSquareIcon,
       badge: 'Zalo Official Account',
     },
     {
       id: 'kiotviet',
       name: 'KiotViet POS Multi-Store',
-      followers: '5 Chi nhánh',
-      status: isVi ? 'Đồng bộ tự động 2 chiều' : 'Bi-directional Sync',
-      syncTime: 'Real-time',
+      followers: isVi ? '5 chi nhánh' : '5 branches',
+      status: isVi ? 'Đồng bộ 2 chiều' : 'Two-way sync',
+      syncTime: 'Realtime',
       icon: StoreIcon,
       badge: 'KiotViet Open API',
     },
@@ -77,153 +70,95 @@ export function InteractiveSocialRetail({ isVi }: InteractiveSocialRetailProps) 
   const kiotvietProducts = [
     {
       code: 'SP-KV-1092',
-      name: isVi ? 'Tai Nghe Bluetooth Không Dây Pro' : 'Wireless Pro Headphone',
-      branches: isVi ? '5/5 Cửa hàng' : '5/5 Branches',
+      name: isVi ? 'Tai nghe Bluetooth Pro' : 'Wireless Pro Headphone',
+      branches: isVi ? '5/5 cửa hàng' : '5/5 branches',
       posStock: 340,
       commadeskStock: 340,
-      status: 'synced',
     },
     {
       code: 'SP-KV-0481',
-      name: isVi ? 'Bàn Phím Cơ Không Dây RGB' : 'Mechanical RGB Keyboard',
-      branches: isVi ? '3/5 Cửa hàng' : '3/5 Branches',
+      name: isVi ? 'Bàn phím cơ không dây' : 'Mechanical Wireless Keyboard',
+      branches: isVi ? '3/5 cửa hàng' : '3/5 branches',
       posStock: 85,
       commadeskStock: 85,
-      status: 'synced',
     },
     {
       code: 'SP-KV-9204',
-      name: isVi ? 'Chuột Công Thái Học Không Dây' : 'Ergonomic Wireless Mouse',
-      branches: isVi ? '5/5 Cửa hàng' : '5/5 Branches',
+      name: isVi ? 'Chuột công thái học' : 'Ergonomic Wireless Mouse',
+      branches: isVi ? '5/5 cửa hàng' : '5/5 branches',
       posStock: 142,
       commadeskStock: 142,
-      status: 'synced',
     },
   ];
 
   return (
     <ShowcaseCard
-      title={isVi ? 'Social Gateway & Đồng Bộ Bán Lẻ KiotViet' : 'Social Gateway & KiotViet Retail Integration'}
+      title={isVi ? 'Social Gateway & Đồng bộ KiotViet POS' : 'Social Gateway & KiotViet POS Sync'}
       headerRight={
-        <ShowcaseTabBar
-          tabs={tabs}
-          activeTab={activeTab}
-          onChange={setActiveTab}
-        />
+        <ShowcaseTabBar tabs={tabs} activeTab={activeTab} onChange={setActiveTab} />
       }
     >
-      {activeTab === '3d-retail' && (
-        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
-          <Image
-            src="/showcase/tech_inventory_assets.webp"
-            alt="Futuristic 3D Smart Retail and Omnichannel Fulfillment"
-            fill
-            unoptimized
-            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-            sizes="(max-width: 1200px) 100vw, 1200px"
-            priority
-          />
-
-          {/* Floating Badge 1: KiotViet POS Sync */}
-          <div className="absolute top-4 left-4 sm:top-6 sm:left-6 animate-float bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg max-w-[220px] hidden sm:block">
-            <div className="flex items-center gap-2 mb-1.5">
-              <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-              <span className="text-[11px] font-bold text-slate-900">
-                {isVi ? 'Đồng Bộ KiotViet POS Live' : 'KiotViet POS Realtime'}
-              </span>
-            </div>
-            <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-1">
-              <div className="bg-blue-500 h-full w-[96%] rounded-full animate-pulse"></div>
-            </div>
-            <span className="text-[10px] text-slate-500 font-medium">
-              {isVi ? 'Tự động trừ tồn kho khi phát sinh đơn' : 'Auto-deduct stock on order completion'}
+      {activeTab === 'composer' && (
+        <div className="rounded-xl bg-white border border-slate-900/[0.08] p-4 space-y-3">
+          <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-900/[0.06]">
+            <span className="text-[13px] font-semibold text-[#111827]">
+              {isVi ? 'Xuất bản nội dung đồng thời' : 'Multi-channel post composer'}
             </span>
+            <div className="flex items-center gap-1 p-0.5 bg-[#F5F7FA] rounded-lg border border-slate-900/[0.06]">
+              <button
+                type="button"
+                onClick={() => setSelectedChannel('facebook')}
+                className={`px-2.5 py-1 text-[12px] font-medium rounded-md cursor-pointer transition-colors ${
+                  selectedChannel === 'facebook'
+                    ? 'bg-white text-[#111827] shadow-[0_1px_2px_rgba(17,24,39,0.06)]'
+                    : 'text-[#6B7487] hover:text-[#111827]'
+                }`}
+              >
+                Facebook Page
+              </button>
+              <button
+                type="button"
+                onClick={() => setSelectedChannel('zalo')}
+                className={`px-2.5 py-1 text-[12px] font-medium rounded-md cursor-pointer transition-colors ${
+                  selectedChannel === 'zalo'
+                    ? 'bg-white text-[#111827] shadow-[0_1px_2px_rgba(17,24,39,0.06)]'
+                    : 'text-[#6B7487] hover:text-[#111827]'
+                }`}
+              >
+                Zalo OA
+              </button>
+            </div>
           </div>
 
-          {/* Floating Badge 2: Omnichannel Channels */}
-          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 animate-float-delayed bg-white/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 shadow-lg hidden sm:block">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-xs">
-                <CheckIcon className="w-3.5 h-3.5" />
+          <div className="p-4 rounded-xl bg-[#F5F7FA] border border-slate-900/[0.06] space-y-3">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-lg bg-[#111827] text-white font-semibold flex items-center justify-center text-[12px]">
+                C
               </div>
               <div>
-                <p className="text-[11px] font-bold text-slate-900">
-                  {isVi ? 'Đăng Bài Đa Kênh Tự Động' : 'Multi-Channel Auto-Publish'}
-                </p>
-                <p className="text-[10px] text-emerald-600 font-semibold">
-                  {isVi ? 'Meta Facebook & Zalo Official Account' : 'Facebook & Zalo OA Connected'}
-                </p>
+                <div className="text-[13px] font-semibold text-[#111827]">CommaDesk Official Store</div>
+                <div className="text-[11px] text-[#6B7487]">
+                  {selectedChannel === 'facebook'
+                    ? 'Meta Graph API'
+                    : 'Zalo OA Broadcast'}
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      )}
 
-      {activeTab === 'composer' && (
-        <div className="space-y-3">
-          <div className="rounded-2xl bg-gradient-to-br from-white to-slate-50 border border-slate-200/90 p-4 shadow-xs">
-            <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
-              <span className="text-xs font-bold text-slate-900">
-                {isVi ? 'Xuất Bản Nội Dung Đồng Thời Đa Nền Tảng' : 'Multi-Channel Live Post Composer'}
+            <p className="text-[13px] text-[#4B5565] leading-relaxed">
+              {isVi
+                ? 'Ưu đãi tháng 10: Giảm 15% phụ kiện văn phòng và thiết bị công thái học tại toàn bộ 5 chi nhánh.'
+                : 'October campaign: 15% off ergonomic desk accessories across all 5 retail locations.'}
+            </p>
+
+            <div className="p-2.5 rounded-lg bg-white border border-slate-900/[0.08] flex items-center justify-between text-[12px]">
+              <span className="text-[#4B5565]">
+                {isVi ? 'Đính kèm: 3 ảnh sản phẩm' : 'Attached: 3 product images'}
               </span>
-              <div className="flex items-center gap-1">
-                <button
-                  type="button"
-                  onClick={() => setSelectedChannel('facebook')}
-                  className={`px-2.5 py-1 text-xs font-bold rounded-lg cursor-pointer ${
-                    selectedChannel === 'facebook'
-                      ? 'bg-blue-600 text-white shadow-xs'
-                      : 'text-slate-600 hover:bg-slate-100'
-                  }`}
-                >
-                  Facebook Page
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setSelectedChannel('zalo')}
-                  className={`px-2.5 py-1 text-xs font-bold rounded-lg cursor-pointer ${
-                    selectedChannel === 'zalo'
-                      ? 'bg-blue-500 text-white shadow-xs'
-                      : 'text-slate-600 hover:bg-slate-100'
-                  }`}
-                >
-                  Zalo OA
-                </button>
-              </div>
-            </div>
-
-            {/* Post Preview Simulation */}
-            <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-2">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-[#FF4D38]/10 text-[#FF4D38] font-extrabold flex items-center justify-center text-xs">
-                  C
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-slate-900">CommaDesk Official Store</div>
-                  <div className="text-[10px] text-slate-400">
-                    {selectedChannel === 'facebook' ? 'Đăng tự động qua Social Gateway' : 'Đăng qua Zalo OA Broadcast'}
-                  </div>
-                </div>
-              </div>
-
-              <p className="text-xs text-slate-800 leading-relaxed pt-1 flex items-start gap-1.5">
-                <GiftIcon className="w-4 h-4 text-[#FF4D38] shrink-0 mt-0.5" />
-                <span>
-                  {isVi
-                    ? 'Ưu đãi độc quyền tháng này: Giảm ngay 15% cho toàn bộ phụ kiện văn phòng và trang thiết bị công thái học. Hàng chính hãng, bảo hành 2 năm!'
-                    : 'Exclusive Monthly Campaign: Enjoy 15% off across all ergonomic office accessories and tech workstations. Verified warranty!'}
-                </span>
-              </p>
-
-              <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200/80 flex items-center justify-between text-[11px]">
-                <span className="text-slate-600 font-medium">
-                  {isVi ? 'Đính kèm: 3 Ảnh sản phẩm + Nút Mua ngay' : 'Attached: 3 Product Assets + CTA'}
-                </span>
-                <span className="inline-flex items-center gap-1 text-emerald-600 font-bold">
-                  <CheckIcon className="w-3.5 h-3.5" />
-                  <span>Ready to Broadcast</span>
-                </span>
-              </div>
+              <span className="inline-flex items-center gap-1.5 text-[#16A34A] font-medium">
+                <CheckIcon className="w-3.5 h-3.5" />
+                <span>{isVi ? 'Sẵn sàng đăng' : 'Ready to publish'}</span>
+              </span>
             </div>
           </div>
         </div>
@@ -231,37 +166,34 @@ export function InteractiveSocialRetail({ isVi }: InteractiveSocialRetailProps) 
 
       {activeTab === 'kiotviet' && (
         <div className="space-y-2.5">
-          <div className="p-3 rounded-2xl bg-white border border-slate-200/90 shadow-xs mb-2">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-900">
-                {isVi ? 'Đồng Bộ Hai Chiều Tồn Kho & Đơn Hàng POS KiotViet' : 'Bi-directional Real-Time KiotViet Sync'}
-              </span>
-              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 inline-flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
-                <span>Live Webhook 200 OK</span>
-              </span>
-            </div>
-            <p className="text-[11px] text-slate-500 mt-1">
-              {isVi
-                ? 'Khi có đơn hàng bán lẻ tại quầy POS KiotViet, số lượng tồn kho trên CommaDesk tự động cân bằng tức thì trong < 1.2s.'
-                : 'Whenever a POS sale occurs at any retail branch, CommaDesk inventory balance updates in < 1.2s.'}
-            </p>
+          <div className="p-3.5 rounded-xl bg-white border border-slate-900/[0.08] flex flex-wrap items-center justify-between gap-2">
+            <span className="text-[13px] font-semibold text-[#111827]">
+              {isVi ? 'Đồng bộ tồn kho POS KiotViet hai chiều' : 'Two-way KiotViet POS stock sync'}
+            </span>
+            <span className="font-mono text-[12px] font-medium text-[#16A34A]">
+              Webhook 200 OK
+            </span>
           </div>
 
           {kiotvietProducts.map((p) => (
-            <div key={p.code} className="p-3 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center justify-between">
+            <div
+              key={p.code}
+              className="p-3.5 rounded-xl bg-white border border-slate-900/[0.08] flex items-center justify-between gap-3"
+            >
               <div>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold text-slate-900">{p.name}</span>
-                  <span className="text-[10px] font-mono text-slate-400">{p.code}</span>
+                  <span className="text-[13px] font-medium text-[#111827]">{p.name}</span>
+                  <span className="text-[11px] font-mono text-[#6B7487]">{p.code}</span>
                 </div>
-                <div className="text-[11px] text-slate-500 mt-0.5">{p.branches}</div>
+                <div className="text-[12px] text-[#6B7487] mt-0.5">{p.branches}</div>
               </div>
-              <div className="text-right">
-                <div className="text-xs font-extrabold text-slate-900">
-                  {p.posStock} <span className="text-[10px] text-emerald-600 font-bold">Khớp 100%</span>
+              <div className="text-right font-mono tabular-nums">
+                <div className="text-[13px] font-semibold text-[#111827]">
+                  {p.posStock} <span className="text-[11px] text-[#16A34A] font-medium">100% match</span>
                 </div>
-                <div className="text-[10px] text-slate-400 mt-0.5">POS: {p.posStock} = CP: {p.commadeskStock}</div>
+                <div className="text-[11px] text-[#6B7487] mt-0.5">
+                  POS {p.posStock} = Desk {p.commadeskStock}
+                </div>
               </div>
             </div>
           ))}
@@ -273,23 +205,24 @@ export function InteractiveSocialRetail({ isVi }: InteractiveSocialRetailProps) 
           {channels.map((c) => {
             const ChannelIcon = c.icon;
             return (
-              <div key={c.id} className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center justify-between">
+              <div
+                key={c.id}
+                className="p-3.5 rounded-xl bg-white border border-slate-900/[0.08] flex items-center justify-between gap-3"
+              >
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700">
-                    <ChannelIcon className="w-5 h-5" />
+                  <div className="w-9 h-9 rounded-lg bg-[#F5F7FA] border border-slate-900/[0.08] flex items-center justify-center text-[#111827]">
+                    <ChannelIcon className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-slate-900">{c.name}</div>
-                    <div className="text-[11px] text-slate-500 mt-0.5">
-                      {c.followers} · <span className="font-mono text-slate-400">{c.badge}</span>
+                    <div className="text-[13px] font-medium text-[#111827]">{c.name}</div>
+                    <div className="font-mono tabular-nums text-[12px] text-[#6B7487] mt-0.5">
+                      {c.followers} · {c.badge}
                     </div>
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-                    {c.status}
-                  </span>
-                  <div className="text-[10px] text-slate-400 mt-1">{c.syncTime}</div>
+                  <span className="text-[12px] font-medium text-[#16A34A]">{c.status}</span>
+                  <div className="font-mono text-[11px] text-[#6B7487] mt-0.5">{c.syncTime}</div>
                 </div>
               </div>
             );
@@ -297,13 +230,9 @@ export function InteractiveSocialRetail({ isVi }: InteractiveSocialRetailProps) 
         </div>
       )}
 
-      {/* Bottom Status Ticker */}
-      <div className="mt-3 pt-3 border-t border-slate-200/80 flex items-center justify-between text-[11px] text-slate-500">
-        <span className="flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-          {isVi ? 'Đảm bảo tuân thủ chính sách Meta API & KiotViet Open API' : 'Compliant with Meta API & KiotViet Open Protocols'}
-        </span>
-        <span className="font-semibold text-slate-700">Latency: 120ms</span>
+      <div className="mt-3 pt-3 border-t border-slate-900/[0.06] flex items-center justify-between text-[12px] text-[#6B7487]">
+        <span>{isVi ? 'Kết nối Meta API & KiotViet Open API' : 'Meta API & KiotViet Open API'}</span>
+        <span className="font-mono tabular-nums text-[#111827] font-medium">Latency: 120 ms</span>
       </div>
     </ShowcaseCard>
   );

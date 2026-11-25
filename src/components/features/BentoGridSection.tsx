@@ -15,21 +15,20 @@ export function BentoGridSection() {
   return (
     <section
       id="features"
-      className="canvas-card scroll-mt-32 sm:scroll-mt-36 md:scroll-mt-40 bg-white rounded-[24px] sm:rounded-[44px] md:rounded-[48px] shadow-sm border border-slate-200/60 overflow-hidden relative pt-20 sm:pt-40 md:pt-44 pb-16 sm:pb-28 px-2.5 sm:px-10 lg:px-14"
+      className="canvas-card scroll-mt-24 bg-white rounded-2xl sm:rounded-3xl shadow-[0_1px_2px_rgba(17,24,39,0.05)] border border-slate-900/[0.08] overflow-hidden relative pt-14 sm:pt-20 md:pt-24 pb-14 sm:pb-20 px-4 sm:px-8 lg:px-12"
     >
       {/* Section Header */}
-      <div className="scroll-blur-reveal text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#FF4D38]"></span>
+      <div className="scroll-blur-reveal text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+        <p className="text-[13px] font-medium text-[#6B7487] mb-2">
           {t.features.sectionBadge}
-        </div>
+        </p>
         <TextBlurWipe
           as="h2"
-          className="text-2xl sm:text-4xl md:text-5xl font-black text-gray-900 tracking-tight"
+          className="text-[28px] sm:text-4xl md:text-[42px] font-semibold text-[#111827] tracking-[-0.02em] leading-[1.12]"
         >
           {t.features.title}
         </TextBlurWipe>
-        <p className="text-blur-wipe-sub mt-2.5 sm:mt-3 text-xs sm:text-base text-gray-500 max-w-2xl mx-auto">
+        <p className="text-blur-wipe-sub mt-3 text-[14px] sm:text-[16px] text-[#4B5565] max-w-xl mx-auto leading-relaxed">
           {t.features.subtitle}
         </p>
       </div>

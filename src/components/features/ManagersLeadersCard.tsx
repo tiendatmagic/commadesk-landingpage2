@@ -12,18 +12,15 @@ export function ManagersLeadersCard() {
   const badges = [
     {
       text: t.features.card2.badge1Title,
-      iconClass: 'bg-sky-50 text-sky-500',
-      icon: <ClockIcon className="w-5 h-5" />,
+      icon: <ClockIcon className="w-4 h-4" />,
     },
     {
       text: t.features.card2.badge2Title,
-      iconClass: 'bg-red-50 text-red-500',
-      icon: <BarChartIcon className="w-5 h-5" />,
+      icon: <BarChartIcon className="w-4 h-4" />,
     },
     {
       text: t.features.card2.badge3Title,
-      iconClass: 'bg-amber-50 text-amber-500',
-      icon: <TrendingUpIcon className="w-5 h-5" />,
+      icon: <TrendingUpIcon className="w-4 h-4" />,
     },
   ];
 
@@ -34,7 +31,7 @@ export function ManagersLeadersCard() {
       setTimeout(() => {
         setCurrentIdx((prev) => (prev + 1) % badges.length);
         setIsFlipping(false);
-      }, 250);
+      }, 220);
     }, 3400);
 
     return () => clearInterval(timer);
@@ -43,42 +40,33 @@ export function ManagersLeadersCard() {
   const badge = badges[currentIdx];
 
   return (
-    <div className="scroll-fade-up delay-150 bg-[#FAFAFC] rounded-3xl p-6 sm:p-8 border border-slate-200/70 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-      {/* Graphic: Concentric Radar & Stacked Badges */}
-      <div className="bg-white rounded-2xl p-6 border border-slate-100 mb-6 flex items-center justify-center min-h-[170px] relative overflow-hidden shadow-xs">
-        {/* Concentric Circles Background */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none animate-ripple">
-          <div className="w-48 h-48 rounded-full border border-slate-100" />
-          <div className="absolute w-32 h-32 rounded-full border border-slate-100" />
-          <div className="absolute w-16 h-16 rounded-full border border-slate-100" />
+    <div className="scroll-fade-up delay-150 bg-[#F8FAFC] rounded-2xl p-6 border border-slate-900/[0.08] flex flex-col justify-between">
+      {/* Graphic: Concentric Rings & Stacked Cards */}
+      <div className="bg-white rounded-xl p-6 border border-slate-900/[0.08] mb-6 flex items-center justify-center min-h-[176px] relative overflow-hidden shadow-[0_1px_2px_rgba(17,24,39,0.04)]">
+        {/* Static Concentric Circles */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-48 h-48 rounded-full border border-slate-900/[0.05]" />
+          <div className="absolute w-32 h-32 rounded-full border border-slate-900/[0.06]" />
+          <div className="absolute w-16 h-16 rounded-full border border-slate-900/[0.07]" />
         </div>
 
-        {/* Stacked Cards Container */}
+        {/* Stacked Cards */}
         <div className="relative z-10 flex flex-col items-center">
-          {/* Thẻ lót 3 (dưới cùng có mép vàng) */}
-          <div className="w-56 h-10 bg-slate-50 rounded-xl border border-slate-200/60 shadow-xs -mb-7 scale-90 relative">
-            <div className="absolute -bottom-1 left-4 w-5 h-1.5 bg-amber-400 rounded-full" />
-          </div>
-          {/* Thẻ lót 2 (ở giữa có mép đỏ) */}
-          <div className="w-60 h-10 bg-slate-100/80 rounded-xl border border-slate-200/70 shadow-xs -mb-7 scale-95 relative">
-            <div className="absolute -bottom-1 left-4 w-5 h-1.5 bg-red-400 rounded-full" />
-          </div>
-          {/* Thẻ chính: 3D Flip Cylinder Stacked Badge */}
+          <div className="w-56 h-10 bg-[#F5F7FA] rounded-lg border border-slate-900/[0.06] -mb-7 scale-90 relative" />
+          <div className="w-60 h-10 bg-[#ECEFF4] rounded-lg border border-slate-900/[0.08] -mb-7 scale-95 relative" />
           <div
-            className="relative z-10 px-5 py-3 bg-white rounded-2xl border border-slate-200 shadow-xl flex items-center gap-3 transition-all duration-300"
+            className="relative z-10 px-4 py-2.5 bg-white rounded-xl border border-slate-900/[0.1] shadow-[0_4px_14px_rgba(17,24,39,0.06)] flex items-center gap-3 transition-[transform,opacity] duration-200"
             style={{
               transform: isFlipping
-                ? 'perspective(500px) rotateX(-75deg) scale(0.92)'
+                ? 'perspective(500px) rotateX(-70deg) scale(0.95)'
                 : 'perspective(500px) rotateX(0deg) scale(1)',
               opacity: isFlipping ? 0 : 1,
             }}
           >
-            <span
-              className={`w-8 h-8 rounded-xl flex items-center justify-center text-sm font-bold shadow-2xs ${badge.iconClass}`}
-            >
+            <span className="w-8 h-8 rounded-lg bg-[#F5F7FA] border border-slate-900/[0.08] text-[#111827] flex items-center justify-center">
               {badge.icon}
             </span>
-            <span className="text-sm font-bold text-gray-800 tracking-tight whitespace-nowrap">
+            <span className="text-[14px] font-medium text-[#111827] whitespace-nowrap">
               {badge.text}
             </span>
           </div>
@@ -86,8 +74,8 @@ export function ManagersLeadersCard() {
       </div>
 
       <div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">{t.features.card2.title}</h3>
-        <p className="text-sm text-gray-500 leading-relaxed">
+        <h3 className="text-[18px] font-semibold text-[#111827] mb-1.5">{t.features.card2.title}</h3>
+        <p className="text-[14px] text-[#4B5565] leading-relaxed">
           {t.features.card2.desc}
         </p>
       </div>
