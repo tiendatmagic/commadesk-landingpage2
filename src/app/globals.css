@@ -55,6 +55,22 @@
   backdrop-filter: blur(6px);
 }
 
+/* Navbar & Dropdown Popover Entrance */
+@keyframes navPopoverIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.nav-popover-enter {
+  animation: navPopoverIn 0.18s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
 /* Custom menu scrollbar */
 .custom-menu-scroll::-webkit-scrollbar {
   width: 5px;

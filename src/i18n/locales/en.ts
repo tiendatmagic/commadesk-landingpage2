@@ -122,7 +122,7 @@ export const en = {
     integrations: 'Integrations',
     platform: 'Platform & Trust',
     resources: 'Resources',
-    getStarted: 'Explore modules',
+    getStarted: 'Explore Modules',
     exploreAllModules: 'Enterprise modules',
     viewAll: 'View all capabilities',
     closeMenu: 'Close menu',
