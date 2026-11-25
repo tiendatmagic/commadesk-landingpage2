@@ -163,9 +163,9 @@ export function InteractiveFleetLogistics({ isVi }: InteractiveFleetLogisticsPro
       )}
 
       <div className="mt-4 pt-3 border-t border-slate-900/[0.06] flex items-center justify-between text-[12px] text-[#6B7487]">
-        <span>{isVi ? 'Tối ưu tuyến đường Goong GIS' : 'Goong GIS route engine'}</span>
+        <span>{isVi ? 'Bản đồ điều phối & theo dõi lộ trình' : 'Dispatch map & route tracking'}</span>
         <span className="font-mono tabular-nums font-medium text-[#16A34A]">
-          {isVi ? 'Giảm 22% nhiên liệu' : '-22% fuel cost'}
+          {isVi ? 'Đối soát chi phí theo chuyến' : 'Per-trip cost ledger'}
         </span>
       </div>
     </ShowcaseCard>

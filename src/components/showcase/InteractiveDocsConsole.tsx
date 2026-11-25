@@ -42,7 +42,7 @@ export function InteractiveDocsConsole({ isVi }: Props) {
     {
       id: 'CV-101',
       title: isVi ? 'Khai trương chi nhánh bán lẻ miền Nam' : 'Launch Southern retail branch',
-      assignee: 'Sarah Mitchell',
+      assignee: isVi ? 'Nguyễn Thị Thảo' : 'Thao Nguyen',
       role: isVi ? 'Trưởng dự án' : 'Project lead',
       department: isVi ? 'Phát triển kinh doanh' : 'Business dev',
       progress: 90,
@@ -54,9 +54,9 @@ export function InteractiveDocsConsole({ isVi }: Props) {
     {
       id: 'CV-102',
       title: isVi ? 'Nghiệm thu lắp đặt hệ thống Camera an ninh' : 'Security camera system acceptance',
-      assignee: 'James Carter',
+      assignee: isVi ? 'Trần Văn Minh' : 'Minh Tran',
       role: isVi ? 'Chuyên viên kỹ thuật' : 'Tech specialist',
-      department: isVi ? 'Vận hành hạ tầng' : 'Infra ops',
+      department: isVi ? 'Vận hành hạ tầng' : 'Operations',
       progress: 100,
       priority: isVi ? 'Bình thường' : 'Normal',
       priorityTone: 'text-[#4B5565]',
@@ -66,7 +66,7 @@ export function InteractiveDocsConsole({ isVi }: Props) {
     {
       id: 'CV-103',
       title: isVi ? 'Tổng hợp báo cáo doanh thu & KPI tháng' : 'Monthly revenue & KPI consolidation',
-      assignee: 'Elena Rostova',
+      assignee: isVi ? 'Lê Thu Hương' : 'Huong Le',
       role: isVi ? 'Kế toán trưởng' : 'Chief accountant',
       department: isVi ? 'Tài chính kế toán' : 'Finance',
       progress: 75,

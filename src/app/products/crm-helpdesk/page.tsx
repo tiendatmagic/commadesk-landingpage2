@@ -22,43 +22,43 @@ export default function CRMHelpdeskPage() {
           id: 'crm-pipeline',
           tag: 'Kinh doanh',
           title: 'Phễu Bán Hàng B2B',
-          description: 'Theo dõi chu trình bán hàng từ cơ hội tiềm năng đến dự báo doanh thu.',
-          metricBadge: { label: 'Tăng trưởng', value: '+35% chốt deal' },
+          description: 'Theo dõi chu trình bán hàng từ cơ hội tiềm năng, báo giá đến dự báo doanh thu.',
+          metricBadge: { label: 'Theo dõi', value: 'Theo từng giai đoạn' },
         },
         {
           id: 'helpdesk-queues',
-          tag: 'Hỗ trợ ITIL',
+          tag: 'Hỗ trợ',
           title: 'Hàng Đợi Ticket & SLA',
-          description: 'Tiếp nhận sự cố, phân công tự động và đồng hồ đếm ngược vi phạm cam kết SLA.',
-          metricBadge: { label: 'Tuân thủ SLA', value: '98.5% chuẩn hạn' },
+          description: 'Tiếp nhận sự cố, phân công tự động cho kỹ thuật viên và theo dõi đồng hồ cam kết SLA.',
+          metricBadge: { label: 'Kiểm soát', value: 'Cảnh báo hạn SLA' },
         },
         {
           id: 'customer-360',
           tag: 'Khách hàng',
           title: 'Hồ Sơ Khách Hàng 360°',
           description: 'Tổng hợp hợp đồng, lịch sử giao dịch và nhật ký hỗ trợ trên một màn hình.',
-          metricBadge: { label: 'Hài lòng CSAT', value: '4.9 / 5.0' },
+          metricBadge: { label: 'Tổng hợp', value: 'Lịch sử đầy đủ' },
         },
         {
           id: 'hr-helpdesk-widget',
           tag: 'Hỗ trợ nội bộ',
-          title: 'Widget Hỗ Trợ HR',
-          description: 'Gửi yêu cầu hỗ trợ nội bộ cho nhân sự ngay trên không gian làm việc.',
-          metricBadge: { label: 'Xử lý', value: '< 1 giờ' },
+          title: 'Kênh Hỗ Trợ HR Nội Bộ',
+          description: 'Nhân viên gửi yêu cầu hỗ trợ về nhân sự, hành chính ngay trên không gian làm việc.',
+          metricBadge: { label: 'Phân loại', value: 'Định tuyến tự động' },
         },
         {
           id: 'omnichannel',
           tag: 'Đa kênh',
           title: 'Tiếp Nhận Đa Kênh',
-          description: 'Tự động tạo ticket từ Email, Chat trực tuyến và cổng tự phục vụ.',
-          metricBadge: { label: 'Tốc độ', value: 'Thời gian thực' },
+          description: 'Tự động tạo ticket từ Email, Chat trực tuyến và cổng tự phục vụ của khách hàng.',
+          metricBadge: { label: 'Kênh nhận', value: 'Email, Chat & Cổng web' },
         },
         {
           id: 'knowledge-base',
           tag: 'Tri thức',
           title: 'Kho Tri Thức Tự Phục Vụ',
-          description: 'Kho bài viết giải pháp tự phục vụ giúp giảm tải ticket trùng và khảo sát CSAT.',
-          metricBadge: { label: 'Giảm tải', value: '-50% ticket trùng' },
+          description: 'Lưu trữ bài viết hướng dẫn xử lý thường gặp giúp khách hàng tự tra cứu và đánh giá CSAT.',
+          metricBadge: { label: 'Tự phục vụ', value: 'Hướng dẫn & CSAT' },
         },
       ]
     : [
@@ -66,43 +66,43 @@ export default function CRMHelpdeskPage() {
           id: 'crm-pipeline',
           tag: 'Sales',
           title: 'B2B Sales Pipeline',
-          description: 'Track deals from initial leads to closure with accurate revenue forecasting.',
-          metricBadge: { label: 'Win Rate', value: '+35% Boost' },
+          description: 'Track deals from initial leads and proposals to closure with revenue forecasting.',
+          metricBadge: { label: 'Tracking', value: 'Stage Pipeline' },
         },
         {
           id: 'helpdesk-queues',
           tag: 'Service Desk',
           title: 'Ticket Queues & SLA',
-          description: 'ITIL ticket handling with automated triage and SLA countdown timers.',
-          metricBadge: { label: 'SLA Rate', value: '98.5% On-Time' },
+          description: 'Service desk ticket handling with automated routing and SLA countdown timers.',
+          metricBadge: { label: 'Tracking', value: 'SLA Deadlines' },
         },
         {
           id: 'customer-360',
           tag: 'Customer',
           title: 'Customer 360° View',
-          description: 'Unified customer dossier uniting signed contracts, billing, and support history.',
-          metricBadge: { label: 'CSAT', value: '4.9 / 5.0' },
+          description: 'Unified customer record combining signed contracts, billing, and support history.',
+          metricBadge: { label: 'Records', value: 'Full History' },
         },
         {
           id: 'hr-helpdesk-widget',
           tag: 'Internal Desk',
-          title: 'Internal HR Widget',
-          description: 'In-app HR request widget enabling rapid employee query resolution.',
-          metricBadge: { label: 'Speed', value: '< 1 Hour' },
+          title: 'Internal HR Support Desk',
+          description: 'In-app HR request widget enabling employees to log and track workplace queries.',
+          metricBadge: { label: 'Routing', value: 'Auto-Assigned' },
         },
         {
           id: 'omnichannel',
           tag: 'Omnichannel',
-          title: 'Omnichannel Ingest',
-          description: 'Ingest issues via mailboxes, chat widgets, self-service portals, and APIs.',
-          metricBadge: { label: 'Ingest', value: 'Realtime' },
+          title: 'Multi-Channel Ticket Intake',
+          description: 'Convert incoming emails, live chat messages, and self-service portal forms into tickets.',
+          metricBadge: { label: 'Channels', value: 'Mail, Chat & Portal' },
         },
         {
           id: 'knowledge-base',
           tag: 'Knowledge',
-          title: 'Self-Service Knowledge',
-          description: 'Deflect repetitive tickets with self-service resolution articles and CSAT.',
-          metricBadge: { label: 'Deflection', value: '-50% Repetitive' },
+          title: 'Self-Service Knowledge Base',
+          description: 'Publish help articles for common issues and collect post-resolution CSAT ratings.',
+          metricBadge: { label: 'Support', value: 'Guides & CSAT' },
         },
       ];
 
@@ -115,29 +115,29 @@ export default function CRMHelpdeskPage() {
           categoryBadge={isVi ? 'Phân hệ Khách hàng & Hỗ trợ' : 'CRM & Helpdesk Module'}
           title={
             isVi
-              ? ['Dịch vụ xuất sắc.', 'Tăng trưởng doanh số bền vững.']
-              : ['Exceptional service.', 'Accelerated enterprise sales.']
+              ? ['Chăm sóc khách hàng bài bản', 'Quản lý cơ hội bán hàng B2B']
+              : ['Structured customer support', 'Clear B2B sales pipelines']
           }
           subtitle={
             isVi
-              ? 'Hợp nhất phễu kinh doanh B2B, hàng đợi ticket ITIL và hỗ trợ nhân sự nội bộ trên một nền tảng.'
-              : 'Unify B2B opportunity pipelines, ITIL service desk queues, and internal HR support in one connected suite.'
+              ? 'Hợp nhất phễu kinh doanh B2B, hàng đợi ticket hỗ trợ theo SLA và kênh hỗ trợ nhân sự nội bộ trên một nền tảng.'
+              : 'Manage B2B opportunity pipelines, SLA support queues, and internal HR service requests in one workspace.'
           }
           tags={
             isVi
               ? [
                   'Phễu bán hàng B2B',
-                  'Hàng đợi ITIL',
+                  'Hàng đợi Ticket',
                   'Đồng hồ đếm SLA',
                   'Hồ sơ khách hàng 360°',
                   'Tiếp nhận đa kênh',
                 ]
               : [
                   'B2B Sales Pipeline',
-                  'ITIL Service Desk',
+                  'Support Queues',
                   'SLA Countdown',
                   'Customer 360°',
-                  'Omnichannel Ingest',
+                  'Multi-Channel Intake',
                 ]
           }
           visualPreview={visualPreview}
@@ -145,11 +145,11 @@ export default function CRMHelpdeskPage() {
 
         <SubpageFeaturesGrid
           badge={isVi ? 'Khả năng cốt lõi' : 'Core Capabilities'}
-          title={isVi ? 'Bộ giải pháp quan hệ khách hàng & Dịch vụ' : 'Enterprise CRM & Service Desk Suite'}
+          title={isVi ? 'Bộ công cụ quản lý khách hàng & Dịch vụ' : 'CRM & Service Desk Capabilities'}
           subtitle={
             isVi
-              ? 'Rút ngắn chu kỳ bán hàng và tối ưu hóa tốc độ giải quyết sự cố kỹ thuật.'
-              : 'Shorten enterprise deal cycles and empower agents with automated workflows.'
+              ? 'Theo dõi xuyên suốt từ cơ hội bán hàng đến tiếp nhận và xử lý yêu cầu hỗ trợ sau bán.'
+              : 'Follow every account from initial sales deal to ongoing customer support requests.'
           }
           features={features}
         />

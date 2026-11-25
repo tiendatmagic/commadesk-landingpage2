@@ -271,7 +271,9 @@ export function InteractiveInventoryAssets({ isVi }: InteractiveInventoryAssetsP
         <span>
           {isVi ? 'Cân bằng tồn kho tự động theo phân quyền' : 'Automated ledger sync with permissions'}
         </span>
-        <span className="font-mono text-[#111827] font-medium">Audit trail: ok</span>
+        <span className="font-mono text-[#111827] font-medium">
+          {isVi ? 'Đồng bộ tồn kho: Bật' : 'Stock sync: active'}
+        </span>
       </div>
     </ShowcaseCard>
   );

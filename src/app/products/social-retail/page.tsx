@@ -21,87 +21,87 @@ export default function SocialRetailPage() {
           id: 'multi-channel-hub',
           tag: 'Đa kênh MXH',
           title: 'Cổng Mạng Xã Hội',
-          description: 'Hội tụ Facebook Fanpage, Zalo OA và Webchat vào một màn hình duy nhất.',
-          metricBadge: { label: 'Kết nối mạng xã hội', value: 'Đa kênh Meta & Zalo' },
+          description: 'Hội tụ Facebook Fanpage, Zalo OA và Webchat vào một màn hình làm việc chung.',
+          metricBadge: { label: 'Kết nối', value: 'Facebook & Zalo OA' },
         },
         {
           id: 'post-composer',
           tag: 'Soạn thảo',
           title: 'Đăng Bài Đa Kênh',
-          description: 'Soạn nội dung một lần, xem trước trực quan và hẹn giờ đăng bài đồng thời.',
-          metricBadge: { label: 'Tốc độ', value: 'Nhanh hơn 4x' },
+          description: 'Soạn nội dung một lần, xem trước bố cục bài đăng và hẹn giờ đăng đồng thời lên các kênh.',
+          metricBadge: { label: 'Xuất bản', value: 'Hẹn giờ đa kênh' },
         },
         {
           id: 'kiotviet-two-way-sync',
           tag: 'Bán lẻ POS',
           title: 'Đồng Bộ KiotViet',
-          description: 'Đồng bộ hai chiều danh mục sản phẩm, giá bán và đơn hàng thời gian thực.',
-          metricBadge: { label: 'Độ trễ đồng bộ', value: '< 1.2 Giây' },
+          description: 'Đồng bộ hai chiều danh mục sản phẩm, bảng giá và đơn hàng tại quầy KiotViet.',
+          metricBadge: { label: 'Chế độ', value: 'Đồng bộ hai chiều' },
         },
         {
           id: 'branch-stock-balance',
           tag: 'Tồn kho',
           title: 'Tồn Kho Chi Nhánh',
-          description: 'Theo dõi tồn kho từng điểm bán lẻ, tự động trừ kho khi phát sinh đơn hàng.',
-          metricBadge: { label: 'Sai lệch số dư', value: 'Tuyệt đối 0%' },
+          description: 'Theo dõi tồn kho từng cửa hàng bán lẻ và tự động trừ kho khi có đơn hàng phát sinh.',
+          metricBadge: { label: 'Kiểm soát', value: 'Theo từng cửa hàng' },
         },
         {
           id: 'social-monitoring',
           tag: 'Chất lượng',
           title: 'Đo Lường Hiệu Quả Tương Tác',
-          description: 'Giám sát tốc độ phản hồi tin nhắn, đo lường mức độ hài lòng và theo dõi lịch sử tư vấn bán hàng.',
-          metricBadge: { label: 'Chất lượng', value: 'Đo lường 100%' },
+          description: 'Theo dõi tốc độ phản hồi tin nhắn của tư vấn viên và lịch sử chăm sóc khách hàng.',
+          metricBadge: { label: 'Theo dõi', value: 'Lịch sử tư vấn' },
         },
         {
           id: 'omnichannel-orders',
           tag: 'Đơn hàng',
           title: 'Đơn Hàng Đa Kênh',
-          description: 'Chuyển hóa tin nhắn và tương tác thành đơn hàng, kích hoạt xuất kho tức thì.',
-          metricBadge: { label: 'Tăng trưởng', value: '+28% Doanh thu' },
+          description: 'Chốt đơn trực tiếp từ hội thoại mạng xã hội và chuyển sang bộ phận kho đóng gói giao hàng.',
+          metricBadge: { label: 'Quy trình', value: 'Tạo đơn từ chat' },
         },
       ]
     : [
         {
           id: 'multi-channel-hub',
           tag: 'Omnichannel',
-          title: 'Social Gateway',
-          description: 'Unify Facebook Fanpages, Zalo OA, and webchats into a single operational dashboard.',
-          metricBadge: { label: 'Connected Channels', value: 'Meta & Zalo Native' },
+          title: 'Social Inbox Hub',
+          description: 'Bring Facebook Pages, Zalo OA, and website chat into a single inbox for sales teams.',
+          metricBadge: { label: 'Channels', value: 'Facebook & Zalo OA' },
         },
         {
           id: 'post-composer',
           tag: 'Composer',
-          title: 'Post Composer',
-          description: 'Draft campaigns once, preview live, and schedule simultaneous broadcasts.',
-          metricBadge: { label: 'Velocity', value: '4x Faster' },
+          title: 'Multi-Channel Post Composer',
+          description: 'Draft posts once, preview layouts, and schedule announcements across connected channels.',
+          metricBadge: { label: 'Publishing', value: 'Scheduled Posts' },
         },
         {
           id: 'kiotviet-two-way-sync',
           tag: 'KiotViet Sync',
           title: 'POS Synchronization',
-          description: 'Real-time two-way sync of product catalogs, branch prices, and store orders.',
-          metricBadge: { label: 'Sync Latency', value: '< 1.2 Seconds' },
+          description: 'Two-way sync of product catalogs, branch pricing, and KiotViet POS orders.',
+          metricBadge: { label: 'Sync', value: 'Two-Way POS' },
         },
         {
           id: 'branch-stock-balance',
           tag: 'Inventory',
           title: 'Storefront Inventory',
-          description: 'Track stock balances across locations with automatic deduction per sale.',
-          metricBadge: { label: 'Oversell Risk', value: 'Zero Discrepancy' },
+          description: 'Monitor stock levels per store location with automatic deduction when orders close.',
+          metricBadge: { label: 'Stock', value: 'Per-Branch Counts' },
         },
         {
           id: 'social-monitoring',
           tag: 'Quality',
-          title: 'Engagement & Response Analytics',
-          description: 'Monitor customer engagement volume, response times, and omnichannel messaging quality.',
-          metricBadge: { label: 'Quality', value: '100% Tracked' },
+          title: 'Engagement & Response Tracking',
+          description: 'Monitor message response times and review customer conversation history across agents.',
+          metricBadge: { label: 'Tracking', value: 'Response Metrics' },
         },
         {
           id: 'omnichannel-orders',
           tag: 'Orders',
           title: 'Order Fulfillment',
-          description: 'Convert social interactions into confirmed orders with automated dispatch.',
-          metricBadge: { label: 'Conversion', value: '+28% Revenue' },
+          description: 'Convert chat inquiries into confirmed orders and hand them directly to warehouse dispatch.',
+          metricBadge: { label: 'Workflow', value: 'Chat to Order' },
         },
       ];
 
@@ -114,25 +114,25 @@ export default function SocialRetailPage() {
           categoryBadge={isVi ? 'Phân hệ Mạng Xã Hội & Bán Lẻ' : 'Social & Retail Module'}
           title={
             isVi
-              ? ['Kết nối mạng xã hội.', 'Đồng bộ bán lẻ KiotViet.']
-              : ['Unify social marketing.', 'Sync retail POS instantly.']
+              ? ['Kết nối mạng xã hội', 'Đồng bộ bán lẻ KiotViet']
+              : ['Manage social channels', 'Sync KiotViet POS stock']
           }
           subtitle={
             isVi
               ? 'Cổng kết nối mạng xã hội tập trung, đăng bài đa kênh và tự động đồng bộ tồn kho hai chiều với KiotViet.'
-              : 'Enterprise social broadcasting, multi-channel composer, and real-time retail synchronization with KiotViet POS.'
+              : 'Centralized social inbox, scheduled post composer, and two-way inventory sync with KiotViet POS.'
           }
           tags={
             isVi
               ? [
-                  'Social Gateway',
+                  'Cổng mạng xã hội',
                   'Đăng bài đa kênh',
                   'Đồng bộ KiotViet POS',
                   'Tồn kho chi nhánh',
                   'Xử lý đơn hàng',
                 ]
               : [
-                  'Social Gateway',
+                  'Social Inbox',
                   'Post Composer',
                   'KiotViet Sync',
                   'Branch Inventory',
@@ -144,11 +144,11 @@ export default function SocialRetailPage() {
 
         <SubpageFeaturesGrid
           badge={isVi ? 'Khả năng cốt lõi' : 'Core Capabilities'}
-          title={isVi ? 'Giải pháp bán lẻ & mạng xã hội hợp nhất' : 'Omnichannel Social & Retail Engine'}
+          title={isVi ? 'Giải pháp bán lẻ & mạng xã hội hợp nhất' : 'Social Channels & Retail POS Sync'}
           subtitle={
             isVi
-              ? 'Xóa bỏ khoảng cách giữa tiếp thị số, bán lẻ tại quầy và xuất kho trung tâm.'
-              : 'Unify social marketing, store point-of-sale transactions, and warehouse fulfillment.'
+              ? 'Liên kết tiếp thị mạng xã hội, bán hàng tại quầy KiotViet và xuất kho chi nhánh trên cùng một màn hình.'
+              : 'Connect social customer messages, in-store KiotViet POS sales, and branch inventory.'
           }
           features={features}
         />

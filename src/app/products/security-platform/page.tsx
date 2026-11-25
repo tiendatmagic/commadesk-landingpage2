@@ -20,100 +20,100 @@ export default function SecurityPlatformPage() {
     ? [
         {
           id: 'enterprise-permissions',
-          tag: 'Phân quyền đa tầng',
-          title: 'Phân quyền đa tầng, linh hoạt theo mô hình doanh nghiệp',
+          tag: 'Phân quyền',
+          title: 'Phân quyền theo cơ cấu doanh nghiệp',
           description:
-            'Kiểm soát quyền truy cập xuyên suốt từ tổ chức, phòng ban đến từng vị trí và người dùng. Linh hoạt thiết lập chính sách phân quyền theo cơ cấu tổ chức và nhu cầu vận hành thực tế, đảm bảo quản trị tập trung nhưng vẫn trao quyền chủ động cho từng đơn vị.',
-          metricBadge: { label: 'Cơ chế', value: 'Đa tầng linh hoạt' },
+            'Kiểm soát quyền truy cập xuyên suốt từ công ty mẹ, chi nhánh, phòng ban đến từng vai trò nhân sự. Linh hoạt thiết lập phạm vi xem, sửa và phê duyệt theo đúng nhiệm vụ thực tế.',
+          metricBadge: { label: 'Cơ chế', value: 'Theo vai trò & đơn vị' },
         },
         {
           id: 'multi-tenant',
           tag: 'Đa chi nhánh',
           title: 'Quản Trị Đa Doanh Nghiệp & Chi Nhánh',
           description:
-            'Cô lập dữ liệu tuyệt đối giữa các công ty thành viên và chi nhánh, phân cấp điều hành tập trung nhưng vẫn tự chủ đơn vị.',
-          metricBadge: { label: 'Cô lập dữ liệu', value: '100% Độc lập' },
+            'Tách biệt dữ liệu giữa các công ty thành viên và chi nhánh, giúp ban điều hành tổng hợp báo cáo nhưng vẫn giữ độc lập từng đơn vị.',
+          metricBadge: { label: 'Phạm vi', value: 'Độc lập theo đơn vị' },
         },
         {
           id: 'audit-trails',
-          tag: 'Kiểm toán',
+          tag: 'Kiểm soát',
           title: 'Nhật Ký Hoạt Động & Lịch Sử Thay Đổi',
           description:
-            'Ghi nhận minh bạch mọi thao tác của người dùng, lịch sử truy cập và chỉnh sửa dữ liệu, phục vụ đối soát và thanh tra.',
-          metricBadge: { label: 'Toàn vẹn', value: 'Minh bạch 100%' },
+            'Ghi nhận minh bạch các thao tác truy cập, phê duyệt và chỉnh sửa hồ sơ quan trọng để phục vụ đối soát nội bộ.',
+          metricBadge: { label: 'Lưu vết', value: 'Đầy đủ lịch sử' },
         },
         {
           id: 'two-factor-auth',
           tag: 'Xác thực',
           title: 'Bảo Mật Đăng Nhập 2 Lớp & Thiết Bị',
           description:
-            'Bảo vệ tài khoản với xác thực 2 lớp (OTP), quản lý phiên đăng nhập từ xa và định danh thiết bị làm việc an toàn.',
+            'Bảo vệ tài khoản với xác thực 2 lớp (OTP), quản lý phiên đăng nhập từ xa và danh sách thiết bị làm việc tin cậy.',
           metricBadge: { label: 'Bảo mật', value: 'Xác thực 2 lớp' },
         },
         {
           id: 'rest-api-webhooks',
           tag: 'Kết nối',
-          title: 'Kết Nối & Tích Hợp Hệ Thống Sẵn Có',
+          title: 'Đồng Bộ Phần Mềm Doanh Nghiệp',
           description:
-            'Dễ dàng liên kết và đồng bộ dữ liệu hai chiều với phần mềm kế toán, hóa đơn điện tử, ERP và cổng thanh toán nội bộ.',
-          metricBadge: { label: 'Tương thích', value: 'Mọi nền tảng' },
+            'Liên kết và đồng bộ dữ liệu hai chiều với phần mềm kế toán, hóa đơn điện tử, POS bán hàng và ERP đang dùng.',
+          metricBadge: { label: 'Kết nối', value: 'Đồng bộ hai chiều' },
         },
         {
           id: 'deployment-modes',
-          tag: 'Hạ tầng',
-          title: 'Lựa Chọn Vận Hành Đám Mây Hoặc Máy Chủ Riêng',
+          tag: 'Triển khai',
+          title: 'Lựa Chọn Đám Mây Hoặc Máy Chủ Riêng',
           description:
-            'Linh hoạt sử dụng trên Đám mây doanh nghiệp hoặc Cài đặt trên máy chủ nội bộ với đầy đủ ứng dụng Máy tính và Di động.',
-          metricBadge: { label: 'Linh hoạt', value: 'Đám mây & Máy chủ riêng' },
+            'Linh hoạt sử dụng trực tuyến trên đám mây hoặc cài đặt trên máy chủ nội bộ của doanh nghiệp cùng ứng dụng Máy tính và Di động.',
+          metricBadge: { label: 'Tùy chọn', value: 'Cloud & Máy chủ riêng' },
         },
       ]
     : [
         {
           id: 'enterprise-permissions',
-          tag: 'Access Governance',
-          title: 'Multi-Tier Flexible Enterprise Permissions',
+          tag: 'Access Control',
+          title: 'Role & Unit-Based Permissions',
           description:
-            'Control access seamlessly across organizations, departments, roles, and individual users. Flexibly define authorization policies aligned with corporate structure and operational needs, ensuring centralized governance while empowering business units.',
-          metricBadge: { label: 'Model', value: 'Multi-Level & Flexible' },
+            'Control access across companies, branches, departments, and individual roles. Define view, edit, and approval scopes matched to your reporting structure.',
+          metricBadge: { label: 'Model', value: 'Role & Unit Scoped' },
         },
         {
           id: 'multi-tenant',
           tag: 'Multi-Branch',
           title: 'Corporate Multi-Unit Governance',
           description:
-            'Strict logical data partitioning between subsidiaries and branches, enabling unified corporate management.',
-          metricBadge: { label: 'Isolation', value: '100% Tenant Scoped' },
+            'Separate records cleanly across subsidiaries and branches while giving headquarters consolidated oversight.',
+          metricBadge: { label: 'Isolation', value: 'Unit-Scoped Data' },
         },
         {
           id: 'audit-trails',
           tag: 'Auditing',
-          title: 'Activity Logs & Tamper-Proof Audit',
+          title: 'Activity Logs & Change History',
           description:
-            'Transparent logging of all user activities, data modifications, and privilege adjustments for compliance.',
-          metricBadge: { label: 'Integrity', value: '100% Audited' },
+            'Record user sign-ins, approvals, document updates, and permission changes for internal review and compliance.',
+          metricBadge: { label: 'Traceability', value: 'Full History' },
         },
         {
           id: 'two-factor-auth',
           tag: 'Auth & Safety',
-          title: 'Two-Factor Authentication & Device Trust',
+          title: 'Two-Factor Auth & Device Trust',
           description:
-            'Safeguard corporate accounts with 2FA/OTP login verification, remote session revoke, and trusted device binding.',
+            'Protect accounts with 2FA verification, remote session sign-out, and trusted work device controls.',
           metricBadge: { label: 'Protection', value: '2-Factor Auth' },
         },
         {
           id: 'rest-api-webhooks',
           tag: 'Integration',
-          title: 'Ecosystem Connectivity & Open Data Sync',
+          title: 'Business Software Synchronization',
           description:
-            'Seamlessly connect and synchronize two-way data with external ERP, accounting, e-invoices, and corporate systems.',
-          metricBadge: { label: 'Standard', value: 'Universal Sync' },
+            'Connect and synchronize records with accounting tools, e-invoicing, POS systems, and existing ERP workflows.',
+          metricBadge: { label: 'Sync', value: 'Two-Way Sync' },
         },
         {
           id: 'deployment-modes',
           tag: 'Deployment',
-          title: 'Flexible Cloud or On-Premises Hosting',
+          title: 'Cloud or On-Premises Hosting',
           description:
-            'Choose between turnkey Cloud SaaS or private on-premises server hosting with native desktop and mobile parity.',
+            'Run on CommaDesk Cloud or deploy on your private company server with full Web, Desktop, and Mobile support.',
           metricBadge: { label: 'Options', value: 'Cloud & On-Prem' },
         },
       ];
@@ -124,32 +124,32 @@ export default function SecurityPlatformPage() {
 
       <main className="max-w-[1536px] mx-auto flex flex-col gap-6 sm:gap-10 md:gap-12 lg:gap-14 relative px-2.5 sm:px-6 lg:px-8 pb-4 sm:pb-6 md:pb-6 lg:pb-6">
         <SubpageHero
-          categoryBadge={isVi ? 'Phân hệ Bảo mật & Nền tảng' : 'Security & Platform Module'}
+          categoryBadge={isVi ? 'Phân hệ Bảo mật & Phân quyền' : 'Security & Platform Module'}
           title={
             isVi
-              ? ['Bảo mật cấp doanh nghiệp.', 'Hạ tầng mở rộng linh hoạt.']
-              : ['Enterprise-grade security.', 'Scalable infrastructure.']
+              ? ['Phân quyền chặt chẽ', 'Vận hành đa chi nhánh an toàn']
+              : ['Scoped role permissions', 'Protected multi-branch data']
           }
           subtitle={
             isVi
-              ? 'Phân quyền đa tầng linh hoạt theo mô hình doanh nghiệp, quản trị đa chi nhánh an toàn và bảo mật dữ liệu tuyệt đối.'
-              : 'Multi-tier flexible permissions aligned with corporate structure, multi-branch governance, and complete data safety.'
+              ? 'Phân quyền theo vai trò và đơn vị, quản trị đa chi nhánh tách biệt và lưu vết hoạt động minh bạch.'
+              : 'Role-based permissions aligned with your org chart, branch-level data separation, and complete activity logs.'
           }
           tags={
             isVi
               ? [
-                  'Phân quyền đa tầng linh hoạt',
+                  'Phân quyền theo vai trò',
                   'Quản trị đa chi nhánh',
-                  'Nhật ký hoạt động minh bạch',
+                  'Nhật ký hoạt động',
                   'Bảo mật đăng nhập 2 lớp',
-                  'Tích hợp hệ thống mở',
+                  'Đồng bộ phần mềm sẵn có',
                 ]
               : [
-                  'Multi-Tier Permissions',
+                  'Role-Based Permissions',
                   'Multi-Branch Governance',
-                  'Transparent Activity Logs',
-                  'Two-Factor Authentication',
-                  'Open Ecosystem Integration',
+                  'Activity Logs',
+                  'Two-Factor Auth',
+                  'Business System Sync',
                 ]
           }
           visualPreview={visualPreview}
@@ -157,11 +157,11 @@ export default function SecurityPlatformPage() {
 
         <SubpageFeaturesGrid
           badge={isVi ? 'Khả năng cốt lõi' : 'Core Capabilities'}
-          title={isVi ? 'Nền tảng bảo mật & Hạ tầng công nghệ' : 'Enterprise Security & Technical Foundation'}
+          title={isVi ? 'Kiểm soát truy cập & Bảo vệ dữ liệu' : 'Access Control & Data Protection'}
           subtitle={
             isVi
-              ? 'Xây dựng theo tiêu chuẩn an ninh nghiêm ngặt, bảo vệ dữ liệu và triển khai linh hoạt.'
-              : 'Engineered according to rigorous security standards with versatile cloud and on-prem deployments.'
+              ? 'Đảm bảo đúng người chỉ thấy đúng dữ liệu theo phạm vi phòng ban và chi nhánh được giao.'
+              : 'Ensure every team member accesses only the modules and records authorized for their unit.'
           }
           features={features}
         />

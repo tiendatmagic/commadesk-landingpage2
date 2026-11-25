@@ -54,9 +54,9 @@ export function InteractiveApprovalsAnalytics({ isVi }: InteractiveApprovalsAnal
     },
     {
       id: 'REQ-TC-1029',
-      type: isVi ? 'Đề xuất gia hạn hạ tầng cloud' : 'Cloud infrastructure subscription',
-      requester: isVi ? 'Vũ Đức Thành (Tech Director)' : 'Thanh Vu (Tech Director)',
-      details: isVi ? 'Mở rộng cụm máy chủ Q4' : 'Cluster node scaling Q4',
+      type: isVi ? 'Đề xuất gia hạn phần mềm văn phòng' : 'Annual office software renewal',
+      requester: isVi ? 'Vũ Đức Thành (Trưởng phòng IT)' : 'Thanh Vu (IT Manager)',
+      details: isVi ? 'Gia hạn gói sử dụng cho 120 nhân sự Q4' : 'Annual seat renewal for 120 staff',
       slaRemaining: isVi ? '12 giờ còn lại' : '12h remaining',
       amount: '125,000,000 đ',
     },
@@ -242,8 +242,8 @@ export function InteractiveApprovalsAnalytics({ isVi }: InteractiveApprovalsAnal
       <div className="mt-3 pt-3 border-t border-slate-900/[0.06] flex flex-wrap items-center justify-between gap-2 text-[12px] text-[#6B7487]">
         <span>
           {isVi
-            ? 'Lưu trữ chữ ký số và nhật ký kiểm toán không thể chỉnh sửa'
-            : 'Digital signatures and immutable audit trails'}
+            ? 'Lưu trữ chữ ký duyệt và lịch sử thay đổi theo quy định'
+            : 'Signed approvals and change history logged'}
         </span>
         <span className="font-mono text-[#111827] font-medium">
           {isVi ? 'Chính sách: Đã áp dụng' : 'Policy: Enforced'}

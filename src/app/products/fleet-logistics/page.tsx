@@ -21,88 +21,88 @@ export default function FleetLogisticsPage() {
         {
           id: 'fleet-tracking',
           tag: 'Định vị',
-          title: 'Giám Sát GPS Live',
-          description: 'Theo dõi hành trình, tốc độ và vị trí xe theo thời gian thực trên bản đồ GIS.',
-          metricBadge: { label: 'Độ chính xác', value: 'Thời gian thực' },
+          title: 'Giám Sát GPS Trực Tiếp',
+          description: 'Theo dõi hành trình, tốc độ và vị trí xe theo thời gian thực trên bản đồ điều phối.',
+          metricBadge: { label: 'Theo dõi', value: 'Vị trí trực tiếp' },
         },
         {
           id: 'driver-pwa',
           tag: 'Tài xế',
-          title: 'Ứng Dụng Driver PWA',
-          description: 'Giao diện cho tài xế nhận lệnh chuyến, cập nhật lộ trình và ký nhận hàng POD.',
+          title: 'Ứng Dụng Cho Tài Xế',
+          description: 'Ứng dụng di động giúp tài xế nhận lệnh chuyến, cập nhật lộ trình và chụp ảnh xác nhận giao hàng POD.',
           metricBadge: { label: 'Nền tảng', value: 'Android & iOS' },
         },
         {
           id: 'order-board',
           tag: 'Điều phối',
           title: 'Bảng Điều Phối Tuyến',
-          description: 'Phân luồng xe thông minh, ghép đơn tối ưu tuyến đường và hạn chế chạy rỗng.',
-          metricBadge: { label: 'Đúng hạn', value: '98.5% On-time' },
+          description: 'Phân luồng xe, ghép đơn theo tuyến đường và theo dõi trạng thái giao nhận từng chặng.',
+          metricBadge: { label: 'Điều phối', value: 'Đa điểm giao nhận' },
         },
         {
           id: 'fleet-ledger',
           tag: 'Chi phí',
           title: 'Sổ Cái Cước Vận Tải',
-          description: 'Hạch toán xăng dầu, phí cầu đường bến bãi và đối soát công nợ theo chuyến.',
-          metricBadge: { label: 'Tiết kiệm', value: '-22% chi phí' },
+          description: 'Hạch toán xăng dầu, phí cầu đường bến bãi và đối soát công nợ theo từng chuyến.',
+          metricBadge: { label: 'Quyết toán', value: 'Theo từng chuyến' },
         },
         {
           id: 'zones-rates',
           tag: 'Bảng giá',
           title: 'Cấu Hình Vùng Cước',
-          description: 'Thiết lập biểu phí theo vùng địa lý và tải trọng xe, tự động tính cước tức thì.',
-          metricBadge: { label: 'Tính cước', value: 'Tự động 100%' },
+          description: 'Thiết lập biểu phí theo vùng địa lý và tải trọng xe để hệ thống tính cước tự động.',
+          metricBadge: { label: 'Tính cước', value: 'Theo vùng & tải trọng' },
         },
         {
           id: 'storefront-logistics',
           tag: 'Tra cứu',
           title: 'Cổng Khách Hàng',
-          description: 'Khách hàng tự đặt chuyến, theo dõi xe trên bản đồ và nhận thông báo khi giao.',
-          metricBadge: { label: 'Trải nghiệm', value: 'Minh bạch 100%' },
+          description: 'Khách hàng đặt chuyến, theo dõi hành trình xe trên bản đồ và nhận thông báo khi giao hàng.',
+          metricBadge: { label: 'Tra cứu', value: 'Theo mã vận đơn' },
         },
       ]
     : [
         {
           id: 'fleet-tracking',
-          tag: 'Telemetry',
+          tag: 'GPS Tracking',
           title: 'Real-Time GPS Tracking',
-          description: 'Live vehicle tracking, speed monitoring, and route breadcrumbs on GIS maps.',
-          metricBadge: { label: 'Precision', value: 'Realtime' },
+          description: 'Live vehicle tracking, speed monitoring, and route history on the dispatch map.',
+          metricBadge: { label: 'Updates', value: 'Live Location' },
         },
         {
           id: 'driver-pwa',
           tag: 'Driver',
-          title: 'Driver Mobile PWA',
-          description: 'Mobile PWA for drivers to accept dispatches, navigate routes, and capture POD.',
+          title: 'Driver Mobile App',
+          description: 'Mobile app for drivers to accept dispatches, follow routes, and capture proof of delivery (POD).',
           metricBadge: { label: 'Platforms', value: 'iOS & Android' },
         },
         {
           id: 'order-board',
           tag: 'Dispatch',
           title: 'Route Dispatch Board',
-          description: 'Intelligent delivery dispatching, multi-stop routing, and deadhead reduction.',
-          metricBadge: { label: 'On-time', value: '98.5% Rate' },
+          description: 'Assign vehicles, group multi-stop deliveries, and monitor leg-by-leg trip status.',
+          metricBadge: { label: 'Routing', value: 'Multi-Stop Trips' },
         },
         {
           id: 'fleet-ledger',
           tag: 'Ledger',
           title: 'Freight Cost Ledger',
-          description: 'Fuel cost logging, toll settlements, trip stipends, and client billing audits.',
-          metricBadge: { label: 'Savings', value: '-22% Spend' },
+          description: 'Record fuel expenses, toll settlements, trip allowances, and client billing per trip.',
+          metricBadge: { label: 'Accounting', value: 'Per-Trip Ledger' },
         },
         {
           id: 'zones-rates',
           tag: 'Tariffs',
-          title: 'Zone Tariff Engines',
-          description: 'Configure distance-based, weight-tiered tariff matrices with instant quotes.',
-          metricBadge: { label: 'Rates', value: 'Automated' },
+          title: 'Zone & Rate Rules',
+          description: 'Configure distance-based and weight-tiered tariff tables for automated trip quotes.',
+          metricBadge: { label: 'Rates', value: 'Zone & Weight' },
         },
         {
           id: 'storefront-logistics',
-          tag: 'Storefront',
-          title: 'Consignment Tracking',
-          description: 'Self-service shipping booking, real-time vehicle breadcrumbs, and alerts.',
-          metricBadge: { label: 'Visibility', value: '100% Transparent' },
+          tag: 'Tracking',
+          title: 'Shipment Tracking Portal',
+          description: 'Self-service shipment booking, live map status, and delivery notifications for clients.',
+          metricBadge: { label: 'Portal', value: 'Waybill Lookup' },
         },
       ];
 
@@ -115,29 +115,29 @@ export default function FleetLogisticsPage() {
           categoryBadge={isVi ? 'Phân hệ Vận Tải & Đội Xe' : 'Fleet & Logistics Module'}
           title={
             isVi
-              ? ['Định vị thời gian thực.', 'Tối ưu hành trình vận tải.']
-              : ['Real-time telemetry.', 'Intelligent route dispatch.']
+              ? ['Giám sát hành trình trực tiếp', 'Điều phối vận tải tập trung']
+              : ['Live fleet GPS tracking', 'Organized route dispatch']
           }
           subtitle={
             isVi
-              ? 'Giám sát GPS thời gian thực trên bản đồ GIS, ứng dụng tài xế Driver PWA và sổ cái chi phí xe minh bạch.'
-              : 'Real-time GPS GIS tracking, mobile Driver PWA dispatch, and transparent freight cost accounting.'
+              ? 'Giám sát GPS trực tiếp trên bản đồ, ứng dụng cho tài xế và sổ cái chi phí vận tải minh bạch theo từng chuyến.'
+              : 'Live GPS map tracking, driver delivery app, proof of delivery, and transparent trip cost accounting.'
           }
           tags={
             isVi
               ? [
-                  'Giám sát GPS Live',
-                  'Driver PWA',
-                  'Điều phối Order Board',
+                  'Giám sát GPS trực tiếp',
+                  'Ứng dụng tài xế',
+                  'Bảng điều phối chuyến',
                   'Sổ cái cước xe',
-                  'Bảng giá theo Zones',
+                  'Bảng giá theo vùng',
                 ]
               : [
                   'Real-Time GPS',
-                  'Driver Mobile PWA',
+                  'Driver Mobile App',
                   'Dispatch Board',
                   'Freight Ledger',
-                  'Dynamic Tariff Zones',
+                  'Zone Tariff Rules',
                 ]
           }
           visualPreview={visualPreview}
@@ -145,11 +145,11 @@ export default function FleetLogisticsPage() {
 
         <SubpageFeaturesGrid
           badge={isVi ? 'Khả năng cốt lõi' : 'Core Capabilities'}
-          title={isVi ? 'Vận hành đội xe & giao vận khép kín' : 'Enterprise Fleet & Transport Operations'}
+          title={isVi ? 'Vận hành đội xe & giao vận khép kín' : 'Fleet & Transport Operations'}
           subtitle={
             isVi
-              ? 'Kiểm soát từng cung đường, hạn chế xe chạy rỗng và minh bạch hóa chi phí vận tải.'
-              : 'Gain minute-by-minute visibility into routes, reduce empty miles, and streamline accounting.'
+              ? 'Kiểm soát từng cung đường, xác nhận giao nhận tại điểm đến và đối soát chi phí theo chuyến.'
+              : 'Track vehicle routes, record proof of delivery, and reconcile freight expenses per trip.'
           }
           features={features}
         />

@@ -244,7 +244,9 @@ export function InteractiveCmsPortal({ isVi }: InteractiveCmsPortalProps) {
             ? 'Tương thích giao diện Web, Desktop và Mobile'
             : 'Responsive Web, Desktop, and Mobile portal'}
         </span>
-        <span className="font-mono text-[#111827] font-medium">CDN cache: active</span>
+        <span className="font-mono text-[#111827] font-medium">
+          {isVi ? 'Cổng nội bộ: Đang mở' : 'Intranet: Active'}
+        </span>
       </div>
     </ShowcaseCard>
   );

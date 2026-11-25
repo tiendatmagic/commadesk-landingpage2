@@ -201,7 +201,7 @@ export function InteractiveDeploymentHub({ isVi }: Props) {
                 </div>
               </div>
               <span className="font-mono tabular-nums text-[12px] font-medium text-[#16A34A]">
-                99.9% uptime
+                {isVi ? 'Đám mây trực tuyến' : 'Cloud workspace'}
               </span>
             </div>
 
@@ -211,15 +211,15 @@ export function InteractiveDeploymentHub({ isVi }: Props) {
                   meta: isVi ? 'Truy cập' : 'Access',
                   title: isVi ? 'Dùng ngay trên Web' : 'Browser native',
                   desc: isVi
-                    ? 'Hoạt động trên Chrome, Safari, Edge không cần cài thêm plugin'
+                    ? 'Hoạt động trên Chrome, Safari, Edge không cần cài đặt'
                     : 'Run on Chrome, Safari, or Edge without local setup',
                 },
                 {
                   meta: isVi ? 'Sao lưu' : 'Backups',
-                  title: isVi ? 'Sao lưu tự động 24/7' : 'Automated backups',
+                  title: isVi ? 'Sao lưu tự động hàng ngày' : 'Scheduled backups',
                   desc: isVi
-                    ? 'Mã hóa dữ liệu và sao lưu định kỳ nhiều vùng dự phòng'
-                    : 'Encrypted snapshots across redundant availability zones',
+                    ? 'Lưu trữ dự phòng định kỳ giúp bảo vệ dữ liệu vận hành'
+                    : 'Automated daily snapshots to protect operational records',
                 },
                 {
                   meta: isVi ? 'Mở rộng' : 'Scale',
@@ -258,7 +258,7 @@ export function InteractiveDeploymentHub({ isVi }: Props) {
                 </div>
               </div>
               <span className="font-mono text-[12px] font-medium text-[#111827]">
-                ISO 27001 ready
+                {isVi ? 'Mạng nội bộ' : 'Private network'}
               </span>
             </div>
 

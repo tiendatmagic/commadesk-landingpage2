@@ -35,7 +35,7 @@ export function InteractiveCRMPipeline({ isVi }: Props) {
       title={isVi ? 'CRM đa kênh & Kiểm soát SLA' : 'Omnichannel CRM & SLA Timer'}
       headerRight={
         <span className="font-mono tabular-nums text-[12px] text-[#6B7487]">
-          ITIL SLA: 99.8%
+          {isVi ? 'Theo dõi SLA' : 'SLA active'}
         </span>
       }
     >
@@ -53,10 +53,10 @@ export function InteractiveCRMPipeline({ isVi }: Props) {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
             {[
-              { name: 'REST API', icon: ZapIcon, count: '14 req/s' },
-              { name: 'Email ITIL', icon: MailIcon, count: '8 tk/min' },
-              { name: 'Team chat', icon: MessageSquareIcon, count: '26 msg/s' },
-              { name: 'Web forms', icon: GlobeIcon, count: '5 sub/min' },
+              { name: isVi ? 'Cổng khách hàng' : 'Client portal', icon: ZapIcon, count: '14 / h' },
+              { name: isVi ? 'Email hỗ trợ' : 'Support mail', icon: MailIcon, count: '8 / h' },
+              { name: isVi ? 'Chat trực tuyến' : 'Team chat', icon: MessageSquareIcon, count: '26 / h' },
+              { name: isVi ? 'Biểu mẫu Web' : 'Web forms', icon: GlobeIcon, count: '5 / h' },
             ].map((c, i) => {
               const IconComponent = c.icon;
               return (

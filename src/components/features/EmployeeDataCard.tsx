@@ -123,7 +123,7 @@ export function EmployeeDataCard() {
                   <div className="w-6 h-6 rounded-full overflow-hidden relative shrink-0">
                     <Image
                       src="/avatars/hero2_1.webp"
-                      alt="Willem Gray"
+                      alt="Minh Nguyen"
                       fill
                       sizes="24px"
                       className="object-cover"
@@ -131,9 +131,9 @@ export function EmployeeDataCard() {
                   </div>
                   <div>
                     <p className="text-[12px] font-medium text-[#111827] leading-tight">
-                      Willem Gray
+                      Minh Nguyen
                     </p>
-                    <p className="text-[10px] text-[#6B7487]">Visual Director</p>
+                    <p className="text-[10px] text-[#6B7487]">Product Lead</p>
                   </div>
                 </div>
                 <MailIcon className="w-3.5 h-3.5 text-[#6B7487]" />
@@ -143,7 +143,7 @@ export function EmployeeDataCard() {
                   <div className="w-6 h-6 rounded-full overflow-hidden relative shrink-0">
                     <Image
                       src="/avatars/hero2_7.webp"
-                      alt="Dimitri Ryabell"
+                      alt="Huy Tran"
                       fill
                       sizes="24px"
                       className="object-cover"
@@ -151,9 +151,9 @@ export function EmployeeDataCard() {
                   </div>
                   <div>
                     <p className="text-[12px] font-medium text-[#111827] leading-tight">
-                      Dimitri Ryabell
+                      Huy Tran
                     </p>
-                    <p className="text-[10px] text-[#6B7487]">PM/BA</p>
+                    <p className="text-[10px] text-[#6B7487]">Operations BA</p>
                   </div>
                 </div>
                 <MailIcon className="w-3.5 h-3.5 text-[#6B7487]" />
@@ -163,7 +163,7 @@ export function EmployeeDataCard() {
                   <div className="w-6 h-6 rounded-full overflow-hidden relative shrink-0">
                     <Image
                       src="/avatars/hero2_3.webp"
-                      alt="Olivia Klyver"
+                      alt="Lan Pham"
                       fill
                       sizes="24px"
                       className="object-cover"
@@ -171,9 +171,9 @@ export function EmployeeDataCard() {
                   </div>
                   <div>
                     <p className="text-[12px] font-medium text-[#111827] leading-tight">
-                      Olivia Klyver
+                      Lan Pham
                     </p>
-                    <p className="text-[10px] text-[#6B7487]">PM/BA</p>
+                    <p className="text-[10px] text-[#6B7487]">HR Specialist</p>
                   </div>
                 </div>
                 <MailIcon className="w-3.5 h-3.5 text-[#6B7487]" />

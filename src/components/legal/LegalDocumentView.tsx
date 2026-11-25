@@ -12,9 +12,7 @@ import {
   ArrowRightIcon,
   CheckCircleIcon,
   ChevronDownIcon,
-  ClockIcon,
   FileTextIcon,
-  GlobeIcon,
   MailIcon,
   ShieldCheckIcon,
 } from '@/components/ui/UIIcons';
@@ -120,27 +118,6 @@ export function LegalDocumentView({ docKey }: LegalDocumentViewProps) {
             <p className="mt-4 text-[15px] sm:text-[18px] text-[#4B5565] font-normal leading-relaxed max-w-2xl mx-auto">
               {doc.subtitle}
             </p>
-
-            {/* Metadata Row */}
-            <div className="flex flex-wrap items-center justify-center gap-2.5 mt-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#F5F7FA] border border-slate-900/[0.08] text-[12px] text-[#4B5565]">
-                <ClockIcon className="w-3.5 h-3.5 text-[#6B7487] shrink-0" />
-                <span>{doc.effectiveDateLabel}:</span>
-                <span className="font-mono tabular-nums font-medium text-[#111827]">{doc.effectiveDate}</span>
-              </div>
-
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#F5F7FA] border border-slate-900/[0.08] text-[12px] text-[#4B5565]">
-                <ShieldCheckIcon className="w-3.5 h-3.5 text-[#16A34A] shrink-0" />
-                <span>{doc.versionLabel}:</span>
-                <span className="font-mono tabular-nums font-medium text-[#111827]">{doc.version}</span>
-              </div>
-
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#F5F7FA] border border-slate-900/[0.08] text-[12px] text-[#4B5565]">
-                <GlobeIcon className="w-3.5 h-3.5 text-[#6B7487] shrink-0" />
-                <span>{doc.scopeLabel}:</span>
-                <span className="font-medium text-[#111827]">{doc.scope}</span>
-              </div>
-            </div>
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 mt-7 w-full max-w-xs sm:max-w-none mx-auto">

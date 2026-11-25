@@ -3,33 +3,33 @@ import type { LegalDocKey, LegalDocumentContent } from '../../types';
 export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
   privacy: {
     badge: 'Privacy & Data Protection',
-    title: ['Privacy Policy.', 'Transparent by Design.'],
+    title: ['Privacy Policy', 'Data protection & handling'],
     subtitle:
-      'How CommaDesk collects, isolates, protects, and processes personal and enterprise operational data across our Web, Desktop, Mobile, and On-Premises ecosystems.',
+      'How CommaDesk collects, protects, and handles personal and organizational operational data across Web, Desktop, Mobile, and On-Premises deployments.',
     effectiveDateLabel: 'Effective Date',
     effectiveDate: 'November 25, 2026',
     versionLabel: 'Version',
-    version: 'v2.0 (Enterprise)',
+    version: '2.0',
     scopeLabel: 'Scope',
-    scope: 'Public Web, Cloud SaaS, Desktop & Mobile',
+    scope: 'Web, Desktop & Mobile',
     switchDocLabel: 'Read Terms of Service',
     switchDocHref: '/terms-of-service',
     highlightsTitle: 'Core Privacy Commitments',
     highlights: [
       {
-        title: 'Strict Multi-Tenant Isolation',
+        title: 'Strict Organization Isolation',
         description:
-          'Each enterprise workspace is logically partitioned so subsidiary, branch, and user data never leaks across organizations.',
+          'Each company workspace is logically separated so subsidiary, branch, and user records remain private to your organization.',
       },
       {
         title: 'Zero Data Monetization',
         description:
-          'We never sell, rent, or broker customer operational records, employee profiles, or analytics data to third-party advertisers.',
+          'We never sell, rent, or broker customer operational records, employee profiles, or business analytics to third-party advertisers.',
       },
       {
-        title: 'Customer-Controlled Biometrics & GPS',
+        title: 'Customer-Controlled Attendance & Cameras',
         description:
-          'Face AI check-in, GPS geofencing, and camera analytics operate strictly under organizational configuration and local compliance rules.',
+          'Facial check-in, GPS location verification, and camera monitoring operate strictly under organizational configuration and local compliance rules.',
       },
     ],
     tocTitle: 'On This Page',
@@ -39,8 +39,8 @@ export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
         number: '01',
         title: 'Scope & Data Controller Roles',
         paragraphs: [
-          'This Privacy Policy explains how CommaDesk Inc. ("CommaDesk", "we", "our") handles information when you visit our public websites (including this landing page), evaluate our platform, or use CommaDesk applications across Web Cloud, Windows/macOS Desktop, and iOS/Android Mobile.',
-          'For public website visitors and prospective inquiries, CommaDesk acts as the Data Controller. For enterprise customers deploying CommaDesk for workforce, project, logistics, document registry, CRM, or AI Vision operations, the subscribing organization acts as the Data Controller and CommaDesk acts as the Data Processor acting solely on documented instructions.',
+          'This Privacy Policy explains how CommaDesk ("we", "our") handles information when you visit our public websites, evaluate the platform, or use CommaDesk applications across Web, Windows and macOS Desktop, and iOS and Android Mobile.',
+          'For public website visitors and prospective inquiries, CommaDesk acts as the Data Controller. For organizations using CommaDesk for workforce, project, logistics, document registry, CRM, or camera operations, the subscribing organization acts as the Data Controller and CommaDesk acts as the Data Processor following your organization’s instructions.',
         ],
       },
       {
@@ -48,19 +48,19 @@ export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
         number: '02',
         title: 'Information We Collect',
         paragraphs: [
-          'We collect only the information necessary to deliver a secure, responsive, and multi-module enterprise experience:',
+          'We collect only the information required to operate your selected business modules accurately and securely:',
         ],
         bullets: [
-          'Account & Organization Metadata: Name, business email, job role, organizational unit, and multi-tier permission assignments configured by your workspace administrator.',
-          'Operational & Workspace Content: Tasks, Kanban/Gantt items, document registry records, inventory SKU logs, helpdesk tickets, fleet dispatches, and internal communications submitted by authorized users.',
-          'Optional Workforce & AI Modules (When Enabled by Customer): Attendance timestamps, GPS geofence coordinates at clock-in, facial recognition embeddings for Face AI attendance, and authorized camera stream events.',
-          'Technical & Security Telemetry: Session tokens, device trust identifiers, IP addresses, browser/OS diagnostics, and immutable audit logs (HTTP, data delta, and permission changes) used to protect workspace integrity.',
-          'Local Preferences: Non-tracking browser storage such as your selected interface language (English or Vietnamese) saved locally via localStorage.',
+          'Account & Organization Details: Name, business email, job role, organizational unit, and role-based permission settings configured by your workspace administrator.',
+          'Operational & Workspace Content: Tasks, project schedules, document registry records, warehouse stock logs, support tickets, fleet dispatches, and internal messages submitted by authorized users.',
+          'Optional Attendance & Camera Modules (When Enabled by Customer): Clock-in timestamps, GPS check-in coordinates, facial check-in verification data, and authorized camera event logs.',
+          'Security & Activity Logs: Sign-in sessions, trusted device verification, access activity, and audit records (access events, record updates, and permission changes) used to protect workspace integrity.',
+          'Display Preferences: Browser settings such as your selected interface language (English or Vietnamese).',
         ],
         callout: {
-          title: 'Public Landing Page Visitors',
+          title: 'Public Website Visitors',
           content:
-            'Browsing our public landing pages, product guides, and legal pages does not require registration. We only store lightweight client-side preferences (such as language selection) in your browser.',
+            'Browsing our public pages, feature handbook, and legal pages does not require registration. Only your chosen display language preference is remembered in your browser.',
         },
       },
       {
@@ -71,11 +71,11 @@ export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
           'CommaDesk processes personal and organizational data exclusively for legitimate operational and contractual purposes:',
         ],
         bullets: [
-          'Provisioning, authenticating (including 2FA/OTP verification), and maintaining multi-branch enterprise workspaces.',
-          'Enforcing multi-tier access control policies so users only view modules and records authorized for their department or role.',
-          'Generating real-time operational analytics, attendance summaries, payroll-ready work entries, and SLA alerts configured by your organization.',
-          'Detecting anomalous access, preventing unauthorized sessions, and maintaining tamper-evident audit trails.',
-          'Providing technical support, service reliability monitoring, and critical security or product update notices.',
+          'Providing workspaces, verifying sign-ins (including two-factor verification), and supporting multi-branch operations.',
+          'Enforcing role-based access rules so team members only view modules and records authorized for their department or role.',
+          'Generating operational reports, attendance summaries, payroll work entries, and approval deadline reminders configured by your organization.',
+          'Detecting unauthorized sign-ins, supporting remote session revocation, and keeping reliable activity audit trails.',
+          'Providing customer support, maintaining service reliability, and sending essential security or product notices.',
         ],
       },
       {
@@ -86,19 +86,19 @@ export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
           'We do not sell personal data. Information is shared only in the following strictly governed scenarios:',
         ],
         bullets: [
-          'Customer-Authorized Integrations: Two-way synchronization with external systems explicitly connected by your administrators (such as accounting/ERP tools, retail POS systems like KiotViet, or notification channels like Zalo/Telegram/Webhooks).',
-          'Infrastructure Sub-Processors: Trusted cloud hosting, encrypted object storage, and email/notification delivery providers bound by strict confidentiality and data protection agreements.',
+          'Customer-Authorized Integrations: Two-way synchronization with business software explicitly connected by your administrators (such as accounting tools, retail POS systems like KiotViet, or notification channels like Zalo and Telegram).',
+          'Service & Hosting Providers: Trusted cloud hosting, encrypted storage, and email or notification delivery providers bound by strict confidentiality and data protection agreements.',
           'Legal & Regulatory Compliance: When required by applicable law, court order, or valid governmental request, with prior notice to the customer organization where legally permitted.',
         ],
       },
       {
         id: 'security-and-isolation',
         number: '05',
-        title: 'Security Architecture & Data Retention',
+        title: 'Security Protection & Data Retention',
         paragraphs: [
-          'CommaDesk is engineered with defense-in-depth safeguards across transport, storage, and application layers. All traffic is encrypted in transit via TLS, passwords and authentication secrets are cryptographically hashed, and administrative actions are recorded in multi-layer audit logs.',
-          'For organizations requiring full data sovereignty or air-gapped networks, CommaDesk also supports Private Dedicated Server (On-Premises) deployment where all operational data remains entirely within the customer’s internal infrastructure.',
-          'We retain workspace data for as long as the customer subscription remains active or as required by statutory retention rules (such as official document registry and payroll regulations). Upon contract termination, customers may export their records and request verified deletion within the agreed transition window.',
+          'CommaDesk applies layered safeguards across network connections, storage, and workspace access. Connections are encrypted in transit, account credentials are protected, and administrative changes are recorded in activity audit logs.',
+          'For organizations requiring full data ownership or isolated internal networks, CommaDesk also supports Private Dedicated Server (On-Premises) deployment where all operational data remains inside your own infrastructure.',
+          'We retain workspace data while your subscription remains active or as required by statutory retention rules (such as official document registry and payroll regulations). Upon contract termination, customers can export their records and request verified deletion within the agreed transition window.',
         ],
       },
       {
@@ -106,18 +106,18 @@ export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
         number: '06',
         title: 'Your Privacy Rights',
         paragraphs: [
-          'Depending on your jurisdiction (including Vietnam’s Decree 13/2023/ND-CP on Personal Data Protection, GDPR, and equivalent frameworks), you have the right to:',
+          'Depending on your jurisdiction (including Vietnam’s Decree 13/2023/ND-CP on Personal Data Protection and equivalent privacy frameworks), you have the right to:',
         ],
         bullets: [
-          'Request access to and a portable copy of your personal data processed by CommaDesk.',
+          'Request access to and a portable copy of your personal data processed within CommaDesk.',
           'Request correction of inaccurate or incomplete profile and personnel records.',
           'Request deletion, restriction, or objection to specific processing activities where applicable.',
-          'Withdraw consent for optional features (such as biometric or location-based check-in) through your organization’s administrator or alternative check-in methods.',
+          'Withdraw consent for optional features (such as facial or location-based check-in) through your organization’s administrator or use alternative check-in methods.',
         ],
         callout: {
-          title: 'Enterprise End-Users',
+          title: 'Organization Users',
           content:
-            'If your account is managed by your employer or organization, please direct data access or correction requests to your Workspace Administrator first, as they control organizational records.',
+            'If your account is managed by your employer or organization, please direct data access or correction requests to your Workspace Administrator first, as they manage your organizational records.',
         },
       },
       {
@@ -125,32 +125,32 @@ export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
         number: '07',
         title: 'Policy Updates & Contact Information',
         paragraphs: [
-          'We may update this Privacy Policy periodically to reflect new platform capabilities, regulatory changes, or security enhancements. Material updates will be posted on this page with an updated Effective Date and version number.',
-          'If you have questions regarding privacy practices, sub-processors, or data protection requests, please contact our Privacy & Compliance Team using the details below.',
+          'We may update this Privacy Policy periodically to reflect new platform capabilities, regulatory changes, or security updates. Material updates will be posted directly on this page.',
+          'If you have questions regarding privacy practices or data protection requests, please contact our Privacy & Compliance Team using the details below.',
         ],
       },
     ],
     contactTitle: 'Privacy & Data Protection Inquiries',
     contactDesc:
-      'Need to submit a data subject request, review security compliance, or verify our privacy posture for your organization?',
+      'Need to submit a data access request, review privacy commitments, or verify compliance for your organization?',
     contactEmailLabel: 'Privacy Contact',
     contactEmail: 'privacy@commadesk.com',
     entityLabel: 'Data Controller / Publisher',
-    entityValue: 'CommaDesk Inc.',
-    securityCtaLabel: 'Explore Security Architecture',
+    entityValue: 'CommaDesk',
+    securityCtaLabel: 'Explore Security & Permissions',
   },
 
   terms: {
     badge: 'Legal & Governance',
-    title: ['Terms of Service.', 'Clear Enterprise Rules.'],
+    title: ['Terms of Service', 'Platform usage guidelines'],
     subtitle:
-      'The binding terms governing access to CommaDesk’s public websites, cloud SaaS workspaces, desktop/mobile clients, and enterprise module ecosystems.',
+      'The binding terms governing access to CommaDesk websites, cloud workspaces, desktop and mobile apps, and business modules.',
     effectiveDateLabel: 'Effective Date',
     effectiveDate: 'November 25, 2026',
     versionLabel: 'Version',
-    version: 'v2.0 (Enterprise)',
+    version: '2.0',
     scopeLabel: 'Scope',
-    scope: 'Public Web, Cloud SaaS & Enterprise Clients',
+    scope: 'Web, Desktop & Mobile',
     switchDocLabel: 'Read Privacy Policy',
     switchDocHref: '/privacy-policy',
     highlightsTitle: 'Key Agreement Pillars',
@@ -158,17 +158,17 @@ export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
       {
         title: 'You Own Your Business Data',
         description:
-          'Customer organizations retain 100% ownership and export rights over all projects, HR records, documents, and operational assets.',
+          'Customer organizations retain full ownership and export rights over all projects, HR records, documents, and operational files.',
       },
       {
         title: 'Flexible Cloud & On-Premises',
         description:
-          'Clear licensing coverage whether your teams operate on CommaDesk Cloud SaaS or Private Dedicated Server deployments.',
+          'Clear licensing coverage whether your teams operate on CommaDesk Cloud or Private Dedicated Server deployments.',
       },
       {
-        title: 'Enterprise SLA & Governance',
+        title: 'Service Standards & Governance',
         description:
-          'Transparent uptime commitments, role-based access accountability, and responsible acceptable-use standards.',
+          'Transparent availability commitments, role-based access accountability, and clear acceptable-use rules.',
       },
     ],
     tocTitle: 'On This Page',
@@ -178,7 +178,7 @@ export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
         number: '01',
         title: 'Acceptance of Terms',
         paragraphs: [
-          'By accessing or using CommaDesk’s public websites, requesting product evaluations, or deploying the CommaDesk platform (across Web, Windows/macOS Desktop, or iOS/Android Mobile), you agree to be bound by these Terms of Service ("Terms") and our Privacy Policy.',
+          'By accessing or using CommaDesk’s public websites, reviewing product guides, or deploying the CommaDesk platform (across Web, Windows and macOS Desktop, or iOS and Android Mobile), you agree to be bound by these Terms of Service ("Terms") and our Privacy Policy.',
           'If you are entering into these Terms on behalf of a company, government agency, or other legal entity ("Customer"), you represent that you have the authority to bind that organization and its authorized users.',
         ],
       },
@@ -187,12 +187,12 @@ export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
         number: '02',
         title: 'Platform Scope & Deployment Models',
         paragraphs: [
-          'CommaDesk provides an integrated multi-module enterprise operating system covering Work & Projects, HR & Workforce, Operations & Document Registry, Inventory & Fleet Logistics, CRM & Helpdesk, Internal Communications, AI Vision, and Security Governance.',
+          'CommaDesk provides an integrated business operations platform covering Work & Projects, HR & Workforce, Document Registry, Inventory & Fleet Logistics, CRM & Helpdesk, Internal Communications, Camera Monitoring, and Access Governance.',
         ],
         bullets: [
-          'Cloud SaaS Edition: Hosted and maintained by CommaDesk with multi-tenant data isolation, automated backups, and continuous updates.',
-          'On-Premises / Dedicated Server Edition: Deployed within Customer-managed infrastructure under a separate Enterprise Master Agreement or Order Form.',
-          'Public Landing & Documentation Pages: Provided publicly for informational, evaluation, and compliance reference purposes without warranty of specific module availability outside an active subscription.',
+          'Cloud Edition: Hosted and maintained by CommaDesk with strict organization data isolation, scheduled backups, and regular feature updates.',
+          'On-Premises / Dedicated Server Edition: Deployed within Customer-managed infrastructure under a separate Enterprise Agreement or Order Form.',
+          'Public Website & Handbook Pages: Provided publicly for product information and compliance reference without warranty of specific module availability outside an active subscription.',
         ],
       },
       {
@@ -200,12 +200,12 @@ export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
         number: '03',
         title: 'Workspace Accounts & Security Responsibilities',
         paragraphs: [
-          'Customers are responsible for configuring multi-tier permissions, managing user provisioning/deprovisioning, and safeguarding administrator credentials.',
+          'Customers are responsible for configuring role-based permissions, managing employee onboarding and offboarding access, and safeguarding administrator credentials.',
         ],
         bullets: [
-          'Enforce strong password policies and Two-Factor Authentication (2FA/OTP) across privileged accounts.',
+          'Enforce strong password policies and Two-Factor Authentication (2FA) across privileged accounts.',
           'Promptly revoke access or active sessions when employees, contractors, or partners leave the organization.',
-          'Notify CommaDesk immediately upon suspecting unauthorized workspace access or credential compromise.',
+          'Notify CommaDesk promptly upon suspecting unauthorized workspace access or credential compromise.',
         ],
       },
       {
@@ -213,13 +213,13 @@ export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
         number: '04',
         title: 'Customer Data Ownership & Intellectual Property',
         paragraphs: [
-          'As between CommaDesk and the Customer, Customer retains all right, title, and interest in and to all data, documents, media, employee records, and configurations uploaded or generated within its workspace ("Customer Data").',
-          'CommaDesk retains all intellectual property rights in the platform software, user interfaces, 3D visual assets, trademarks, logos, documentation, and underlying algorithms. Except for the limited right to use the Service during an active term, no ownership rights are transferred.',
+          'As between CommaDesk and the Customer, Customer retains all right, title, and interest in and to all data, documents, media, employee records, and configurations uploaded or created within its workspace ("Customer Data").',
+          'CommaDesk retains all intellectual property rights in the platform software, user interfaces, trademarks, logos, and documentation. Except for the limited right to use the Service during an active term, no ownership rights are transferred.',
         ],
         callout: {
           title: 'Zero Claim on Customer Content',
           content:
-            'CommaDesk accesses Customer Data solely to deliver, secure, troubleshoot, and back up the Service—never to compete with or train unauthorized public models on your proprietary business records.',
+            'CommaDesk accesses Customer Data solely to deliver, protect, troubleshoot, and back up the Service—never to compete with your business or use your private records for unauthorized purposes.',
         },
       },
       {
@@ -230,10 +230,10 @@ export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
           'Users and organizations agree not to misuse the platform or public website. Prohibited activities include:',
         ],
         bullets: [
-          'Attempting to bypass multi-tenant isolation, authentication gates, rate limits, or permission boundaries.',
-          'Uploading unlawful content, malware, or biometric/camera feeds without obtaining legally required employee or visitor notices/consents.',
-          'Reverse engineering, scraping, decompiling, or reselling platform components without written authorization from CommaDesk.',
-          'Disrupting platform availability through automated stress attacks, spam, or abusive webhook loops.',
+          'Attempting to bypass organization data isolation, sign-in controls, or role-based permission boundaries.',
+          'Uploading unlawful content, malicious files, or biometric and camera feeds without obtaining legally required employee or visitor notices and consents.',
+          'Copying, reverse engineering, or reselling platform components without written authorization from CommaDesk.',
+          'Disrupting platform availability through automated abuse, spam, or excessive automated traffic.',
         ],
       },
       {
@@ -241,7 +241,7 @@ export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
         number: '06',
         title: 'Service Availability, SLA & Disclaimers',
         paragraphs: [
-          'For paid Enterprise Cloud subscriptions, CommaDesk targets high availability (99.9% uptime excluding scheduled maintenance and force majeure events) as detailed in your Order Form or Service Level Agreement.',
+          'For paid Enterprise Cloud subscriptions, CommaDesk targets high service availability excluding scheduled maintenance and force majeure events as detailed in your Order Form or Service Level Agreement.',
           'Except as expressly stated in a signed enterprise agreement, the public website and platform services are provided on an "AS IS" and "AS AVAILABLE" basis without implied warranties of merchantability or fitness for a particular purpose.',
         ],
       },
@@ -266,11 +266,11 @@ export const legalEn: Record<LegalDocKey, LegalDocumentContent> = {
     ],
     contactTitle: 'Legal & Compliance Department',
     contactDesc:
-      'Have questions about enterprise licensing, custom Data Processing Agreements (DPA), or legal terms?',
+      'Have questions about business licensing, custom Data Processing Agreements (DPA), or legal terms?',
     contactEmailLabel: 'Legal Contact',
     contactEmail: 'legal@commadesk.com',
     entityLabel: 'Service Provider',
-    entityValue: 'CommaDesk Inc.',
-    securityCtaLabel: 'Explore Security Architecture',
+    entityValue: 'CommaDesk',
+    securityCtaLabel: 'Explore Security & Permissions',
   },
 };

@@ -31,19 +31,19 @@ export const FOOTER_LINKS = {
   commerce: [
     { label: 'CRM & Helpdesk', labelVi: 'Khách hàng & Hỗ trợ', labelEn: 'CRM & Helpdesk', href: '/products/crm-helpdesk' },
     { label: 'Social & Retail', labelVi: 'Mạng xã hội & Bán lẻ', labelEn: 'Social & Retail', href: '/products/social-retail' },
-    { label: 'AI Vision & Cameras', labelVi: 'AI Vision & Smart City', labelEn: 'AI Vision & Cameras', href: '/products/ai-smart-city' },
-    { label: 'Multi-Tier Permissions', labelVi: 'Phân quyền & Bảo mật', labelEn: 'Multi-Tier Permissions', href: '/products/security-platform' },
+    { label: 'Vision & Cameras', labelVi: 'Camera & Đô thị thông minh', labelEn: 'Vision & Cameras', href: '/products/ai-smart-city' },
+    { label: 'Role-Based Permissions', labelVi: 'Phân quyền & Bảo mật', labelEn: 'Role-Based Permissions', href: '/products/security-platform' },
   ],
   pricing: [
     { label: 'Enterprise Cloud', labelVi: 'Đám mây Doanh nghiệp', labelEn: 'Enterprise Cloud', href: '/deployment' },
     { label: 'Private Server', labelVi: 'Máy chủ riêng nội bộ', labelEn: 'Private Dedicated Server', href: '/deployment' },
     { label: 'Desktop & Mobile Apps', labelVi: 'Ứng dụng Máy tính & Di động', labelEn: 'Desktop & Mobile Apps', href: '/deployment' },
-    { label: 'High Availability SLA', labelVi: 'Cam kết vận hành 99.9%', labelEn: 'High Availability SLA', href: '/deployment' },
+    { label: 'Service Availability', labelVi: 'Cam kết vận hành', labelEn: 'Service Availability', href: '/deployment' },
   ],
   resources: [
     { label: 'Feature Handbook', labelVi: 'Cẩm nang tính năng nghiệp vụ', labelEn: 'Feature Handbook', href: '/docs' },
     { label: "What's New & Updates", labelVi: 'Nhật ký cập nhật mới', labelEn: "What's New & Updates", href: '/release-notes' },
-    { label: 'Ecosystem & Sync', labelVi: 'Tích hợp & Kết nối mở', labelEn: 'Ecosystem & Sync', href: '/docs' },
+    { label: 'Software Integrations', labelVi: 'Đồng bộ phần mềm sẵn có', labelEn: 'Software Integrations', href: '/docs' },
     { label: 'Apps & Deployment', labelVi: 'Ứng dụng & Triển khai', labelEn: 'Apps & Deployment', href: '/deployment' },
   ],
   legal: [

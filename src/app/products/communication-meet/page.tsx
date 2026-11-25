@@ -23,42 +23,42 @@ export default function CommunicationMeetPage() {
           tag: 'Họp online',
           title: 'Họp Video CommaMeet',
           description: 'Họp video trực tuyến hình ảnh sắc nét, âm thanh rõ ràng và không giới hạn thời gian họp.',
-          metricBadge: { label: 'Chất lượng', value: 'HD Siêu mượt' },
+          metricBadge: { label: 'Chất lượng', value: 'Video HD' },
         },
         {
           id: 'matrix-chat',
           tag: 'Chat',
           title: 'Chat & Trao Đổi Nhóm Nội Bộ',
           description: 'Nhắn tin tức thì, chia sẻ tệp tin và tạo nhóm thảo luận riêng theo từng dự án hoặc phòng ban.',
-          metricBadge: { label: 'Bảo mật', value: 'Mã hóa an toàn' },
+          metricBadge: { label: 'Bảo mật', value: 'Mã hóa nội bộ' },
         },
         {
           id: 'cms-portal',
           tag: 'Cổng tin',
           title: 'Cổng Tin Doanh Nghiệp',
           description: 'Xuất bản thông báo nội bộ, chính sách công ty và tin tức hoạt động trực quan.',
-          metricBadge: { label: 'Tiếp cận', value: '100% nhân sự' },
+          metricBadge: { label: 'Phạm vi', value: 'Toàn nhân sự' },
         },
         {
           id: 'screen-share',
           tag: 'Hợp tác',
           title: 'Chia Sẻ & Bảng Trắng',
           description: 'Trình chiếu tài liệu, chia sẻ màn hình và vẽ sơ đồ trực tiếp trong cuộc họp.',
-          metricBadge: { label: 'Tương tác', value: 'Thời gian thực' },
+          metricBadge: { label: 'Tương tác', value: 'Trực tiếp' },
         },
         {
           id: 'surveys-feedback',
           tag: 'Khảo sát',
           title: 'Khảo Sát & Góp Ý Ẩn Danh',
           description: 'Thăm dò ý kiến nhân viên, đo lường gắn kết và tiếp nhận góp ý bảo mật.',
-          metricBadge: { label: 'Bảo mật', value: 'Ẩn danh 100%' },
+          metricBadge: { label: 'Riêng tư', value: 'Ẩn danh' },
         },
         {
           id: 'push-notifications',
           tag: 'Thông báo',
           title: 'Thông Báo Tức Thì',
           description: 'Nhận thông báo quan trọng trên ứng dụng, nhắc việc tự động và liên kết thông báo qua Zalo, Telegram.',
-          metricBadge: { label: 'Tốc độ', value: 'Thời gian thực' },
+          metricBadge: { label: 'Kênh gửi', value: 'App, Zalo, Telegram' },
         },
       ]
     : [
@@ -66,43 +66,43 @@ export default function CommunicationMeetPage() {
           id: 'commameet-webrtc',
           tag: 'Video',
           title: 'CommaMeet Video Calls',
-          description: 'Enterprise HD video conferencing with crystal-clear audio and zero time limits.',
-          metricBadge: { label: 'Quality', value: 'Ultra Smooth HD' },
+          description: 'HD video conferencing for team meetings with clear audio and no session time limits.',
+          metricBadge: { label: 'Quality', value: 'HD Video' },
         },
         {
           id: 'matrix-chat',
           tag: 'Chat',
           title: 'Team Chat & Group Messaging',
-          description: 'Instant team channels, file sharing, and dedicated project discussion rooms with encryption.',
-          metricBadge: { label: 'Security', value: 'Encrypted' },
+          description: 'Instant team channels, file sharing, and dedicated project discussion rooms.',
+          metricBadge: { label: 'Security', value: 'Encrypted Chat' },
         },
         {
           id: 'cms-portal',
           tag: 'Portal',
           title: 'Corporate Intranet Portal',
-          description: 'Publish company news, policy announcements, and interactive articles easily.',
-          metricBadge: { label: 'Reach', value: '100% Staff' },
+          description: 'Publish company news, policy announcements, and internal bulletins in one place.',
+          metricBadge: { label: 'Reach', value: 'All Staff' },
         },
         {
           id: 'screen-share',
           tag: 'Collab',
           title: 'Screen Share & Whiteboard',
-          description: 'HD screen presentation and interactive whiteboard brainstorming in meetings.',
-          metricBadge: { label: 'Interactivity', value: 'Realtime' },
+          description: 'Present slides, share screens, and sketch diagrams together during meetings.',
+          metricBadge: { label: 'Mode', value: 'Live Collaboration' },
         },
         {
           id: 'surveys-feedback',
           tag: 'Surveys',
           title: 'Anonymous Feedback',
-          description: 'Conduct eNPS surveys and collect confidential employee suggestions safely.',
-          metricBadge: { label: 'Privacy', value: '100% Anonymous' },
+          description: 'Run employee pulse surveys and collect confidential workplace suggestions safely.',
+          metricBadge: { label: 'Privacy', value: 'Anonymous' },
         },
         {
           id: 'push-notifications',
           tag: 'Alerts',
           title: 'Multi-Channel Alerts',
           description: 'Instant in-app alerts, automated task reminders, and mobile push notifications.',
-          metricBadge: { label: 'Speed', value: 'Instant' },
+          metricBadge: { label: 'Delivery', value: 'Web & Mobile' },
         },
       ];
 
@@ -115,13 +115,13 @@ export default function CommunicationMeetPage() {
           categoryBadge={isVi ? 'Phân hệ Giao tiếp & Họp trực tuyến' : 'Comms & Meet Module'}
           title={
             isVi
-              ? ['Họp video HD bảo mật.', 'Kết nối đội ngũ tức thì.']
-              : ['Encrypted HD meetings.', 'Instant workforce collaboration.']
+              ? ['Họp video HD bảo mật', 'Kết nối đội ngũ nhanh chóng']
+              : ['Encrypted HD meetings', 'Direct team collaboration']
           }
           subtitle={
             isVi
-              ? 'Họp video trực tuyến CommaMeet không giới hạn, kênh chat nội bộ và thông báo đẩy tức thì.'
-              : 'Secure CommaMeet video conferencing with unlimited call time, encrypted channels, and instant alerts.'
+              ? 'Họp video trực tuyến CommaMeet không giới hạn thời lượng, kênh chat theo phòng ban và thông báo công việc.'
+              : 'CommaMeet video conferencing with unlimited call time, encrypted team channels, and instant task alerts.'
           }
           visualPreview={visualPreview}
           tags={
@@ -133,11 +133,11 @@ export default function CommunicationMeetPage() {
 
         <SubpageFeaturesGrid
           badge={isVi ? 'Năng lực cốt lõi' : 'Core Capabilities'}
-          title={isVi ? 'Giao tiếp không khoảng cách' : 'Frictionless Communications'}
+          title={isVi ? 'Giao tiếp & Hợp tác nội bộ' : 'Internal Meetings & Team Chat'}
           subtitle={
             isVi
-              ? 'Tăng tốc trao đổi thông tin và bảo mật tuyệt đối các cuộc họp chiến lược.'
-              : 'Accelerate decision-making with high-fidelity meetings and encrypted collaboration.'
+              ? 'Giúp các phòng ban trao đổi nhanh chóng và bảo mật nội dung cuộc họp nội bộ.'
+              : 'Keep project discussions, video calls, and company announcements in one workspace.'
           }
           features={features}
         />

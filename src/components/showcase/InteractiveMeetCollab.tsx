@@ -186,9 +186,9 @@ export function InteractiveMeetCollab({ isVi }: InteractiveMeetCollabProps) {
       )}
 
       <div className="mt-4 pt-3 border-t border-slate-900/[0.06] flex items-center justify-between text-[12px] text-[#6B7487]">
-        <span>{isVi ? 'Giao thức LiveKit WebRTC & Matrix E2EE' : 'LiveKit WebRTC & Matrix E2EE'}</span>
+        <span>{isVi ? 'Họp video bảo mật & Chat nội bộ' : 'Encrypted video meetings & team chat'}</span>
         <span className="font-mono tabular-nums font-medium text-[#16A34A]">
-          {isVi ? 'Độ trễ < 100 ms' : '< 100 ms latency'}
+          {isVi ? 'Âm thanh & Video HD' : 'HD audio & video'}
         </span>
       </div>
     </ShowcaseCard>

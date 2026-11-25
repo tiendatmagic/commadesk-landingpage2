@@ -68,7 +68,7 @@ export function InteractiveCasbinShield({ isVi }: Props) {
 
   return (
     <ShowcaseCard
-      title={isVi ? 'Ma trận phân quyền Casbin RBAC' : 'Role-Based Permission Matrix'}
+      title={isVi ? 'Ma trận phân quyền theo vai trò' : 'Role-Based Permission Matrix'}
       headerRight={
         <span className="font-mono tabular-nums text-[12px] text-[#6B7487]">
           {grantedCount}/{roles.length} {isVi ? 'quyền hoạt động' : 'policies active'}
@@ -93,7 +93,7 @@ export function InteractiveCasbinShield({ isVi }: Props) {
 
           <div className="mt-5 pt-4 border-t border-slate-900/[0.06] w-full flex items-center justify-center gap-2 text-[12px] text-[#16A34A] font-medium">
             <CheckIcon className="w-3.5 h-3.5" />
-            <span>{isVi ? 'Đồng bộ tức thì toàn hệ thống' : 'Enforced across all tenants'}</span>
+            <span>{isVi ? 'Đồng bộ tức thì toàn hệ thống' : 'Enforced across all units'}</span>
           </div>
         </div>
 

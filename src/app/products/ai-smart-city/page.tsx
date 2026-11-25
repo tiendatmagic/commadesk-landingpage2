@@ -20,89 +20,89 @@ export default function AISmartCityPage() {
     ? [
         {
           id: 'face-recognition',
-          tag: 'Khuôn mặt AI',
+          tag: 'Khuôn mặt',
           title: 'Nhận Diện Khuôn Mặt',
-          description: 'Nhận diện khuôn mặt dưới 200ms, chống giả mạo cho chấm công và đón tiếp VIP.',
-          metricBadge: { label: 'Tốc độ', value: '< 200ms' },
+          description: 'Chấm công nhận diện khuôn mặt và đón tiếp khách mời tại quầy lễ tân với kiểm tra chống giả mạo.',
+          metricBadge: { label: 'Ứng dụng', value: 'Chấm công & Lễ tân' },
         },
         {
           id: 'anpr',
           tag: 'Biển số xe',
-          title: 'Nhận Diện Biển Số',
-          description: 'Tự động đọc biển số xe và điều khiển barrier bãi đỗ xe thông minh.',
-          metricBadge: { label: 'Chính xác', value: '99.4%' },
+          title: 'Nhận Diện Biển Số Xe',
+          description: 'Tự động đọc biển số xe ra vào cổng và kết nối điều khiển barrier bãi đỗ xe.',
+          metricBadge: { label: 'Kiểm soát', value: 'Cổng & Bãi xe' },
         },
         {
           id: 'vms',
           tag: 'Camera an ninh',
           title: 'Quản Lý Camera Tập Trung',
-          description: 'Kết nối và quản lý tập trung toàn bộ hệ thống camera an ninh sẵn có, xem trực tiếp và tua lại sự kiện tức thì.',
-          metricBadge: { label: 'Tương thích', value: 'Mọi dòng Camera' },
+          description: 'Kết nối và theo dõi tập trung hệ thống camera sẵn có, xem trực tiếp và tua lại sự kiện theo thời gian.',
+          metricBadge: { label: 'Tương thích', value: 'Camera IP hiện hữu' },
         },
         {
           id: 'heatmap',
           tag: 'Bản đồ nhiệt',
           title: 'Bản Đồ Nhiệt Mật Độ',
-          description: 'Theo dõi luồng di chuyển và mật độ dừng chân để tối ưu không gian bán lẻ.',
-          metricBadge: { label: 'Độ phân giải', value: 'Realtime 2D' },
+          description: 'Theo dõi luồng di chuyển và thời gian dừng chân tại từng khu vực để tối ưu bố trí cửa hàng.',
+          metricBadge: { label: 'Phân tích', value: 'Mật độ theo khu vực' },
         },
         {
           id: 'gis-map',
           tag: 'Đô thị số',
           title: 'Bản Đồ Số GIS',
-          description: 'Bản đồ số định vị hệ thống camera, cảm biến IoT và cửa hàng thời gian thực.',
-          metricBadge: { label: 'Định vị', value: 'Độ chính xác cao' },
+          description: 'Theo dõi vị trí hệ thống camera, thiết bị cảm biến và các điểm chi nhánh trên bản đồ trực quan.',
+          metricBadge: { label: 'Hiển thị', value: 'Theo điểm lắp đặt' },
         },
         {
           id: 'retail-events',
           tag: 'Bán lẻ',
           title: 'Phân Tích Khách Bán Lẻ',
-          description: 'Đối soát lưu lượng khách với doanh thu POS thực tế để đo lường chuyển đổi.',
-          metricBadge: { label: 'Chuyển đổi', value: 'Đối soát tự động' },
+          description: 'Đối chiếu lưu lượng khách vào cửa hàng với dữ liệu bán hàng POS để đánh giá hiệu quả từng chi nhánh.',
+          metricBadge: { label: 'Báo cáo', value: 'Đối soát lượt khách' },
         },
       ]
     : [
         {
           id: 'face-recognition',
-          tag: 'Biometric AI',
+          tag: 'Facial Check-in',
           title: 'Facial Recognition',
-          description: 'Sub-200ms face recognition with anti-spoofing for check-in and VIP welcome.',
-          metricBadge: { label: 'Latency', value: '< 200ms' },
+          description: 'Facial attendance check-in and visitor reception with liveness checks against photo spoofing.',
+          metricBadge: { label: 'Use case', value: 'Check-in & Reception' },
         },
         {
           id: 'anpr',
           tag: 'Smart Parking',
-          title: 'Plate Recognition (ANPR)',
-          description: 'Automated vehicle license plate reading with automated gate barrier controls.',
-          metricBadge: { label: 'Accuracy', value: '99.4%' },
+          title: 'License Plate Recognition',
+          description: 'Automated vehicle plate reading at entry gates connected to parking barrier controls.',
+          metricBadge: { label: 'Control', value: 'Gate Automation' },
         },
         {
           id: 'vms',
           tag: 'Security Cameras',
           title: 'Centralized Camera Management',
-          description: 'Manage and stream existing surveillance cameras centrally with instant event playback.',
-          metricBadge: { label: 'Compatibility', value: 'Universal Cameras' },
+          description: 'Manage and view existing surveillance cameras centrally with instant event playback.',
+          metricBadge: { label: 'Compatibility', value: 'Existing Cameras' },
         },
         {
           id: 'heatmap',
           tag: 'Footfall',
           title: 'Density Heatmaps',
-          description: 'Analyze customer dwell times and high-traffic aisles to maximize retail layout.',
-          metricBadge: { label: 'Resolution', value: 'Realtime 2D' },
+          description: 'Analyze customer dwell times and busy aisles to improve store layouts and staffing.',
+          metricBadge: { label: 'Tracking', value: 'Zone Heatmaps' },
         },
         {
           id: 'gis-map',
           tag: 'Smart City',
-          title: 'GIS Smart City Map',
-          description: 'Geospatial map plotting cameras, IoT sensors, and branch statuses in real time.',
-          metricBadge: { label: 'Precision', value: 'Meter-Level' },
+          title: 'GIS Location Map',
+          description: 'Interactive map displaying cameras, sensors, and branch statuses across sites.',
+          metricBadge: { label: 'Mapping', value: 'Site-Level View' },
         },
         {
           id: 'retail-events',
-          tag: 'Retail AI',
+          tag: 'Retail',
           title: 'Footfall & POS Analytics',
-          description: 'Correlate footfall traffic with POS register sales to compute conversion rates.',
-          metricBadge: { label: 'Tracking', value: 'Automated Audit' },
+          description: 'Compare store visitor counts against point-of-sale orders to track branch conversion.',
+          metricBadge: { label: 'Reporting', value: 'Traffic & Sales' },
         },
       ];
 
@@ -112,32 +112,32 @@ export default function AISmartCityPage() {
 
       <main className="max-w-[1536px] mx-auto flex flex-col gap-6 sm:gap-10 md:gap-12 lg:gap-14 relative px-2.5 sm:px-6 lg:px-8 pb-4 sm:pb-6 md:pb-6 lg:pb-6">
         <SubpageHero
-          categoryBadge={isVi ? 'Phân hệ AI Vision & Smart City' : 'AI Vision & Smart City Module'}
+          categoryBadge={isVi ? 'Phân hệ Camera & Đô thị thông minh' : 'Vision & Smart City Module'}
           title={
             isVi
-              ? ['Thị giác máy tính AI.', 'Giám sát & Điều hành đô thị.']
-              : ['Computer Vision AI.', 'Smart City Intelligence.']
+              ? ['Giám sát camera thông minh', 'Điều hành an ninh & đô thị']
+              : ['Camera vision monitoring', 'Site & city operations']
           }
           subtitle={
             isVi
-              ? 'Phân tích thị giác AI thông minh: nhận diện khuôn mặt, đọc biển số xe ANPR, bản đồ nhiệt và bản đồ GIS.'
-              : 'Enterprise computer vision insights: fast face matching, automated ANPR plates, retail heatmaps, and GIS city management.'
+              ? 'Quản lý camera tập trung, chấm công khuôn mặt, nhận diện biển số xe, bản đồ nhiệt cửa hàng và bản đồ vị trí GIS.'
+              : 'Centralized camera management, facial check-in, license plate reading, store heatmaps, and GIS site mapping.'
           }
           tags={
             isVi
               ? [
                   'Nhận diện khuôn mặt',
-                  'Đọc biển số ANPR',
+                  'Đọc biển số xe',
                   'Camera an ninh tập trung',
                   'Bản đồ mật độ khách',
                   'Bản đồ số GIS',
                 ]
               : [
                   'Facial Recognition',
-                  'ANPR License Plates',
+                  'License Plate Reader',
                   'Centralized Cameras',
                   'Footfall Heatmaps',
-                  'GIS Smart City',
+                  'GIS Location Map',
                 ]
           }
           visualPreview={visualPreview}
@@ -145,11 +145,11 @@ export default function AISmartCityPage() {
 
         <SubpageFeaturesGrid
           badge={isVi ? 'Khả năng cốt lõi' : 'Core Capabilities'}
-          title={isVi ? 'Thị giác máy tính & Phân tích không gian' : 'Computer Vision & Spatial Analytics'}
+          title={isVi ? 'Giám sát hình ảnh & Phân tích không gian' : 'Camera Vision & Spatial Analytics'}
           subtitle={
             isVi
-              ? 'Nâng cao mức độ an ninh, tự động hóa kiểm soát ra vào và thấu hiểu hành vi khách hàng.'
-              : 'Fortify perimeter security, automate physical access, and optimize commercial footfall revenue.'
+              ? 'Hỗ trợ kiểm soát ra vào tại văn phòng, bãi xe và theo dõi lưu lượng khách tại hệ thống cửa hàng.'
+              : 'Automate gate and building access while tracking visitor flow across retail branches.'
           }
           features={features}
         />

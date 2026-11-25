@@ -23,7 +23,7 @@ export default function DeploymentPage() {
           tag: 'Máy tính',
           title: 'Ứng Dụng Máy Tính Chuyên Dụng',
           description:
-            'Tải về và cài đặt dễ dàng trên Windows (.exe) và macOS. Mở nhiều cửa sổ làm việc đồng thời, nhận thông báo tức thì.',
+            'Cài đặt trực tiếp trên Windows và macOS. Mở nhiều cửa sổ làm việc song song và nhận thông báo tức thì.',
           metricBadge: { label: 'Tương thích', value: 'Windows & macOS' },
         },
         {
@@ -37,84 +37,84 @@ export default function DeploymentPage() {
         {
           id: 'cloud-saas-platform',
           tag: 'Đám mây',
-          title: 'Nền Tảng Đám Mây Trực Tuyến',
+          title: 'Sử Dụng Trực Tiếp Trên Trình Duyệt',
           description:
-            'Đăng nhập và làm việc ngay qua trình duyệt web mà không cần cài đặt phần mềm. Triển khai nhanh chóng trong ngày.',
-          metricBadge: { label: 'Tiện lợi', value: 'Dùng ngay trên Web' },
+            'Đăng nhập và làm việc ngay qua trình duyệt web mà không cần cài đặt phần mềm, phù hợp triển khai nhanh cho các đội ngũ.',
+          metricBadge: { label: 'Truy cập', value: 'Trình duyệt Web' },
         },
         {
           id: 'private-on-prem-server',
           tag: 'Máy chủ riêng',
           title: 'Cài Đặt Trên Máy Chủ Riêng',
           description:
-            'Dành cho cơ quan hành chính và tập đoàn yêu cầu bảo mật cao: làm chủ 100% dữ liệu, vận hành độc lập trong mạng nội bộ.',
-          metricBadge: { label: 'Chủ quyền', value: '100% Nội bộ' },
+            'Dành cho cơ quan hành chính và tập đoàn yêu cầu chủ quyền dữ liệu: toàn bộ hồ sơ vận hành nằm trong mạng nội bộ của đơn vị.',
+          metricBadge: { label: 'Chủ quyền', value: 'Lưu trữ nội bộ' },
         },
         {
           id: 'multi-branch-sync',
           tag: 'Đa chi nhánh',
           title: 'Quản Trị Đa Chi Nhánh Hợp Nhất',
           description:
-            'Dễ dàng kết nối trụ sở chính với hàng loạt chi nhánh, cửa hàng và kho bãi trên cùng một hệ thống duy nhất.',
-          metricBadge: { label: 'Quy mô', value: 'Không giới hạn' },
+            'Kết nối trụ sở chính với nhiều chi nhánh, cửa hàng và kho bãi trên cùng một không gian làm việc thống nhất.',
+          metricBadge: { label: 'Phạm vi', value: 'Đa chi nhánh' },
         },
         {
           id: 'sla-uptime-guarantee',
           tag: 'Độ tin cậy',
-          title: 'Cam Kết Hoạt Động Ổn Định 99.9%',
+          title: 'Sao Lưu & Vận Hành Liên Tục',
           description:
-            'Hạ tầng dự phòng đa tầng tự phục hồi, dữ liệu được sao lưu định kỳ, cam kết vận hành liên tục không gián đoạn.',
-          metricBadge: { label: 'Cam kết', value: '99.9% Uptime' },
+            'Sao lưu dữ liệu định kỳ, hỗ trợ khôi phục nhanh và đảm bảo hoạt động ổn định cho công việc hàng ngày.',
+          metricBadge: { label: 'Vận hành', value: 'Sao lưu định kỳ' },
         },
       ]
     : [
         {
           id: 'desktop-workstation',
           tag: 'Desktop',
-          title: 'Dedicated Desktop Client',
+          title: 'Dedicated Desktop App',
           description:
-            'Standalone installer for Windows (.exe) and macOS with multi-window support and instant desktop notifications.',
+            'Desktop client for Windows and macOS with multi-window workspace support and instant task notifications.',
           metricBadge: { label: 'OS', value: 'Windows & macOS' },
         },
         {
           id: 'mobile-everywhere',
           tag: 'Mobile',
-          title: 'Mobile App for On-the-Go Teams',
+          title: 'Mobile App for Field & Office Teams',
           description:
-            'Available on App Store & Google Play: GPS check-in, AI Face clock-in, and 1-tap mobile approvals for leaders.',
+            'Available on App Store & Google Play: GPS check-in, face attendance, and 1-tap approvals for managers.',
           metricBadge: { label: 'Platform', value: 'iOS & Android' },
         },
         {
           id: 'cloud-saas-platform',
           tag: 'Cloud',
-          title: 'Turnkey Enterprise Web Cloud',
+          title: 'Browser-Based Cloud Access',
           description:
-            'Instant browser access via Chrome, Safari, or Edge without local setup. Deploy and onboard teams in hours.',
-          metricBadge: { label: 'Access', value: 'Web Native' },
+            'Log in via Chrome, Safari, or Edge without local setup. Get departments working together quickly.',
+          metricBadge: { label: 'Access', value: 'Web Browser' },
         },
         {
           id: 'private-on-prem-server',
           tag: 'Private Server',
-          title: 'On-Premises Dedicated Server',
+          title: 'On-Premises Private Hosting',
           description:
-            'For public sector and enterprise compliance: complete data sovereignty and air-gapped internal LAN operations.',
-          metricBadge: { label: 'Sovereignty', value: '100% In-House' },
+            'For public sector and regulated organizations: keep all operational records strictly within your internal network.',
+          metricBadge: { label: 'Ownership', value: 'In-House Hosting' },
         },
         {
           id: 'multi-branch-sync',
           tag: 'Multi-Branch',
-          title: 'Unified Multi-Location Governance',
+          title: 'Unified Multi-Branch Governance',
           description:
-            'Seamlessly connect corporate headquarters with dozens of retail branches, warehouses, and remote hubs.',
-          metricBadge: { label: 'Scale', value: 'Unlimited' },
+            'Connect headquarters with retail stores, regional offices, and warehouses in a single workspace.',
+          metricBadge: { label: 'Coverage', value: 'Multi-Branch' },
         },
         {
           id: 'sla-uptime-guarantee',
           tag: 'Reliability',
-          title: '99.9% High Availability SLA',
+          title: 'Scheduled Backups & Continuity',
           description:
-            'Self-healing redundant cloud infrastructure with automated backup routines ensuring 24/7 business continuity.',
-          metricBadge: { label: 'Commitment', value: '99.9% Uptime' },
+            'Regular automated backups and monitored service continuity to keep daily business operations running.',
+          metricBadge: { label: 'Continuity', value: 'Scheduled Backups' },
         },
       ];
 
@@ -127,8 +127,8 @@ export default function DeploymentPage() {
           categoryBadge={isVi ? 'Ứng Dụng & Mô Hình Triển Khai' : 'Apps & Deployment Models'}
           title={
             isVi
-              ? ['Làm việc mọi lúc, mọi nơi.', 'Linh hoạt theo quy mô doanh nghiệp.']
-              : ['Work anywhere, anytime.', 'Tailored to your business scale.']
+              ? ['Làm việc mọi lúc, mọi nơi', 'Linh hoạt theo quy mô doanh nghiệp']
+              : ['Work across devices', 'Fit to your organization']
           }
           subtitle={
             isVi

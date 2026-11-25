@@ -22,43 +22,43 @@ export default function SurveysFeedbackPage() {
           id: 'survey-builder',
           tag: 'Tạo khảo sát',
           title: 'Trình Tạo Khảo Sát',
-          description: 'Thiết kế khảo sát linh hoạt: thang điểm Likert, trắc nghiệm và logic phân nhánh.',
-          metricBadge: { label: 'Tùy biến', value: '10+ Loại trường' },
+          description: 'Thiết kế khảo sát linh hoạt với thang điểm Likert, câu hỏi trắc nghiệm và điều kiện rẽ nhánh.',
+          metricBadge: { label: 'Câu hỏi', value: 'Đa dạng định dạng' },
         },
         {
           id: 'survey-approval-workflow',
           tag: 'Kiểm duyệt',
           title: 'Phê Duyệt Nội Dung',
-          description: 'Xét duyệt nội dung qua HR hoặc Ban Giám Đốc trước khi gửi đến toàn thể nhân viên.',
-          metricBadge: { label: 'Kiểm duyệt', value: '100% chuẩn mực' },
+          description: 'Xét duyệt bộ câu hỏi qua HR hoặc Ban Giám Đốc trước khi phát hành tới toàn nhân viên.',
+          metricBadge: { label: 'Quy trình', value: 'Duyệt trước khi gửi' },
         },
         {
           id: 'enps-analytics',
           tag: 'Chỉ số eNPS',
-          title: 'Phân Tích eNPS Realtime',
-          description: 'Đo lường mức độ gắn kết, phân loại nhóm ủng hộ và phản hồi theo từng phòng ban.',
-          metricBadge: { label: 'Gắn kết', value: 'Realtime eNPS' },
+          title: 'Thống Kê Chỉ Số eNPS',
+          description: 'Đo lường mức độ gắn kết, tổng hợp tỷ lệ tham gia và phản hồi theo từng phòng ban.',
+          metricBadge: { label: 'Thống kê', value: 'Theo phòng ban' },
         },
         {
           id: 'confidential-mailbox',
           tag: 'Hộp thư bảo mật',
           title: 'Hòm Thư Góp Ý Lãnh Đạo',
-          description: 'Kênh tiếp nhận tâm tư nhân viên: gửi ẩn danh mã hóa hoàn toàn, chống lộ danh tính.',
-          metricBadge: { label: 'Bảo mật', value: 'Mã hóa 100%' },
+          description: 'Kênh tiếp nhận tâm tư nhân viên với tùy chọn gửi ẩn danh để bảo vệ người đóng góp ý kiến.',
+          metricBadge: { label: 'Chế độ', value: 'Ẩn danh tùy chọn' },
         },
         {
           id: 'sla-response-tracking',
           tag: 'Cam kết SLA',
           title: 'Theo Dõi Tiến Độ Phản Hồi',
-          description: 'Cấp mã tra cứu bí mật cho người gửi và cam kết phản hồi giải quyết trong 48 giờ.',
-          metricBadge: { label: 'Thời hạn', value: 'Cam kết 48h' },
+          description: 'Cấp mã tra cứu riêng cho người gửi để theo dõi trạng thái xử lý và thời hạn phản hồi.',
+          metricBadge: { label: 'Thời hạn', value: 'Mục tiêu 48h' },
         },
         {
           id: 'culture-retention',
           tag: 'Văn hóa',
-          title: 'Gắn Kết & Giữ Chân Nhân Tài',
-          description: 'Chuyển hóa dữ liệu khảo sát thành hành động cải thiện môi trường làm việc.',
-          metricBadge: { label: 'Giữ chân', value: '+22% Gắn kết' },
+          title: 'Cải Thiện Môi Trường Làm Việc',
+          description: 'Tổng hợp đề xuất thực tế từ khảo sát để HR và quản lý lên kế hoạch cải tiến nội bộ.',
+          metricBadge: { label: 'Hành động', value: 'Theo dõi xử lý' },
         },
       ]
     : [
@@ -66,43 +66,43 @@ export default function SurveysFeedbackPage() {
           id: 'survey-builder',
           tag: 'Builder',
           title: 'Visual Survey Designer',
-          description: 'Construct feedback questionnaires: Likert scales, multi-choice, and branching logic.',
-          metricBadge: { label: 'Input Formats', value: '10+ Types' },
+          description: 'Create employee questionnaires with rating scales, multiple-choice items, and branching logic.',
+          metricBadge: { label: 'Formats', value: 'Flexible Fields' },
         },
         {
           id: 'survey-approval-workflow',
           tag: 'Approvals',
           title: 'Pre-Broadcast Approvals',
-          description: 'Ensure survey rigor through integrated review routing before broadcast.',
-          metricBadge: { label: 'Editorial', value: '100% Policy-Safe' },
+          description: 'Review survey drafts with HR or management before publishing to staff.',
+          metricBadge: { label: 'Workflow', value: 'Pre-Send Review' },
         },
         {
           id: 'enps-analytics',
           tag: 'eNPS',
-          title: 'Real-Time eNPS Radar',
-          description: 'Track sentiment metrics and segment cohorts (Promoters, Passives, Detractors).',
-          metricBadge: { label: 'Metric', value: 'Realtime eNPS' },
+          title: 'eNPS Engagement Reports',
+          description: 'Track employee sentiment scores and response rates segmented by department.',
+          metricBadge: { label: 'Metrics', value: 'By Department' },
         },
         {
           id: 'confidential-mailbox',
           tag: 'Confidential',
           title: 'Direct Leadership Mailbox',
-          description: 'Provide safe channels to voice concerns with cryptographically shielded anonymity.',
-          metricBadge: { label: 'Privacy', value: '100% Zero-Leak' },
+          description: 'Provide a dedicated channel for staff to share suggestions with optional anonymity.',
+          metricBadge: { label: 'Privacy', value: 'Optional Anonymity' },
         },
         {
           id: 'sla-response-tracking',
           tag: 'SLA',
           title: '48h Resolution Tracking',
-          description: 'Assign anonymous tracking IDs and guarantee audited 48-hour response closure.',
+          description: 'Give contributors a private lookup code to follow response progress against SLA targets.',
           metricBadge: { label: 'Window', value: '48h Target' },
         },
         {
           id: 'culture-retention',
-          tag: 'Retention',
-          title: 'Workplace Trust Drivers',
-          description: 'Transform pulse data into concrete actions to foster psychological safety.',
-          metricBadge: { label: 'Retention', value: '+22% Lift' },
+          tag: 'Culture',
+          title: 'Workplace Action Plans',
+          description: 'Turn employee feedback into assigned follow-up items for HR and team managers.',
+          metricBadge: { label: 'Follow-Up', value: 'Tracked Actions' },
         },
       ];
 
@@ -115,28 +115,28 @@ export default function SurveysFeedbackPage() {
           categoryBadge={isVi ? 'Phân hệ Khảo Sát & Góp Ý' : 'Surveys & Feedback Module'}
           title={
             isVi
-              ? ['Lắng nghe tiếng nói.', 'Nâng tầm văn hóa tổ chức.']
-              : ['Listen to employee voices.', 'Elevate workplace trust.']
+              ? ['Lắng nghe đội ngũ', 'Cải thiện môi trường làm việc']
+              : ['Listen to employee feedback', 'Act on workplace insights']
           }
           subtitle={
             isVi
-              ? 'Khảo sát trực quan, đo lường chỉ số eNPS thời gian thực và hòm thư góp ý bảo mật tới Lãnh đạo.'
-              : 'Pulse surveys, real-time eNPS analytics, and encrypted direct leadership feedback mailboxes.'
+              ? 'Tạo khảo sát nội bộ, theo dõi chỉ số eNPS theo phòng ban và tiếp nhận góp ý bảo mật gửi tới lãnh đạo.'
+              : 'Internal pulse surveys, department eNPS reporting, and a confidential feedback mailbox for leadership.'
           }
           tags={
             isVi
               ? [
-                  'Tạo khảo sát kéo thả',
+                  'Tạo khảo sát nội bộ',
                   'Phê duyệt nội dung',
-                  'Chỉ số eNPS Realtime',
-                  'Hộp thư góp ý bảo mật',
-                  'Cam kết giải quyết 48h',
+                  'Chỉ số eNPS',
+                  'Hộp thư góp ý ẩn danh',
+                  'Theo dõi phản hồi 48h',
                 ]
               : [
-                  'Visual Survey Builder',
+                  'Survey Builder',
                   'Editorial Approval',
-                  'Real-Time eNPS',
-                  'Encrypted Mailbox',
+                  'eNPS Reporting',
+                  'Anonymous Mailbox',
                   '48h SLA Tracking',
                 ]
           }
@@ -145,11 +145,11 @@ export default function SurveysFeedbackPage() {
 
         <SubpageFeaturesGrid
           badge={isVi ? 'Khả năng cốt lõi' : 'Core Capabilities'}
-          title={isVi ? 'Đo lường gắn kết & Minh bạch ý kiến' : 'Measuring Engagement with Accountability'}
+          title={isVi ? 'Đo lường gắn kết & Tiếp nhận góp ý' : 'Employee Surveys & Feedback Handling'}
           subtitle={
             isVi
-              ? 'Trao cho mọi nhân viên kênh lên tiếng an toàn và cung cấp bức tranh trung thực cho ban lãnh đạo.'
-              : 'Give team members a safe voice and empower leadership with an unfiltered organizational pulse.'
+              ? 'Tạo kênh lắng nghe minh bạch giữa nhân viên và ban điều hành kèm lộ trình phản hồi rõ ràng.'
+              : 'Give staff a structured channel to share feedback with clear follow-up tracking.'
           }
           features={features}
         />

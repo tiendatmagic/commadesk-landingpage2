@@ -24,15 +24,15 @@ export default function DocsPage() {
           title: 'Quản Trị Dự Án & Tiến Độ',
           description:
             'Tổ chức công việc theo bảng Kanban, lập kế hoạch với sơ đồ Gantt và theo dõi tiến độ chi tiết đến từng nhân sự.',
-          metricBadge: { label: 'Hiệu quả', value: '+35% Tốc độ bàn giao' },
+          metricBadge: { label: 'Nghiệp vụ', value: 'Kanban & Gantt' },
         },
         {
           id: 'hr-payroll-guide',
           tag: 'Nhân sự',
-          title: 'Vận Hành Nhân Sự & Chấm Công AI',
+          title: 'Vận Hành Nhân Sự & Chấm Công',
           description:
-            'Quản lý hồ sơ nhân viên 360°, chấm công nhận diện khuôn mặt và tự động tính bảng lương không sai sót.',
-          metricBadge: { label: 'Độ chính xác', value: '100% Tự động hóa' },
+            'Quản lý hồ sơ nhân viên, chấm công nhận diện khuôn mặt và tổng hợp bảng công sang bảng lương tự động.',
+          metricBadge: { label: 'Quy trình', value: 'Đồng bộ bảng lương' },
         },
         {
           id: 'digital-documents-guide',
@@ -45,76 +45,76 @@ export default function DocsPage() {
         {
           id: 'enterprise-permissions-docs',
           tag: 'Phân quyền',
-          title: 'Phân Quyền Đa Tầng Theo Tổ Chức',
+          title: 'Phân Quyền Theo Cơ Cấu Tổ Chức',
           description:
             'Thiết lập chính sách truy cập phân cấp từ trụ sở, chi nhánh đến từng phòng ban và vị trí chuyên môn.',
-          metricBadge: { label: 'Cơ chế', value: 'Đa tầng linh hoạt' },
+          metricBadge: { label: 'Phạm vi', value: 'Theo vai trò & đơn vị' },
         },
         {
           id: 'camera-ai-guide',
-          tag: 'An ninh AI',
-          title: 'Camera AI & Giám Sát Thông Minh',
+          tag: 'Giám sát',
+          title: 'Camera & Kiểm Soát Ra Vào',
           description:
-            'Kết nối camera giám sát hiện hữu, nhận diện khách quen/khách VIP, đếm lưu lượng và cảnh báo an ninh tức thì.',
-          metricBadge: { label: 'Phản ứng', value: 'Thời gian thực' },
+            'Kết nối camera giám sát hiện hữu, nhận diện khách mời, đếm lưu lượng và ghi nhận sự kiện an ninh tức thì.',
+          metricBadge: { label: 'Giám sát', value: 'Theo thời gian thực' },
         },
         {
           id: 'open-integration-guide',
           tag: 'Kết nối',
-          title: 'Kết Nối Dữ Liệu Doanh Nghiệp',
+          title: 'Đồng Bộ Phần Mềm Doanh Nghiệp',
           description:
-            'Dễ dàng kết nối và đồng bộ hai chiều với phần mềm kế toán, bán hàng POS, máy chấm công và cổng dịch vụ công.',
-          metricBadge: { label: 'Tương thích', value: 'Mọi nền tảng' },
+            'Kết nối và đồng bộ hai chiều với phần mềm kế toán, bán hàng POS, máy chấm công và cổng thông tin nội bộ.',
+          metricBadge: { label: 'Đồng bộ', value: 'Hai chiều' },
         },
       ]
     : [
         {
           id: 'project-management-guide',
           tag: 'Projects',
-          title: 'Project & Milestone Governance',
+          title: 'Project & Milestone Tracking',
           description:
-            'Organize deliverables with Kanban boards, Gantt timelines, and monitor individual contributor velocity.',
-          metricBadge: { label: 'Efficiency', value: '+35% Delivery Rate' },
+            'Organize deliverables with Kanban boards, Gantt timelines, and track task completion by team member.',
+          metricBadge: { label: 'Workflow', value: 'Kanban & Gantt' },
         },
         {
           id: 'hr-payroll-guide',
           tag: 'Workforce',
-          title: 'Smart HR & Automated Payroll',
+          title: 'HR & Automated Payroll',
           description:
-            '360° employee directory, AI biometric clock-in, and automated timesheets without manual discrepancies.',
-          metricBadge: { label: 'Accuracy', value: '100% Automated' },
+            'Employee directory, facial and GPS clock-in, and verified attendance entries synced directly to payroll.',
+          metricBadge: { label: 'Workflow', value: 'Payroll Sync' },
         },
         {
           id: 'digital-documents-guide',
           tag: 'Documents',
           title: 'Document Registry & Digital Signing',
           description:
-            'Standardized inbound and outbound dispatches, auto-numbering, cryptographic approvals, and archiving.',
-          metricBadge: { label: 'Standard', value: 'Decree 30 Ready' },
+            'Standardized inbound and outbound dispatches, auto-numbering, digital sign-offs, and compliant archiving.',
+          metricBadge: { label: 'Standard', value: 'Decree 30' },
         },
         {
           id: 'enterprise-permissions-docs',
           tag: 'Permissions',
-          title: 'Multi-Tier Permission Policies',
+          title: 'Organization-Scoped Permissions',
           description:
-            'Control access seamlessly across organizations, branches, departments, roles, and individual users.',
-          metricBadge: { label: 'Model', value: 'Multi-Tier' },
+            'Configure access rules across organizations, branches, departments, roles, and individual team members.',
+          metricBadge: { label: 'Model', value: 'Role-Based Access' },
         },
         {
           id: 'camera-ai-guide',
-          tag: 'Vision AI',
-          title: 'AI Cameras & Smart Operations',
+          tag: 'Vision',
+          title: 'Cameras & Access Monitoring',
           description:
-            'Integrate existing CCTV streams, detect VIP visitors, license plates, and receive instant anomaly alerts.',
-          metricBadge: { label: 'Response', value: 'Real-Time' },
+            'Connect existing camera feeds, identify visitors, track license plates, and log security events as they occur.',
+          metricBadge: { label: 'Monitoring', value: 'Live Events' },
         },
         {
           id: 'open-integration-guide',
-          tag: 'Ecosystem',
-          title: 'Enterprise Data Synchronization',
+          tag: 'Integrations',
+          title: 'Business Software Synchronization',
           description:
-            'Seamlessly connect and sync two-way data with accounting software, retail POS, and corporate tools.',
-          metricBadge: { label: 'Support', value: 'Universal Sync' },
+            'Connect and sync two-way records with accounting tools, retail POS systems, and attendance devices.',
+          metricBadge: { label: 'Sync', value: 'Two-Way' },
         },
       ];
 
@@ -127,29 +127,29 @@ export default function DocsPage() {
           categoryBadge={isVi ? 'Cẩm Nang & Tính Năng Nghiệp Vụ' : 'Feature Handbook & Guides'}
           title={
             isVi
-              ? ['Làm chủ nền tảng.', 'Tối ưu hóa vận hành.']
-              : ['Master the platform.', 'Optimize operations.']
+              ? ['Cẩm nang nghiệp vụ', 'Quy trình vận hành chuẩn hóa']
+              : ['Operational handbook', 'Standardized business workflows']
           }
           subtitle={
             isVi
-              ? 'Khám phá đầy đủ tính năng và quy trình vận hành thực tế cho toàn bộ 14 phân hệ quản trị doanh nghiệp CommaDesk.'
-              : 'Explore comprehensive features and real-world workflows across all 14 CommaDesk enterprise modules.'
+              ? 'Khám phá đầy đủ tính năng và quy trình vận hành thực tế cho toàn bộ 13 phân hệ quản trị doanh nghiệp CommaDesk.'
+              : 'Explore practical features and day-to-day workflows across all 13 CommaDesk business modules.'
           }
           tags={
             isVi
               ? [
                   'Quản trị dự án & Tiến độ',
-                  'Chấm công AI & Tính lương',
+                  'Chấm công & Tính lương',
                   'Sổ văn bản & Ký số',
-                  'Phân quyền đa tầng',
-                  'Camera AI thông minh',
+                  'Phân quyền theo vai trò',
+                  'Camera giám sát thông minh',
                 ]
               : [
                   'Project & Progress Hub',
-                  'Smart HR & Payroll',
+                  'HR & Payroll',
                   'Document Registry',
-                  'Multi-Tier Permissions',
-                  'Vision AI & Safety',
+                  'Role-Based Permissions',
+                  'Camera Monitoring',
                 ]
           }
           visualPreview={visualPreview}
@@ -160,8 +160,8 @@ export default function DocsPage() {
           title={isVi ? 'Cẩm nang nghiệp vụ doanh nghiệp' : 'Enterprise Operational Handbook'}
           subtitle={
             isVi
-              ? 'Tất cả nghiệp vụ cần thiết được số hóa và kết nối liền mạch trên cùng một không gian làm việc duy nhất.'
-              : 'Every critical enterprise workflow is digitized and seamlessly united in a single workspace.'
+              ? 'Các quy trình nghiệp vụ trọng yếu được số hóa và liên kết chặt chẽ trên một không gian làm việc chung.'
+              : 'Core business workflows digitized and connected in one shared workspace.'
           }
           features={features}
         />

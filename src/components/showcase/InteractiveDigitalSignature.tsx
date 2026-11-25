@@ -19,7 +19,11 @@ export function InteractiveDigitalSignature({ isVi }: Props) {
 
   return (
     <ShowcaseCard
-      title={isVi ? 'Sổ văn bản số & Ký duyệt điện tử' : 'Digital Document Registry & e-Signing'}
+      title={
+        isVi
+          ? "Sổ văn bản số & Ký duyệt điện tử"
+          : "Digital Document Registry & e-Signing"
+      }
       headerRight={
         <span className="font-mono tabular-nums text-[12px] text-[#6B7487]">
           Decree 30/2020/ND-CP
@@ -38,40 +42,50 @@ export function InteractiveDigitalSignature({ isVi }: Props) {
                   <FileTextIcon className="w-3.5 h-3.5" />
                 </span>
                 <div>
-                  <p className="font-mono text-[12px] font-medium text-[#111827]">DOC-2026-HQ-882</p>
+                  <p className="font-mono text-[12px] font-medium text-[#111827]">
+                    DOC-2026-HQ-882
+                  </p>
                   <p className="text-[11px] text-[#6B7487]">
-                    {isVi ? 'Chỉ thị điều hành chính thức' : 'Official executive directive'}
+                    {isVi
+                      ? "Chỉ thị điều hành chính thức"
+                      : "Official executive directive"}
                   </p>
                 </div>
               </div>
               <span
                 className={`text-[11px] font-medium ${
-                  isSigned ? 'text-[#16A34A]' : 'text-[#D97706]'
+                  isSigned ? "text-[#16A34A]" : "text-[#D97706]"
                 }`}
               >
-                {isVi ? (isSigned ? 'Đã ký số' : 'Chờ ký') : isSigned ? 'Verified' : 'Pending'}
+                {isVi
+                  ? isSigned
+                    ? "Đã ký số"
+                    : "Chờ ký"
+                  : isSigned
+                    ? "Verified"
+                    : "Pending"}
               </span>
             </div>
 
             <p className="text-[12.5px] text-[#4B5565] line-clamp-3 leading-relaxed mb-4">
               {isVi
-                ? 'Quyết định ban hành quy chế vận hành số hóa liên phòng ban, bảo mật văn bản theo tiêu chuẩn ISO 27001 và phân quyền đa tầng linh hoạt.'
-                : 'Executive directive on inter-departmental document dispatching under ISO 27001 controls and multi-tier permissions.'}
+                ? "Quyết định ban hành quy chế tiếp nhận, trình ký và lưu trữ văn bản điện tử liên phòng ban theo quy định."
+                : "Inter-departmental directive on electronic document dispatching, approval routing, and compliant archiving."}
             </p>
 
             <div className="flex items-center justify-between pt-3 border-t border-slate-900/[0.06]">
               <div className="text-[11px] text-[#6B7487] font-mono">
-                SHA-256: 4f8a...e91c
+                {isVi ? "Số hiệu: 882/QĐ-VP" : "Ref: DOC-882/2026"}
               </div>
 
               <div
                 className={`px-2.5 py-1 rounded-md border text-[11px] font-mono font-medium transition-colors ${
                   isSigned
-                    ? 'border-[#16A34A] text-[#16A34A] bg-emerald-50/60'
-                    : 'border-[#FF4D38]/40 text-[#C8321F] bg-[#FFF8F7]'
+                    ? "border-[#16A34A] text-[#16A34A] bg-emerald-50/60"
+                    : "border-[#FF4D38]/40 text-[#C8321F] bg-[#FFF8F7]"
                 }`}
               >
-                {isVi ? 'ĐÃ KÝ SỐ' : 'DIGITALLY SIGNED'}
+                {isVi ? "ĐÃ KÝ SỐ" : "DIGITALLY SIGNED"}
               </div>
             </div>
           </div>
@@ -82,7 +96,9 @@ export function InteractiveDigitalSignature({ isVi }: Props) {
           <div className="p-5 rounded-xl bg-white border border-slate-900/[0.08] space-y-4">
             <div className="flex items-center justify-between pb-2.5 border-b border-slate-900/[0.06]">
               <span className="text-[13px] font-semibold text-[#111827]">
-                {isVi ? 'Luồng phê duyệt văn bản' : 'Multi-tier review pipeline'}
+                {isVi
+                  ? "Luồng phê duyệt văn bản"
+                  : "Multi-tier review pipeline"}
               </span>
               <span className="text-[12px] font-mono tabular-nums text-[#6B7487]">
                 {isVi ? `Bước ${currentStep}/3` : `Step ${currentStep}/3`}
@@ -91,42 +107,61 @@ export function InteractiveDigitalSignature({ isVi }: Props) {
 
             <div className="space-y-2">
               {[
-                { step: 1, role: isVi ? 'Trưởng phòng Pháp chế' : 'Legal counsel review', done: true, by: 'Sarah M.' },
-                { step: 2, role: isVi ? 'Giám đốc Vận hành' : 'COO verification', done: isSigned, by: 'James C.' },
-                { step: 3, role: isVi ? 'Tổng Giám đốc phê chuẩn' : 'CEO sign-off', done: isSigned, by: 'Elena R.' },
+                {
+                  step: 1,
+                  role: isVi ? "Trưởng phòng Pháp chế" : "Legal counsel review",
+                  done: true,
+                  by: "Minh T.",
+                },
+                {
+                  step: 2,
+                  role: isVi ? "Giám đốc Vận hành" : "COO verification",
+                  done: isSigned,
+                  by: "Lan N.",
+                },
+                {
+                  step: 3,
+                  role: isVi ? "Tổng Giám đốc phê chuẩn" : "CEO sign-off",
+                  done: isSigned,
+                  by: "Hung P.",
+                },
               ].map((s) => (
                 <div
                   key={s.step}
                   className={`p-3 rounded-lg border flex items-center justify-between ${
                     s.done
-                      ? 'bg-[#F5F7FA] border-slate-900/[0.08]'
-                      : 'bg-white border-slate-900/[0.06]'
+                      ? "bg-[#F5F7FA] border-slate-900/[0.08]"
+                      : "bg-white border-slate-900/[0.06]"
                   }`}
                 >
                   <div className="flex items-center gap-2.5">
                     <div
                       className={`w-6 h-6 rounded-full flex items-center justify-center font-mono tabular-nums text-[11px] font-medium ${
-                        s.done ? 'bg-[#16A34A] text-white' : 'bg-[#ECEFF4] text-[#4B5565]'
+                        s.done
+                          ? "bg-[#16A34A] text-white"
+                          : "bg-[#ECEFF4] text-[#4B5565]"
                       }`}
                     >
                       {s.done ? <CheckIcon className="w-3.5 h-3.5" /> : s.step}
                     </div>
                     <div>
-                      <p className="text-[12.5px] font-medium text-[#111827]">{s.role}</p>
+                      <p className="text-[12.5px] font-medium text-[#111827]">
+                        {s.role}
+                      </p>
                       <p className="text-[11px] text-[#6B7487]">
                         {isVi
                           ? s.done
                             ? `Đã ký bởi ${s.by}`
-                            : 'Đang chờ token ký số'
+                            : "Đang chờ ký duyệt"
                           : s.done
-                          ? `Signed by ${s.by}`
-                          : 'Awaiting token'}
+                            ? `Signed by ${s.by}`
+                            : "Awaiting signature"}
                       </p>
                     </div>
                   </div>
                   {s.done && (
                     <span className="text-[11px] font-medium text-[#16A34A]">
-                      {isVi ? 'Đã duyệt' : 'Verified'}
+                      {isVi ? "Đã duyệt" : "Verified"}
                     </span>
                   )}
                 </div>
@@ -140,7 +175,7 @@ export function InteractiveDigitalSignature({ isVi }: Props) {
                 className="w-full h-10 px-4 rounded-[10px] bg-[#FF4D38] hover:bg-[#E03E2A] text-white font-medium text-[13px] transition-[background-color,transform] duration-150 active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
               >
                 <PenToolIcon className="w-3.5 h-3.5" />
-                <span>{isVi ? 'Ký số và ban hành' : 'Sign and dispatch'}</span>
+                <span>{isVi ? "Ký số và ban hành" : "Sign and dispatch"}</span>
               </button>
             )}
           </div>

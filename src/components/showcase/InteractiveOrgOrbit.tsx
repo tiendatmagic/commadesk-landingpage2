@@ -44,9 +44,11 @@ export function InteractiveOrgOrbit({ isVi }: Props) {
                 <LandmarkIcon className="w-4 h-4" />
               </div>
               <span className="text-[11px] font-semibold text-[#111827] leading-tight">
-                {isVi ? 'Ban điều hành' : 'Executive core'}
+                {isVi ? 'Ban điều hành' : 'Executive board'}
               </span>
-              <span className="font-mono text-[10px] text-[#6B7487]">Level 0</span>
+              <span className="font-mono text-[10px] text-[#6B7487]">
+                {isVi ? 'Trụ sở chính' : 'Headquarters'}
+              </span>
             </div>
           </div>
 
@@ -54,28 +56,28 @@ export function InteractiveOrgOrbit({ isVi }: Props) {
           {[
             {
               role: isVi ? 'Khối Kỹ thuật' : 'Engineering',
-              lead: 'Elena Rostova',
+              lead: isVi ? 'Nguyễn Văn Minh' : 'Minh Nguyen',
               avatar: '/avatars/elena_rostova_hd.webp',
               pos: 'top-3 sm:top-6 right-3 sm:right-8',
               badge: 'Sprint 14',
             },
             {
               role: isVi ? 'Khối Vận hành' : 'Operations',
-              lead: 'James Carter',
+              lead: isVi ? 'Trần Quốc Huy' : 'Huy Tran',
               avatar: '/avatars/james_carter_hd.webp',
               pos: 'top-3 sm:top-6 left-3 sm:left-8',
-              badge: '99.8% SLA',
+              badge: 'SLA active',
             },
             {
               role: isVi ? 'Khối Nhân sự' : 'People Ops',
-              lead: 'David Chen',
+              lead: isVi ? 'Phạm Thu Lan' : 'Lan Pham',
               avatar: '/avatars/david_chen_hd.webp',
               pos: 'bottom-3 sm:bottom-6 left-3 sm:left-8',
               badge: '1,420 staff',
             },
             {
               role: isVi ? 'Khối Dự án' : 'PMO Office',
-              lead: 'Sophia Lin',
+              lead: isVi ? 'Lê Minh Thảo' : 'Thao Le',
               avatar: '/avatars/sophia_lin_hd.webp',
               pos: 'bottom-3 sm:bottom-6 right-3 sm:right-8',
               badge: '18 active',
@@ -146,7 +148,7 @@ export function InteractiveOrgOrbit({ isVi }: Props) {
             <div className="flex-1">
               <div className="flex items-center justify-between">
                 <p className="text-[13px] font-medium text-[#111827]">
-                  {isVi ? 'Nhận diện khuôn mặt: 0.12s' : 'Face match latency: 0.12s'}
+                  {isVi ? 'Chấm công nhận diện khuôn mặt' : 'Facial recognition check-in'}
                 </p>
                 <span className="text-[13px] font-semibold font-mono tabular-nums text-[#16A34A]">
                   {shiftStats[activeShift].rate}

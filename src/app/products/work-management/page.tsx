@@ -22,43 +22,43 @@ export default function WorkManagementPage() {
           id: 'kanban',
           tag: 'Trực quan',
           title: 'Bảng Việc Kanban',
-          description: 'Kéo thả trực quan, phân loại mức ưu tiên và kiểm soát checklist công việc.',
-          metricBadge: { label: 'Tối ưu luồng việc', value: '3x nhanh hơn' },
+          description: 'Kéo thả thẻ việc theo trạng thái, gắn nhãn ưu tiên và kiểm soát checklist đầu việc.',
+          metricBadge: { label: 'Quy trình', value: 'Bảng Kanban đa cột' },
         },
         {
           id: 'gantt',
           tag: 'Lộ trình',
           title: 'Biểu Đồ Gantt',
-          description: 'Theo dõi mốc tiến độ dự án và tự động cập nhật khi nhiệm vụ liên đới đổi lịch.',
-          metricBadge: { label: 'Tiến độ', value: '100% chính xác' },
+          description: 'Theo dõi các mốc tiến độ, phụ thuộc công việc và điều chỉnh lịch trình khi có thay đổi.',
+          metricBadge: { label: 'Lập lịch', value: 'Phụ thuộc mốc việc' },
         },
         {
           id: 'my-work',
           tag: 'Cá nhân',
           title: 'Công Việc Của Tôi',
-          description: 'Tổng hợp mọi đầu việc được giao từ nhiều dự án vào một màn hình duy nhất.',
-          metricBadge: { label: 'Tập trung', value: '0 bỏ sót task' },
+          description: 'Gom toàn bộ đầu việc được giao từ nhiều dự án vào một danh sách cá nhân có nhắc hạn.',
+          metricBadge: { label: 'Theo dõi', value: 'Danh sách hợp nhất' },
         },
         {
           id: 'time-logs',
-          tag: 'Năng suất',
+          tag: 'Giờ công',
           title: 'Nhật Ký Thời Gian',
-          description: 'Ghi nhận giờ làm việc, kiểm soát ngân sách và tự động đồng bộ sang bảng công.',
-          metricBadge: { label: 'Năng suất', value: '+17% vượt kế hoạch' },
+          description: 'Ghi nhận giờ làm theo từng đầu việc, đối soát ngân sách và đồng bộ sang bảng công.',
+          metricBadge: { label: 'Liên kết', value: 'Đồng bộ bảng công' },
         },
         {
           id: 'sprints',
           tag: 'Agile',
           title: 'Quản Lý Sprint',
-          description: 'Theo dõi biểu đồ Burndown, cân bằng tải công việc và nhịp bàn giao sprint.',
-          metricBadge: { label: 'Chu kỳ', value: '2 tuần/sprint' },
+          description: 'Theo dõi biểu đồ Burndown, cân bằng khối lượng công việc và tiến độ bàn giao theo chu kỳ.',
+          metricBadge: { label: 'Chu kỳ', value: 'Quản lý theo Sprint' },
         },
         {
           id: 'acceptance-budget',
           tag: 'Điều hành',
           title: 'Nghiệm Thu & Ngân Sách',
-          description: 'Nghiệm thu trực tuyến, đối soát chi phí thực tế và báo cáo tiến độ đa dự án.',
-          metricBadge: { label: 'Ngân sách', value: 'Thời gian thực' },
+          description: 'Nghiệm thu trực tuyến theo cấp, đối soát chi phí thực tế và báo cáo tiến độ đa dự án.',
+          metricBadge: { label: 'Kiểm soát', value: 'Dự toán & Thực chi' },
         },
       ]
     : [
@@ -66,43 +66,43 @@ export default function WorkManagementPage() {
           id: 'kanban',
           tag: 'Visual Flow',
           title: 'Kanban Boards',
-          description: 'Intuitive drag-and-drop task boards with priority tags and checklists.',
-          metricBadge: { label: 'Efficiency', value: '3x Faster' },
+          description: 'Move tasks across workflow stages with priority labels, assignees, and checklists.',
+          metricBadge: { label: 'Workflow', value: 'Multi-Stage Boards' },
         },
         {
           id: 'gantt',
           tag: 'Roadmap',
           title: 'Gantt Timeline',
-          description: 'Interactive timelines with automated rescheduling when milestones shift.',
-          metricBadge: { label: 'Accuracy', value: '100% On-Track' },
+          description: 'Schedule milestones, map task dependencies, and adjust timelines when dates shift.',
+          metricBadge: { label: 'Scheduling', value: 'Task Dependencies' },
         },
         {
           id: 'my-work',
           tag: 'Personal Hub',
           title: 'My Work Hub',
-          description: 'Aggregates all personal assignments across enterprise workspaces in one view.',
-          metricBadge: { label: 'Focus', value: 'Zero Missed Tasks' },
+          description: 'Collect personal assignments across all active projects into one prioritized daily list.',
+          metricBadge: { label: 'View', value: 'Unified Task List' },
         },
         {
           id: 'time-logs',
-          tag: 'Productivity',
+          tag: 'Hours',
           title: 'Time Logs & Hours',
-          description: 'Track subtask hours, monitor budgets, and auto-sync with timesheets.',
-          metricBadge: { label: 'Velocity', value: '+17% Ahead' },
+          description: 'Log time per subtask, monitor project budgets, and sync hours with monthly timesheets.',
+          metricBadge: { label: 'Sync', value: 'Timesheet Linked' },
         },
         {
           id: 'sprints',
-          tag: 'Agile Engine',
+          tag: 'Agile',
           title: 'Sprint Planning',
-          description: 'Balance squad capacities with Burndown curves and release cadence.',
-          metricBadge: { label: 'Cadence', value: 'Bi-weekly Sprints' },
+          description: 'Balance team workload with Burndown charts and sprint completion tracking.',
+          metricBadge: { label: 'Cadence', value: 'Sprint Tracking' },
         },
         {
           id: 'acceptance-budget',
           tag: 'Governance',
           title: 'Acceptance & Budget',
-          description: 'Digital sign-offs with real-time budget vs actual expenditure tracking.',
-          metricBadge: { label: 'Budget Control', value: 'Realtime Variance' },
+          description: 'Multi-level deliverable sign-offs with planned budget vs actual cost comparison.',
+          metricBadge: { label: 'Control', value: 'Budget vs Actual' },
         },
       ];
 
@@ -115,13 +115,13 @@ export default function WorkManagementPage() {
           categoryBadge={isVi ? 'Phân hệ Dự án & Công việc' : 'Work & Projects Module'}
           title={
             isVi
-              ? ['Lập kế hoạch chính xác.', 'Thực thi không gián đoạn.']
-              : ['Plan with precision.', 'Execute without friction.']
+              ? ['Lập kế hoạch dự án rõ ràng', 'Theo dõi tiến độ từng đầu việc']
+              : ['Plan projects clearly', 'Track progress to completion']
           }
           subtitle={
             isVi
-              ? 'Hợp nhất bảng việc Kanban, biểu đồ Gantt và nhật ký thời gian trên một nền tảng trực quan.'
-              : 'Unify Kanban boards, Gantt timelines, and project time logs in one intuitive platform.'
+              ? 'Hợp nhất bảng việc Kanban, biểu đồ Gantt, nhật ký giờ làm và nghiệm thu dự án trong cùng một không gian.'
+              : 'Combine Kanban boards, Gantt timelines, task time logs, and project acceptance in one workspace.'
           }
           tags={
             isVi
@@ -145,11 +145,11 @@ export default function WorkManagementPage() {
 
         <SubpageFeaturesGrid
           badge={isVi ? 'Khả năng cốt lõi' : 'Core Capabilities'}
-          title={isVi ? 'Bộ công cụ quản lý dự án cấp doanh nghiệp' : 'Enterprise Project Management Suite'}
+          title={isVi ? 'Công cụ quản lý dự án & công việc' : 'Project & Task Management'}
           subtitle={
             isVi
-              ? 'Kiểm soát tiến độ, dự toán ngân sách và tăng tốc độ bàn giao cho toàn bộ đội ngũ.'
-              : 'Accelerate delivery timelines and keep project budgets strictly on schedule.'
+              ? 'Theo dõi tiến độ thực tế, kiểm soát ngân sách và phân bổ công việc đồng đều cho các phòng ban.'
+              : 'Track deliverables, monitor project budgets, and coordinate tasks across departments.'
           }
           features={features}
         />

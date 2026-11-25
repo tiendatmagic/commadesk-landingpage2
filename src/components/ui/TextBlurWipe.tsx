@@ -55,7 +55,9 @@ export function TextBlurWipe({
     if (Array.isArray(children)) {
       return children
         .map((child) => (typeof child === 'string' ? child : ' '))
-        .join('');
+        .join(' ')
+        .replace(/\s+/g, ' ')
+        .trim();
     }
     return '';
   }, [children]);
@@ -104,8 +106,11 @@ export function TextBlurWipe({
     if (Array.isArray(children)) {
       return children.map((item, itemIdx) => {
         if (typeof item === 'string') {
+          const needsLineBreak =
+            itemIdx > 0 && typeof children[itemIdx - 1] === 'string';
           return (
             <React.Fragment key={`frag-${itemIdx}`}>
+              {needsLineBreak && <br />}
               {processText(item)}
             </React.Fragment>
           );

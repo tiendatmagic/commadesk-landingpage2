@@ -107,7 +107,7 @@ export function InteractiveVisionRadar({ isVi }: Props) {
 
           <div className="space-y-3 max-w-lg text-left">
             <span className="font-mono text-[12px] text-[#6B7487] block">
-              VMS spatial grid · 128 feeds
+              {isVi ? 'Khu vực camera · 128 điểm' : 'Camera zones · 128 cameras'}
             </span>
             <h3 className="text-[20px] font-semibold tracking-[-0.01em] text-[#111827]">
               {isVi ? 'Định vị không gian & Theo dõi luồng di chuyển' : 'Spatial mapping & multi-zone tracking'}
@@ -123,15 +123,15 @@ export function InteractiveVisionRadar({ isVi }: Props) {
                   {isVi ? 'Tổng số camera' : 'Active cameras'}
                 </span>
                 <p className="text-[18px] font-semibold text-[#111827] font-mono tabular-nums mt-0.5">
-                  128 feeds
+                  128 {isVi ? 'điểm' : 'cameras'}
                 </p>
               </div>
               <div className="p-3.5 rounded-xl bg-[#F5F7FA] border border-slate-900/[0.06]">
                 <span className="text-[12px] text-[#6B7487]">
-                  {isVi ? 'Độ trễ xử lý' : 'Processing latency'}
+                  {isVi ? 'Trạng thái' : 'Monitoring'}
                 </span>
                 <p className="text-[18px] font-semibold text-[#16A34A] font-mono tabular-nums mt-0.5">
-                  &lt; 45 ms
+                  24/7
                 </p>
               </div>
             </div>

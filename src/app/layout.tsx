@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "CommaDesk - Unified Enterprise Operations Platform",
   description:
-    "CommaDesk unifies project delivery, HR and automated payroll, document registry (Decree 30/150), multi-warehouse inventory, fleet logistics, ITIL service desk, and vision AI in one workspace.",
+    "CommaDesk brings together project tracking, HR and payroll, document registry (Decree 30), multi-warehouse inventory, fleet delivery, customer support, and camera monitoring in one workspace.",
   icons: {
     icon: "/favicon.ico",
   },

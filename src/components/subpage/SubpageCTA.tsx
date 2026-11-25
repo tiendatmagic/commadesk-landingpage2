@@ -43,22 +43,22 @@ export function SubpageCTA({ moduleName }: SubpageCTAProps) {
             href="/#integrations"
             className="inline-flex items-center justify-center w-full sm:w-auto h-11 px-5 rounded-[10px] bg-[#ECEFF4] hover:bg-slate-200/80 text-[#111827] font-medium text-[14px] border border-slate-900/[0.08] transition-[background-color,transform] duration-150 active:scale-[0.98] text-center"
           >
-            {language === 'vi' ? 'Hệ sinh thái tích hợp' : 'Integrations'}
+            {language === 'vi' ? 'Các phân hệ tích hợp' : 'Integrations'}
           </Link>
         </div>
 
         <div className="mt-10 pt-6 border-t border-slate-900/[0.06] flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-[13px] text-[#6B7487]">
           <span className="flex items-center gap-1.5">
             <CheckCircleIcon className="w-4 h-4 text-[#16A34A]" />
-            {language === 'vi' ? 'Phân quyền đa tầng linh hoạt' : 'Multi-tier permissions'}
+            {language === 'vi' ? 'Phân quyền theo vai trò' : 'Role-based permissions'}
           </span>
           <span className="flex items-center gap-1.5">
             <CheckCircleIcon className="w-4 h-4 text-[#16A34A]" />
-            Multi-tenant isolation
+            {language === 'vi' ? 'Cô lập dữ liệu theo đơn vị' : 'Organization data isolation'}
           </span>
           <span className="flex items-center gap-1.5">
             <CheckCircleIcon className="w-4 h-4 text-[#16A34A]" />
-            SOC2 &amp; ISO 27001 ready
+            {language === 'vi' ? 'Nhật ký phê duyệt & kiểm soát' : 'Activity logs & approvals'}
           </span>
         </div>
       </div>

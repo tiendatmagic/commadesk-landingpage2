@@ -31,11 +31,11 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     avatar: '/avatars/sang_aqp_hd.webp',
     rating: 5.0,
     quote:
-      '“CommaDesk unified our Kanban sprint tracking, GPS biometric attendance, and workforce records under one hub. Reporting meetings dropped by over 50%, while project delivery transparency reached an all-time high.”',
+      '“CommaDesk brought our Kanban project tracking, GPS and face attendance, and employee records into one hub. Weekly status check-ins take far less time and delivery schedules stay clear across teams.”',
     quoteVi:
-      '“CommaDesk giúp AQP hợp nhất toàn bộ tiến độ Kanban, chấm công GPS và hồ sơ nhân sự trên một nền tảng duy nhất. Thời gian họp báo cáo giảm hơn 50%, tiến độ bàn giao dự án luôn minh bạch và tức thì.”',
+      '“CommaDesk giúp AQP gộp việc theo dõi tiến độ Kanban, chấm công GPS và hồ sơ nhân sự vào một hệ thống chung. Đội ngũ giảm đáng kể thời gian họp rà soát báo cáo và luôn nắm rõ tiến độ bàn giao dự án.”',
     quoteEn:
-      '“CommaDesk unified our Kanban sprint tracking, GPS biometric attendance, and workforce records under one hub. Reporting meetings dropped by over 50%, while project delivery transparency reached an all-time high.”',
+      '“CommaDesk brought our Kanban project tracking, GPS and face attendance, and employee records into one hub. Weekly status check-ins take far less time and delivery schedules stay clear across teams.”',
   },
   {
     id: 'phong_cvedix',
@@ -51,11 +51,11 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     avatar: '/avatars/phong_cvedix_hd.webp',
     rating: 5.0,
     quote:
-      '“The multi-tier permission matrix, open REST APIs, and event webhooks in CommaDesk operate with exceptional reliability. CVEDIX integrated it into our core infrastructure within days while maintaining strict enterprise security.”',
+      '“Role-based data permissions and two-way software sync in CommaDesk work reliably across departments. CVEDIX rolled out the platform across our teams within days while keeping internal data access strictly scoped.”',
     quoteVi:
-      '“Hệ thống phân quyền dữ liệu đa cấp và bộ REST API, Webhooks của CommaDesk vận hành cực kỳ ổn định. CVEDIX tích hợp sâu vào hệ thống hạ tầng sẵn có chỉ trong vài ngày mà vẫn đảm bảo an toàn tuyệt đối.”',
+      '“Cơ chế phân quyền dữ liệu theo vai trò và khả năng đồng bộ với phần mềm kế toán, bán hàng sẵn có của CommaDesk vận hành rất ổn định. CVEDIX triển khai cho các phòng ban chỉ trong vài ngày mà vẫn kiểm soát chặt phạm vi truy cập.”',
     quoteEn:
-      '“The multi-tier permission matrix, open REST APIs, and event webhooks in CommaDesk operate with exceptional reliability. CVEDIX integrated it into our core infrastructure within days while maintaining strict enterprise security.”',
+      '“Role-based data permissions and two-way software sync in CommaDesk work reliably across departments. CVEDIX rolled out the platform across our teams within days while keeping internal data access strictly scoped.”',
   },
   {
     id: 'nganthy',
@@ -71,11 +71,11 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     avatar: '/avatars/ngan_thy_hd.webp',
     rating: 5.0,
     quote:
-      '“The digital document registry, multi-tier approvals, and logistics inventory tracking freed Ngan Thy from cumbersome paper trails. Proposals and procurement requests are now approved on mobile in minutes.”',
+      '“The digital document registry, multi-step approvals, and warehouse tracking replaced our paper sign-off binders. Leave requests, dispatches, and purchase vouchers are now reviewed directly on mobile.”',
     quoteVi:
-      '“Hệ thống sổ văn bản số điện tử, quy trình duyệt đa cấp và quản lý kho bãi của CommaDesk giải phóng đội ngũ Ngân Thy khỏi mớ giấy tờ rườm rà. Mọi đề xuất, tờ trình đều được phê duyệt ngay trên điện thoại trong vài phút.”',
+      '“Sổ văn bản điện tử, quy trình duyệt nhiều cấp và quản lý kho bãi của CommaDesk giúp Ngân Thy bỏ hẳn quy trình giấy tờ thủ công. Mọi tờ trình và phiếu đề xuất đều được xem và duyệt ngay trên điện thoại.”',
     quoteEn:
-      '“The digital document registry, multi-tier approvals, and logistics inventory tracking freed Ngan Thy from cumbersome paper trails. Proposals and procurement requests are now approved on mobile in minutes.”',
+      '“The digital document registry, multi-step approvals, and warehouse tracking replaced our paper sign-off binders. Leave requests, dispatches, and purchase vouchers are now reviewed directly on mobile.”',
   },
   {
     id: 'tuan_citares',
@@ -91,10 +91,10 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     avatar: '/avatars/tuan_citares_hd.webp',
     rating: 5.0,
     quote:
-      '“The seamless integration between AI vision surveillance and real-time Gantt tracking provides CITARES with unparalleled operational visibility. It is a benchmark digital operating platform for modern organizations.”',
+      '“Combining camera event monitoring with Gantt project tracking gives CITARES clear visibility over daily operations. Teams follow schedules and site alerts in one workspace instead of switching between tools.”',
     quoteVi:
-      '“Khả năng kết nối camera AI giám sát thông minh và biểu đồ Gantt tiến độ thời gian thực của CommaDesk mang lại tầm nhìn vận hành vượt trội cho CITARES. Đây là nền tảng quản trị số chuẩn mực cho tổ chức hiện đại.”',
+      '“Việc kết nối cảnh báo từ camera giám sát cùng biểu đồ tiến độ Gantt trên CommaDesk giúp CITARES theo dõi vận hành hàng ngày rất thuận tiện. Nhân sự chỉ cần mở một nơi để nắm cả lịch dự án lẫn tình hình tại hiện trường.”',
     quoteEn:
-      '“The seamless integration between AI vision surveillance and real-time Gantt tracking provides CITARES with unparalleled operational visibility. It is a benchmark digital operating platform for modern organizations.”',
+      '“Combining camera event monitoring with Gantt project tracking gives CITARES clear visibility over daily operations. Teams follow schedules and site alerts in one workspace instead of switching between tools.”',
   },
 ];

@@ -35,30 +35,30 @@ export default function ReleaseNotesPage() {
       badge: isVi ? 'Mới nhất' : 'Latest',
       badgeColor: 'bg-emerald-50 text-[#16A34A] border-emerald-200/80',
       summary: {
-        vi: 'Ra mắt 5 phân hệ: Kho SKU & Tài sản, CMS kéo thả, KiotViet POS Sync, Khảo sát eNPS và Phê duyệt tập trung.',
-        en: '5 core modules: SKU Inventory & Assets, Visual CMS, KiotViet POS Sync, eNPS Surveys, and Approvals.',
+        vi: 'Ra mắt 5 phân hệ: Kho hàng & Tài sản, CMS & Cổng nội bộ, Đồng bộ KiotViet POS, Khảo sát eNPS và Phê duyệt tập trung.',
+        en: '5 business modules: Inventory & Assets, CMS & Intranet, KiotViet POS Sync, eNPS Surveys, and Unified Approvals.',
       },
       highlights: [
         {
           category: 'feature',
           title: {
-            vi: 'Kho SKU & Tài sản serial',
-            en: 'SKU Inventory & Fixed Assets',
+            vi: 'Kho hàng đa điểm & Tài sản serial',
+            en: 'Multi-Warehouse Inventory & Serial Assets',
           },
           desc: {
-            vi: 'Cân bằng kho đa điểm, duyệt phiếu 2 cấp và cảnh báo tồn an toàn.',
-            en: 'Multi-location balance, 2-step approvals, and safety stock alerts.',
+            vi: 'Cân bằng tồn kho đa điểm, duyệt phiếu 2 cấp và cảnh báo định mức tồn an toàn.',
+            en: 'Multi-location stock balances, 2-step voucher approvals, and low-stock alerts.',
           },
         },
         {
           category: 'feature',
           title: {
-            vi: 'CMS Studio & Intranet',
+            vi: 'CMS Studio & Cổng thông tin nội bộ',
             en: 'CMS Studio & Intranet',
           },
           desc: {
-            vi: 'Dựng website kéo thả no-code, tòa soạn tin tức và thư viện media.',
-            en: 'No-code visual page builder, newsroom, and media assets.',
+            vi: 'Dựng trang tin nội bộ trực quan, tòa soạn bài viết và thư viện hình ảnh tập trung.',
+            en: 'Visual page builder, internal newsroom, and centralized media library.',
           },
         },
         {
@@ -68,19 +68,19 @@ export default function ReleaseNotesPage() {
             en: 'KiotViet POS Sync',
           },
           desc: {
-            vi: 'Tự động đồng bộ sản phẩm, giá bán và trừ kho < 1.2s khi bán tại quầy.',
-            en: 'Real-time sync of items, prices, and stock deduction in < 1.2s.',
+            vi: 'Tự động đồng bộ danh mục sản phẩm, bảng giá và trừ tồn kho khi phát sinh đơn tại quầy.',
+            en: 'Automatic sync of items, pricing, and stock deduction on point-of-sale orders.',
           },
         },
         {
           category: 'security',
           title: {
-            vi: 'Ủy quyền & Hòm thư lãnh đạo',
+            vi: 'Ủy quyền duyệt & Hòm thư góp ý',
             en: 'Approval Delegation & Mailbox',
           },
           desc: {
-            vi: 'Ủy quyền duyệt theo hạn mức và tiếp nhận phản ánh ẩn danh bảo mật.',
-            en: 'Threshold-based delegation and encrypted anonymous feedback.',
+            vi: 'Ủy quyền duyệt theo hạn mức khi vắng mặt và tiếp nhận góp ý ẩn danh bảo mật.',
+            en: 'Threshold-based delegation during absence and confidential anonymous feedback.',
           },
         },
       ],
@@ -91,8 +91,8 @@ export default function ReleaseNotesPage() {
       badge: isVi ? 'Cập nhật nền tảng' : 'Platform update',
       badgeColor: 'bg-[#F5F7FA] text-[#4B5565] border-slate-900/[0.08]',
       summary: {
-        vi: 'Chuẩn văn bản Nghị định 30, Face AI & ANPR biển số xe, CommaMeet video HD.',
-        en: 'Decree 30 document registry, Face AI & ANPR recognition, and CommaMeet HD.',
+        vi: 'Chuẩn văn bản Nghị định 30, nhận diện khuôn mặt & biển số xe, họp video CommaMeet HD.',
+        en: 'Decree 30 document registry, facial and plate recognition, and CommaMeet HD.',
       },
       highlights: [
         {
@@ -102,19 +102,19 @@ export default function ReleaseNotesPage() {
             en: 'Decree 30 Document Registry',
           },
           desc: {
-            vi: 'Đánh số tự động, luân chuyển văn bản nội bộ và quản lý sổ chuẩn mực.',
-            en: 'Auto numbering, internal dispatch, and decree-compliant books.',
+            vi: 'Đánh số tự động, luân chuyển văn bản nội bộ và quản lý sổ theo chuẩn quy định.',
+            en: 'Auto numbering, internal dispatch routing, and decree-compliant registry books.',
           },
         },
         {
           category: 'performance',
           title: {
-            vi: 'Face AI & ANPR Biển Số',
-            en: 'Face AI & ANPR Recognition',
+            vi: 'Nhận diện Khuôn mặt & Biển số xe',
+            en: 'Face Check-in & License Plate Recognition',
           },
           desc: {
-            vi: 'Nhận diện biển số và chấm công sinh trắc học < 85ms qua camera VMS.',
-            en: 'Sub-85ms plate and biometric recognition across VMS cameras.',
+            vi: 'Tự động ghi nhận biển số xe tại cổng kiểm soát và chấm công khuôn mặt qua camera.',
+            en: 'Automated gate license plate logging and facial attendance check-in from cameras.',
           },
         },
       ],
@@ -125,19 +125,19 @@ export default function ReleaseNotesPage() {
       badge: isVi ? 'Bảo mật & Ứng dụng' : 'Security & app parity',
       badgeColor: 'bg-[#F5F7FA] text-[#4B5565] border-slate-900/[0.08]',
       summary: {
-        vi: 'Ra mắt Ứng dụng Máy tính Windows, Ứng dụng Di động và nâng cấp Phân quyền đa tầng doanh nghiệp.',
-        en: 'Windows Desktop app, Mobile app, and enhanced multi-tier enterprise permissions.',
+        vi: 'Ra mắt Ứng dụng Máy tính Windows, Ứng dụng Di động và nâng cấp Phân quyền theo vai trò.',
+        en: 'Windows Desktop app, Mobile app, and enhanced role-based workspace permissions.',
       },
       highlights: [
         {
           category: 'security',
           title: {
-            vi: 'Phân quyền đa tầng & Bảo mật 2 lớp',
-            en: 'Multi-Tier Permissions & 2FA Security',
+            vi: 'Phân quyền theo vai trò & Bảo mật 2 lớp',
+            en: 'Role-Based Permissions & 2FA Security',
           },
           desc: {
-            vi: 'Thu hồi phiên đăng nhập từ xa, định danh thiết bị an toàn và nhật ký hoạt động minh bạch.',
-            en: 'Remote session revoke, trusted device binding, and transparent audit logs.',
+            vi: 'Thu hồi phiên đăng nhập từ xa, xác nhận thiết bị tin cậy và nhật ký hoạt động minh bạch.',
+            en: 'Remote session revocation, trusted device verification, and transparent activity logs.',
           },
         },
       ],
@@ -211,7 +211,7 @@ export default function ReleaseNotesPage() {
                 }`}
               >
                 <ShieldCheckIcon className="w-3.5 h-3.5" />
-                <span>{isVi ? 'Bảo mật & RBAC' : 'Security & RBAC'}</span>
+                <span>{isVi ? 'Bảo mật & Phân quyền' : 'Security & Permissions'}</span>
               </button>
               <button
                 type="button"

@@ -45,7 +45,7 @@ export function InteractiveSocialRetail({ isVi }: InteractiveSocialRetailProps) 
       status: isVi ? 'Đã kết nối' : 'Connected',
       syncTime: isVi ? 'Vừa xong' : 'Just now',
       icon: FacebookIcon,
-      badge: 'Meta Graph API v19',
+      badge: 'Facebook Fanpage',
     },
     {
       id: 'zalo',
@@ -61,9 +61,9 @@ export function InteractiveSocialRetail({ isVi }: InteractiveSocialRetailProps) 
       name: 'KiotViet POS Multi-Store',
       followers: isVi ? '5 chi nhánh' : '5 branches',
       status: isVi ? 'Đồng bộ 2 chiều' : 'Two-way sync',
-      syncTime: 'Realtime',
+      syncTime: isVi ? 'Tự động' : 'Automatic',
       icon: StoreIcon,
-      badge: 'KiotViet Open API',
+      badge: 'KiotViet POS',
     },
   ];
 
@@ -139,8 +139,8 @@ export function InteractiveSocialRetail({ isVi }: InteractiveSocialRetailProps) 
                 <div className="text-[13px] font-semibold text-[#111827]">CommaDesk Official Store</div>
                 <div className="text-[11px] text-[#6B7487]">
                   {selectedChannel === 'facebook'
-                    ? 'Meta Graph API'
-                    : 'Zalo OA Broadcast'}
+                    ? 'Facebook Fanpage'
+                    : 'Zalo OA'}
                 </div>
               </div>
             </div>
@@ -171,7 +171,7 @@ export function InteractiveSocialRetail({ isVi }: InteractiveSocialRetailProps) 
               {isVi ? 'Đồng bộ tồn kho POS KiotViet hai chiều' : 'Two-way KiotViet POS stock sync'}
             </span>
             <span className="font-mono text-[12px] font-medium text-[#16A34A]">
-              Webhook 200 OK
+              {isVi ? 'Đã đồng bộ' : 'Synced'}
             </span>
           </div>
 
@@ -231,8 +231,10 @@ export function InteractiveSocialRetail({ isVi }: InteractiveSocialRetailProps) 
       )}
 
       <div className="mt-3 pt-3 border-t border-slate-900/[0.06] flex items-center justify-between text-[12px] text-[#6B7487]">
-        <span>{isVi ? 'Kết nối Meta API & KiotViet Open API' : 'Meta API & KiotViet Open API'}</span>
-        <span className="font-mono tabular-nums text-[#111827] font-medium">Latency: 120 ms</span>
+        <span>{isVi ? 'Kết nối Fanpage, Zalo OA & KiotViet POS' : 'Facebook, Zalo OA & KiotViet POS'}</span>
+        <span className="font-mono tabular-nums text-[#111827] font-medium">
+          {isVi ? 'Đồng bộ 2 chiều' : 'Two-way sync'}
+        </span>
       </div>
     </ShowcaseCard>
   );
