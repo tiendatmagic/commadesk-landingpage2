@@ -156,9 +156,9 @@ export default function ReleaseNotesPage() {
     <div className="min-h-screen bg-[#FBFBFD] text-slate-900 selection:bg-[#FF4D38] selection:text-white">
       <Navbar />
 
-      <main className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 pb-20">
+      <main className="max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-36 pb-20">
         {/* Header Breadcrumb & Title */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200/90 text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-4">
             <span className="w-2 h-2 rounded-full bg-[#FF4D38]"></span>
             {isVi ? 'Nhật Ký Phát Hành' : "Changelog"}
@@ -227,7 +227,7 @@ export default function ReleaseNotesPage() {
         </div>
 
         {/* Timeline Stream */}
-        <div className="max-w-4xl mx-auto space-y-12">
+        <div className="max-w-6xl mx-auto space-y-12">
           {filteredReleases.map((release) => (
             <div
               key={release.version}
@@ -285,7 +285,7 @@ export default function ReleaseNotesPage() {
         </div>
 
         {/* Bottom CTA to Docs */}
-        <div className="max-w-4xl mx-auto mt-16 p-8 rounded-3xl bg-gradient-to-br from-white to-slate-50 border border-slate-200 text-center shadow-xs space-y-3">
+        <div className="max-w-6xl mx-auto mt-16 p-8 rounded-3xl bg-gradient-to-br from-white to-slate-50 border border-slate-200 text-center shadow-xs space-y-3">
           <h2 className="text-lg sm:text-xl font-bold text-slate-900">
             {isVi ? 'Tìm Hiểu Chi Tiết Về Tính Năng Nghiệp Vụ?' : 'Explore Feature Guides & Operations?'}
           </h2>

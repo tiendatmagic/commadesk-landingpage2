@@ -16,9 +16,9 @@ export function Footer() {
   const isVi = language === "vi";
 
   return (
-    <footer className="canvas-card bg-white rounded-[24px] sm:rounded-[44px] md:rounded-[48px] shadow-sm border border-slate-200/60 overflow-hidden relative pt-12 sm:pt-20 md:pt-24 pb-8 sm:pb-10 px-3.5 sm:px-10 md:px-12 lg:px-16 flex flex-col justify-between">
+    <footer className="canvas-card bg-white rounded-[24px] sm:rounded-[44px] md:rounded-[48px] shadow-sm border border-slate-200/60 overflow-hidden relative pt-12 sm:pt-20 md:pt-24 pb-8 sm:pb-10 px-3.5 sm:px-10 md:px-12 lg:px-14 flex flex-col justify-between">
       {/* Upper Section */}
-      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 xl:gap-10 pb-10 sm:pb-16 text-left">
+      <div className="max-w-[1360px] mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 xl:gap-10 pb-10 sm:pb-16 text-left">
         {/* Col 1: Bio & Branding */}
         <div className="md:col-span-7 lg:col-span-7 xl:col-span-3 text-left">
           <Link href="/" className="inline-flex items-center gap-2 mb-4 group">
@@ -199,11 +199,22 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Copyright */}
-      <div className="pt-6 border-t border-slate-100 text-center">
+      {/* Copyright & Public Legal Links */}
+      <div className="max-w-[1360px] mx-auto w-full pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
         <p className="text-xs sm:text-sm font-medium text-gray-400">
           {t.footer.copyright}
         </p>
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-gray-500">
+          {FOOTER_LINKS.legal.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="hover:text-gray-950 transition-colors underline-offset-4 hover:underline"
+            >
+              {link.key === 'privacy' ? t.footer.legal.privacy : t.footer.legal.terms}
+            </Link>
+          ))}
+        </div>
       </div>
     </footer>
   );

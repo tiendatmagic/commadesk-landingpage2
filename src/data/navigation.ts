@@ -46,5 +46,9 @@ export const FOOTER_LINKS = {
     { label: 'Ecosystem & Sync', labelVi: 'Tích hợp & Kết nối mở', labelEn: 'Ecosystem & Sync', href: '/docs' },
     { label: 'Apps & Deployment', labelVi: 'Ứng dụng & Triển khai', labelEn: 'Apps & Deployment', href: '/deployment' },
   ],
+  legal: [
+    { key: 'privacy' as const, label: 'Privacy Policy', labelVi: 'Chính sách Bảo mật', labelEn: 'Privacy Policy', href: '/privacy-policy' },
+    { key: 'terms' as const, label: 'Terms of Service', labelVi: 'Điều khoản Dịch vụ', labelEn: 'Terms of Service', href: '/terms-of-service' },
+  ],
 };
 

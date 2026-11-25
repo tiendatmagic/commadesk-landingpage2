@@ -122,7 +122,7 @@ export default function DocsPage() {
     <>
       <Navbar />
 
-      <main className="max-w-[1440px] mx-auto flex flex-col gap-6 sm:gap-10 md:gap-12 lg:gap-14 relative px-2.5 sm:px-6 lg:px-8 pb-4 sm:pb-6 md:pb-6 lg:pb-6">
+      <main className="max-w-[1536px] mx-auto flex flex-col gap-6 sm:gap-10 md:gap-12 lg:gap-14 relative px-2.5 sm:px-6 lg:px-8 pb-4 sm:pb-6 md:pb-6 lg:pb-6">
         <SubpageHero
           categoryBadge={isVi ? 'Cẩm Nang & Tính Năng Nghiệp Vụ' : 'Feature Handbook & Guides'}
           title={

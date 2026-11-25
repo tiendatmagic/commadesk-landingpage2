@@ -260,6 +260,10 @@ export const vi: TranslationSchema = {
     },
     followUs: 'Theo dõi chúng tôi',
     copyright: '© 2026 CommaDesk Inc. Bảo lưu mọi quyền.',
+    legal: {
+      privacy: 'Chính sách Bảo mật',
+      terms: 'Điều khoản Dịch vụ',
+    },
   },
   subpages: {
     backHome: 'Quay lại Trang chủ',

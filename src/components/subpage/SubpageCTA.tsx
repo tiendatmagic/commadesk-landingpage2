@@ -21,7 +21,7 @@ export function SubpageCTA({ moduleName }: SubpageCTAProps) {
       <div className="pointer-events-none absolute -right-20 -top-20 w-96 h-96 rounded-full bg-[#FF4D38]/5 blur-3xl" />
       <div className="pointer-events-none absolute -left-20 -bottom-20 w-96 h-96 rounded-full bg-[#6366F1]/5 blur-3xl" />
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
+      <div className="relative z-10 max-w-5xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-slate-100 text-slate-800 text-[11px] sm:text-xs font-semibold mb-4 sm:mb-6 border border-slate-200/80">
           <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
           <span>

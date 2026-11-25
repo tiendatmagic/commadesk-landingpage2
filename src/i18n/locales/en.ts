@@ -259,6 +259,10 @@ export const en = {
     },
     followUs: 'Follow us',
     copyright: '© 2026 CommaDesk Inc. All rights reserved.',
+    legal: {
+      privacy: 'Privacy Policy',
+      terms: 'Terms of Service',
+    },
   },
   subpages: {
     backHome: 'Back to Home',
